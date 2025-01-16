@@ -1,5 +1,5 @@
 import "./styles.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const ChefSlider = ({ chefs, visibleImages }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
