@@ -1,13 +1,13 @@
 import "./styles.css";
 import Navbar from "../../components/Navbar/Navbar";
-import HeaderImg from "../../assets/images/HeaderImg.png";
+import HeaderImg from "../../assets/images/HeaderImg.webp";
 import Footer from "../../components/Footer/Footer";
 import CallToAction from "../../components/CallToAction/CallToAction";
-import ChefImg from "../../assets/images/chef-cooking.jpg";
-import Event1Img from "../../assets/images/event1.jpg";
-import Event2Img from "../../assets/images/event2.jpg";
-import ConnectingImg from "../../assets/images/connecting.jpg";
-import OnlinePayment from "../../assets/images/online-payment.jpg";
+import ChefImg from "../../assets/images/chef-cooking.webp";
+import Event1Img from "../../assets/images/event1.webp";
+import Event2Img from "../../assets/images/event2.webp";
+import ConnectingImg from "../../assets/images/connecting.webp";
+import OnlinePayment from "../../assets/images/online-payment.webp";
 import ChefTemp from "../../assets/images/chef-temp.png";
 import ChefSlider from "../../components/ChefSlider/ChefSlider";
 
