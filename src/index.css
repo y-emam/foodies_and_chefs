@@ -18,3 +18,7 @@ code {
   --custom-black: rgb(30, 30, 30);
   --custom-white: rgb(220, 220, 220);
 }
+
+.highlight {
+  color: var(--custom-orange);
+}

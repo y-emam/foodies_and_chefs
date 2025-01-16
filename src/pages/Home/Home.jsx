@@ -3,6 +3,11 @@ import Navbar from "../../components/Navbar/Navbar";
 import HeaderImg from "../../assets/images/HeaderImg.png";
 import Footer from "../../components/Footer/Footer";
 import CallToAction from "../../components/CallToAction/CallToAction";
+import ChefImg from "../../assets/images/chef-cooking.jpg";
+import Event1Img from "../../assets/images/event1.jpg";
+import Event2Img from "../../assets/images/event2.jpg";
+import ConnectingImg from "../../assets/images/connecting.jpg";
+import OnlinePayment from "../../assets/images/online-payment.jpg";
 import ChefTemp from "../../assets/images/chef-temp.png";
 
 function HomePage() {
@@ -26,60 +31,58 @@ function HomePage() {
       {/* How It Works Section */}
       <div className="how-it-works">
         <h1>How It Works</h1>
-        <div>
-          <img src={HeaderImg} alt="img" />
-          <h3>Personalize your events1</h3>
-          <p>
-            Fill in your event details, date, time, and location. Create event.
-          </p>
-          <CallToAction title="Create Event" />
-        </div>
-        <div>
-          <img src={HeaderImg} alt="img" />
-          <h3>Personalize your events2</h3>
-          <p>
-            Fill in your event details, date, time, and location. Create event.
-          </p>
-          <CallToAction title="Create Event" />
-        </div>
-        <div>
-          <img src={HeaderImg} alt="img" />
-          <h3>Personalize your events3</h3>
-          <p>
-            Fill in your event details, date, time, and location. Create event.
-          </p>
-          <CallToAction title="Create Event" />
-        </div>
-        <div>
-          <img src={HeaderImg} alt="img" />
-          <h3>Personalize your events4</h3>
-          <p>
-            Fill in your event details, date, time, and location. Create event.
-          </p>
-          <CallToAction title="Create Event" />
-        </div>
-        <div>
-          <img src={HeaderImg} alt="img" />
-          <h3>Personalize your events5</h3>
-          <p>
-            Fill in your event details, date, time, and location. Create event.
-          </p>
-          <CallToAction title="Create Event" />
-        </div>
-        <div>
-          <img src={HeaderImg} alt="img" />
-          <h3>Personalize your events6</h3>
-          <p>
-            Fill in your event details, date, time, and location. Create event.
-          </p>
-          <CallToAction title="Create Event" />
+        <div className="container">
+          <div className="card">
+            <img src={Event1Img} alt="img" />
+            <h3>Personalize your events</h3>
+            <p>
+              Share the details like date, time, location, and any special
+              requests to start planning your perfect event.
+            </p>
+            <CallToAction title="Create Event" />
+          </div>
+          <div className="card">
+            <img src={Event2Img} alt="img" />
+            <h3>Choose Your Cuisine</h3>
+            <p>
+              Explore a variety of menus crafted by our top chefs and pick the
+              one that suits your taste.
+            </p>
+            <CallToAction title="Show Menus" />
+          </div>
+          <div className="card">
+            <img src={ConnectingImg} alt="img" />
+            <h3>Connect with Chefs</h3>
+            <p>
+              Chat directly with your chef to customize the menu, finalize
+              details, and agree on the cost.
+            </p>
+            <CallToAction title="Start Chatting" />
+          </div>
+          <div className="card">
+            <img src={OnlinePayment} alt="img" />
+            <h3>Book Your Experience</h3>
+            <p>
+              Once you're satisfied with your chef and menu, confirm your
+              booking by completing a secure payment.
+            </p>
+            <CallToAction title="Book Now" />
+          </div>
+          <div className="card">
+            <img src={ChefImg} alt="img" />
+            <h3>Enjoy</h3>
+            <p>All done! Get ready for an unforgettable experience!</p>
+            <CallToAction title="Create Event" />
+          </div>
         </div>
       </div>
 
       {/* Chefs Section */}
       <div className="chefs-section">
         <div>
-          <h1>Meet our Chefs</h1>
+          <h1>
+            Meet our <span className="highlight">Top</span> Chefs
+          </h1>
           <div>Search</div>
         </div>
         <div className="content">

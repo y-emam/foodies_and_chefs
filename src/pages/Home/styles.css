@@ -1,6 +1,8 @@
+/* Header Section */
 .header {
   min-height: 80vh;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -20,10 +22,6 @@
   text-align: start;
 }
 
-.header-content h1 .highlight {
-  color: var(--custom-orange);
-}
-
 .header img {
   width: 100%;
   max-width: 420px;
@@ -32,3 +30,50 @@
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(250, 136, 54, 0.4);
 }
+
+/* How It works section */
+.how-it-works {
+  padding: 1rem 2rem;
+}
+
+.how-it-works h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.how-it-works .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.how-it-works .container .card {
+  width: auto;
+  max-width: 40%;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(250, 136, 54, 0.4);
+}
+
+.how-it-works .card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.how-it-works .card h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.how-it-works .card p {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.how-it-works .card button {
+}
+
+/* Chefs Section */
