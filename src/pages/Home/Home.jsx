@@ -9,8 +9,20 @@ import Event2Img from "../../assets/images/event2.jpg";
 import ConnectingImg from "../../assets/images/connecting.jpg";
 import OnlinePayment from "../../assets/images/online-payment.jpg";
 import ChefTemp from "../../assets/images/chef-temp.png";
+import ChefSlider from "../../components/Slider/Slider";
 
 function HomePage() {
+  const chefs = [
+    { name: "Ahmed Hassan", location: "Alexandria, Egypt", image: ChefTemp },
+    { name: "Fatima Mahmoud", location: "Giza, Egypt", image: ChefTemp },
+    { name: "Omar Abdelrahman", location: "Luxor, Egypt", image: ChefTemp },
+    { name: "Sara Adel", location: "Aswan, Egypt", image: ChefTemp },
+    { name: "Nour Ebrahim", location: "Hurghada, Egypt", image: ChefTemp },
+    { name: "Layla Mostafa", location: "Mansoura, Egypt", image: ChefTemp },
+    { name: "Hassan Alaa", location: "Port Said, Egypt", image: ChefTemp },
+    { name: "Reem Khalil", location: "Ismailia, Egypt", image: ChefTemp },
+  ];
+
   return (
     <div>
       <Navbar />
@@ -79,53 +91,11 @@ function HomePage() {
 
       {/* Chefs Section */}
       <div className="chefs-section">
-        <div>
-          <h1>
-            Meet our <span className="highlight">Top</span> Chefs
-          </h1>
-          <div>Search</div>
-        </div>
-        <div className="content">
-          <div className="chef">
-            <img src={ChefTemp} alt="img" />
-            <h3>John Doe</h3>
-          </div>
-          <div className="chef">
-            <img src={ChefTemp} alt="img" />
-            <h3>John Doe</h3>
-          </div>
-          <div className="chef">
-            <img src={ChefTemp} alt="img" />
-            <h3>John Doe</h3>
-          </div>
-          <div className="chef">
-            <img src={ChefTemp} alt="img" />
-            <h3>John Doe</h3>
-          </div>
-          <div className="chef">
-            <img src={ChefTemp} alt="img" />
-            <h3>John Doe</h3>
-          </div>
-          <div className="chef">
-            <img src={ChefTemp} alt="img" />
-            <h3>John Doe</h3>
-          </div>
-          <div className="chef">
-            <img src={ChefTemp} alt="img" />
-            <h3>John Doe</h3>
-          </div>
-          <div className="chef">
-            <img src={ChefTemp} alt="img" />
-            <h3>John Doe</h3>
-          </div>
-          <div className="chef">
-            <img src={ChefTemp} alt="img" />
-            <h3>John Doe</h3>
-          </div>
-          <div className="chef">
-            <img src={ChefTemp} alt="img" />
-            <h3>John Doe</h3>
-          </div>
+        <h1>
+          Meet our <span className="highlight">Top</span> Chefs
+        </h1>
+        <div className="container">
+          <ChefSlider chefs={chefs} visibleImages={4} />
         </div>
       </div>
 
