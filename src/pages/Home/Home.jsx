@@ -9,7 +9,7 @@ import Event2Img from "../../assets/images/event2.jpg";
 import ConnectingImg from "../../assets/images/connecting.jpg";
 import OnlinePayment from "../../assets/images/online-payment.jpg";
 import ChefTemp from "../../assets/images/chef-temp.png";
-import ChefSlider from "../../components/Slider/Slider";
+import ChefSlider from "../../components/ChefSlider/ChefSlider";
 
 function HomePage() {
   const chefs = [
