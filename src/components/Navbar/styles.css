@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: black;
+  color: #fff;
+}
+
+nav img {
+  width: 80px;
+  object-fit: cover;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+}
+
+nav ul a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li {
+  color: white;
+  margin-right: 1rem;
+}
