@@ -9,17 +9,21 @@ function HomePage() {
   return (
     <div>
       <Navbar />
+
+      {/* Header */}
       <header className="header">
         <div className="header-content">
-          <p>
-            Explore top chefs, book personalized dining events, and create
-            unforgettable experiences.
-          </p>
+          <h1>
+            Explore <span className="highlight">top</span> chefs, book
+            <span className="highlight"> personalized</span> dining events, and
+            create <span className="highlight">unforgettable</span> experiences.
+          </h1>
           <CallToAction title="Get Started" />
         </div>
         <img src={HeaderImg} alt="img" className="img" />
       </header>
 
+      {/* How It Works Section */}
       <div className="how-it-works">
         <h1>How It Works</h1>
         <div>
@@ -71,6 +75,8 @@ function HomePage() {
           <CallToAction title="Create Event" />
         </div>
       </div>
+
+      {/* Chefs Section */}
       <div className="chefs-section">
         <div>
           <h1>Meet our Chefs</h1>
@@ -119,6 +125,7 @@ function HomePage() {
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );
