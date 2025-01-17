@@ -10,6 +10,11 @@ import ConnectingImg from "../../assets/images/connecting.webp";
 import OnlinePayment from "../../assets/images/online-payment.webp";
 import ChefTemp from "../../assets/images/chef-temp.png";
 import ChefSlider from "../../components/ChefSlider/ChefSlider";
+// import SimpleSlider from "../../components/ChefSlider/ChefSlider";
+// import MultipleItems from "../../components/ChefSlider/ChefSlider";
+// import MySlider from "../../components/ChefSlider/ChefSlider";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function HomePage() {
   const chefs = [
@@ -21,6 +26,10 @@ function HomePage() {
     { name: "Layla Mostafa", location: "Mansoura, Egypt", image: ChefTemp },
     { name: "Hassan Alaa", location: "Port Said, Egypt", image: ChefTemp },
     { name: "Reem Khalil", location: "Ismailia, Egypt", image: ChefTemp },
+    { name: "Yasser Emam", location: "Cairo, Egypt", image: ChefTemp },
+    { name: "Ahmed Khaled", location: "Alexandria, Egypt", image: ChefTemp },
+    { name: "Magdy Mahmoud", location: "New Cairo, Egypt", image: ChefTemp },
+    { name: "Amgad Yasser", location: "Luxor, Egypt", image: ChefTemp },
   ];
 
   return (
@@ -94,8 +103,11 @@ function HomePage() {
         <h1>
           Meet our <span className="highlight">Top</span> Chefs
         </h1>
+
         <div className="container">
-          <ChefSlider chefs={chefs} visibleImages={4} />
+          <ChefSlider chefs={chefs} />
+          {/* <MySlider /> */}
+          {/* <MultipleItems /> */}
         </div>
       </div>
 

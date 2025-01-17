@@ -1,32 +1,39 @@
+import React from "react";
+import Slider from "react-slick";
 import "./styles.css";
-import { useState } from "react";
 
-const ChefSlider = ({ chefs, visibleImages }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleChefClick = (index) => {};
-
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
+function ChefSlider({ chefs }) {
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 5, // Default for larger screens
+    slidesToScroll: 5, // Default for larger screens
+    responsive: [
+      {
+        breakpoint: 1024, // Tablets and below (1024px)
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 768, // Mobile phones and below (768px)
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+    ],
   };
 
-  const handleNext = () => {
-    if (currentIndex < chefs.length - visibleImages) {
-      setCurrentIndex(currentIndex + 1);
-    }
+  const handleChefClick = (index) => {
+    console.log(index);
   };
 
   return (
     <div className="slider-container">
-      {/* Images Wrapper */}
-      <div
-        className="slider"
-        style={{
-          transform: `translateX(-${(currentIndex * 100) / visibleImages}%)`,
-        }}
-      >
+      <Slider {...settings}>
         {chefs.map((chef, index) => (
           <div
             onClick={() => handleChefClick(index)}
@@ -35,28 +42,12 @@ const ChefSlider = ({ chefs, visibleImages }) => {
           >
             <img src={chef.image} alt="chef" />
             <h3>{chef.name}</h3>
-            <h4>{chef.location}</h4>
+            <p>{chef.location}</p>
           </div>
         ))}
-      </div>
-
-      {/* Navigation Buttons */}
-      <button
-        onClick={handlePrev}
-        className="prev-btn"
-        disabled={currentIndex === 0}
-      >
-        ‹
-      </button>
-      <button
-        onClick={handleNext}
-        className="next-btn"
-        disabled={currentIndex >= chefs.length - visibleImages}
-      >
-        ›
-      </button>
+      </Slider>
     </div>
   );
-};
+}
 
 export default ChefSlider;
