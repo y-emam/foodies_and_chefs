@@ -4,112 +4,34 @@ import "./styles.css";
 
 function SignUpPage() {
   return (
-    <div class="min-h-screen flex items-center justify-center   hero-section backdrop-filter backdrop-blur lg:backdrop-blur-none">
-      <div class="z-10 absolute lg:top-1 top-5 sm:left-3 lg:left-9 lg:z-10">
-        <img
-          class="img-fluid w-1/4 h-1/4 w-15 md:hidden"
-          src={LogoImg}
-          alt="Logo"
-        />
-      </div>
-      <div class="lg:grid lg:grid-cols-2 w-full max-w-md lg:max-w-full space-y-6 md:space-y-0 rounded-lg z-10 mt-20 lg:mt-0   ">
+    <div className="min-h-screen flex items-center justify-center   hero-section backdrop-filter backdrop-blur lg:backdrop-blur-none">
+      <div className="lg:grid lg:grid-cols-2 w-full max-w-md lg:max-w-full space-y-6 md:space-y-0 rounded-lg z-10 mt-20 lg:mt-0   ">
         {/* Logo and Title */}
 
-        <div class="text-center  lg:flex lg:flex-col lg:justify-center items-center   ">
-          <svg
-            class="hidden lg:block"
-            width="343"
-            height="246"
-            viewBox="0 0 343 246"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g filter="url(#filter0_d_6858_807)">
-              <rect
-                x="4"
-                width="335"
-                height="238"
-                fill="url(#pattern0_6858_807)"
-                fill-opacity="0.9"
-                shape-rendering="crispEdges"
-              />
-            </g>
-            <defs>
-              <filter
-                id="filter0_d_6858_807"
-                x="0"
-                y="0"
-                width="343"
-                height="246"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feColorMatrix
-                  in="SourceAlpha"
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  result="hardAlpha"
-                />
-                <feOffset dy="4" />
-                <feGaussianBlur stdDeviation="2" />
-                <feComposite in2="hardAlpha" operator="out" />
-                <feColorMatrix
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-                />
-                <feBlend
-                  mode="normal"
-                  in2="BackgroundImageFix"
-                  result="effect1_dropShadow_6858_807"
-                />
-                <feBlend
-                  mode="normal"
-                  in="SourceGraphic"
-                  in2="effect1_dropShadow_6858_807"
-                  result="shape"
-                />
-              </filter>
-              <pattern
-                id="pattern0_6858_807"
-                patternContentUnits="objectBoundingBox"
-                width="1"
-                height="1"
-              >
-                <use transform="matrix(0.000881834 0 0 0.00124124 0 -0.00145984)" />
-              </pattern>
-              <img
-                id="image0_6858_807"
-                width="1134"
-                height="808"
-                src={LogoImg}
-                alt="logo"
-              />
-            </defs>
-          </svg>
+        <div className="text-center lg:flex lg:flex-col lg:justify-center items-center   ">
+          <img className="object-cover" width={335} src={LogoImg} alt="Logo" />
         </div>
 
         {/* Sign Up Form */}
         <form
           data-ajax="true"
           method="post"
-          class="md:min-h-screen space-y-4 p-8 px-1 md:px-14 bg-[#0000008F] backdrop-filter backdrop-blur md:backdrop-blur-none"
-          //   style="  z-index: 1; border-radius: 15px; "
+          className="md:min-h-screen space-y-4 p-8 px-1 md:px-14 bg-[#0000008F] backdrop-filter backdrop-blur md:backdrop-blur-none"
           style={{ zIndex: "1", borderRadius: "15px" }}
           action="/SignUp"
         >
           {/* Sign Up Heading */}
-          <h2 class="text-white text-5xl mb-10    text-center font-extrabold">
+          <h2 className="text-white text-5xl mb-10    text-center font-extrabold">
             Sign Up
           </h2>
 
           {/* Name Fields */}
-          <div class="flex  gap-2">
-            <div class="flex flex-col w-1/2 ">
+          <div className="flex  gap-2">
+            <div className="flex flex-col w-1/2 ">
               <input
                 type="text"
                 placeholder="First Name"
-                class="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white  bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
+                className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white  bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                 data-val="true"
                 data-val-regex="Invalid format"
                 data-val-regex-pattern="^[\u0621-\u064A\u0660-\u0669a-zA-Z\s]&#x2B;$"
@@ -119,16 +41,16 @@ function SignUpPage() {
                 value=""
               />
               <span
-                class="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
+                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
                 data-valmsg-for="FirstName"
                 data-valmsg-replace="true"
               ></span>
             </div>
-            <div class="flex flex-col w-1/2 ">
+            <div className="flex flex-col w-1/2 ">
               <input
                 type="text"
                 placeholder="Last Name"
-                class="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white   bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
+                className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white   bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                 data-val="true"
                 data-val-regex="Invalid format"
                 data-val-regex-pattern="^[\u0621-\u064A\u0660-\u0669a-zA-Z\s]&#x2B;$"
@@ -138,20 +60,20 @@ function SignUpPage() {
                 value=""
               />
               <span
-                class="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
+                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
                 data-valmsg-for="LastName"
                 data-valmsg-replace="true"
               ></span>
             </div>
           </div>
 
-          <div class="flex  gap-2">
-            <div class="flex flex-col w-1/2 ">
+          <div className="flex  gap-2">
+            <div className="flex flex-col w-1/2 ">
               <input
                 name="Email"
                 type="email"
                 placeholder="Email"
-                class="h-[3rem] md:h-[4.125rem] w-full px-3 py-2 pe-0 text-white bg-black bg-opacity-25 text-[0.7rem] lg:text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
+                className="h-[3rem] md:h-[4.125rem] w-full px-3 py-2 pe-0 text-white bg-black bg-opacity-25 text-[0.7rem] lg:text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                 data-val="true"
                 data-val-email="The Email field is not a valid e-mail address."
                 data-val-required=" this field is required."
@@ -159,14 +81,14 @@ function SignUpPage() {
                 value=""
               />
               <span
-                class="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
+                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
                 data-valmsg-for="Email"
                 data-valmsg-replace="true"
               ></span>
             </div>
-            <div class="flex flex-col w-1/2 ">
-              <div class="flex w-full">
-                <div class="relative inline-flex w-1/2">
+            <div className="flex flex-col w-1/2 ">
+              <div className="flex w-full">
+                <div className="relative inline-flex w-1/2">
                   {/* Input with Datalist */}
                   <input
                     name="CountryCode"
@@ -175,7 +97,7 @@ function SignUpPage() {
                     id="countryCodeInput"
                     value="&#x2B;20"
                     pattern="^\+\d{1,3}$"
-                    class="h-[3rem] md:h-[4.125rem] text-[0.7rem] lg:text-sm w-full appearance-none inline-flex items-center pl-2 md:px-2 bg-[#00000036] text-white text-sm border border-white border-e-0 rounded-s-[15px] rounded-e-none"
+                    className="h-[3rem] md:h-[4.125rem] text-[0.7rem] lg:text-sm w-full appearance-none inline-flex items-center pl-2 md:px-2 bg-[#00000036] text-white text-sm border border-white border-e-0 rounded-s-[15px] rounded-e-none"
                     oninput="filterCountryCodes()"
                     type="text"
                     data-val="true"
@@ -187,7 +109,7 @@ function SignUpPage() {
                   {/* Datalist for country codes */}
                   <datalist
                     id="countryCodeList"
-                    class="rounded-s-none"
+                    className="rounded-s-none"
                     autocomplete="off"
                   >
                     <option value="&#x2B;44">&#x2B;44</option>
@@ -245,7 +167,7 @@ function SignUpPage() {
                     <option value="&#x2B;974">&#x2B;974</option>
                     {/* Add more country codes as needed */}
                   </datalist>
-                  <div class="absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4 border-r border-white"></div>
+                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4 border-r border-white"></div>
                 </div>
 
                 <input
@@ -253,7 +175,7 @@ function SignUpPage() {
                   maxlength="11"
                   type="text"
                   placeholder="Phone Number"
-                  class="h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036] text-[0.7rem] lg:text-sm  border-t border-r border-b border-white rounded-e-[15px] rounded-s-none "
+                  className="h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036] text-[0.7rem] lg:text-sm  border-t border-r border-b border-white rounded-e-[15px] rounded-s-none "
                   data-val="true"
                   data-val-phone="The Phone field is not a valid phone number."
                   data-val-required=" this field is required."
@@ -262,13 +184,13 @@ function SignUpPage() {
                 />
               </div>
               <span
-                class="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
+                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
                 data-valmsg-for="Phone"
                 data-valmsg-replace="true"
               ></span>
               <p
                 id="countryCodeError"
-                class=" hidden text-red-500 text-start w-full text-[0.7rem] lg:text-sm "
+                className=" hidden text-red-500 text-start w-full text-[0.7rem] lg:text-sm "
               >
                 Invalid country code. Please select from the list.
               </p>
@@ -276,49 +198,49 @@ function SignUpPage() {
           </div>
 
           {/* Password Fields */}
-          <div class="flex  gap-2">
-            <div class="flex flex-col w-1/2 ">
-              <div class="relative w-full">
+          <div className="flex  gap-2">
+            <div className="flex flex-col w-1/2 ">
+              <div className="relative w-full">
                 <input
                   name="Password"
                   type="password"
                   id="password"
                   placeholder="Password"
-                  class="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
+                  className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                   data-val="true"
                   data-val-required=" this field is required."
                 />
                 <i
-                  class="fas fa-eye absolute top-4 md:top-5  rtl:left-3 ltr:right-3 md:text-lg text-white cursor-pointer"
+                  className="fas fa-eye absolute top-4 md:top-5  rtl:left-3 ltr:right-3 md:text-lg text-white cursor-pointer"
                   onclick="togglePasswordVisibility('password', this)"
                 ></i>
               </div>
               <span
-                class="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
+                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
                 data-valmsg-for="Password"
                 data-valmsg-replace="true"
               ></span>
             </div>
-            <div class="flex flex-col w-1/2 ">
-              <div class="relative w-full">
+            <div className="flex flex-col w-1/2 ">
+              <div className="relative w-full">
                 <input
                   name="Comfirm_Password"
                   type="password"
                   id="confirm-password"
                   placeholder="Confirm Password"
-                  class="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
+                  className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                   data-val="true"
                   data-val-equalto="The password and confirmation password do not match."
                   data-val-equalto-other="*.Password"
                   data-val-required=" this field is required."
                 />
                 <i
-                  class="fas fa-eye absolute top-4 md:top-5  rtl:left-3 ltr:right-3 md:text-lg text-white cursor-pointer"
+                  className="fas fa-eye absolute top-4 md:top-5  rtl:left-3 ltr:right-3 md:text-lg text-white cursor-pointer"
                   onclick="togglePasswordVisibility('confirm-password', this)"
                 ></i>
               </div>
               <span
-                class="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
+                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
                 data-valmsg-for="Comfirm_Password"
                 data-valmsg-replace="true"
               ></span>
@@ -326,14 +248,14 @@ function SignUpPage() {
           </div>
 
           <div
-            class="flex justify-around space-x-4 items-center m-auto p-4 border border-white  w-full  "
+            className="flex justify-around space-x-4 items-center m-auto p-4 border border-white  w-full  "
             style={{ borderRadius: "15px" }}
           >
-            <div class="flex items-center justify-center">
+            <div className="flex items-center justify-center">
               <input
                 name="Role"
                 type="checkbox"
-                class="accent-[#6555FF]  hover:accent-[#6555FF] w-5 h-5 "
+                className="accent-[#6555FF]  hover:accent-[#6555FF] w-5 h-5 "
                 value="Chef"
                 id="Foodies"
                 autocomplete="off"
@@ -342,7 +264,7 @@ function SignUpPage() {
               />
               <label
                 id="foodies"
-                class="inline-flex items-center cursor-pointer ml-2 text-white font-bold text-xl	 md:text-2xl"
+                className="inline-flex items-center cursor-pointer ml-2 text-white font-bold text-xl	 md:text-2xl"
                 for="Foodies"
               >
                 Foodies
@@ -350,11 +272,11 @@ function SignUpPage() {
             </div>
 
             {/* Chefs Option */}
-            <div class="flex items-center justify-center">
+            <div className="flex items-center justify-center">
               <input
                 name="Role"
                 type="checkbox"
-                class="accent-[#6555FF] hover:accent-[#6555FF] w-5 h-5 "
+                className="accent-[#6555FF] hover:accent-[#6555FF] w-5 h-5 "
                 id="Chefs"
                 autocomplete="off"
                 data-val="true"
@@ -363,7 +285,7 @@ function SignUpPage() {
               />
               <label
                 id="chefs"
-                class="inline-flex items-center cursor-pointer ml-2 text-white font-bold text-xl	 md:text-2xl"
+                className="inline-flex items-center cursor-pointer ml-2 text-white font-bold text-xl	 md:text-2xl"
                 for="Chefs"
               >
                 chef
@@ -377,47 +299,47 @@ function SignUpPage() {
           <button
             type="submit"
             style={{ height: "40.76px" }}
-            class="w-full  bg-[#4136A3] mt-6 text-white font-bold text-2xl  focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full  bg-[#4136A3] mt-6 text-white font-bold text-2xl  focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             Sign Up
           </button>
-          <p class="text-base	font-medium	 text-white text-start">
+          <p className="text-base	font-medium	 text-white text-start">
             already have an account?{" "}
-            <a class="text-blue-500 hover:underline" href="/SignIn">
+            <a className="text-blue-500 hover:underline" href="/SignIn">
               Sign In
             </a>
           </p>
 
           {/* OR Divider */}
-          <div class="flex items-center justify-center my-4">
-            <div class="w-1/4 border-t border-gray-300"></div>
-            <span class="text-white mx-3 font-medium text-xl">OR</span>
-            <div class="w-1/4 border-t border-gray-300"></div>
+          <div className="flex items-center justify-center my-4">
+            <div className="w-1/4 border-t border-gray-300"></div>
+            <span className="text-white mx-3 font-medium text-xl">OR</span>
+            <div className="w-1/4 border-t border-gray-300"></div>
           </div>
 
           {/* Sign Up with Google Button */}
 
-          <div id="googleFoodie" class="mt-8">
+          <div id="googleFoodie" className="mt-8">
             <a
               id="element1"
               name="provider"
               style={{ height: "39.42px", color: "#464343" }}
-              class="w-full mt-4 bg-white text-xl	  font-bold	 py-2 rounded-lg flex items-center justify-center shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-4 bg-white text-xl	  font-bold	 py-2 rounded-lg flex items-center justify-center shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
               href="/ExternalLogin?provider=Google&amp;role=Foodies"
             >
-              <img src={GoogleImg} alt="Google Icon" class="w-5 h-5 mr-2" />
+              <img src={GoogleImg} alt="Google Icon" className="w-5 h-5 mr-2" />
               Sign Up with Google
             </a>
           </div>
-          <div id="googleChef" class="mt-8 hidden">
+          <div id="googleChef" className="mt-8 hidden">
             <a
               id="element2"
               name="provider"
               style={{ height: "39.42px", color: "#464343" }}
-              class=" w-full mt-4 bg-white text-xl	  font-bold	 py-2 rounded-lg flex items-center justify-center shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className=" w-full mt-4 bg-white text-xl	  font-bold	 py-2 rounded-lg flex items-center justify-center shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
               href="/ExternalLogin?provider=Google&amp;role=Chef"
             >
-              <img src={GoogleImg} alt="Google Icon" class="w-5 h-5 mr-2" />
+              <img src={GoogleImg} alt="Google Icon" className="w-5 h-5 mr-2" />
               Sign Up with Google
             </a>
           </div>
