@@ -1,18 +1,10 @@
-.SignInPage {
-  font-family: "Cairo", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  font-variation-settings: "slnt" 0;
-}
-
 .hero-section {
   position: relative;
   background-image: url("../../assets/images/Backgroundimage.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh; /* Full viewport height */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +28,8 @@
   position: relative;
   z-index: 2;
 }
-@media screen and (min-width: 769px) {
+
+@media (min-width: 769px) {
   .hero-section {
     background-position: top; /* Adjust background position for smaller screens */
   }
@@ -53,7 +46,8 @@
   }
 }
 /* Adjusting the hero section for smaller screens */
-@media screen and (max-width: 768px) {
+
+@media (max-width: 768px) {
   .hero-section {
     background-position: top; /* Adjust background position for smaller screens */
   }
@@ -71,7 +65,8 @@
 }
 
 /* Further adjustments for extra small screens */
-@media screen and (max-width: 576px) {
+
+@media (max-width: 576px) {
   h1 {
     font-size: 2rem;
   }

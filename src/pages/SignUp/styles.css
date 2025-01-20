@@ -7,7 +7,7 @@
 }
 .hero-section {
   position: relative;
-  background-image: url("../../Newassets/Backgroundimage.jpeg");
+  /* background-image: url("../../assets/images/Backgroundimage.jpeg"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
