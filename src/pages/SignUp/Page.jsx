@@ -4,12 +4,16 @@ import "./styles.css";
 
 function SignUpPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center   hero-section backdrop-filter backdrop-blur lg:backdrop-blur-none">
-      <div className="lg:grid lg:grid-cols-2 w-full max-w-md lg:max-w-full space-y-6 md:space-y-0 rounded-lg z-10 mt-20 lg:mt-0   ">
+    <div className="min-h-screen flex items-center justify-center   hero-section backdrop-filter">
+      <div className="lg:grid lg:grid-cols-2 w-full max-w-md lg:max-w-full space-y-6 md:space-y-0 rounded-lg z-10 mt-0   ">
         {/* Logo and Title */}
 
         <div className="text-center lg:flex lg:flex-col lg:justify-center items-center   ">
-          <img className="object-cover" width={335} src={LogoImg} alt="Logo" />
+          <img
+            className="object-cover w-1/3 lg:w-1/2"
+            src={LogoImg}
+            alt="Logo"
+          />
         </div>
 
         {/* Sign Up Form */}
