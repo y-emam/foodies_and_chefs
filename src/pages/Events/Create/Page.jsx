@@ -1,4 +1,4 @@
-import DishImg from "../../../assets/images/dish.png";
+import DishImg from "../../../assets/images/dish.webp";
 import ArrowUpSVG from "../../../assets/images/ArrowUp.svg";
 import ArrowDownSVG from "../../../assets/images/ArrowDown.svg";
 import "./styles.css";
