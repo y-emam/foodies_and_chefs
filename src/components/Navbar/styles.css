@@ -9,7 +9,7 @@ nav {
   padding: 1rem 2rem;
   background-color: black;
   color: #fff;
-  z-index: 10;
+  z-index: 50;
   box-sizing: border-box; /* Ensures padding doesn't affect width */
 }
 
