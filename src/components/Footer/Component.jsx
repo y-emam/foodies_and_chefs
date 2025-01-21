@@ -15,10 +15,10 @@ function Footer() {
           </div>
 
           <div className="footer-social">
-            <a href="/" className="social-icon">
+            <a href="/" className="social-icon" aria-label="Go to homepage">
               <FontAwesomeIcon icon={faFacebook} size="1x" />
             </a>
-            <a href="/" className="social-icon">
+            <a href="/" className="social-icon" aria-label="Go to homepage">
               <FontAwesomeIcon icon={faInstagram} size="1x" />
             </a>
           </div>
