@@ -5,7 +5,7 @@ import "./styles.css";
 
 function CreateEventsPage() {
   return (
-    <div className="mainbg overflow-auto min-h-screen">
+    <div className="mainbg overflow-auto min-h-screen pt-4">
       <main className="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0 " id="overlay">
         <section className=" CreateEventpgMobile w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-20  ">
           <form method="post" dir="auto" action="/" novalidate="novalidate">
