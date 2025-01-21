@@ -11,6 +11,8 @@ import { useEffect } from "react";
 import EventsPage from "./pages/Events/Pages";
 import CreateEventsPage from "./pages/Events/Create/Page";
 import Footer from "./components/Footer/Component";
+import MenusPage from "./pages/Menus/Page";
+import CreateMenuPage from "./pages/Menus/Create/Page";
 
 function App() {
   useEffect(() => {
@@ -25,13 +27,17 @@ function App() {
             <Route path="/" element={<HomePage />} />
 
             {/* Authentication */}
-            <Route path="/SignIn" element={<SignInPage />} />
-            <Route path="/SignUp" element={<SignUpPage />} />
-            <Route path="/ForgotPassword" element={<ForgotPasswordPage />} />
+            <Route path="/signin" element={<SignInPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
             {/* Events */}
-            <Route path="/Events" element={<EventsPage />} />
-            <Route path="/Events/create" element={<CreateEventsPage />} />
+            <Route path="/events" element={<EventsPage />} />
+            <Route path="/events/create" element={<CreateEventsPage />} />
+
+            {/* Menu Pages */}
+            <Route path="/menus" element={<MenusPage />} />
+            <Route path="/menus/create" element={<CreateMenuPage />} />
 
             {/* Handling any other route */}
             <Route path="*" element={<NoPage />} />

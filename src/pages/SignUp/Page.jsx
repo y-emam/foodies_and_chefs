@@ -22,7 +22,7 @@ function SignUpPage() {
           method="post"
           className="md:min-h-screen space-y-4 p-8 px-1 md:px-14 bg-[#0000008F] backdrop-filter backdrop-blur md:backdrop-blur-none"
           style={{ zIndex: "1", borderRadius: "15px" }}
-          action="/SignUp"
+          action="/signup"
         >
           {/* Sign Up Heading */}
           <h2 className="text-white text-5xl mb-10    text-center font-extrabold">
@@ -309,7 +309,7 @@ function SignUpPage() {
           </button>
           <p className="text-base	font-medium	 text-white text-start">
             already have an account?{" "}
-            <a className="text-blue-500 hover:underline" href="/SignIn">
+            <a className="text-blue-500 hover:underline" href="/signin">
               Sign In
             </a>
           </p>

@@ -10,7 +10,7 @@ function ForgotPasswordPage() {
 
       <form
         class="flex flex-col p-8 rounded-lg sm:w-75 md:w-full max-w-md z-10 bg-[#000000A3] h-[60vh] md:h-[80vh] justify-center "
-        action="/ForgotPassword"
+        action="/forgot-password"
         method="post"
       >
         <div class="text-center mb-6">
@@ -49,7 +49,7 @@ function ForgotPasswordPage() {
           Password reset
         </button>
         <div class="text-center my-6">
-          <a class="text-white" href="/SignIn">
+          <a class="text-white" href="/signin">
             <i class="fa-solid fa-arrow-left mx-2"></i>Back to log in
           </a>
         </div>

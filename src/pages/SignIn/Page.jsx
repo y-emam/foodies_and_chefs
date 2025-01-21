@@ -24,7 +24,7 @@ function SignInPage() {
           <div className="text-center mb-6">
             <h1 className="text-3xl font-bold text-white">Sign In</h1>
           </div>
-          <form data-ajax="true" method="post" action="/SignIn">
+          <form data-ajax="true" method="post" action="/signin">
             <div className="mb-4 flex flex-col">
               <label htmlFor="email" className="sr-only">
                 Email
@@ -81,13 +81,13 @@ function SignInPage() {
             <div className="flex flex-col items-start justify-between text-sm text-white leading-relaxed">
               <a
                 className="hover:underline text-blue-500"
-                href="/ForgotPassword"
+                href="/forgot-password"
               >
                 Forgot Password?
               </a>
               <span>
                 Don&#x27;t Have an account?{" "}
-                <a className="hover:underline text-blue-500" href="/SignUp">
+                <a className="hover:underline text-blue-500" href="/signup">
                   Create Account
                 </a>
               </span>
