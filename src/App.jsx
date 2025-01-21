@@ -13,6 +13,8 @@ import CreateEventsPage from "./pages/Events/Create/Page";
 import Footer from "./components/Footer/Component";
 import MenusPage from "./pages/Menus/Page";
 import CreateMenuPage from "./pages/Menus/Create/Page";
+import ProfilePage from "./pages/Profile/Page";
+import EditProfilePage from "./pages/Profile/Edit/Page";
 
 function App() {
   useEffect(() => {
@@ -38,6 +40,10 @@ function App() {
             {/* Menu Pages */}
             <Route path="/menus" element={<MenusPage />} />
             <Route path="/menus/create" element={<CreateMenuPage />} />
+
+            {/* Profile Pages */}
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profile/edit" element={<EditProfilePage />} />
 
             {/* Handling any other route */}
             <Route path="*" element={<NoPage />} />

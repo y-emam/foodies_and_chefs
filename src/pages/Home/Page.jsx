@@ -4,11 +4,17 @@ function HomePage() {
       <a href="/signin" className="text-white">
         Sign In
       </a>
-      <a href="/Events" className="text-white">
+      <a href="/events" className="text-white">
         Events
       </a>
-      <a href="/Events/create" className="text-white">
+      <a href="/events/create" className="text-white">
         Create Event
+      </a>
+      <a href="/menus/create" className="text-white">
+        Create Menu
+      </a>
+      <a href="/profile" className="text-white">
+        Profile
       </a>
     </div>
   );
