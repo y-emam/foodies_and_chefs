@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import DishImg2 from "../../assets/images/dish2.svg";
+// TODO change this to dish2 image
+import DishImg2 from "../../assets/images/dish.webp";
 import "./styles.css";
 
 function EventsPage() {
