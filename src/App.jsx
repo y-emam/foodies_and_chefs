@@ -10,6 +10,8 @@ import i18n from "./i18n";
 import { useEffect } from "react";
 import EventsPage from "./pages/Events/Pages";
 import CreateEventsPage from "./pages/Events/Create/Page";
+import Navbar from "./components/Navbar/Component";
+import Footer from "./components/Footer/Component";
 
 function App() {
   useEffect(() => {
@@ -20,6 +22,7 @@ function App() {
     <I18nextProvider i18n={i18n}>
       <Router>
         <div className="App">
+          <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />
 
@@ -37,6 +40,7 @@ function App() {
           </Routes>
         </div>
       </Router>
+      <Footer />
     </I18nextProvider>
   );
 }
