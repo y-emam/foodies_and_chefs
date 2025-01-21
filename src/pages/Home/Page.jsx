@@ -1,7 +1,12 @@
 function HomePage() {
   return (
-    <div>
-      <a href="/SignIn">Sign In</a>
+    <div className="flex flex-col items-center justify-center h-screen bg-blue-500">
+      <a href="/SignIn" className="text-white">
+        Sign In
+      </a>
+      <a href="/Events" className="text-white">
+        Create Event
+      </a>
     </div>
   );
 }

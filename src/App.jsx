@@ -8,6 +8,8 @@ import ForgotPasswordPage from "./pages/ForgotPassword/Page";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
 import { useEffect } from "react";
+import EventsPage from "./pages/Events/Pages";
+import CreateEventsPage from "./pages/Events/Create/Page";
 
 function App() {
   useEffect(() => {
@@ -20,9 +22,17 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/" element={<HomePage />} />
+
+            {/* Authentication */}
             <Route path="/SignIn" element={<SignInPage />} />
             <Route path="/SignUp" element={<SignUpPage />} />
             <Route path="/ForgotPassword" element={<ForgotPasswordPage />} />
+
+            {/* Events */}
+            <Route path="/Events" element={<EventsPage />} />
+            <Route path="/Events/create" element={<CreateEventsPage />} />
+
+            {/* Handling any other route */}
             <Route path="*" element={<NoPage />} />
           </Routes>
         </div>
