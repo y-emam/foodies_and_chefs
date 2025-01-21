@@ -1,7 +1,144 @@
+import { useEffect, useState } from "react";
+import DishImg2 from "../../assets/images/dish2.svg";
 import "./styles.css";
 
 function EventsPage() {
-  return <div>Events Page</div>;
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    setEvents([
+      {
+        id: "5cac8011-c94a-4f11-5285-08dd3a229010",
+        name: "Festival",
+        date: "Tue 21-Jan-2025 15:49",
+      },
+    ]);
+  }, []);
+
+  return (
+    <div className="mainbg overflow-hidden min-h-screen">
+      <div b-10f7mt3975 class=" w-full  mx-3 my-3 border-custom">
+        {/* <Sidebar */}
+        <main
+          b-10f7mt3975
+          class=" min-h-[80dvh]  md:flex md:gap-10 mt-0 p-0 "
+          id="overlay"
+        >
+          <section class="min-h-screen space-y-6 md:min-h-full flex flex-col w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
+            {events.map((event) => (
+              <div
+                class="bg-[#FA8836] h-[53px] flex justify-between w-full items-center p-6 "
+                style={{ borderRadius: "16px" }}
+              >
+                <div class="font-bold text-xl flex gap-0 md:gap-2 flex-col md:flex-row">
+                  <span class="font-bold md:text-[18px] text-[14px] mx-2">
+                    {event.name}
+                  </span>
+                  <span class="date font-bold	md:text-[18px] text-[12px] ">
+                    {event.date}
+                  </span>
+                </div>
+                <div
+                  class="flex text-center justify-end gap-2 md:w-3/12"
+                  dir="auto"
+                >
+                  <a
+                    class="md:h-[35px] h-[24px] md:w-[85px] w-[44px] bg-white text-[#FA8836] p-0.5 md:p-0 my-auto  border-[3px] border-white   font-bold md:text-[18px] text-[10px]  hover:bg-[#000000]  hover:border-[3px] hover:border-[#000000] rounded-[40px]	"
+                    href={`/Home/EditEvent?eventId=${event.id}`}
+                  >
+                    Edit
+                  </a>
+                  <a
+                    class=" md:h-[35px] h-[24px] md:w-[85px] w-[44px]  bg-white text-[#FA8836] p-0.5 md:p-0 my-auto  border-[3px] border-white     font-bold md:text-[18px] text-[10px] 	 hover:bg-[#000000]   hover:border-[3px] hover:border-[#000000] rounded-[40px]"
+                    href={`/Home/ChefOffers?eventId=${event.id}`}
+                  >
+                    Show
+                  </a>
+                </div>
+              </div>
+            ))}
+            <div class="flex justify-center mt-6 gap-2">
+              <button
+                disabled
+                class="bg-white text-black font-semibold px-3 py-3 rounded-md"
+              >
+                <svg
+                  class="rtl:block ltr:hidden"
+                  width="8"
+                  height="13"
+                  viewBox="0 0 8 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.72747 7.19041L2.46094 12.7137C2.09693 13.0954 1.50832 13.0954 1.14818 12.7137L0.273008 11.7958C-0.0910026 11.4141 -0.0910026 10.7968 0.273008 10.4191L4.00605 6.50406L0.273008 2.58903C-0.0910026 2.20728 -0.0910026 1.58997 0.273008 1.21228L1.14431 0.286317C1.50832 -0.0954389 2.09693 -0.0954389 2.45707 0.286317L7.7236 5.80959C8.09148 6.19135 8.09148 6.80865 7.72747 7.19041Z"
+                    fill="black"
+                  />
+                </svg>
+
+                <svg
+                  class="ltr:block rtl:hidden"
+                  width="8"
+                  height="13"
+                  viewBox="0 0 8 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.272394 5.80959L5.53638 0.286317C5.90021 -0.0954389 6.48854 -0.0954389 6.8485 0.286317L7.72325 1.20415C8.08709 1.58591 8.08709 2.20322 7.72325 2.58091L3.99589 6.5L7.72712 10.415C8.09096 10.7968 8.09096 11.4141 7.72712 11.7918L6.85237 12.7137C6.48854 13.0954 5.90021 13.0954 5.54025 12.7137L0.276264 7.19041C-0.0914405 6.80865 -0.0914404 6.19135 0.272394 5.80959Z"
+                    fill="black"
+                  />
+                </svg>
+              </button>
+
+              <a
+                class="bg-orange-500 text-white font-semibold px-3 py-1 rounded-md"
+                href="/Home/GetMyEvents?page=1"
+              >
+                1
+              </a>
+
+              <button
+                disabled
+                class="bg-white text-black font-semibold px-3 py-3 rounded-md"
+              >
+                <svg
+                  class="ltr:block rtl:hidden"
+                  width="8"
+                  height="13"
+                  viewBox="0 0 8 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.72747 7.19041L2.46094 12.7137C2.09693 13.0954 1.50832 13.0954 1.14818 12.7137L0.273008 11.7958C-0.0910026 11.4141 -0.0910026 10.7968 0.273008 10.4191L4.00605 6.50406L0.273008 2.58903C-0.0910026 2.20728 -0.0910026 1.58997 0.273008 1.21228L1.14431 0.286317C1.50832 -0.0954389 2.09693 -0.0954389 2.45707 0.286317L7.7236 5.80959C8.09148 6.19135 8.09148 6.80865 7.72747 7.19041Z"
+                    fill="black"
+                  />
+                </svg>
+
+                <svg
+                  class="rtl:block ltr:hidden"
+                  width="8"
+                  height="13"
+                  viewBox="0 0 8 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.272394 5.80959L5.53638 0.286317C5.90021 -0.0954389 6.48854 -0.0954389 6.8485 0.286317L7.72325 1.20415C8.08709 1.58591 8.08709 2.20322 7.72325 2.58091L3.99589 6.5L7.72712 10.415C8.09096 10.7968 8.09096 11.4141 7.72712 11.7918L6.85237 12.7137C6.48854 13.0954 5.90021 13.0954 5.54025 12.7137L0.276264 7.19041C-0.0914405 6.80865 -0.0914404 6.19135 0.272394 5.80959Z"
+                    fill="black"
+                  />
+                </svg>
+              </button>
+            </div>
+          </section>
+          <section class="w-5/12 hidden md:flex justify-end ">
+            <img src={DishImg2} class="w-[30rem] h-5/6 " alt="FoodImage" />
+          </section>
+        </main>
+      </div>
+    </div>
+  );
 }
 
 export default EventsPage;

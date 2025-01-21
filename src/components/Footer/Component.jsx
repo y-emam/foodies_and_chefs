@@ -15,7 +15,13 @@ function Footer() {
           </div>
 
           <div className="footer-social">
-            <a href="/" className="social-icon" aria-label="Go to homepage">
+            <a
+              href="https://www.facebook.com/profile.php?id=61560800888332"
+              target="_blank"
+              rel="noreferrer"
+              className="social-icon"
+              aria-label="Go to homepage"
+            >
               <FontAwesomeIcon icon={faFacebook} size="1x" />
             </a>
             <a href="/" className="social-icon" aria-label="Go to homepage">
