@@ -5,6 +5,9 @@ function HomePage() {
         Sign In
       </a>
       <a href="/Events" className="text-white">
+        Events
+      </a>
+      <a href="/Events/create" className="text-white">
         Create Event
       </a>
     </div>
