@@ -5,13 +5,9 @@ import "./styles.css";
 function InvitesPage() {
   const [invites, setInvites] = useState([]);
 
-  // useEffect(() => {
-  //   setInvites([
-  //     {
-  //       id: 1,
-  //     },
-  //   ]);
-  // }, []);
+  useEffect(() => {
+    setInvites([]);
+  }, []);
 
   return (
     <main

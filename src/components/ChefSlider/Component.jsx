@@ -27,20 +27,18 @@ function ChefSlider({ chefs }) {
     ],
   };
 
-  const handleChefClick = (index) => {
-    console.log(index);
-  };
+  const handleChefClick = (index) => {};
 
   return (
-    <div className="slider-container">
-      <Slider {...settings}>
+    <div className="slider-container w-full">
+      <Slider {...settings} className="slider px-auto">
         {chefs.map((chef, index) => (
           <div
             onClick={() => handleChefClick(index)}
             className="chef"
             key={index}
           >
-            <img src={chef.image} alt="chef" />
+            <img src={chef.image} alt="chef" className="rounded-full" />
             <h3>{chef.name}</h3>
             <p>{chef.location}</p>
           </div>

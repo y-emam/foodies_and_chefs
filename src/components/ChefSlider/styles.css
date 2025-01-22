@@ -1,3 +1,7 @@
+.slider {
+  width: 90vw;
+}
+
 .chef {
   width: 8rem;
   height: 16rem;
@@ -6,7 +10,8 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  box-shadow: 0 4px 12px rgba(250, 136, 54, 0.4);
+  box-shadow: 0 4px 12px rgba(250, 136, 54, 0.212);
+  cursor: pointer;
 }
 
 .chef img {

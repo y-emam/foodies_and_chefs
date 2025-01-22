@@ -1,6 +1,9 @@
-function HomePage() {
+function Navigator() {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-blue-500">
+      <a href="/home" className="text-white">
+        Home
+      </a>
       <a href="/signin" className="text-white">
         Sign In
       </a>
@@ -26,4 +29,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Navigator;

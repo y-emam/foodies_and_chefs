@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import HomePage from "./pages/Home/Page";
+import HomePage from "./pages/Home/Home";
 import NoPage from "./pages/NoPage/Page";
 import SignInPage from "./pages/SignIn/Page";
 import SignUpPage from "./pages/SignUp/Page";
@@ -16,6 +16,7 @@ import CreateMenuPage from "./pages/Menus/Create/Page";
 import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
 import InvitesPage from "./pages/Invites/Pages";
+import Navigator from "./pages/Home/Page";
 
 function App() {
   useEffect(() => {
@@ -27,7 +28,10 @@ function App() {
       <Router>
         <div className="App">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<Navigator />} />
+
+            {/* Home Page */}
+            <Route path="/home" element={<HomePage />} />
 
             {/* Authentication */}
             <Route path="/signin" element={<SignInPage />} />
