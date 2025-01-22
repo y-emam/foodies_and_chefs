@@ -397,7 +397,7 @@ function CreateEventsPage() {
         <section className="w-5/12 hidden md:flex justify-center border-l border-[#FA8836]">
           <img
             src={DishImg}
-            className="w-[30rem] h-5/6 object-cover"
+            className="w-[30rem] h-auto object-cover"
             alt="DishImg"
           />
         </section>

@@ -134,7 +134,11 @@ function EventsPage() {
             </div>
           </section>
           <section class="w-5/12 hidden md:flex justify-end ">
-            <img src={DishImg2} class="w-[30rem] h-5/6 " alt="FoodImage" />
+            <img
+              src={DishImg2}
+              class="w-[30rem] h-auto object-cover"
+              alt="FoodImage"
+            />
           </section>
         </main>
       </div>
