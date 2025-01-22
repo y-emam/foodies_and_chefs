@@ -1,0 +1,20 @@
+main {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-image: url("../../assets/images/mainbg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  background-blend-mode: soft-light, normal;
+}
+
+textarea {
+  resize: none;
+}
+
+.zeyada-regular {
+  font-family: "Zeyada", serif;
+  font-weight: 400;
+  font-style: normal;
+}

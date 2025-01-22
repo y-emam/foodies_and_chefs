@@ -1,9 +1,9 @@
-* {
+/* * {
   font-family: "Cairo", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-}
+} */
 .hero-section {
   position: relative;
   background-image: url("../../assets/images/Backgroundimage.webp");

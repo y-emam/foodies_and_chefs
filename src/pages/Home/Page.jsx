@@ -10,6 +10,9 @@ function HomePage() {
       <a href="/events/create" className="text-white">
         Create Event
       </a>
+      <a href="/menus" className="text-white">
+        Menus
+      </a>
       <a href="/menus/create" className="text-white">
         Create Menu
       </a>

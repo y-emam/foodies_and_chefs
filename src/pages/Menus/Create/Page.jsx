@@ -483,4 +483,12 @@ function CreateMenuPage() {
   );
 }
 
+// function ChooseImageButton() {
+//   return <button>Choose Image</button>;
+// }
+
+// function ShowImageButton() {
+//   return <button>Show Image</button>;
+// }
+
 export default CreateMenuPage;
