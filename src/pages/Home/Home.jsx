@@ -4,22 +4,39 @@ import LogoImg from "../../assets/images/Logo.png";
 import ChefSlider from "../../components/ChefSlider/Component";
 import ChefTempImg from "../../assets/images/chefTemp.png";
 import "./stylesHome.css";
+import { useState } from "react";
+
+const chefs = [
+  { name: "Ahmed Hassan", location: "Alexandria, Egypt", image: ChefTempImg },
+  { name: "Fatima Mahmoud", location: "Giza, Egypt", image: ChefTempImg },
+  { name: "Omar Abdelrahman", location: "Luxor, Egypt", image: ChefTempImg },
+  { name: "Sara Adel", location: "Aswan, Egypt", image: ChefTempImg },
+  { name: "Nour Ebrahim", location: "Hurghada, Egypt", image: ChefTempImg },
+  { name: "Layla Mostafa", location: "Mansoura, Egypt", image: ChefTempImg },
+  { name: "Hassan Alaa", location: "Port Said, Egypt", image: ChefTempImg },
+  { name: "Reem Khalil", location: "Ismailia, Egypt", image: ChefTempImg },
+  { name: "Yasser Emam", location: "Cairo, Egypt", image: ChefTempImg },
+  { name: "Ahmed Khaled", location: "Alexandria, Egypt", image: ChefTempImg },
+  { name: "Magdy Mahmoud", location: "New Cairo, Egypt", image: ChefTempImg },
+  { name: "Amgad Yasser", location: "Luxor, Egypt", image: ChefTempImg },
+];
 
 function HomePage() {
-  const chefs = [
-    { name: "Ahmed Hassan", location: "Alexandria, Egypt", image: ChefTempImg },
-    { name: "Fatima Mahmoud", location: "Giza, Egypt", image: ChefTempImg },
-    { name: "Omar Abdelrahman", location: "Luxor, Egypt", image: ChefTempImg },
-    { name: "Sara Adel", location: "Aswan, Egypt", image: ChefTempImg },
-    { name: "Nour Ebrahim", location: "Hurghada, Egypt", image: ChefTempImg },
-    { name: "Layla Mostafa", location: "Mansoura, Egypt", image: ChefTempImg },
-    { name: "Hassan Alaa", location: "Port Said, Egypt", image: ChefTempImg },
-    { name: "Reem Khalil", location: "Ismailia, Egypt", image: ChefTempImg },
-    { name: "Yasser Emam", location: "Cairo, Egypt", image: ChefTempImg },
-    { name: "Ahmed Khaled", location: "Alexandria, Egypt", image: ChefTempImg },
-    { name: "Magdy Mahmoud", location: "New Cairo, Egypt", image: ChefTempImg },
-    { name: "Amgad Yasser", location: "Luxor, Egypt", image: ChefTempImg },
-  ];
+  const [searchTerm, setSearchTerm] = useState(""); // State to hold the search input
+  const [filteredChefs, setFilteredChefs] = useState(chefs);
+
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase(); // Normalize the input
+    setSearchTerm(value);
+
+    // Filter the chefs based on the name or location
+    const updatedChefs = chefs.filter(
+      (chef) =>
+        chef.name.toLowerCase().includes(value) ||
+        chef.location.toLowerCase().includes(value)
+    );
+    setFilteredChefs(updatedChefs);
+  };
 
   return (
     <main
@@ -105,37 +122,23 @@ function HomePage() {
               Meet Our Chefs!
             </h2>
             <div class="flex w-full md:w-fit justify-end md:justify-start">
-              <form
-                class="flex ltr:flex-row rtl:flex-row-reverse"
-                action="#"
-                method="post"
-              >
-                <button
-                  type="submit"
-                  id="search-button"
-                  class="border-y-2 border-l-2 border-main-color rounded-l-full text-l px-2 py-1 h-9 bg-transparent flex items-center"
-                >
+              <div class="flex ltr:flex-row rtl:flex-row-reverse">
+                <div class="border-y-2 border-l-2 border-main-color rounded-l-full text-l px-2 py-1 h-9 bg-transparent flex items-center">
                   <i class="fa-solid fa-magnifying-glass text-lg"></i>
-                </button>
+                </div>
                 <input
-                  id="search-input"
-                  type="search"
                   placeholder="Search"
                   class="bg-transparent text-main-color border-2 border-main-color border-l-0 rounded-r-full h-9 flex-grow px-3 focus:outline-none"
-                  name="content"
+                  value={searchTerm}
+                  onChange={handleSearch}
                 />
-                <input
-                  name="__RequestVerificationToken"
-                  type="hidden"
-                  value="CfDJ8NCvElKw6pRGs_gjvtMON1Lfa59naUKB9OKxUAxCn_89zFYwmrcVuglAUCIHBry4TOhAWxUbzPz6lk9FqzlmfkuZnfGMN684LiRl7BvFh3Lv_IQshknBAnscS4gxDNdyJRwtww9YizutvU6KQCwlWUIA72klrcOzVtSh1T8XzqszdFkpHnFqHPJP8plzHh7wqg"
-                />
-              </form>
+              </div>
             </div>
           </div>
 
           <div className="flex items-center justify-center w-full">
             <div className="container w-full">
-              <ChefSlider chefs={chefs} />
+              <ChefSlider chefs={filteredChefs} />
             </div>
           </div>
         </div>
