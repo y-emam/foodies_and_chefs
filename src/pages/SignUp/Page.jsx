@@ -216,7 +216,7 @@ function SignUpPage() {
                 />
                 <i
                   className="fas fa-eye absolute top-4 md:top-5  rtl:left-3 ltr:right-3 md:text-lg text-white cursor-pointer"
-                  onclick="togglePasswordVisibility('password', this)"
+                  onClick="togglePasswordVisibility('password', this)"
                 ></i>
               </div>
               <span
@@ -240,7 +240,7 @@ function SignUpPage() {
                 />
                 <i
                   className="fas fa-eye absolute top-4 md:top-5  rtl:left-3 ltr:right-3 md:text-lg text-white cursor-pointer"
-                  onclick="togglePasswordVisibility('confirm-password', this)"
+                  onClick="togglePasswordVisibility('confirm-password', this)"
                 ></i>
               </div>
               <span

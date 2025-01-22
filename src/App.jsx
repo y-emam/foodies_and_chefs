@@ -17,6 +17,7 @@ import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
 import InvitesPage from "./pages/Invites/Pages";
 import Navigator from "./pages/Home/Page";
+import Navbar from "./components/Navbar/Component";
 
 function App() {
   useEffect(() => {
@@ -27,6 +28,10 @@ function App() {
     <I18nextProvider i18n={i18n}>
       <Router>
         <div className="App">
+          {/* Navbar */}
+          <Navbar />
+
+          {/* Routes */}
           <Routes>
             <Route path="/" element={<Navigator />} />
 

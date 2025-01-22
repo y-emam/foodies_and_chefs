@@ -15,21 +15,21 @@ function MenusPage() {
   }, []);
   return (
     <main
-      class="menus-page min-h-[80dvh]  md:flex md:gap-10 mt-0 p-0 "
+      className="menus-page min-h-[80dvh]  md:flex md:gap-10 mt-0 p-0 "
       id="overlay"
     >
-      <section class="min-h-screen space-y-3 md:min-h-full flex flex-col w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
-        <div class="w-full flex flex-col justify-center items-center ">
-          <h2 class="zeyada-regular text-main-color md:text-7xl text-5xl text-center text-[#FA8836]">
+      <section className="min-h-screen space-y-3 md:min-h-full flex flex-col w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
+        <div className="w-full flex flex-col justify-center items-center ">
+          <h2 className="zeyada-regular text-main-color md:text-7xl text-5xl text-center text-[#FA8836]">
             Showcase your talent
           </h2>
-          <h2 class="plus-jakarta-sans md:text-4xl text-2xl text-center">
+          <h2 className="plus-jakarta-sans md:text-4xl text-2xl text-center">
             Create your menus here
           </h2>
         </div>
-        <div class="w-full flex justify-center items-center mb-6 mt-0">
+        <div className="w-full flex justify-center items-center mb-6 mt-0">
           <a
-            class="text-center font-bold text-xl plus-jakarta-sans w-2/6 text-white bg-[#FA8836] h-[53px] flex justify-center items-center mb-2 hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836] rounded-[16px]  "
+            className="text-center font-bold text-xl plus-jakarta-sans w-2/6 text-white bg-[#FA8836] h-[53px] flex justify-center items-center mb-2 hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836] rounded-[16px]  "
             href="/menus/create"
           >
             Add menu
@@ -38,13 +38,13 @@ function MenusPage() {
 
         {menus.map((menu) => (
           <div
-            class="bg-[#FA8836] h-[53px] flex justify-between w-full items-center p-6 rtl:pl-0 ltr:pr-0 "
+            className="bg-[#FA8836] h-[53px] flex justify-between w-full items-center p-6 rtl:pl-0 ltr:pr-0 "
             style={{ borderRadius: "16px" }}
           >
-            <div class="font-bold text-xl mx-5">{menu.name}</div>
-            <div class="flex text-center">
+            <div className="font-bold text-xl mx-5">{menu.name}</div>
+            <div className="flex text-center">
               <a
-                class="plus-jakarta-sans h-[53px] w-[149px] bg-white text-[#FA8836] p-2 font-bold text-xl flex items-center justify-center rounded-[16px] hover:bg-[#000000]  hover:border-[3px] hover:border-[#000000]	"
+                className="plus-jakarta-sans h-[53px] w-[149px] bg-white text-[#FA8836] p-2 font-bold text-xl flex items-center justify-center rounded-[16px] hover:bg-[#000000]  hover:border-[3px] hover:border-[#000000]	"
                 href={`/Chef/UpdateChefMenu?menuId=${menu.id}`}
               >
                 Show menu
@@ -53,13 +53,13 @@ function MenusPage() {
           </div>
         ))}
 
-        <div class="flex justify-center mt-6 gap-2">
+        <div className="flex justify-center mt-6 gap-2">
           <button
             disabled
-            class="bg-white text-black font-semibold px-3 py-3 rounded-md"
+            className="bg-white text-black font-semibold px-3 py-3 rounded-md"
           >
             <svg
-              class="rtl:block ltr:hidden"
+              className="rtl:block ltr:hidden"
               width="8"
               height="13"
               viewBox="0 0 8 13"
@@ -73,7 +73,7 @@ function MenusPage() {
             </svg>
 
             <svg
-              class="ltr:block rtl:hidden"
+              className="ltr:block rtl:hidden"
               width="8"
               height="13"
               viewBox="0 0 8 13"
@@ -88,7 +88,7 @@ function MenusPage() {
           </button>
 
           <a
-            class="bg-orange-500 text-white font-semibold px-3 py-1 rounded-md"
+            className="bg-orange-500 text-white font-semibold px-3 py-1 rounded-md"
             href="/Chef/ChefMenu?page=1"
           >
             1
@@ -96,10 +96,10 @@ function MenusPage() {
 
           <button
             disabled
-            class="bg-white text-black font-semibold px-3 py-3 rounded-md"
+            className="bg-white text-black font-semibold px-3 py-3 rounded-md"
           >
             <svg
-              class="ltr:block rtl:hidden"
+              className="ltr:block rtl:hidden"
               width="8"
               height="13"
               viewBox="0 0 8 13"
@@ -113,7 +113,7 @@ function MenusPage() {
             </svg>
 
             <svg
-              class="rtl:block ltr:hidden"
+              className="rtl:block ltr:hidden"
               width="8"
               height="13"
               viewBox="0 0 8 13"
@@ -128,8 +128,8 @@ function MenusPage() {
           </button>
         </div>
       </section>
-      <section class="w-5/12 hidden md:flex justify-end ">
-        <img src={Dish3Img} class="h-5/6 object-cover" alt="FoodImage" />
+      <section className="w-5/12 hidden md:flex justify-end ">
+        <img src={Dish3Img} className="h-5/6 object-cover" alt="FoodImage" />
       </section>
     </main>
   );

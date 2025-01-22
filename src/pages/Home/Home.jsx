@@ -40,43 +40,44 @@ function HomePage() {
 
   return (
     <main
-      class="HomePage min-h-[80dvh]  md:flex md:gap-10 mt-0 p-0 "
+      className="HomePage min-h-[80dvh]  md:flex md:gap-10 mt-0 p-0 "
       id="overlay"
     >
-      <section class="playwrite-us-modern   py-16 box-border">
-        <div class="flex md:justify-center items-center md:gap-10 gap-0  mb-12 flex-col md:flex-row">
-          <div class="flex flex-col items-center w-[80%] md:w-[62%] justify-center space-y-10   ">
+      <section className="playwrite-us-modern   py-16 box-border">
+        <div className="flex md:justify-center items-center md:gap-10 gap-0  mb-12 flex-col md:flex-row">
+          <div className="flex flex-col items-center w-[80%] md:w-[62%] justify-center space-y-10   ">
             <img
-              class="md:max-w-56 max-w-40 object-cover"
+              className="md:max-w-56 max-w-40 object-cover"
               src={LogoImg}
               alt="ChefImg"
             />
 
-            <p class="font-light playwrite-us-modern text-xl md:text-2xl text-justify leading-10 mx-2	px-5	">
-              Welcome to <span class="text-main-color">Foodies & Chefs</span>
+            <p className="font-light playwrite-us-modern text-xl md:text-2xl text-justify leading-10 mx-2	px-5	">
+              Welcome to{" "}
+              <span className="text-main-color">Foodies & Chefs</span>
               where unforgettable dining experiences begin. Discover top chefs,
               book personalized events, and elevate your gatherings with ease.
             </p>
           </div>
-          <div class="md:w-[32%] max-w-full content-end m-0">
+          <div className="md:w-[32%] max-w-full content-end m-0">
             <img
-              class="max-w-[80%] rounded-tl-[50px] rounded-br-[50px] hidden md:block"
+              className="max-w-[80%] rounded-tl-[50px] rounded-br-[50px] hidden md:block"
               src={ChefImg}
               alt="ChefImg"
             />
             <img
-              class="max-w-full md:hidden block m-auto"
+              className="max-w-full md:hidden block m-auto"
               src={GroupChefsImg}
               alt="ChefImg"
             />
           </div>
         </div>
-        <div class="flex flex-col space-y-10 border-t-2 border-main-color py-12 mx-6  ">
-          <h2 class="text-center md:text-start text-main-color text-4xl">
+        <div className="flex flex-col space-y-10 border-t-2 border-main-color py-12 mx-6  ">
+          <h2 className="text-center md:text-start text-main-color text-4xl">
             How It Works
           </h2>
-          <div class="grid grid-rows-6 grid-cols-1 md:grid-rows-3 md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3  gap-10 mx-5 ">
-            <p class="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color   content-end text-justify px-3">
+          <div className="grid grid-rows-6 grid-cols-1 md:grid-rows-3 md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3  gap-10 mx-5 ">
+            <p className="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color   content-end text-justify px-3">
               <span>Personalize your events!</span>
               <span>
                 Fill in your event details, date, time, and location. Create
@@ -84,17 +85,17 @@ function HomePage() {
               </span>
               <span> CreateEvent.</span>
             </p>
-            <p class="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color   content-end text-justify px-3">
+            <p className="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color   content-end text-justify px-3">
               <span>Choose your Cuisine!</span>
               <span>Choose your desired menu from our renowned chefs. </span>
               <span>Receive Offers </span>
             </p>
-            <p class="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color    content-end text-justify px-3">
+            <p className="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color    content-end text-justify px-3">
               <span>Chat with chefs!</span>
               <span>Message your chef, confirm menu and cost.</span>
               <span>Confirm Offer</span>
             </p>
-            <p class="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color   content-end text-justify px-3">
+            <p className="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color   content-end text-justify px-3">
               <span>Book experience</span>
               <span>
                 Happy with your chef and menu, submit payment via the
@@ -102,12 +103,12 @@ function HomePage() {
               </span>
               <span>Process payment</span>
             </p>
-            <p class="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color   content-end text-justify px-3">
+            <p className="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color   content-end text-justify px-3">
               <span>Send and confirm RSVP to your guests</span>
               <span>All done! Get ready for an unforgettable experience!</span>
               <span>Enjoy</span>
             </p>
-            <p class="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color    content-end text-justify px-3">
+            <p className="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color    content-end text-justify px-3">
               <span>Meet Our Chefs!</span>
               <span>
                 Personalize your event and start chatting with our chefs!
@@ -116,19 +117,19 @@ function HomePage() {
             </p>
           </div>
         </div>
-        <div class="flex flex-col space-y-10 border-t-2 border-main-color py-12 mx-6 ">
-          <div class="flex justify-between flex-wrap space-y-5 md:space-y-0">
-            <h2 class="text-start text-main-color text-3xl md:text-5xl">
+        <div className="flex flex-col space-y-10 border-t-2 border-main-color py-12 mx-6 ">
+          <div className="flex justify-between flex-wrap space-y-5 md:space-y-0">
+            <h2 className="text-start text-main-color text-3xl md:text-5xl">
               Meet Our Chefs!
             </h2>
-            <div class="flex w-full md:w-fit justify-end md:justify-start">
-              <div class="flex ltr:flex-row rtl:flex-row-reverse">
-                <div class="border-y-2 border-l-2 border-main-color rounded-l-full text-l px-2 py-1 h-9 bg-transparent flex items-center">
-                  <i class="fa-solid fa-magnifying-glass text-lg"></i>
+            <div className="flex w-full md:w-fit justify-end md:justify-start">
+              <div className="flex ltr:flex-row rtl:flex-row-reverse">
+                <div className="border-y-2 border-l-2 border-main-color rounded-l-full text-l px-2 py-1 h-9 bg-transparent flex items-center">
+                  <i className="fa-solid fa-magnifying-glass text-lg"></i>
                 </div>
                 <input
                   placeholder="Search"
-                  class="bg-transparent text-main-color border-2 border-main-color border-l-0 rounded-r-full h-9 flex-grow px-3 focus:outline-none"
+                  className="bg-transparent text-main-color border-2 border-main-color border-l-0 rounded-r-full h-9 flex-grow px-3 focus:outline-none"
                   value={searchTerm}
                   onChange={handleSearch}
                 />

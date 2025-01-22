@@ -139,14 +139,14 @@ function CreateEventsPage() {
                     <button
                       type="button"
                       className="w-4 h-4 text-gray-500 bg-transparent rounded-md flex items-center justify-center focus:outline-none"
-                      onclick="pluse('hours')"
+                      onClick="pluse('hours')"
                     >
                       <img src={ArrowUpSVG} alt="Alternate Text" />
                     </button>
                     <button
                       type="button"
                       className="w-4 h-4 text-gray-500 bg-transparent rounded-md flex items-center justify-center focus:outline-none mt-1"
-                      onclick="mines('hours')"
+                      onClick="mines('hours')"
                     >
                       <img src={ArrowDownSVG} alt="Alternate Text" />
                     </button>
@@ -176,14 +176,14 @@ function CreateEventsPage() {
                     <button
                       type="button"
                       className="w-4 h-4 text-gray-500 bg-transparent rounded-md flex items-center justify-center focus:outline-none"
-                      onclick="pluse('minutes')"
+                      onClick="pluse('minutes')"
                     >
                       <img src={ArrowUpSVG} alt="Alternate Text" />
                     </button>
                     <button
                       type="button"
                       className="w-4 h-4 text-gray-500 bg-transparent rounded-md flex items-center justify-center focus:outline-none mt-1"
-                      onclick="mines('minutes')"
+                      onClick="mines('minutes')"
                     >
                       <img src={ArrowDownSVG} alt="Alternate Text" />
                     </button>
@@ -250,14 +250,14 @@ function CreateEventsPage() {
                     <button
                       type="button"
                       className="w-4 h-4 text-gray-500 bg-transparent rounded-md flex items-center justify-center focus:outline-none"
-                      onclick="stepInput('Minimum', 1)"
+                      onClick="stepInput('Minimum', 1)"
                     >
                       <img src={ArrowUpSVG} alt="Alternate Text" />
                     </button>
                     <button
                       type="button"
                       className="w-4 h-4 text-gray-500 bg-transparent rounded-md flex items-center justify-center focus:outline-none mt-1"
-                      onclick="stepInput('Minimum', -1)"
+                      onClick="stepInput('Minimum', -1)"
                     >
                       <img src={ArrowDownSVG} alt="Alternate Text" />
                     </button>
@@ -298,14 +298,14 @@ function CreateEventsPage() {
                     <button
                       type="button"
                       className="w-4 h-4 text-gray-500 bg-transparent rounded-md flex items-center justify-center focus:outline-none"
-                      onclick="stepInput('Maximum', 1)"
+                      onClick="stepInput('Maximum', 1)"
                     >
                       <img src={ArrowUpSVG} alt="Alternate Text" />
                     </button>
                     <button
                       type="button"
                       className="w-4 h-4 text-gray-500 bg-transparent rounded-md flex items-center justify-center focus:outline-none mt-1"
-                      onclick="stepInput('Maximum', -1)"
+                      onClick="stepInput('Maximum', -1)"
                     >
                       <img src={ArrowDownSVG} alt="Alternate Text" />
                     </button>
@@ -367,7 +367,7 @@ function CreateEventsPage() {
               {/* Button to open the map and set location */}
               <div className="absolute top-2 flex flex-col items-center justify-center pr-3 pt-6 rtl:left-2 ltr:right-0 rtl:right-auto ltr:left-auto">
                 <button
-                  onclick="openMapsPage()"
+                  onClick="openMapsPage()"
                   style={{ borderRadius: "10px" }}
                   type="button"
                   className="p-2 leading-3 bg-[#242424] text-xs lato-bold font-medium w-33 h-8 text-white rounded-md flex items-center justify-center focus:outline-none"

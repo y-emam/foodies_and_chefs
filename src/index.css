@@ -27,3 +27,8 @@ code {
 .highlight {
   color: var(--custom-orange);
 }
+
+/* Appling Animations */
+.transition-smooth {
+  @apply transition-all duration-150 ease-in-out;
+}

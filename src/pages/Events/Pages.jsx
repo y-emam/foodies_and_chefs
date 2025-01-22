@@ -18,39 +18,39 @@ function EventsPage() {
 
   return (
     <div className="mainbg overflow-hidden min-h-screen">
-      <div b-10f7mt3975 class=" w-full  mx-3 my-3 border-custom">
+      <div b-10f7mt3975 className=" w-full  mx-3 my-3 border-custom">
         {/* <Sidebar */}
         <main
           b-10f7mt3975
-          class=" min-h-[80dvh]  md:flex md:gap-10 mt-0 p-0 "
+          className=" min-h-[80dvh]  md:flex md:gap-10 mt-0 p-0 "
           id="overlay"
         >
-          <section class="min-h-screen space-y-6 md:min-h-full flex flex-col w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
+          <section className="min-h-screen space-y-6 md:min-h-full flex flex-col w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
             {events.map((event) => (
               <div
-                class="bg-[#FA8836] h-[53px] flex justify-between w-full items-center p-6 "
+                className="bg-[#FA8836] h-[53px] flex justify-between w-full items-center p-6 "
                 style={{ borderRadius: "16px" }}
               >
-                <div class="font-bold text-xl flex gap-0 md:gap-2 flex-col md:flex-row">
-                  <span class="font-bold md:text-[18px] text-[14px] mx-2">
+                <div className="font-bold text-xl flex gap-0 md:gap-2 flex-col md:flex-row">
+                  <span className="font-bold md:text-[18px] text-[14px] mx-2">
                     {event.name}
                   </span>
-                  <span class="date font-bold	md:text-[18px] text-[12px] ">
+                  <span className="date font-bold	md:text-[18px] text-[12px] ">
                     {event.date}
                   </span>
                 </div>
                 <div
-                  class="flex text-center justify-end gap-2 md:w-3/12"
+                  className="flex text-center justify-end gap-2 md:w-3/12"
                   dir="auto"
                 >
                   <a
-                    class="md:h-[35px] h-[24px] md:w-[85px] w-[44px] bg-white text-[#FA8836] p-0.5 md:p-0 my-auto  border-[3px] border-white   font-bold md:text-[18px] text-[10px]  hover:bg-[#000000]  hover:border-[3px] hover:border-[#000000] rounded-[40px]	"
+                    className="md:h-[35px] h-[24px] md:w-[85px] w-[44px] bg-white text-[#FA8836] p-0.5 md:p-0 my-auto  border-[3px] border-white   font-bold md:text-[18px] text-[10px]  hover:bg-[#000000]  hover:border-[3px] hover:border-[#000000] rounded-[40px]	"
                     href={`/Home/EditEvent?eventId=${event.id}`}
                   >
                     Edit
                   </a>
                   <a
-                    class=" md:h-[35px] h-[24px] md:w-[85px] w-[44px]  bg-white text-[#FA8836] p-0.5 md:p-0 my-auto  border-[3px] border-white     font-bold md:text-[18px] text-[10px] 	 hover:bg-[#000000]   hover:border-[3px] hover:border-[#000000] rounded-[40px]"
+                    className=" md:h-[35px] h-[24px] md:w-[85px] w-[44px]  bg-white text-[#FA8836] p-0.5 md:p-0 my-auto  border-[3px] border-white     font-bold md:text-[18px] text-[10px] 	 hover:bg-[#000000]   hover:border-[3px] hover:border-[#000000] rounded-[40px]"
                     href={`/Home/ChefOffers?eventId=${event.id}`}
                   >
                     Show
@@ -58,13 +58,13 @@ function EventsPage() {
                 </div>
               </div>
             ))}
-            <div class="flex justify-center mt-6 gap-2">
+            <div className="flex justify-center mt-6 gap-2">
               <button
                 disabled
-                class="bg-white text-black font-semibold px-3 py-3 rounded-md"
+                className="bg-white text-black font-semibold px-3 py-3 rounded-md"
               >
                 <svg
-                  class="rtl:block ltr:hidden"
+                  className="rtl:block ltr:hidden"
                   width="8"
                   height="13"
                   viewBox="0 0 8 13"
@@ -78,7 +78,7 @@ function EventsPage() {
                 </svg>
 
                 <svg
-                  class="ltr:block rtl:hidden"
+                  className="ltr:block rtl:hidden"
                   width="8"
                   height="13"
                   viewBox="0 0 8 13"
@@ -93,7 +93,7 @@ function EventsPage() {
               </button>
 
               <a
-                class="bg-orange-500 text-white font-semibold px-3 py-1 rounded-md"
+                className="bg-orange-500 text-white font-semibold px-3 py-1 rounded-md"
                 href="/Home/GetMyEvents?page=1"
               >
                 1
@@ -101,10 +101,10 @@ function EventsPage() {
 
               <button
                 disabled
-                class="bg-white text-black font-semibold px-3 py-3 rounded-md"
+                className="bg-white text-black font-semibold px-3 py-3 rounded-md"
               >
                 <svg
-                  class="ltr:block rtl:hidden"
+                  className="ltr:block rtl:hidden"
                   width="8"
                   height="13"
                   viewBox="0 0 8 13"
@@ -118,7 +118,7 @@ function EventsPage() {
                 </svg>
 
                 <svg
-                  class="rtl:block ltr:hidden"
+                  className="rtl:block ltr:hidden"
                   width="8"
                   height="13"
                   viewBox="0 0 8 13"
@@ -133,10 +133,10 @@ function EventsPage() {
               </button>
             </div>
           </section>
-          <section class="w-5/12 hidden md:flex justify-end ">
+          <section className="w-5/12 hidden md:flex justify-end ">
             <img
               src={DishImg2}
-              class="w-[30rem] h-auto object-cover"
+              className="w-[30rem] h-auto object-cover"
               alt="FoodImage"
             />
           </section>
