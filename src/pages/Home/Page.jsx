@@ -16,6 +16,9 @@ function HomePage() {
       <a href="/menus/create" className="text-white">
         Create Menu
       </a>
+      <a href="/invites" className="text-white">
+        Invites
+      </a>
       <a href="/profile" className="text-white">
         Profile
       </a>

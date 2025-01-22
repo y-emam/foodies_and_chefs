@@ -15,6 +15,7 @@ import MenusPage from "./pages/Menus/Page";
 import CreateMenuPage from "./pages/Menus/Create/Page";
 import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
+import InvitesPage from "./pages/Invites/Pages";
 
 function App() {
   useEffect(() => {
@@ -44,6 +45,9 @@ function App() {
             {/* Profile Pages */}
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/profile/edit" element={<EditProfilePage />} />
+
+            {/* Invites Pages */}
+            <Route path="/invites" element={<InvitesPage />} />
 
             {/* Handling any other route */}
             <Route path="*" element={<NoPage />} />

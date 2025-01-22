@@ -14,7 +14,10 @@ function MenusPage() {
     ]);
   }, []);
   return (
-    <main class="min-h-[80dvh]  md:flex md:gap-10 mt-0 p-0 " id="overlay">
+    <main
+      class="menus-page min-h-[80dvh]  md:flex md:gap-10 mt-0 p-0 "
+      id="overlay"
+    >
       <section class="min-h-screen space-y-3 md:min-h-full flex flex-col w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
         <div class="w-full flex flex-col justify-center items-center ">
           <h2 class="zeyada-regular text-main-color md:text-7xl text-5xl text-center text-[#FA8836]">

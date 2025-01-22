@@ -1,4 +1,4 @@
-main {
+.menus-page {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -7,14 +7,4 @@ main {
   background-size: cover;
   background-position: bottom center;
   background-blend-mode: soft-light, normal;
-}
-
-textarea {
-  resize: none;
-}
-
-.zeyada-regular {
-  font-family: "Zeyada", serif;
-  font-weight: 400;
-  font-style: normal;
 }
