@@ -30,8 +30,8 @@ function ChefSlider({ chefs }) {
   const handleChefClick = (index) => {};
 
   return (
-    <div className="slider-container w-full">
-      <Slider {...settings} className="slider px-auto">
+    <div className="slider-container w-full mx-0">
+      <Slider {...settings} className="slider mx-0">
         {chefs.map((chef, index) => (
           <div
             onClick={() => handleChefClick(index)}

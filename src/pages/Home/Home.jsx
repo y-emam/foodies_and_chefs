@@ -133,8 +133,10 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="container w-full">
-            <ChefSlider chefs={chefs} />
+          <div className="flex items-center justify-center w-full">
+            <div className="container w-full">
+              <ChefSlider chefs={chefs} />
+            </div>
           </div>
         </div>
       </section>

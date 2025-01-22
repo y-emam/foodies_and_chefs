@@ -1,5 +1,6 @@
 .slider {
-  width: 90vw;
+  width: 85vw;
+  margin: auto auto;
 }
 
 .chef {
@@ -55,6 +56,9 @@
 
 /* Responsive design for very small screens (mobile) */
 @media (max-width: 480px) {
+  .slider {
+  }
+
   .chef {
     width: 5rem; /* Even smaller width for small screens */
     height: 10rem;
