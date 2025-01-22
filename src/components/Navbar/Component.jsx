@@ -14,14 +14,22 @@ function Navbar() {
     dropdown.classList.toggle("hidden");
   };
 
+  const toggleSideMenu = () => {
+    const mobileNav = document.getElementById("mobile-nav");
+    mobileNav.classList.toggle("transform");
+  };
+
   return (
     <nav>
       <header className=" a relative flex justify-between items-center py-3 mx-4 md:mx-10 ">
         <div className="flex items-center gap-5">
           {/* Mobile Menu Toggle Button */}
-
           <div className=" block md:hidden">
-            <button id="menu-btn" className=" focus:outline-none">
+            <button
+              id="menu-btn"
+              className="focus:outline-none bg-transparent"
+              onClick={toggleSideMenu}
+            >
               <svg
                 className="w-6 h-6"
                 width="23"
@@ -221,7 +229,8 @@ function Navbar() {
           </div>
         </div>
       </header>
-      {/* Sidebar */}
+
+      {/* Sidebar (Visble on Mobile Only*/}
       <div
         className="md:hidden fixed inset-y-0 left-0 z-40 w-1/2 bg-[#2E2E2E] text-white transform -translate-x-full transition-transform duration-300 ease-in-out"
         id="mobile-nav"
