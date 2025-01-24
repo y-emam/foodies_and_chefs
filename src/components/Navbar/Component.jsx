@@ -1,8 +1,11 @@
+import { useState } from "react";
 import CompleteArrowDownImg from "../../assets/images/CompleteArrowDown.svg";
 import ProfileTempImg from "../../assets/images/profileTemp.png";
 import "./styles.css";
 
 function Navbar() {
+  const [isSignedIn, setIsSignedIn] = useState(false);
+
   const toggleDropDown = (dropdownId) => {
     const element = document.getElementById("CreateEventMenu");
 
@@ -134,105 +137,117 @@ function Navbar() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          {/* Notification */}
-          <div className="dropdown">
-            <button
-              className="relative inline-block mr-5 bg-transparent"
-              id="notificationButton"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              {/* Bell Icon */}
-              <i className="text-2xl md:text-3xl text-[#DADADA] fa-regular fa-bell"></i>
-
-              {/* Notification Badge */}
-              <span
-                id="notificationCount"
-                className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-[#B3261E] rounded-full transform translate-x-1/2 -translate-y-1/2"
+        {/* Profile or Sign In */}
+        {isSignedIn ? (
+          <div className="flex items-center gap-3">
+            {/* Notification */}
+            <div className="dropdown">
+              <button
+                className="relative inline-block mr-5 bg-transparent"
+                id="notificationButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
-                0
-              </span>
-            </button>
+                {/* Bell Icon */}
+                <i className="text-2xl md:text-3xl text-[#DADADA] fa-regular fa-bell"></i>
 
-            <div
-              id="notification-list"
-              aria-labelledby="notificationButton"
-              className="hidden z-20 top-12 w-3/4 md:w-4/12 absolute mt-2 text-black bg-white shadow-lg rounded-lg
-                                ltr:right-20 rtl:left-20"
-            >
-              <div className="flex justify-between bg-[#D9D9D9] h-[38px] p-2 border-2 border-black">
-                <span className="font-semibold bg">Notifications</span>
-                <button id="close_Notification">
-                  <svg
-                    width="19"
-                    height="17"
-                    viewBox="0 0 19 17"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M17.2188 0H1.78125C0.797852 0 0 0.797852 0 1.78125V14.8438C0 15.8271 0.797852 16.625 1.78125 16.625H17.2188C18.2021 16.625 19 15.8271 19 14.8438V1.78125C19 0.797852 18.2021 0 17.2188 0ZM14.1164 10.7803C14.2945 10.9584 14.2945 11.2479 14.1164 11.426L12.6135 12.9289C12.4354 13.107 12.1459 13.107 11.9678 12.9289L9.5 10.4389L7.03223 12.9289C6.8541 13.107 6.56465 13.107 6.38652 12.9289L4.88359 11.426C4.70547 11.2479 4.70547 10.9584 4.88359 10.7803L7.37363 8.3125L4.88359 5.84473C4.70547 5.6666 4.70547 5.37715 4.88359 5.19902L6.38652 3.69609C6.56465 3.51797 6.8541 3.51797 7.03223 3.69609L9.5 6.18613L11.9678 3.69609C12.1459 3.51797 12.4354 3.51797 12.6135 3.69609L14.1164 5.19902C14.2945 5.37715 14.2945 5.6666 14.1164 5.84473L11.6264 8.3125L14.1164 10.7803Z"
-                      fill="black"
-                    />
-                  </svg>
-                </button>
-              </div>
+                {/* Notification Badge */}
+                <span
+                  id="notificationCount"
+                  className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-[#B3261E] rounded-full transform translate-x-1/2 -translate-y-1/2"
+                >
+                  0
+                </span>
+              </button>
 
               <div
-                id="Notification-repet"
-                className="max-h-72 overflow-y-auto border-2 border-black border-t-0"
+                id="notification-list"
+                aria-labelledby="notificationButton"
+                className="hidden z-20 top-12 w-3/4 md:w-4/12 absolute mt-2 text-black bg-white shadow-lg rounded-lg
+                                ltr:right-20 rtl:left-20"
               >
-                {/* Notification Item */}
+                <div className="flex justify-between bg-[#D9D9D9] h-[38px] p-2 border-2 border-black">
+                  <span className="font-semibold bg">Notifications</span>
+                  <button id="close_Notification">
+                    <svg
+                      width="19"
+                      height="17"
+                      viewBox="0 0 19 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.2188 0H1.78125C0.797852 0 0 0.797852 0 1.78125V14.8438C0 15.8271 0.797852 16.625 1.78125 16.625H17.2188C18.2021 16.625 19 15.8271 19 14.8438V1.78125C19 0.797852 18.2021 0 17.2188 0ZM14.1164 10.7803C14.2945 10.9584 14.2945 11.2479 14.1164 11.426L12.6135 12.9289C12.4354 13.107 12.1459 13.107 11.9678 12.9289L9.5 10.4389L7.03223 12.9289C6.8541 13.107 6.56465 13.107 6.38652 12.9289L4.88359 11.426C4.70547 11.2479 4.70547 10.9584 4.88359 10.7803L7.37363 8.3125L4.88359 5.84473C4.70547 5.6666 4.70547 5.37715 4.88359 5.19902L6.38652 3.69609C6.56465 3.51797 6.8541 3.51797 7.03223 3.69609L9.5 6.18613L11.9678 3.69609C12.1459 3.51797 12.4354 3.51797 12.6135 3.69609L14.1164 5.19902C14.2945 5.37715 14.2945 5.6666 14.1164 5.84473L11.6264 8.3125L14.1164 10.7803Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </button>
+                </div>
 
-                {/* Repeat more notifications as needed */}
+                <div
+                  id="Notification-repet"
+                  className="max-h-72 overflow-y-auto border-2 border-black border-t-0"
+                >
+                  {/* Notification Item */}
+
+                  {/* Repeat more notifications as needed */}
+                </div>
+              </div>
+            </div>
+
+            {/* Profile Dropdown */}
+            <div className="relative flex items-center gap-2 ">
+              <button
+                className="flex items-center gap-2 bg-transparent"
+                onClick={() => {
+                  toggleDropDown("Profiledropdown");
+                }}
+              >
+                <img src={CompleteArrowDownImg} alt="icon" />
+                <span className="hidden md:block menu-item text-white hover:text-white-500 truncate">
+                  Yasser Emam
+                </span>
+                <span className="sm:block md:hidden menu-item text-white hover:text-white-500 truncate">
+                  Yasser
+                </span>
+
+                <img
+                  className="icon rounded-full w-12 h-12 object-cover"
+                  src={ProfileTempImg}
+                  alt="profileImage"
+                />
+              </button>
+
+              <div
+                id="Profiledropdown"
+                className="z-20 hidden top-10 w-36 dropdown-menu absolute right-0 md:right-4 mt-2 text-black bg-white shadow-lg rounded-lg text-center rtl:text-right"
+              >
+                <a
+                  className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100"
+                  href="/profile"
+                >
+                  Profile
+                </a>
+                <a
+                  className="px-4 py-2 text-black transition-smooth hover:bg-gray-100 flex items-center rtl:flex-row-reverse"
+                  href="/signout"
+                >
+                  Sign out
+                  <i className="px-2 fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
               </div>
             </div>
           </div>
-
-          {/* Profile Dropdown */}
-          <div className="relative flex items-center gap-2 ">
-            <button
-              className="flex items-center gap-2 bg-transparent"
-              onClick={() => {
-                toggleDropDown("Profiledropdown");
-              }}
+        ) : (
+          <div className="flex items-center gap-3 w-24">
+            <a
+              className="bg-main-color text-white font-bold text-lg text-center p-2 rounded-[35px] w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-2 hover:border-main-color hover:text-main-color"
+              href="/signin"
             >
-              <img src={CompleteArrowDownImg} alt="icon" />
-              <span className="hidden md:block menu-item text-white hover:text-white-500 truncate">
-                Yasser Emam
-              </span>
-              <span className="sm:block md:hidden menu-item text-white hover:text-white-500 truncate">
-                Yasser
-              </span>
-
-              <img
-                className="icon rounded-full w-12 h-12 object-cover"
-                src={ProfileTempImg}
-                alt="profileImage"
-              />
-            </button>
-
-            <div
-              id="Profiledropdown"
-              className="z-20 hidden top-10 w-36 dropdown-menu absolute right-0 md:right-4 mt-2 text-black bg-white shadow-lg rounded-lg text-center rtl:text-right"
-            >
-              <a
-                className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100"
-                href="/profile"
-              >
-                Profile
-              </a>
-              <a
-                className="px-4 py-2 text-black transition-smooth hover:bg-gray-100 flex items-center rtl:flex-row-reverse"
-                href="/signout"
-              >
-                Sign out
-                <i className="px-2 fa-solid fa-arrow-right-from-bracket"></i>
-              </a>
-            </div>
+              Sign In
+            </a>
           </div>
-        </div>
+        )}
       </header>
 
       {/* Sidebar (Visble on Mobile Only*/}

@@ -16,7 +16,6 @@ import CreateMenuPage from "./pages/Menus/Create/Page";
 import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
 import InvitesPage from "./pages/Invites/Pages";
-import Navigator from "./pages/Home/Page";
 import Navbar from "./components/Navbar/Component";
 
 function App() {
@@ -33,10 +32,7 @@ function App() {
 
           {/* Routes */}
           <Routes>
-            <Route path="/" element={<Navigator />} />
-
-            {/* Home Page */}
-            <Route path="/home" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
 
             {/* Authentication */}
             <Route path="/signin" element={<SignInPage />} />
