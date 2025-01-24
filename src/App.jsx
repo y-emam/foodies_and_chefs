@@ -16,7 +16,6 @@ import CreateMenuPage from "./pages/Menus/Create/Page";
 import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
 import InvitesPage from "./pages/Invites/Pages";
-import Navbar from "./components/Navbar/Component";
 
 function App() {
   useEffect(() => {
