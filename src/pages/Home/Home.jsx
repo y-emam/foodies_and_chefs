@@ -49,6 +49,7 @@ function HomePage() {
             <img
               className="md:max-w-56 max-w-40 object-cover"
               src={LogoImg}
+              loading="lazy"
               alt="ChefImg"
             />
 
@@ -63,11 +64,13 @@ function HomePage() {
             <img
               className="max-w-[80%] rounded-tl-[50px] rounded-br-[50px] hidden md:block"
               src={ChefImg}
+              loading="lazy"
               alt="ChefImg"
             />
             <img
               className="max-w-full md:hidden block m-auto"
               src={GroupChefsImg}
+              loading="lazy"
               alt="ChefImg"
             />
           </div>

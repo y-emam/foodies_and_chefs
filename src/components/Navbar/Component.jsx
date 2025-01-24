@@ -69,7 +69,7 @@ function Navbar() {
 
               <div className="relative cursor-pointer">
                 <button
-                  className=" px-[18px] py-[9px] flex items-center bg-transparent gap-2"
+                  className="px-[18px] py-[9px] flex items-center bg-transparent gap-2 text-white font-bold text-lg hover:text-orange-500 rounded-[35px] "
                   onClick={() => {
                     toggleDropDown("CreateEventMenu");
                   }}
