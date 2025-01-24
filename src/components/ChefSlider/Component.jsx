@@ -38,7 +38,12 @@ function ChefSlider({ chefs }) {
             className="chef"
             key={index}
           >
-            <img src={chef.image} alt="chef" className="rounded-full" />
+            <img
+              src={chef.image}
+              alt="chef"
+              className="rounded-full"
+              loading="lazy"
+            />
             <h3>{chef.name}</h3>
             <p>{chef.location}</p>
           </div>

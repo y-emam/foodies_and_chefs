@@ -63,13 +63,11 @@ function HomePage() {
             <img
               className="max-w-[80%] rounded-tl-[50px] rounded-br-[50px] hidden md:block"
               src={ChefImg}
-              loading="lazy"
               alt="ChefImg"
             />
             <img
               className="max-w-full md:hidden block m-auto"
               src={GroupChefsImg}
-              loading="lazy"
               alt="GroupChefImg"
             />
           </div>
