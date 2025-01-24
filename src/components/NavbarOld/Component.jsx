@@ -1,5 +1,5 @@
 import "./styles.css";
-import logo from "../../assets/images/Logo.png";
+import logo from "../../assets/images/logo.webp";
 
 function Navbar() {
   return (

@@ -1,4 +1,4 @@
-import LogoImg from "../../assets/images/Logo.png";
+import LogoImg from "../../assets/images/logo.webp";
 import "./styles.css";
 
 function ForgotPasswordPage() {

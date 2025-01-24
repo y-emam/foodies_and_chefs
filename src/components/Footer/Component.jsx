@@ -1,5 +1,5 @@
 import "./styles.css";
-import logo from "../../assets/images/Logo.png";
+import logo from "../../assets/images/logo.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 

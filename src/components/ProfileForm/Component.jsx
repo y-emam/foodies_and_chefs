@@ -1,7 +1,7 @@
 import FacebookIcon from "../../assets/images/facebook.svg";
 import XIcon from "../../assets/images/X.svg";
 import InstagramIcon from "../../assets/images/instagram.svg";
-import ProfileTempImg from "../../assets/images/profileTemp.png";
+import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./styles.css";

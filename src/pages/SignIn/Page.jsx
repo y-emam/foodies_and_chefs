@@ -1,5 +1,5 @@
-import LogoImg from "../../assets/images/Logo.png";
-import GoogleImg from "../../assets/images/Google.png";
+import LogoImg from "../../assets/images/logo.webp";
+import GoogleImg from "../../assets/images/Google.webp";
 import "./styles.css";
 import { useState } from "react";
 

@@ -1,5 +1,5 @@
 import CompleteArrowDownImg from "../../assets/images/CompleteArrowDown.svg";
-import ProfileTempImg from "../../assets/images/profileTemp.png";
+import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import "./styles.css";
 
 function Navbar() {
