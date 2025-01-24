@@ -52,7 +52,7 @@ function HomePage() {
               alt="HomeLogo"
             />
 
-            <p className="font-light playwrite-us-modern text-xl md:text-2xl text-justify leading-10 mx-2	px-5">
+            <p className="playwrite-us-modern text-xl md:text-2xl text-justify leading-10 mx-2	px-5">
               Welcome to{" "}
               <span className="text-main-color">Foodies & Chefs</span> where
               unforgettable dining experiences begin. Discover top chefs, book
