@@ -15,8 +15,13 @@ function Navbar() {
   };
 
   const toggleSideMenu = () => {
+    // show or hide the sidebar
     const mobileNav = document.getElementById("mobile-nav");
-    mobileNav.classList.toggle("transform");
+    mobileNav.classList.toggle("hide-sidebar");
+
+    // show or hide the overlay (this is used to close the sidebar when clicking outside of it)
+    const overlay = document.getElementById("overlay");
+    overlay.classList.toggle("hidden");
   };
 
   return (
@@ -61,7 +66,7 @@ function Navbar() {
 
               <div className="relative cursor-pointer">
                 <button
-                  className=" px-[18px] py-[9px] flex items-center bg-transparent gap-2 text-white font-bold text-lg"
+                  className=" px-[18px] py-[9px] flex items-center bg-transparent gap-2"
                   onClick={() => {
                     toggleDropDown("CreateEventMenu");
                   }}
@@ -77,13 +82,13 @@ function Navbar() {
                 >
                   <a
                     className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
-                    href="/"
+                    href="/events/create"
                   >
                     CreateEvent
                   </a>
                   <a
                     className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
-                    href="/Home/GetMyEvents"
+                    href="/events"
                   >
                     Events
                   </a>
@@ -232,14 +237,14 @@ function Navbar() {
 
       {/* Sidebar (Visble on Mobile Only*/}
       <div
-        className="md:hidden fixed inset-y-0 left-0 z-40 w-1/2 bg-[#2E2E2E] text-white transform -translate-x-full transition-transform duration-300 ease-in-out"
+        className="hide-sidebar md:hidden fixed inset-y-0 left-0 z-40 w-1/2 bg-[#2E2E2E] text-white transform transition-transform duration-300 ease-in-out"
         id="mobile-nav"
       >
         <div className="p-4">
           <ul className="space-y-4">
             <li>
               <a
-                className="menu-item   hover:text-orange-500  px-[18px] py-[9px] bg-[#FA8836]"
+                className="menu-item text-white font-bold text-lg hover:text-black px-[18px] py-[9px] bg-[#FA8836]"
                 style={{ borderRadius: "35px" }}
                 href="/"
               >
@@ -249,16 +254,16 @@ function Navbar() {
             <div className="  mt-10 border-y border-[#FA8836]">
               <li>
                 <a
-                  className="block px-4 py-2 rounded hover:bg-gray-700"
-                  href="/"
+                  className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
+                  href="/events/create"
                 >
                   CreateEvent
                 </a>
               </li>
               <li>
                 <a
-                  className="block px-4 py-2 rounded hover:bg-gray-700"
-                  href="/Home/GetMyEvents"
+                  className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
+                  href="/evnets"
                 >
                   Events
                 </a>
@@ -267,7 +272,7 @@ function Navbar() {
 
             <li>
               <a
-                className="block px-4 py-2 rounded hover:bg-gray-700"
+                className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
                 href="/invites"
               >
                 Invites
@@ -275,21 +280,24 @@ function Navbar() {
             </li>
             <li>
               <a
-                className="block px-4 py-2 rounded hover:bg-gray-700"
+                className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
                 href="/menus"
               >
                 My Menus
               </a>
             </li>
             <li>
-              <a className="block px-4 py-2 hover:bg-gray-100" href="/offers">
+              <a
+                className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
+                href="/offers"
+              >
                 Offers
               </a>
             </li>
 
             <li>
               <a
-                className="  menu-item text-white font-bold text-lg    hover:text-orange-500 rounded-[35px]"
+                className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
                 href="/Language/SetLanguage?culture=ar-EG&amp;returnUrl=%2FHome%2FHome"
               >
                 <span>اللغه العربيه</span>
@@ -298,6 +306,11 @@ function Navbar() {
           </ul>
         </div>
       </div>
+      <div
+        className="sidebar-overlay hidden"
+        id="overlay"
+        onClick={toggleSideMenu}
+      ></div>
     </nav>
   );
 }

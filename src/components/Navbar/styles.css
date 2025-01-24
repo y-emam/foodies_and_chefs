@@ -1,0 +1,18 @@
+.hide-sidebar {
+  transform: translateX(-100%);
+  direction: ltr;
+}
+
+html[dir="rtl"] .hide-sidebar {
+  transform: translateX(100%);
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
