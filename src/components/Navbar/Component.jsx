@@ -1,10 +1,9 @@
-import { useState } from "react";
 import CompleteArrowDownImg from "../../assets/images/CompleteArrowDown.svg";
 import ProfileTempImg from "../../assets/images/profileTemp.png";
 import "./styles.css";
 
 function Navbar() {
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const isSignedIn = false;
 
   const toggleDropDown = (dropdownId) => {
     const element = document.getElementById("CreateEventMenu");
