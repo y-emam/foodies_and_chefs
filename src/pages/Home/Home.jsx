@@ -43,7 +43,7 @@ function HomePage() {
       className="HomePage min-h-[80dvh] md:flex md:gap-10 mt-0 p-0"
       id="overlay"
     >
-      <section className="playwrite-us-modern   py-16 box-border">
+      <section className="py-16 box-border">
         <div className="flex md:justify-center items-center md:gap-10 gap-0  mb-12 flex-col md:flex-row">
           <div className="flex flex-col items-center w-[80%] md:w-[62%] justify-center space-y-10   ">
             <img
@@ -52,7 +52,7 @@ function HomePage() {
               alt="HomeLogo"
             />
 
-            <p className="playwrite-us-modern text-xl md:text-2xl text-justify leading-10 mx-2	px-5">
+            <p className="text-xl md:text-2xl text-justify leading-10 mx-2	px-5">
               Welcome to{" "}
               <span className="text-main-color">Foodies & Chefs</span> where
               unforgettable dining experiences begin. Discover top chefs, book
