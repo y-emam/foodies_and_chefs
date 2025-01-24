@@ -49,8 +49,7 @@ function HomePage() {
             <img
               className="md:max-w-56 max-w-40 object-cover"
               src={LogoImg}
-              loading="lazy"
-              alt="ChefImg"
+              alt="HomeLogo"
             />
 
             <p className="font-light playwrite-us-modern text-xl md:text-2xl text-justify leading-10 mx-2	px-5	">
@@ -71,11 +70,11 @@ function HomePage() {
               className="max-w-full md:hidden block m-auto"
               src={GroupChefsImg}
               loading="lazy"
-              alt="ChefImg"
+              alt="GroupChefImg"
             />
           </div>
         </div>
-        <div className="flex flex-col space-y-10 border-t-2 border-main-color py-12 mx-6  ">
+        <div className="flex flex-col space-y-10 border-t-2 border-main-color py-12 mx-6">
           <h2 className="text-center md:text-start text-main-color text-4xl">
             How It Works
           </h2>
