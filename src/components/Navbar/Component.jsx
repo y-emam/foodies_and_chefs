@@ -37,6 +37,7 @@ function Navbar() {
               id="menu-btn"
               className="focus:outline-none bg-transparent"
               onClick={toggleSideMenu}
+              aria-label="Open Sidebar menu"
             >
               <svg
                 className="w-6 h-6"
