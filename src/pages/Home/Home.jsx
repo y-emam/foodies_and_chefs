@@ -1,42 +1,42 @@
 import ChefImg from "../../assets/images/HomeChefImg.webp";
 import GroupChefsImg from "../../assets/images/GroupChefsImg.webp";
 import LogoImg from "../../assets/images/logo.webp";
-// import ChefSlider from "../../components/ChefSlider/Component";
-// import ChefTempImg from "../../assets/images/chefTemp.webp";
+import ChefSlider from "../../components/ChefSlider/Component";
+import ChefTempImg from "../../assets/images/chefTemp.webp";
 import "./stylesHome.css";
-// import { useState } from "react";
+import { useState } from "react";
 
-// const chefs = [
-//   { name: "Ahmed Hassan", location: "Alexandria, Egypt", image: ChefTempImg },
-//   { name: "Fatima Mahmoud", location: "Giza, Egypt", image: ChefTempImg },
-//   { name: "Omar Abdelrahman", location: "Luxor, Egypt", image: ChefTempImg },
-//   { name: "Sara Adel", location: "Aswan, Egypt", image: ChefTempImg },
-//   { name: "Nour Ebrahim", location: "Hurghada, Egypt", image: ChefTempImg },
-//   { name: "Layla Mostafa", location: "Mansoura, Egypt", image: ChefTempImg },
-//   { name: "Hassan Alaa", location: "Port Said, Egypt", image: ChefTempImg },
-//   { name: "Reem Khalil", location: "Ismailia, Egypt", image: ChefTempImg },
-//   { name: "Yasser Emam", location: "Cairo, Egypt", image: ChefTempImg },
-//   { name: "Ahmed Khaled", location: "Alexandria, Egypt", image: ChefTempImg },
-//   { name: "Magdy Mahmoud", location: "New Cairo, Egypt", image: ChefTempImg },
-//   { name: "Amgad Yasser", location: "Luxor, Egypt", image: ChefTempImg },
-// ];
+const chefs = [
+  { name: "Ahmed Hassan", location: "Alexandria, Egypt", image: ChefTempImg },
+  { name: "Fatima Mahmoud", location: "Giza, Egypt", image: ChefTempImg },
+  { name: "Omar Abdelrahman", location: "Luxor, Egypt", image: ChefTempImg },
+  { name: "Sara Adel", location: "Aswan, Egypt", image: ChefTempImg },
+  { name: "Nour Ebrahim", location: "Hurghada, Egypt", image: ChefTempImg },
+  { name: "Layla Mostafa", location: "Mansoura, Egypt", image: ChefTempImg },
+  { name: "Hassan Alaa", location: "Port Said, Egypt", image: ChefTempImg },
+  { name: "Reem Khalil", location: "Ismailia, Egypt", image: ChefTempImg },
+  { name: "Yasser Emam", location: "Cairo, Egypt", image: ChefTempImg },
+  { name: "Ahmed Khaled", location: "Alexandria, Egypt", image: ChefTempImg },
+  { name: "Magdy Mahmoud", location: "New Cairo, Egypt", image: ChefTempImg },
+  { name: "Amgad Yasser", location: "Luxor, Egypt", image: ChefTempImg },
+];
 
 function HomePage() {
-  // const [searchTerm, setSearchTerm] = useState(""); // State to hold the search input
-  // const [filteredChefs, setFilteredChefs] = useState(chefs);
+  const [searchTerm, setSearchTerm] = useState(""); // State to hold the search input
+  const [filteredChefs, setFilteredChefs] = useState(chefs);
 
-  // const handleSearch = (e) => {
-  //   const value = e.target.value.toLowerCase(); // Normalize the input
-  //   setSearchTerm(value);
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase(); // Normalize the input
+    setSearchTerm(value);
 
-  //   // Filter the chefs based on the name or location
-  //   const updatedChefs = chefs.filter(
-  //     (chef) =>
-  //       chef.name.toLowerCase().includes(value) ||
-  //       chef.location.toLowerCase().includes(value)
-  //   );
-  //   setFilteredChefs(updatedChefs);
-  // };
+    // Filter the chefs based on the name or location
+    const updatedChefs = chefs.filter(
+      (chef) =>
+        chef.name.toLowerCase().includes(value) ||
+        chef.location.toLowerCase().includes(value)
+    );
+    setFilteredChefs(updatedChefs);
+  };
 
   return (
     <main
@@ -130,8 +130,8 @@ function HomePage() {
                 <input
                   placeholder="Search"
                   className="bg-transparent text-main-color border-2 border-main-color border-l-0 rounded-r-full h-9 flex-grow px-3 focus:outline-none"
-                  // value={searchTerm}
-                  // onChange={handleSearch}
+                  value={searchTerm}
+                  onChange={handleSearch}
                 />
               </div>
             </div>
@@ -139,7 +139,7 @@ function HomePage() {
 
           <div className="flex items-center justify-center w-full">
             <div className="container w-full">
-              {/* <ChefSlider chefs={filteredChefs} /> */}
+              <ChefSlider chefs={filteredChefs} />
             </div>
           </div>
         </div>
