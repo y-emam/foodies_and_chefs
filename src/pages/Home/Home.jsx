@@ -66,7 +66,7 @@ function HomePage() {
               alt="ChefImg"
             />
             <img
-              className="max-w-full md:hidden block m-auto"
+              className="w-full h-auto md:hidden block m-auto"
               src={GroupChefsImg}
               alt="GroupChefImg"
             />
