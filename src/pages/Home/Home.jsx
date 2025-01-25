@@ -40,7 +40,7 @@ function HomePage() {
 
   return (
     <main
-      className="HomePage min-h-[80dvh]  md:flex md:gap-10 mt-0 p-0 "
+      className="HomePage min-h-[80dvh] md:flex md:gap-10 mt-0 p-0"
       id="overlay"
     >
       <section className="playwrite-us-modern   py-16 box-border">
