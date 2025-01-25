@@ -276,7 +276,7 @@ function Navbar() {
               <li>
                 <a
                   className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
-                  href="/evnets"
+                  href="/events"
                 >
                   {t("navbar.events")}
                 </a>
