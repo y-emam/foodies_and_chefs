@@ -6,8 +6,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const resources = {
     en: {
         translation: {
-            welcome: "Welcome",
-            description: "This is an English description.",
+            welcome: "Welcome to",
+            description: "description in English",
         },
     },
     ar: {

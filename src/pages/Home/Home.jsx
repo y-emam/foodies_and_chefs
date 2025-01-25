@@ -5,6 +5,7 @@ import ChefSlider from "../../components/ChefSlider/Component";
 import ChefTempImg from "../../assets/images/chefTemp.webp";
 import "./stylesHome.css";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const chefs = [
   { name: "Ahmed Hassan", location: "Alexandria, Egypt", image: ChefTempImg },
@@ -22,6 +23,7 @@ const chefs = [
 ];
 
 function HomePage() {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState(""); // State to hold the search input
   const [filteredChefs, setFilteredChefs] = useState(chefs);
 
@@ -53,7 +55,7 @@ function HomePage() {
             />
 
             <p className="playwrite-us-modern text-xl md:text-2xl text-justify leading-10 mx-2	px-5">
-              Welcome to{" "}
+              {t("welcome")} to{" "}
               <span className="text-main-color">Foodies & Chefs</span> where
               unforgettable dining experiences begin. Discover top chefs, book
               personalized events, and elevate your gatherings with ease.

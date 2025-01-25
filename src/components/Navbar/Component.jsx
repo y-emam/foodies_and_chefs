@@ -1,5 +1,6 @@
 import CompleteArrowDownImg from "../../assets/images/CompleteArrowDown.svg";
 import ProfileTempImg from "../../assets/images/profileTemp.webp";
+import LanguageButton from "../LanguageButton/Components";
 import "./styles.css";
 
 function Navbar() {
@@ -126,12 +127,7 @@ function Navbar() {
               </li>
 
               <li>
-                <a
-                  className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
-                  href="/Language/SetLanguage?culture=ar-EG&amp;returnUrl=%2FHome%2FHome"
-                >
-                  <span>اللغه العربيه</span>
-                </a>
+                <LanguageButton />
               </li>
             </ul>
           </div>
@@ -311,12 +307,7 @@ function Navbar() {
             </li>
 
             <li>
-              <a
-                className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
-                href="/Language/SetLanguage?culture=ar-EG&amp;returnUrl=%2FHome%2FHome"
-              >
-                <span>اللغه العربيه</span>
-              </a>
+              <LanguageButton />
             </li>
           </ul>
         </div>
