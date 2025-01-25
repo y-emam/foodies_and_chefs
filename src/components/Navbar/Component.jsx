@@ -264,7 +264,7 @@ function Navbar() {
                 {t("navbar.home")}
               </a>
             </li>
-            <ul className="  mt-10 border-y border-[#FA8836]">
+            <ul className="mt-10 border-y border-[#FA8836]">
               <li>
                 <a
                   className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
