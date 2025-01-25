@@ -2,8 +2,11 @@ import DishImg from "../../../assets/images/dish.webp";
 import ArrowUpSVG from "../../../assets/images/ArrowUp.svg";
 import ArrowDownSVG from "../../../assets/images/ArrowDown.svg";
 import "./styles.css";
+import { useTranslation } from "react-i18next";
 
 function CreateEventsPage() {
+  const { t } = useTranslation();
+
   return (
     <div className="mainbg overflow-auto min-h-screen pt-4">
       <main className="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0 " id="overlay">
@@ -14,7 +17,7 @@ function CreateEventsPage() {
                 for="event-name"
                 className="section-title lato-bold font-medium"
               >
-                Event name:
+                {t("events.name")}
               </label>
 
               <input
@@ -23,7 +26,7 @@ function CreateEventsPage() {
                 maxlength="30"
                 id="event-name"
                 className="opacity-70 h-[47.02px] border border-[#FFFFFF4D]  bg-[#444444] form-control w-full  p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
-                placeholder="Enter Event Name"
+                placeholder={t("events.namePlaceholder")}
                 data-val="true"
                 data-val-required=" this field is required."
                 value=""
@@ -34,9 +37,9 @@ function CreateEventsPage() {
                 data-valmsg-replace="true"
               ></span>
             </div>
-            <div className="mb-1  ">
+            <div className="mb-1">
               <label for="event-Description" className="section-title">
-                description
+                {t("events.description")}
               </label>
               <input
                 name="EventDescription"
@@ -44,7 +47,7 @@ function CreateEventsPage() {
                 type="text"
                 id="event-Description"
                 className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full   p-3"
-                placeholder="Enter Description"
+                placeholder={t("events.descriptionPlaceholder")}
                 data-val="true"
                 data-val-required=" this field is required."
                 value=""
@@ -62,7 +65,7 @@ function CreateEventsPage() {
                     for="event-date"
                     className="section-title lato-bold font-medium"
                   >
-                    Date{" "}
+                    t{t("events.date")}
                   </label>
                   <input
                     name="Date"
@@ -83,7 +86,7 @@ function CreateEventsPage() {
                 </div>
                 <div className="ms-1.5 md:ms-0 flex flex-col w-1/2">
                   <label for="event-time" className="section-title">
-                    Time
+                    {t("events.time")}
                   </label>
                   <input
                     name="StartTime"
@@ -117,7 +120,7 @@ function CreateEventsPage() {
 
                 <div className="flex flex-col w-full relative">
                   <label for="hours" className="section-title">
-                    Hours
+                    {t("events.hours")}
                   </label>
                   <input
                     type="number"
@@ -155,8 +158,7 @@ function CreateEventsPage() {
 
                 <div className="flex flex-col w-full relative rtl">
                   <label for="minutes" className="section-title">
-                    {" "}
-                    Min
+                    {t("events.minutes")}
                   </label>
                   <input
                     type="number"
@@ -198,6 +200,7 @@ function CreateEventsPage() {
               </div>
             </div>
 
+            {/* TODO: need to make this dynamic */}
             <p
               id="duration-output"
               className="  lato-bold font-medium text-[#FFFFFF] text-[13px] md:text-[12px] my-5"
@@ -211,7 +214,7 @@ function CreateEventsPage() {
                   for="event-invitees"
                   className="section-title rtl:text-right ltr:text-left"
                 >
-                  Number of guests:
+                  {t("events.noGuests")}
                 </label>
               </div>
 
@@ -222,7 +225,7 @@ function CreateEventsPage() {
                     for="Minimum"
                     className="section-title rtl:text-right ltr:text-left"
                   >
-                    Minimum
+                    {t("events.minimum")}
                   </label>
                   <input
                     name="MinNumberOfInvetation"
@@ -270,7 +273,7 @@ function CreateEventsPage() {
                     for="Maximum"
                     className="section-title rtl:text-right ltr:text-left"
                   >
-                    Maximum
+                    {t("events.maximum")}
                   </label>
                   <input
                     value="2"
@@ -343,7 +346,7 @@ function CreateEventsPage() {
                 for="event-location"
                 className="section-title rtl:text-right ltr:text-left"
               >
-                Location:
+                {t("events.location")}
               </label>
 
               {/* General Location input field */}
@@ -353,7 +356,7 @@ function CreateEventsPage() {
                 type="text"
                 id="event-location"
                 className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full p-3 rtl:text-right ltr:text-left"
-                placeholder="Choose location"
+                placeholder={t("events.locationPlaceholder")}
                 data-val="true"
                 data-val-required=" this field is required."
               />
@@ -372,7 +375,7 @@ function CreateEventsPage() {
                   type="button"
                   className="p-2 leading-3 bg-[#242424] text-xs lato-bold font-medium w-33 h-8 text-white rounded-md flex items-center justify-center focus:outline-none"
                 >
-                  set your location
+                  {t("events.setYourLocation")}
                 </button>
               </div>
             </div>
@@ -388,13 +391,13 @@ function CreateEventsPage() {
                 type="submit"
                 className="bg-[#6555FF] rounded-[35px]  w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]  "
               >
-                CreateEvent
+                {t("events.createEvent")}
               </button>
             </div>
             <input name="__RequestVerificationToken" type="hidden" />
           </form>
         </section>
-        <section className="w-5/12 hidden md:flex justify-center border-l border-[#FA8836]">
+        <section className="w-5/12 hidden md:flex justify-center ltr:border-l rtl: border-r border-[#FA8836]">
           <img
             src={DishImg}
             className="w-[30rem] h-auto object-cover"

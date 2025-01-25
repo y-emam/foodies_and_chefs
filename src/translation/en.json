@@ -54,5 +54,34 @@
       "title": "Meet Our Chefs!",
       "searchPlaceholder": "Search for Chefs"
     }
+  },
+  "invites": {
+    "invites": "Invites",
+    "status": "status",
+    "statusType": {
+      "all": "All",
+      "confirmed": "Confirmed",
+      "declined": "Declined",
+      "draft": "Draft",
+      "pending": "Pending"
+    },
+    "noInvites": "You don't have any invites yet."
+  },
+  "events": {
+    "name": "Event Name",
+    "namePlaceholder": "Enter Event Name",
+    "description": "Description",
+    "descriptionPlaceholder": "Enter Description",
+    "date": "Date",
+    "time": "Time",
+    "hours": "Hours",
+    "minutes": "Min",
+    "noGuests": "Nunmber of Guests",
+    "minimum": "Minimum",
+    "maximum": "Maximum",
+    "location": "Location",
+    "locationPlaceholder": "Choose Location",
+    "setYourLocation": "Set Your Location",
+    "createEvent": "Create Event"
   }
 }

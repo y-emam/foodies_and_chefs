@@ -54,5 +54,34 @@
       "title": "تعرف على طهاتنا!",
       "searchPlaceholder": "ابحث عن طهاة"
     }
+  },
+  "invites": {
+    "invites": "الدعوات",
+    "status": "الحالة",
+    "statusType": {
+      "all": "الكل",
+      "confirmed": "قيد الانتظار",
+      "declined": "مرفوض",
+      "draft": "مسودة",
+      "pending": "قيد الانتظار"
+    },
+    "noInvites": "ليس لديك أي دعوات بعد."
+  },
+  "events": {
+    "name": "اسم الحدث",
+    "namePlaceholder": "أدخل اسم الحدث",
+    "description": "الوصف",
+    "descriptionPlaceholder": "أدخل الوصف",
+    "date": "التاريخ",
+    "time": "الوقت",
+    "hours": "الساعات",
+    "minutes": "الدقائق",
+    "noGuests": "عدد الضيوف",
+    "minimum": "الحد الأدنى",
+    "maximum": "الحد الأقصى",
+    "location": "الموقع",
+    "locationPlaceholder": "اختر الموقع",
+    "setYourLocation": "حدد موقعك",
+    "createEvent": "إنشاء الحدث"
   }
 }

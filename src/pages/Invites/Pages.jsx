@@ -1,8 +1,10 @@
 import DishImg from "../../assets/images/dish.webp";
 import { useEffect, useState } from "react";
 import "./styles.css";
+import { useTranslation } from "react-i18next";
 
 function InvitesPage() {
+  const { t } = useTranslation();
   const [invites, setInvites] = useState([]);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ function InvitesPage() {
         >
           <div className="relative flex flex-col  md:w-1/4 w-full  items-center">
             <lable className="section-title font-medium self-start md:self-start lg:self-start text-start p">
-              Status
+              {t("invites.status")}
             </lable>
 
             <select
@@ -40,35 +42,35 @@ function InvitesPage() {
                 value="all"
                 className=" checked:bg-orange-100 bg-white text-black "
               >
-                - All -
+                - {t("invites.statusType.all")} -
               </option>
 
               <option
                 value="accepted"
                 className="checked:bg-orange-100 bg-white text-black "
               >
-                Confirmed
+                {t("invites.statusType.confirmed")}
               </option>
 
               <option
                 value="declined"
                 className="checked:bg-orange-100 bg-white text-black "
               >
-                Declined
+                {t("invites.statusType.declined")}
               </option>
 
               <option
                 value="draft"
                 className="checked:bg-orange-100 bg-white text-black "
               >
-                Draft
+                {t("invites.statusType.draft")}
               </option>
 
               <option
                 value="pending"
                 className="checked:bg-orange-100 bg-white text-black "
               >
-                Pending
+                {t("invites.statusType.pending")}
               </option>
             </select>
             <div className="absolute top-7 ltr:right-2 rtl:left-2 md:ltr:right-[2%] md:rtl:left-[2%] flex items-center px-2 pointer-events-none">
@@ -80,11 +82,11 @@ function InvitesPage() {
         {!invites || invites?.length === 0 ? (
           <div className="text-center z-10">
             <div className="font-bold text-base md:text-2xl mt-5 plus-jakarta-sans">
-              You have not been invited to attend any events yet.{" "}
+              {t("invites.noInvites")}
             </div>
           </div>
         ) : (
-          <div>invites</div>
+          <div>{t("invites.invites")}</div>
         )}
       </section>
     </main>
