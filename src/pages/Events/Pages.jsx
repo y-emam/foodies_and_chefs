@@ -129,7 +129,7 @@ function EventsPage() {
               </button>
             </div>
           </section>
-          <section className="w-5/12 hidden md:flex justify-end ">
+          <section className="w-5/12 hidden md:flex justify-end ltr:border-l rtl: border-r border-[#FA8836]">
             <img
               src={DishImg2}
               className="w-[30rem] h-auto object-cover"
