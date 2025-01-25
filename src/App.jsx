@@ -2,9 +2,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/Home/Home";
 import NoPage from "./pages/NoPage/Page";
-// import SignInPage from "./pages/SignIn/Page";
-// import SignUpPage from "./pages/SignUp/Page";
-// import ForgotPasswordPage from "./pages/ForgotPassword/Page";
+import SignInPage from "./pages/SignIn/Page";
+import SignUpPage from "./pages/SignUp/Page";
+import ForgotPasswordPage from "./pages/ForgotPassword/Page";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
 import { useEffect } from "react";
@@ -36,9 +36,9 @@ function App() {
             <Route path="/" element={<HomePage />} />
 
             {/* Authentication */}
-            {/* <Route path="/signin" element={<SignInPage />} />
+            <Route path="/signin" element={<SignInPage />} />
             <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/forgot-password" element={<ForgotPasswordPage />} /> */}
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
             {/* Events */}
             {/* <Route path="/events" element={<EventsPage />} />
