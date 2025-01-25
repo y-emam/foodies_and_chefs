@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import HomePage from "./pages/Home/Home";
+// import HomePage from "./pages/Home/Home";
 import NoPage from "./pages/NoPage/Page";
-// import SignInPage from "./pages/SignIn/Page";
+import SignInPage from "./pages/SignIn/Page";
 // import SignUpPage from "./pages/SignUp/Page";
 // import ForgotPasswordPage from "./pages/ForgotPassword/Page";
 import { I18nextProvider } from "react-i18next";
@@ -33,10 +33,10 @@ function App() {
           {/* Routes */}
           <Routes>
             {/* Home Page */}
-            <Route path="/" element={<HomePage />} />
+            {/* <Route path="/" element={<HomePage />} /> */}
 
             {/* Authentication */}
-            {/* <Route path="/signin" element={<SignInPage />} /> */}
+            <Route path="/signin" element={<SignInPage />} />
             {/* <Route path="/signup" element={<SignUpPage />} /> */}
             {/* <Route path="/forgot-password" element={<ForgotPasswordPage />} /> */}
 

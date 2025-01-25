@@ -20,7 +20,7 @@ function MenusPage() {
     >
       <section className="min-h-screen space-y-3 md:min-h-full flex flex-col w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
         <div className="w-full flex flex-col justify-center items-center ">
-          <h2 className="zeyada-regular text-main-color md:text-7xl text-5xl text-center text-[#FA8836]">
+          <h2 className="zeyada-regular md:text-7xl text-5xl text-center text-[#FA8836]">
             Showcase your talent
           </h2>
           <h2 className="plus-jakarta-sans md:text-4xl text-2xl text-center">
