@@ -19,6 +19,14 @@
     "createAccount": "إنشاء حساب",
     "signinWithGoogle": "تسجيل الدخول باستخدام جوجل"
   },
+  "forgotPassword": {
+    "forgotPassword": "نسيت كلمة المرور",
+    "description": "سنرسل تعليمات إعادة التعيين",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك",
+    "sendResetLink": "إرسال الرابط",
+    "backToSignin": "العودة للتسجيل"
+  },
   "home": {
     "header": {
       "welcome": "مرحباً بك في",

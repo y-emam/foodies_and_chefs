@@ -20,7 +20,14 @@
     "signinWithGoogle": "Sign in with Google"
   },
   "signup": {},
-  "forgotPassword": {},
+  "forgotPassword": {
+    "forgotPassword": "Forgot Password",
+    "description": "No worries, we'll send your reset instructions",
+    "email": "Email",
+    "emailPlaceholder": "Enter email",
+    "sendResetLink": "Send Reset Link",
+    "backToSignin": "Back to Sign In"
+  },
   "home": {
     "header": {
       "welcome": "Welcome to",
