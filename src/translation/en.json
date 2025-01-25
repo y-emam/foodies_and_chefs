@@ -10,6 +10,17 @@
     "signout": "Sign Out",
     "profile": "Profile"
   },
+  "signin": {
+    "signin": "Sign In",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account?",
+    "createAccount": "Create Account",
+    "signinWithGoogle": "Sign in with Google"
+  },
+  "signup": {},
+  "forgotPassword": {},
   "home": {
     "header": {
       "welcome": "Welcome to",

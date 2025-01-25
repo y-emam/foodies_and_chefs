@@ -10,6 +10,15 @@
     "signout": "تسجيل خروج",
     "profile": "الملف الشخصى"
   },
+  "signin": {
+    "signin": "تسجيل الدخول",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "dontHaveAccount": "ليس لديك حساب؟",
+    "createAccount": "إنشاء حساب",
+    "signinWithGoogle": "تسجيل الدخول باستخدام جوجل"
+  },
   "home": {
     "header": {
       "welcome": "مرحباً بك في",

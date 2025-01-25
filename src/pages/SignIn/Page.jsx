@@ -2,8 +2,10 @@ import LogoImg from "../../assets/images/logo.webp";
 import GoogleImg from "../../assets/images/Google.webp";
 import "./styles.css";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function SignInPage() {
+  const { t } = useTranslation();
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -27,14 +29,14 @@ function SignInPage() {
           <form data-ajax="true" method="post" action="/signin">
             <div className="mb-4 flex flex-col">
               <label htmlFor="email" className="sr-only">
-                Email
+                {t("signin.email")}
               </label>
               <input
                 type="email"
                 name="EmailAddress"
                 autoComplete="on"
                 id="email"
-                placeholder="Email"
+                placeholder={t("signin.email")}
                 className="input-bg w-full px-4 py-2 text-gray-900 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 data-val="true"
                 data-val-email="The EmailAddress field is not a valid e-mail address."
@@ -48,14 +50,14 @@ function SignInPage() {
             </div>
             <div className="mb-4 relative flex flex-col">
               <label htmlFor="password" className="sr-only">
-                Password
+                {t("signin.password")}
               </label>
               <input
                 type={passwordVisible ? "text" : "password"}
                 name="Password"
                 autoComplete="on"
                 id="password"
-                placeholder="Password"
+                placeholder={t("signin.password")}
                 className="input-bg w-full px-4 py-2 text-gray-900 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 pe-10"
                 data-val="true"
                 data-val-required="This field is required."
@@ -83,12 +85,12 @@ function SignInPage() {
                 className="hover:underline text-blue-500"
                 href="/forgot-password"
               >
-                Forgot Password?
+                {t("signin.forgotPassword")}
               </a>
               <span>
-                Don&#x27;t Have an account?{" "}
+                {t("signin.dontHaveAccount")}{" "}
                 <a className="hover:underline text-blue-500" href="/signup">
-                  Create Account
+                  {t("signin.createAccount")}
                 </a>
               </span>
             </div>
@@ -97,7 +99,7 @@ function SignInPage() {
               style={{ height: "40.76px" }}
               className="w-full mt-6 text-white font-bold focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              Sign In
+              {t("signin.signin")}
             </button>
             <input
               name="__RequestVerificationToken"
@@ -117,7 +119,7 @@ function SignInPage() {
             href="/ExternalLogin?provider=Google&amp;fromSignin=true"
           >
             <img src={GoogleImg} alt="Google Icon" className="w-5 h-5 mr-2" />
-            Sign In with Google
+            {t("signin.signinWithGoogle")}
           </a>
         </div>
       </div>
