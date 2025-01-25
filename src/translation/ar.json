@@ -32,6 +32,15 @@
     "signin": "تسجيل الدخول",
     "signupWithGoogle": "إنشاء حساب باستخدام جوجل"
   },
+  "confirmEmail": {
+    "checkYourEmail": "تحقق من بريدك",
+    "description": "أدخل الرمز المكون من 6 أرقام المرسل إلى",
+    "invalideInp": "رمز غير صحيح، حاول مرة أخرى.",
+    "confirm": "تأكيد",
+    "didntReceiveCode": "لم يصلك الرمز؟",
+    "resend": "إعادة الإرسال",
+    "in": "خلال"
+  },
   "forgotPassword": {
     "forgotPassword": "نسيت كلمة المرور",
     "description": "سنرسل تعليمات إعادة التعيين",

@@ -32,6 +32,15 @@
     "signin": "Sign In",
     "signupWithGoogle": "Sign up with Google"
   },
+  "confirmEmail": {
+    "checkYourEmail": "Check your Email",
+    "description": "Please enter the six digit verification code we sent to",
+    "invalideInp": "Invalid code, please try again.",
+    "confirm": "Confirm",
+    "didntReceiveCode": "Didn't receive the code?",
+    "resend": "Resend",
+    "in": "in"
+  },
   "forgotPassword": {
     "forgotPassword": "Forgot Password",
     "description": "No worries, we'll send your reset instructions",

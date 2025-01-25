@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import LogoImg from "../../assets/images/logo.webp";
 import "./styles.css";
+import { useTranslation } from "react-i18next";
 
 function ConfirmEmail() {
+  const { t } = useTranslation();
+
   const [email, setEmail] = useState("yasser@gmail.com");
   const [resetTimerLeft, setResetTimerLeft] = useState(60);
   const [isResetDisabled, setIsResetDisabled] = useState(true);
@@ -37,21 +40,19 @@ function ConfirmEmail() {
     <main className="min-h-screen overflow-auto" id="app-body">
       <div className="min-h-screen flex items-center justify-center bg-cover bg-center hero-section">
         <div className="absolute md:top-1 top-5 sm:left-3 md:left-9">
-          <img
-            className="img-fluid w-1/4 h-1/4 md:w-1/6"
-            src={LogoImg}
-            alt="logo"
-          />
+          <img className="w-1/4 h-1/4 md:w-1/6" src={LogoImg} alt="logo" />
         </div>
 
         <div className="p-8 rounded-lg sm:w-75 md:w-full max-w-md z-10 h-96 bg-black bg-opacity-60">
           {/* OTP Input Boxes */}
           <div className="text-center mb-6">
-            <h1 className="text-3xl font-bold text-white">Check your email</h1>
+            <h1 className="text-3xl font-bold text-white">
+              {t("confirmEmail.checkYourEmail")}
+            </h1>
           </div>
           <div className="text-center mb-6">
             <p className="text-[16px] font-medium text-[#9D9D9D]">
-              please enter the six digit verification code we sent to {email}
+              {t("confirmEmail.description")} {email}
             </p>
           </div>
 
@@ -96,7 +97,7 @@ function ConfirmEmail() {
             id="error"
             className="hidden font-medium text-red-600 text-[10px] md:text-[12px] mb-6"
           >
-            Invalid code, please try again.
+            {t("confirmEmail.invalidCode")}
           </span>
 
           {/* Confirm Button */}
@@ -104,13 +105,13 @@ function ConfirmEmail() {
             id="confirm-btn"
             className="flex justify-center items-center m-auto w-72 h-12 bg-[#4136A3] text-white text-xl rounded-lg shadow-md hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3] focus:outline-none"
           >
-            <span id="btn-text">Confirm</span>
+            <span id="btn-text">{t("confirmEmail.confirm")}</span>
             <div id="loading-spinner" className="hidden spinner"></div>
           </button>
 
           {/* Resend Section */}
           <div className="mt-4 text-sm text-gray-300">
-            <span>Didn&#x27;t get the email? </span>
+            <span>{t("confirmEmail.didntReceiveCode")} </span>
             <button
               onClick={handleReset}
               id="resend-link"
@@ -122,10 +123,10 @@ function ConfirmEmail() {
                     : "text-main-color font-bold"
                 }`}
             >
-              Resend
+              {t("confirmEmail.resend")}
             </button>
             <span id="timer" className="text-main-color font-medium">
-              in{" "}
+              {t("confirmEmail.in")}{" "}
               {`${Math.floor(resetTimerLeft / 60)}:${(resetTimerLeft % 60)
                 .toString()
                 .padStart(2, "0")}`}
