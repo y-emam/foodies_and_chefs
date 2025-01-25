@@ -34,3 +34,10 @@ textarea {
 .plus-jakarta-sans {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
+
+/* Fixing Cummulative Layout Shift */
+.playwrite-us-modern {
+  min-height: 100px; /* Adjust based on the expected text height */
+  margin: 0 auto; /* Center with consistency */
+  padding: 10px 20px; /* Adjust as needed */
+}
