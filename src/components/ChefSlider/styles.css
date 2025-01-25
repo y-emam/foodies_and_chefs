@@ -42,38 +42,39 @@
   }
 
   .chef img {
-    width: 6rem; /* Adjust the image size */
+    width: 6rem;
   }
 
   .chef h3 {
-    font-size: 1rem; /* Adjust font size */
+    font-size: 1rem;
   }
 
   .chef p {
-    font-size: 0.9rem; /* Adjust font size */
+    font-size: 0.9rem;
   }
 }
 
 /* Responsive design for very small screens (mobile) */
 @media (max-width: 480px) {
   .slider {
+    width: 80vw;
   }
 
   .chef {
-    width: 5rem; /* Even smaller width for small screens */
+    width: 5rem;
     height: 10rem;
-    padding: 0.5rem; /* Smaller padding */
+    padding: 0.5rem;
   }
 
   .chef img {
-    width: 5rem; /* Adjust the image size */
+    width: 5rem;
   }
 
   .chef h3 {
-    font-size: 0.8rem; /* Adjust font size */
+    font-size: 0.8rem;
   }
 
   .chef p {
-    font-size: 0.75rem; /* Adjust font size */
+    font-size: 0.75rem;
   }
 }
