@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import EventsPage from "./pages/Events/Pages";
 import CreateEventsPage from "./pages/Events/Create/Page";
 import Footer from "./components/Footer/Component";
-import MenusPage from "./pages/Menus/Page";
+// import MenusPage from "./pages/Menus/Page";
 import CreateMenuPage from "./pages/Menus/Create/Page";
 import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
@@ -44,7 +44,9 @@ function App() {
             <Route path="/events/create" element={<CreateEventsPage />} />
 
             {/* Menu Pages */}
-            <Route path="/menus" element={<MenusPage />} />
+            {/* Commented because low performance */}
+            {/* <Route path="/menus" element={<MenusPage />} /> */}
+
             <Route path="/menus/create" element={<CreateMenuPage />} />
 
             {/* Profile Pages */}
