@@ -2,9 +2,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 // import HomePage from "./pages/Home/Home";
 import NoPage from "./pages/NoPage/Page";
-import SignInPage from "./pages/SignIn/Page";
-import SignUpPage from "./pages/SignUp/Page";
-import ForgotPasswordPage from "./pages/ForgotPassword/Page";
+// import SignInPage from "./pages/SignIn/Page";
+// import SignUpPage from "./pages/SignUp/Page";
+// import ForgotPasswordPage from "./pages/ForgotPassword/Page";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
 import { useEffect } from "react";
@@ -13,10 +13,10 @@ import { useEffect } from "react";
 import Footer from "./components/Footer/Component";
 // // import MenusPage from "./pages/Menus/Page";
 // import CreateMenuPage from "./pages/Menus/Create/Page";
-import ProfilePage from "./pages/Profile/Page";
-import EditProfilePage from "./pages/Profile/Edit/Page";
+// import ProfilePage from "./pages/Profile/Page";
+// import EditProfilePage from "./pages/Profile/Edit/Page";
 // import InvitesPage from "./pages/Invites/Pages";
-import Navbar from "./components/Navbar/Component";
+// import Navbar from "./components/Navbar/Component";
 
 function App() {
   useEffect(() => {
@@ -28,16 +28,16 @@ function App() {
       <Router>
         <div className="App">
           {/* Navbar */}
-          <Navbar />
+          {/* <Navbar /> */}
 
           {/* Routes */}
           <Routes>
             {/* <Route path="/" element={<HomePage />} /> */}
 
             {/* Authentication */}
-            <Route path="/signin" element={<SignInPage />} />
+            {/* <Route path="/signin" element={<SignInPage />} />
             <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} /> */}
 
             {/* Events */}
             {/* <Route path="/events" element={<EventsPage />} />
@@ -50,8 +50,8 @@ function App() {
             {/* <Route path="/menus/create" element={<CreateMenuPage />} /> */}
 
             {/* Profile Pages */}
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/profile/edit" element={<EditProfilePage />} />
+            {/* <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profile/edit" element={<EditProfilePage />} /> */}
 
             {/* Invites Pages */}
             {/* <Route path="/invites" element={<InvitesPage />} /> */}
