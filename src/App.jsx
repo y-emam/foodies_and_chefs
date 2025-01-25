@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-// import HomePage from "./pages/Home/Home";
+import HomePage from "./pages/Home/Home";
 import NoPage from "./pages/NoPage/Page";
 import SignInPage from "./pages/SignIn/Page";
 import SignUpPage from "./pages/SignUp/Page";
@@ -33,8 +33,7 @@ function App() {
           {/* Routes */}
           <Routes>
             {/* Home Page */}
-            {/* Commented because low performance */}
-            {/* <Route path="/" element={<HomePage />} /> */}
+            <Route path="/" element={<HomePage />} />
 
             {/* Authentication */}
             <Route path="/signin" element={<SignInPage />} />

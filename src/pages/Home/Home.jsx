@@ -137,11 +137,11 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center w-full">
+          {/* <div className="flex items-center justify-center w-full">
             <div className="container w-full">
               <ChefSlider chefs={filteredChefs} />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </main>
