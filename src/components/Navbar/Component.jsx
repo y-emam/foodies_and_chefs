@@ -227,10 +227,10 @@ function Navbar() {
                   {t("navbar.profile")}
                 </a>
                 <a
-                  className="px-4 py-2 text-black transition-smooth hover:bg-gray-100 flex items-center rtl:flex-row-reverse"
+                  className="px-3 py-2 text-black transition-smooth hover:bg-gray-100 flex items-center rtl:flex-row-reverse"
                   href="/signout"
                 >
-                  {t("navbar.signOut")}
+                  {t("navbar.signout")}
                   <i className="px-2 fa-solid fa-arrow-right-from-bracket"></i>
                 </a>
               </div>
