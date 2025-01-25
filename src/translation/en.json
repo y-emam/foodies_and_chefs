@@ -19,7 +19,19 @@
     "createAccount": "Create Account",
     "signinWithGoogle": "Sign in with Google"
   },
-  "signup": {},
+  "signup": {
+    "signup": "Sign Up",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phoneNumber": "Phone Number",
+    "invalidPhoneNum": "Invalid country code. Please select from the list.",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "alreadyHaveAccount": "Already have an account?",
+    "signin": "Sign In",
+    "signupWithGoogle": "Sign up with Google"
+  },
   "forgotPassword": {
     "forgotPassword": "Forgot Password",
     "description": "No worries, we'll send your reset instructions",

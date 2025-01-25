@@ -1,8 +1,11 @@
 import LogoImg from "../../assets/images/logo.webp";
 import GoogleImg from "../../assets/images/Google.webp";
 import "./styles.css";
+import { useTranslation } from "react-i18next";
 
 function SignUpPage() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen flex items-center justify-center   hero-section backdrop-filter">
       <div className="lg:grid lg:grid-cols-2 w-full max-w-md lg:max-w-full space-y-6 md:space-y-0 rounded-lg z-10 mt-0   ">
@@ -26,7 +29,7 @@ function SignUpPage() {
         >
           {/* Sign Up Heading */}
           <h2 className="text-white text-5xl mb-10    text-center font-extrabold">
-            Sign Up
+            {t("signup.signup")}
           </h2>
 
           {/* Name Fields */}
@@ -34,7 +37,7 @@ function SignUpPage() {
             <div className="flex flex-col w-1/2 ">
               <input
                 type="text"
-                placeholder="First Name"
+                placeholder={t("signup.firstName")}
                 className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white  bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                 data-val="true"
                 data-val-regex="Invalid format"
@@ -53,7 +56,7 @@ function SignUpPage() {
             <div className="flex flex-col w-1/2 ">
               <input
                 type="text"
-                placeholder="Last Name"
+                placeholder={t("signup.lastName")}
                 className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white   bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                 data-val="true"
                 data-val-regex="Invalid format"
@@ -76,7 +79,7 @@ function SignUpPage() {
               <input
                 name="Email"
                 type="email"
-                placeholder="Email"
+                placeholder={t("signup.email")}
                 className="h-[3rem] md:h-[4.125rem] w-full px-3 py-2 pe-0 text-white bg-black bg-opacity-25 text-[0.7rem] lg:text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                 data-val="true"
                 data-val-email="The Email field is not a valid e-mail address."
@@ -178,7 +181,7 @@ function SignUpPage() {
                   name="Phone"
                   maxlength="11"
                   type="text"
-                  placeholder="Phone Number"
+                  placeholder={t("signup.phoneNumber")}
                   className="h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036] text-[0.7rem] lg:text-sm  border-t border-r border-b border-white rounded-e-[15px] rounded-s-none "
                   data-val="true"
                   data-val-phone="The Phone field is not a valid phone number."
@@ -196,7 +199,7 @@ function SignUpPage() {
                 id="countryCodeError"
                 className=" hidden text-red-500 text-start w-full text-[0.7rem] lg:text-sm "
               >
-                Invalid country code. Please select from the list.
+                {t("signup.invalidCountryCode")}.
               </p>
             </div>
           </div>
@@ -209,7 +212,7 @@ function SignUpPage() {
                   name="Password"
                   type="password"
                   id="password"
-                  placeholder="Password"
+                  placeholder={t("signup.password")}
                   className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                   data-val="true"
                   data-val-required=" this field is required."
@@ -231,7 +234,7 @@ function SignUpPage() {
                   name="Comfirm_Password"
                   type="password"
                   id="confirm-password"
-                  placeholder="Confirm Password"
+                  placeholder={t("signup.confirmPassword")}
                   className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                   data-val="true"
                   data-val-equalto="The password and confirmation password do not match."
@@ -252,7 +255,7 @@ function SignUpPage() {
           </div>
 
           <div
-            className="flex justify-around space-x-4 items-center m-auto p-4 border border-white  w-full  "
+            className="flex justify-around space-x-4 items-center m-auto p-4 border border-white w-full"
             style={{ borderRadius: "15px" }}
           >
             <div className="flex items-center justify-center">
@@ -268,7 +271,7 @@ function SignUpPage() {
               />
               <label
                 id="foodies"
-                className="inline-flex items-center cursor-pointer ml-2 text-white font-bold text-xl	 md:text-2xl"
+                className="inline-flex items-center cursor-pointer mx-2 text-white font-bold text-xl md:text-2xl"
                 for="Foodies"
               >
                 Foodies
@@ -289,7 +292,7 @@ function SignUpPage() {
               />
               <label
                 id="chefs"
-                className="inline-flex items-center cursor-pointer ml-2 text-white font-bold text-xl	 md:text-2xl"
+                className="inline-flex items-center cursor-pointer mx-2 text-white font-bold text-xl	 md:text-2xl"
                 for="Chefs"
               >
                 chef
@@ -305,12 +308,12 @@ function SignUpPage() {
             style={{ height: "40.76px" }}
             className="w-full  bg-[#4136A3] mt-6 text-white font-bold text-2xl  focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            Sign Up
+            {t("signup.signup")}
           </button>
           <p className="text-base	font-medium	 text-white text-start">
-            already have an account?{" "}
+            {t("signup.alreadyHaveAccount")}{" "}
             <a className="text-blue-500 hover:underline" href="/signin">
-              Sign In
+              {t("signup.signin")}
             </a>
           </p>
 
@@ -322,7 +325,6 @@ function SignUpPage() {
           </div>
 
           {/* Sign Up with Google Button */}
-
           <div id="googleFoodie" className="mt-8">
             <a
               id="element1"
@@ -332,19 +334,7 @@ function SignUpPage() {
               href="/ExternalLogin?provider=Google&amp;role=Foodies"
             >
               <img src={GoogleImg} alt="Google Icon" className="w-5 h-5 mr-2" />
-              Sign Up with Google
-            </a>
-          </div>
-          <div id="googleChef" className="mt-8 hidden">
-            <a
-              id="element2"
-              name="provider"
-              style={{ height: "39.42px", color: "#464343" }}
-              className=" w-full mt-4 bg-white text-xl	  font-bold	 py-2 rounded-lg flex items-center justify-center shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              href="/ExternalLogin?provider=Google&amp;role=Chef"
-            >
-              <img src={GoogleImg} alt="Google Icon" className="w-5 h-5 mr-2" />
-              Sign Up with Google
+              {t("signup.signupWithGoogle")}
             </a>
           </div>
           <input

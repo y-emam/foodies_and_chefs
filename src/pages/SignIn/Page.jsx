@@ -24,7 +24,9 @@ function SignInPage() {
           style={{ background: "#000000A3", zIndex: 1 }}
         >
           <div className="text-center mb-6">
-            <h1 className="text-3xl font-bold text-white">Sign In</h1>
+            <h1 className="text-3xl font-bold text-white">
+              {t("signin.signin")}
+            </h1>
           </div>
           <form data-ajax="true" method="post" action="/signin">
             <div className="mb-4 flex flex-col">

@@ -19,6 +19,19 @@
     "createAccount": "إنشاء حساب",
     "signinWithGoogle": "تسجيل الدخول باستخدام جوجل"
   },
+  "signup": {
+    "signup": "إنشاء حساب",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "phoneNumber": "رقم الهاتف",
+    "invalidPhoneNum": "رمز الدولة غير صالح. يرجى الاختيار من القائمة.",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+    "signin": "تسجيل الدخول",
+    "signupWithGoogle": "إنشاء حساب باستخدام جوجل"
+  },
   "forgotPassword": {
     "forgotPassword": "نسيت كلمة المرور",
     "description": "سنرسل تعليمات إعادة التعيين",
