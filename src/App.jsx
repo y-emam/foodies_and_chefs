@@ -13,8 +13,8 @@ import { useEffect } from "react";
 import Footer from "./components/Footer/Component";
 // // import MenusPage from "./pages/Menus/Page";
 // import CreateMenuPage from "./pages/Menus/Create/Page";
-// import ProfilePage from "./pages/Profile/Page";
-// import EditProfilePage from "./pages/Profile/Edit/Page";
+import ProfilePage from "./pages/Profile/Page";
+import EditProfilePage from "./pages/Profile/Edit/Page";
 import InvitesPage from "./pages/Invites/Pages";
 import Navbar from "./components/Navbar/Component";
 
@@ -51,8 +51,8 @@ function App() {
             {/* <Route path="/menus/create" element={<CreateMenuPage />} /> */}
 
             {/* Profile Pages */}
-            {/* <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/profile/edit" element={<EditProfilePage />} /> */}
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profile/edit" element={<EditProfilePage />} />
 
             {/* Invites Pages */}
             <Route path="/invites" element={<InvitesPage />} />
