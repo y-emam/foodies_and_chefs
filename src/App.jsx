@@ -32,7 +32,8 @@ function App() {
 
           {/* Routes */}
           <Routes>
-            {/* <Route path="/" element={<HomePage />} /> */}
+            {/* Home Page */}
+            <Route path="/" element={<HomePage />} />
 
             {/* Authentication */}
             {/* <Route path="/signin" element={<SignInPage />} />
