@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import HomePage from "./pages/Home/Home";
+// import HomePage from "./pages/Home/Home";
 import NoPage from "./pages/NoPage/Page";
 import SignInPage from "./pages/SignIn/Page";
 import SignUpPage from "./pages/SignUp/Page";
@@ -8,14 +8,14 @@ import ForgotPasswordPage from "./pages/ForgotPassword/Page";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
 import { useEffect } from "react";
-import EventsPage from "./pages/Events/Pages";
-import CreateEventsPage from "./pages/Events/Create/Page";
+// import EventsPage from "./pages/Events/Pages";
+// import CreateEventsPage from "./pages/Events/Create/Page";
 import Footer from "./components/Footer/Component";
-// import MenusPage from "./pages/Menus/Page";
-import CreateMenuPage from "./pages/Menus/Create/Page";
+// // import MenusPage from "./pages/Menus/Page";
+// import CreateMenuPage from "./pages/Menus/Create/Page";
 import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
-import InvitesPage from "./pages/Invites/Pages";
+// import InvitesPage from "./pages/Invites/Pages";
 import Navbar from "./components/Navbar/Component";
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
 
           {/* Routes */}
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            {/* <Route path="/" element={<HomePage />} /> */}
 
             {/* Authentication */}
             <Route path="/signin" element={<SignInPage />} />
@@ -40,21 +40,21 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
             {/* Events */}
-            <Route path="/events" element={<EventsPage />} />
-            <Route path="/events/create" element={<CreateEventsPage />} />
+            {/* <Route path="/events" element={<EventsPage />} />
+            <Route path="/events/create" element={<CreateEventsPage />} /> */}
 
             {/* Menu Pages */}
             {/* Commented because low performance */}
             {/* <Route path="/menus" element={<MenusPage />} /> */}
 
-            <Route path="/menus/create" element={<CreateMenuPage />} />
+            {/* <Route path="/menus/create" element={<CreateMenuPage />} /> */}
 
             {/* Profile Pages */}
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/profile/edit" element={<EditProfilePage />} />
 
             {/* Invites Pages */}
-            <Route path="/invites" element={<InvitesPage />} />
+            {/* <Route path="/invites" element={<InvitesPage />} /> */}
 
             {/* Handling any other route */}
             <Route path="*" element={<NoPage />} />
