@@ -1,4 +1,15 @@
 {
+  "navbar": {
+    "home": "الصفحة الرئيسية",
+    "createEvent": "انشاء مناسبه",
+    "events": "المناسبات",
+    "invites": "الدعوات",
+    "myMenus": "قوائمى",
+    "offers": "العروض",
+    "signin": "تسجيل الدخول",
+    "signout": "تسجيل الخروج",
+    "profile": "الملف الشخصى"
+  },
   "home": {
     "header": {
       "welcome": "مرحباً بك في",

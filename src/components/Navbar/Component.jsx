@@ -1,9 +1,11 @@
+import { useTranslation } from "react-i18next";
 import CompleteArrowDownImg from "../../assets/images/CompleteArrowDown.svg";
 import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import LanguageButton from "../LanguageButton/Components";
 import "./styles.css";
 
 function Navbar() {
+  const { t } = useTranslation();
   const isSignedIn = true;
 
   const toggleDropDown = (dropdownId) => {
@@ -64,7 +66,7 @@ function Navbar() {
                   style={{ borderRadius: "35px" }}
                   href="/"
                 >
-                  Home
+                  {t("navbar.home")}
                 </a>
               </li>
 
@@ -76,7 +78,7 @@ function Navbar() {
                   }}
                   style={{ borderRadius: "35px" }}
                 >
-                  CreateEvent
+                  {t("navbar.createEvent")}
                   <img src={CompleteArrowDownImg} alt="icon" />
                 </button>
 
@@ -88,13 +90,13 @@ function Navbar() {
                     className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
                     href="/events/create"
                   >
-                    CreateEvent
+                    {t("navbar.createEvent")}
                   </a>
                   <a
                     className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
                     href="/events"
                   >
-                    Events
+                    {t("navbar.events")}
                   </a>
                 </div>
               </div>
@@ -105,7 +107,7 @@ function Navbar() {
                   style={{ borderRadius: "35px" }}
                   href="/invites"
                 >
-                  Invites
+                  {t("navbar.invites")}
                 </a>
               </li>
               <li>
@@ -114,7 +116,7 @@ function Navbar() {
                   style={{ borderRadius: "35px" }}
                   href="/menus"
                 >
-                  My Menus
+                  {t("navbar.myMenus")}
                 </a>
               </li>
               <li>
@@ -122,7 +124,7 @@ function Navbar() {
                   className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
                   href="/offers"
                 >
-                  Offers
+                  {t("navbar.offers")}
                 </a>
               </li>
 
@@ -222,13 +224,13 @@ function Navbar() {
                   className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100"
                   href="/profile"
                 >
-                  Profile
+                  {t("navbar.profile")}
                 </a>
                 <a
                   className="px-4 py-2 text-black transition-smooth hover:bg-gray-100 flex items-center rtl:flex-row-reverse"
                   href="/signout"
                 >
-                  Sign out
+                  {t("navbar.signOut")}
                   <i className="px-2 fa-solid fa-arrow-right-from-bracket"></i>
                 </a>
               </div>
@@ -240,7 +242,7 @@ function Navbar() {
               className="bg-main-color text-black font-bold text-lg text-center p-2 rounded-[35px] w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-2 hover:border-main-color hover:text-main-color"
               href="/signin"
             >
-              Sign In
+              {t("navbar.signIn")}
             </a>
           </div>
         )}
@@ -259,7 +261,7 @@ function Navbar() {
                 style={{ borderRadius: "35px" }}
                 href="/"
               >
-                Home
+                {t("navbar.home")}
               </a>
             </li>
             <ul className="  mt-10 border-y border-[#FA8836]">
@@ -268,7 +270,7 @@ function Navbar() {
                   className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
                   href="/events/create"
                 >
-                  CreateEvent
+                  {t("navbar.createEvent")}
                 </a>
               </li>
               <li>
@@ -276,7 +278,7 @@ function Navbar() {
                   className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
                   href="/evnets"
                 >
-                  Events
+                  {t("navbar.events")}
                 </a>
               </li>
             </ul>
@@ -286,7 +288,7 @@ function Navbar() {
                 className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
                 href="/invites"
               >
-                Invites
+                {t("navbar.invites")}
               </a>
             </li>
             <li>
@@ -294,7 +296,7 @@ function Navbar() {
                 className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
                 href="/menus"
               >
-                My Menus
+                {t("navbar.myMenus")}
               </a>
             </li>
             <li>
@@ -302,7 +304,7 @@ function Navbar() {
                 className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
                 href="/offers"
               >
-                Offers
+                {t("navbar.offers")}
               </a>
             </li>
 

@@ -1,11 +1,11 @@
 {
   "navbar": {
     "home": "Home",
-    "CreateEvnet": "Create Event",
-    "Events": "Events",
-    "Invite": "Invites",
-    "MyMenus": "My Menus",
-    "Offers": "Offers",
+    "createEvent": "Create Event",
+    "events": "Events",
+    "invites": "Invites",
+    "myMenus": "My Menus",
+    "offers": "Offers",
     "signin": "Sign In",
     "signout": "Sign Out",
     "profile": "Profile"
