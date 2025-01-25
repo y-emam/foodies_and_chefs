@@ -241,7 +241,7 @@ function Navbar() {
         ) : (
           <div className="flex items-center gap-3 w-24">
             <a
-              className="bg-main-color text-white font-bold text-lg text-center p-2 rounded-[35px] w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-2 hover:border-main-color hover:text-main-color"
+              className="bg-main-color text-black font-bold text-lg text-center p-2 rounded-[35px] w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-2 hover:border-main-color hover:text-main-color"
               href="/signin"
             >
               Sign In
