@@ -85,7 +85,7 @@ function SignInPage() {
             <div className="flex flex-col items-start justify-between text-sm text-white leading-relaxed">
               <a
                 className="hover:underline text-blue-500"
-                href="/forgot-password"
+                href="/forgotPassword"
               >
                 {t("signin.forgotPassword")}
               </a>

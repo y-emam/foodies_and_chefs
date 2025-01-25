@@ -13,7 +13,7 @@ function ForgotPasswordPage() {
 
       <form
         className="flex flex-col p-8 rounded-lg sm:w-75 md:w-full max-w-md z-10 bg-[#000000A3] h-[50vh] md:h-[80vh] justify-center"
-        action="/forgot-password"
+        action="/forgotPassword"
         method="post"
       >
         <div className="text-center mb-6">

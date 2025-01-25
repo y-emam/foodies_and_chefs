@@ -16,6 +16,7 @@ import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
 import InvitesPage from "./pages/Invites/Pages";
 import Navbar from "./components/Navbar/Component";
+import ConfirmEmail from "./pages/ConfirmEmail/Page";
 
 function App() {
   useEffect(() => {
@@ -36,7 +37,8 @@ function App() {
           {/* Authentication */}
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/forgotPassword" element={<ForgotPasswordPage />} />
+          <Route path="/confirmEmail" element={<ConfirmEmail />} />
 
           {/* Events */}
           <Route path="/events" element={<EventsPage />} />
