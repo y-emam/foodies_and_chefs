@@ -29,10 +29,10 @@ function Navbar() {
 
   return (
     <nav>
-      <header className=" a relative flex justify-between items-center py-3 mx-4 md:mx-10 ">
+      <header className="relative flex justify-between items-center py-3 mx-4 md:mx-10">
         <div className="flex items-center gap-5">
           {/* Mobile Menu Toggle Button */}
-          <div className=" block md:hidden">
+          <div className="block md:hidden">
             <button
               id="menu-btn"
               className="focus:outline-none bg-transparent"
@@ -192,7 +192,7 @@ function Navbar() {
             </div>
 
             {/* Profile Dropdown */}
-            <div className="relative flex items-center gap-2 ">
+            <div className="relative flex items-center gap-2">
               <button
                 className="flex items-center gap-2 bg-transparent"
                 onClick={() => {
@@ -248,7 +248,7 @@ function Navbar() {
 
       {/* Sidebar (Visble on Mobile Only*/}
       <div
-        className="hide-sidebar md:hidden fixed inset-y-0 left-0 z-40 w-1/2 bg-[#2E2E2E] text-white transform transition-transform duration-300 ease-in-out"
+        className="hide-sidebar md:hidden fixed inset-y-0 ltr:left-0 rtl:right-0 z-40 w-1/2 bg-[#2E2E2E] text-white transform transition-transform duration-300 ease-in-out"
         id="mobile-nav"
       >
         <div className="p-4">

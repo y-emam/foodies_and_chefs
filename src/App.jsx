@@ -16,20 +16,14 @@ import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
 import InvitesPage from "./pages/Invites/Pages";
 import Navbar from "./components/Navbar/Component";
-import { useTranslation } from "react-i18next";
 
 function App() {
-  const { i18n } = useTranslation();
-
   useEffect(() => {
-    document.body.setAttribute("dir", i18n.language === "ar" ? "rtl" : "ltr");
-  }, [i18n.language]);
+    document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
+  });
 
   return (
-    <div
-      className="App"
-      style={{ direction: i18n.language === "ar" ? "rtl" : "ltr" }}
-    >
+    <div className="App">
       <Router>
         {/* Navbar */}
         <Navbar />

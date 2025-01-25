@@ -6,6 +6,9 @@ function LanguageButton() {
 
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
+
+    // Reload the page to apply the changes
+    window.location.reload();
   };
 
   return (

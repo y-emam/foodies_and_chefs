@@ -1,20 +1,16 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import enTranslation from './translation/en.json';
+import arTranslation from './translation/ar.json';
 
 // Translation resources
 const resources = {
     en: {
-        translation: {
-            welcome: "Welcome to",
-            description: "description in English",
-        },
+        translation: enTranslation,
     },
     ar: {
-        translation: {
-            welcome: "مرحبًا",
-            description: "هذا وصف باللغة العربية.",
-        },
+        translation: arTranslation,
     },
 };
 

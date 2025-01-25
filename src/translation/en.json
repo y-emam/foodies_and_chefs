@@ -1,0 +1,58 @@
+{
+  "navbar": {
+    "home": "Home",
+    "CreateEvnet": "Create Event",
+    "Events": "Events",
+    "Invite": "Invites",
+    "MyMenus": "My Menus",
+    "Offers": "Offers",
+    "signin": "Sign In",
+    "signout": "Sign Out",
+    "profile": "Profile"
+  },
+  "home": {
+    "header": {
+      "welcome": "Welcome to",
+      "description": "where unforgettable dining experiences begin. Discover top chefs, book personalized events, and elevate your gatherings with ease."
+    },
+    "howItWorks": {
+      "title": "How It Works!",
+      "steps": [
+        {
+          "title": "Personalize your events!",
+          "description": "Fill in your event details, date, time, and location. Create event.",
+          "action": "CreateEvent."
+        },
+        {
+          "title": "Choose your Cuisine!",
+          "description": "Choose your desired menu from our renowned chefs.",
+          "action": "Receive Offers"
+        },
+        {
+          "title": "Chat with chefs!",
+          "description": "Message your chef, confirm menu and cost.",
+          "action": "Confirm Offer"
+        },
+        {
+          "title": "Book experience",
+          "description": "Happy with your chef and menu, submit payment via the agreed-upon method.",
+          "action": "Process payment"
+        },
+        {
+          "title": "Send and confirm RSVP to your guests",
+          "description": "All done! Get ready for an unforgettable experience!",
+          "action": "Enjoy"
+        },
+        {
+          "title": "Meet Our Chefs!",
+          "description": "Personalize your event and start chatting with our chefs!",
+          "action": ""
+        }
+      ]
+    },
+    "meetOurChefs": {
+      "title": "Meet Our Chefs!",
+      "searchPlaceholder": "Search for Chefs"
+    }
+  }
+}

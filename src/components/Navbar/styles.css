@@ -3,8 +3,9 @@
   direction: ltr;
 }
 
-html[dir="rtl"] .hide-sidebar {
+body[dir="rtl"] .hide-sidebar {
   transform: translateX(100%);
+  direction: rtl;
 }
 
 .sidebar-overlay {
