@@ -5,7 +5,6 @@ import NoPage from "./pages/NoPage/Page";
 import SignInPage from "./pages/SignIn/Page";
 import SignUpPage from "./pages/SignUp/Page";
 import ForgotPasswordPage from "./pages/ForgotPassword/Page";
-import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
 import { useEffect } from "react";
 import EventsPage from "./pages/Events/Pages";
@@ -17,53 +16,57 @@ import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
 import InvitesPage from "./pages/Invites/Pages";
 import Navbar from "./components/Navbar/Component";
+import { useTranslation } from "react-i18next";
 
 function App() {
+  const { i18n } = useTranslation();
+
   useEffect(() => {
-    document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
-  });
+    document.body.setAttribute("dir", i18n.language === "ar" ? "rtl" : "ltr");
+  }, [i18n.language]);
 
   return (
-    <I18nextProvider i18n={i18n}>
+    <div
+      className="App"
+      style={{ direction: i18n.language === "ar" ? "rtl" : "ltr" }}
+    >
       <Router>
-        <div className="App">
-          {/* Navbar */}
-          <Navbar />
+        {/* Navbar */}
+        <Navbar />
 
-          {/* Routes */}
-          <Routes>
-            {/* Home Page */}
-            <Route path="/" element={<HomePage />} />
+        {/* Routes */}
+        <Routes>
+          {/* Home Page */}
+          <Route path="/" element={<HomePage />} />
 
-            {/* Authentication */}
-            <Route path="/signin" element={<SignInPage />} />
-            <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          {/* Authentication */}
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
-            {/* Events */}
-            <Route path="/events" element={<EventsPage />} />
-            <Route path="/events/create" element={<CreateEventsPage />} />
+          {/* Events */}
+          <Route path="/events" element={<EventsPage />} />
+          <Route path="/events/create" element={<CreateEventsPage />} />
 
-            {/* Menu Pages */}
-            {/* Commented because low performance */}
-            {/* <Route path="/menus" element={<MenusPage />} /> */}
+          {/* Menu Pages */}
+          {/* Commented because low performance */}
+          {/* <Route path="/menus" element={<MenusPage />} /> */}
 
-            {/* <Route path="/menus/create" element={<CreateMenuPage />} /> */}
+          {/* <Route path="/menus/create" element={<CreateMenuPage />} /> */}
 
-            {/* Profile Pages */}
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/profile/edit" element={<EditProfilePage />} />
+          {/* Profile Pages */}
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile/edit" element={<EditProfilePage />} />
 
-            {/* Invites Pages */}
-            <Route path="/invites" element={<InvitesPage />} />
+          {/* Invites Pages */}
+          <Route path="/invites" element={<InvitesPage />} />
 
-            {/* Handling any other route */}
-            <Route path="*" element={<NoPage />} />
-          </Routes>
-        </div>
+          {/* Handling any other route */}
+          <Route path="*" element={<NoPage />} />
+        </Routes>
       </Router>
       <Footer />
-    </I18nextProvider>
+    </div>
   );
 }
 
