@@ -16,7 +16,7 @@ import Footer from "./components/Footer/Component";
 // import ProfilePage from "./pages/Profile/Page";
 // import EditProfilePage from "./pages/Profile/Edit/Page";
 // import InvitesPage from "./pages/Invites/Pages";
-// import Navbar from "./components/Navbar/Component";
+import Navbar from "./components/Navbar/Component";
 
 function App() {
   useEffect(() => {
@@ -28,7 +28,7 @@ function App() {
       <Router>
         <div className="App">
           {/* Navbar */}
-          {/* <Navbar /> */}
+          <Navbar />
 
           {/* Routes */}
           <Routes>
