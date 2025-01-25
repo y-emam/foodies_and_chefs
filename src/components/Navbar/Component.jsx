@@ -3,7 +3,7 @@ import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import "./styles.css";
 
 function Navbar() {
-  const isSignedIn = false;
+  const isSignedIn = true;
 
   const toggleDropDown = (dropdownId) => {
     const element = document.getElementById("CreateEventMenu");
