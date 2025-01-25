@@ -15,7 +15,7 @@ import Footer from "./components/Footer/Component";
 // import CreateMenuPage from "./pages/Menus/Create/Page";
 // import ProfilePage from "./pages/Profile/Page";
 // import EditProfilePage from "./pages/Profile/Edit/Page";
-// import InvitesPage from "./pages/Invites/Pages";
+import InvitesPage from "./pages/Invites/Pages";
 import Navbar from "./components/Navbar/Component";
 
 function App() {
@@ -55,7 +55,7 @@ function App() {
             <Route path="/profile/edit" element={<EditProfilePage />} /> */}
 
             {/* Invites Pages */}
-            {/* <Route path="/invites" element={<InvitesPage />} /> */}
+            <Route path="/invites" element={<InvitesPage />} />
 
             {/* Handling any other route */}
             <Route path="*" element={<NoPage />} />
