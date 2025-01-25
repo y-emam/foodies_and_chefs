@@ -8,8 +8,8 @@ import ForgotPasswordPage from "./pages/ForgotPassword/Page";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
 import { useEffect } from "react";
-// import EventsPage from "./pages/Events/Pages";
-// import CreateEventsPage from "./pages/Events/Create/Page";
+import EventsPage from "./pages/Events/Pages";
+import CreateEventsPage from "./pages/Events/Create/Page";
 import Footer from "./components/Footer/Component";
 // // import MenusPage from "./pages/Menus/Page";
 // import CreateMenuPage from "./pages/Menus/Create/Page";
@@ -33,6 +33,7 @@ function App() {
           {/* Routes */}
           <Routes>
             {/* Home Page */}
+            {/* Commented because low performance */}
             {/* <Route path="/" element={<HomePage />} /> */}
 
             {/* Authentication */}
@@ -41,8 +42,8 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
             {/* Events */}
-            {/* <Route path="/events" element={<EventsPage />} />
-            <Route path="/events/create" element={<CreateEventsPage />} /> */}
+            <Route path="/events" element={<EventsPage />} />
+            <Route path="/events/create" element={<CreateEventsPage />} />
 
             {/* Menu Pages */}
             {/* Commented because low performance */}
