@@ -37,8 +37,8 @@ function App() {
 
             {/* Authentication */}
             <Route path="/signin" element={<SignInPage />} />
-            {/* <Route path="/signup" element={<SignUpPage />} /> */}
-            {/* <Route path="/forgot-password" element={<ForgotPasswordPage />} /> */}
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
             {/* Events */}
             {/* <Route path="/events" element={<EventsPage />} />
