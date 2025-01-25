@@ -3,7 +3,7 @@ import GroupChefsImg from "../../assets/images/GroupChefsImg.webp";
 import LogoImg from "../../assets/images/logo.webp";
 import ChefSlider from "../../components/ChefSlider/Component";
 import ChefTempImg from "../../assets/images/chefTemp.webp";
-// import "./stylesHome.css";
+import "./stylesHome.css";
 import { useState } from "react";
 
 const chefs = [
