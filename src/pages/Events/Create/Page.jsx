@@ -11,7 +11,7 @@ function CreateEventsPage() {
     <div className="mainbg overflow-auto min-h-screen pt-4">
       <main className="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0 " id="overlay">
         <section className="CreateEventpgMobile w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-20  ">
-          <form method="post" dir="auto" action="/" novalidate="novalidate">
+          <form method="post" dir="auto" action="/" noValidate="novalidate">
             <div className="mb-1 ">
               <label
                 for="event-name"
@@ -23,7 +23,7 @@ function CreateEventsPage() {
               <input
                 name="EventName"
                 type="text"
-                maxlength="30"
+                maxLength="30"
                 id="event-name"
                 className="opacity-70 h-[47.02px] border border-[#FFFFFF4D]  bg-[#444444] form-control w-full  p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
                 placeholder={t("events.namePlaceholder")}
@@ -43,7 +43,7 @@ function CreateEventsPage() {
               </label>
               <input
                 name="EventDescription"
-                maxlength="100"
+                maxLength="100"
                 type="text"
                 id="event-Description"
                 className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full   p-3"

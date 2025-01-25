@@ -179,7 +179,7 @@ function SignUpPage() {
 
                 <input
                   name="Phone"
-                  maxlength="11"
+                  maxLength="11"
                   type="text"
                   placeholder={t("signup.phoneNumber")}
                   className="h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036] text-[0.7rem] lg:text-sm  border-t border-r border-b border-white rounded-e-[15px] rounded-s-none "
