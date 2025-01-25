@@ -266,7 +266,7 @@ function Navbar() {
                 Home
               </a>
             </li>
-            <div className="  mt-10 border-y border-[#FA8836]">
+            <ul className="  mt-10 border-y border-[#FA8836]">
               <li>
                 <a
                   className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
@@ -283,7 +283,7 @@ function Navbar() {
                   Events
                 </a>
               </li>
-            </div>
+            </ul>
 
             <li>
               <a
