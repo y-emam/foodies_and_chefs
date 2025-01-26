@@ -32,7 +32,7 @@
     "signin": "Sign In",
     "signupWithGoogle": "Sign up with Google"
   },
-  "confirmEmail": {
+  "verifyOtp": {
     "checkYourEmail": "Check your Email",
     "description": "Please enter the six digit verification code we sent to",
     "invalideInp": "Invalid code, please try again.",

@@ -3,7 +3,7 @@ import LogoImg from "../../assets/images/logo.webp";
 import "./styles.css";
 import { useTranslation } from "react-i18next";
 
-function ConfirmEmail() {
+function VerifyOtpPage() {
   const { t } = useTranslation();
 
   const [email, setEmail] = useState("yasser@gmail.com");
@@ -47,12 +47,12 @@ function ConfirmEmail() {
           {/* OTP Input Boxes */}
           <div className="text-center mb-6">
             <h1 className="text-3xl font-bold text-white">
-              {t("confirmEmail.checkYourEmail")}
+              {t("verifyOtp.checkYourEmail")}
             </h1>
           </div>
           <div className="text-center mb-6">
             <p className="text-[16px] font-medium text-[#9D9D9D]">
-              {t("confirmEmail.description")} {email}
+              {t("verifyOtp.description")} {email}
             </p>
           </div>
 
@@ -97,7 +97,7 @@ function ConfirmEmail() {
             id="error"
             className="hidden font-medium text-red-600 text-[10px] md:text-[12px] mb-6"
           >
-            {t("confirmEmail.invalidCode")}
+            {t("verifyOtp.invalidCode")}
           </span>
 
           {/* Confirm Button */}
@@ -105,13 +105,13 @@ function ConfirmEmail() {
             id="confirm-btn"
             className="flex justify-center items-center m-auto w-72 h-12 bg-[#4136A3] text-white text-xl rounded-lg shadow-md hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3] focus:outline-none"
           >
-            <span id="btn-text">{t("confirmEmail.confirm")}</span>
+            <span id="btn-text">{t("verifyOtp.confirm")}</span>
             <div id="loading-spinner" className="hidden spinner"></div>
           </button>
 
           {/* Resend Section */}
           <div className="mt-4 text-sm text-gray-300">
-            <span>{t("confirmEmail.didntReceiveCode")} </span>
+            <span>{t("verifyOtp.didntReceiveCode")} </span>
             <button
               onClick={handleReset}
               id="resend-link"
@@ -123,10 +123,10 @@ function ConfirmEmail() {
                     : "text-main-color font-bold"
                 }`}
             >
-              {t("confirmEmail.resend")}
+              {t("verifyOtp.resend")}
             </button>
             <span id="timer" className="text-main-color font-medium">
-              {t("confirmEmail.in")}{" "}
+              {t("verifyOtp.in")}{" "}
               {`${Math.floor(resetTimerLeft / 60)}:${(resetTimerLeft % 60)
                 .toString()
                 .padStart(2, "0")}`}
@@ -138,4 +138,4 @@ function ConfirmEmail() {
   );
 }
 
-export default ConfirmEmail;
+export default VerifyOtpPage;

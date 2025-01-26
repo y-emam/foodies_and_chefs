@@ -10,14 +10,11 @@ import { useEffect } from "react";
 import EventsPage from "./pages/Events/Pages";
 import CreateEventsPage from "./pages/Events/Create/Page";
 import Footer from "./components/Footer/Component";
-// // import MenusPage from "./pages/Menus/Page";
-// import CreateMenuPage from "./pages/Menus/Create/Page";
 import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
 import InvitesPage from "./pages/Invites/Pages";
 import Navbar from "./components/Navbar/Component";
-import ConfirmEmail from "./pages/ConfirmEmail/Page";
-// import isTokenValid from "./utils/token/isTokenValid";
+import VerifyOtpPage from "./pages/VerifyOtp/Page";
 
 function App() {
   useEffect(() => {
@@ -39,7 +36,7 @@ function App() {
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/forgotPassword" element={<ForgotPasswordPage />} />
-          <Route path="/confirmEmail" element={<ConfirmEmail />} />
+          <Route path="/verifyOtp" element={<VerifyOtpPage />} />
 
           {/* Events */}
           <Route path="/events" element={<EventsPage />} />

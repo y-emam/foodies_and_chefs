@@ -32,7 +32,7 @@
     "signin": "تسجيل الدخول",
     "signupWithGoogle": "إنشاء حساب باستخدام جوجل"
   },
-  "confirmEmail": {
+  "verifyOtp": {
     "checkYourEmail": "تحقق من بريدك",
     "description": "أدخل الرمز المكون من 6 أرقام المرسل إلى",
     "invalideInp": "رمز غير صحيح، حاول مرة أخرى.",
