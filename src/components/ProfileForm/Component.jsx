@@ -14,9 +14,7 @@ function ProfileForm({ isEditable, userDataInp }) {
     setUserData(userDataInp);
   }, [userDataInp]);
 
-  useEffect(() => {
-    console.log("userData", userData);
-  }, [userData, userDataInp]);
+  useEffect(() => {}, [userData, userDataInp]);
 
   const uploadImage = () => {
     // Example: Open a file dialog or trigger upload functionality
