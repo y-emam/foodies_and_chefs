@@ -3,7 +3,7 @@ import GoogleImg from "../../assets/images/Google.webp";
 import "./styles.css";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import handleSigninSubmit from "../../services/Signin";
+import signinService from "../../services/Signin";
 import { useNavigate } from "react-router-dom";
 
 function SignInPage() {
@@ -24,11 +24,14 @@ function SignInPage() {
     e.preventDefault();
 
     // Your logic here
-    const res = await handleSigninSubmit(email, password);
+    const res = await signinService(email, password);
 
     if (res.success) {
       // Redirect to home page
       navigate("/");
+
+      // refresh page to update UI
+      window.location.reload();
     } else {
       // show error to user
       document.getElementById("error").style.display = "block";

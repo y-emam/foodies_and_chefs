@@ -1,4 +1,4 @@
-const handleSigninSubmit = async (email, password) => {
+const signinService = async (email, password) => {
     try {
         const res = await fetch("http://khaledyk-001-site6.atempurl.com/User/SignIn", {
             method: "POST",
@@ -14,10 +14,7 @@ const handleSigninSubmit = async (email, password) => {
 
 
         if (signinData.success) {
-            // store token in local storage
             localStorage.setItem("token", signinData.token);
-
-            // store user data in local storage
             localStorage.setItem("user", JSON.stringify(signinData.data));
         }
 
@@ -27,4 +24,4 @@ const handleSigninSubmit = async (email, password) => {
     }
 }
 
-export default handleSigninSubmit;
+export default signinService;

@@ -17,6 +17,7 @@ import EditProfilePage from "./pages/Profile/Edit/Page";
 import InvitesPage from "./pages/Invites/Pages";
 import Navbar from "./components/Navbar/Component";
 import ConfirmEmail from "./pages/ConfirmEmail/Page";
+// import isTokenValid from "./utils/token/isTokenValid";
 
 function App() {
   useEffect(() => {

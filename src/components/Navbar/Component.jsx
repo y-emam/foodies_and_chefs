@@ -3,10 +3,27 @@ import CompleteArrowDownImg from "../../assets/images/CompleteArrowDown.svg";
 import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import LanguageButton from "../LanguageButton/Components";
 import "./styles.css";
+import { useEffect, useState } from "react";
+import isJwtTokenValid from "../../utils/token/isTokenValid";
+import signoutService from "../../services/Signout";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const { t } = useTranslation();
-  const isSignedIn = true;
+  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [userData, setUserData] = useState({});
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (isJwtTokenValid(token)) {
+      setIsSignedIn(true);
+
+      setUserData(JSON.parse(localStorage.getItem("user")));
+    }
+  }, []);
 
   const toggleDropDown = (dropdownId) => {
     const element = document.getElementById("CreateEventMenu");
@@ -211,7 +228,7 @@ function Navbar() {
 
                 <img
                   className="icon rounded-full w-12 h-12 object-cover"
-                  src={ProfileTempImg}
+                  src={userData?.image || ProfileTempImg}
                   alt="profileImage"
                 />
               </button>
@@ -226,23 +243,23 @@ function Navbar() {
                 >
                   {t("navbar.profile")}
                 </a>
-                <a
-                  className="px-3 py-2 text-black transition-smooth hover:bg-gray-100 flex items-center rtl:flex-row-reverse"
-                  href="/signout"
+                <div
+                  className="px-3 py-2 text-black transition-smooth hover:bg-gray-100 flex items-center rtl:flex-row-reverse cursor-pointer"
+                  onClick={() => signoutService(navigate)}
                 >
                   {t("navbar.signout")}
                   <i className="px-2 fa-solid fa-arrow-right-from-bracket"></i>
-                </a>
+                </div>
               </div>
             </div>
           </div>
         ) : (
           <div className="flex items-center gap-3 w-24">
             <a
-              className="bg-main-color text-black font-bold text-lg text-center p-2 rounded-[35px] w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-2 hover:border-main-color hover:text-main-color"
+              className="bg-main-color text-white font-bold text-lg text-center p-2 rounded-[35px] w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-2 hover:border-main-color hover:text-main-color"
               href="/signin"
             >
-              {t("navbar.signIn")}
+              {t("navbar.signin")}
             </a>
           </div>
         )}
