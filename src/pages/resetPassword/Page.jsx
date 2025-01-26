@@ -1,10 +1,19 @@
 import { useState } from "react";
 import LogoImg from "../../assets/images/logo.webp";
+import { useLocation, useNavigate } from "react-router-dom";
+import resetPasswordService from "../../services/resetPassword";
 
 function ResetPasswordPage() {
   const [password, setPassword] = useState("");
-
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const params = new URLSearchParams(location.search);
+  const email = params.get("email");
+  const token = params.get("token");
 
   const togglePasswordVisibility = (id, iconId) => {
     const input = document.getElementById(id);
@@ -21,11 +30,28 @@ function ResetPasswordPage() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
-      alert("Password does not match");
+      document.getElementById("error").style.display = "block";
+      setErrorMessage("Password does not match");
       return;
+    }
+
+    const res = await resetPasswordService(
+      email,
+      token,
+      password,
+      confirmPassword
+    );
+
+    if (res.success) {
+      navigate("/signin");
+    } else {
+      // show error to user
+      document.getElementById("error").style.display = "block";
+      setErrorMessage(res.message);
     }
   };
 
@@ -53,6 +79,7 @@ function ResetPasswordPage() {
             id="NewPassword"
             placeholder="New Password"
             value={password}
+            required
             onChange={(e) => setPassword(e.target.value)}
             className="input-bg w-full px-4 py-2 text-gray-900 bg-gray-100  focus:outline-none focus:ring-2 focus:ring-blue-500"
             data-val="true"
@@ -80,6 +107,7 @@ function ResetPasswordPage() {
             id="ConfirmPassword"
             placeholder="Confirm Password"
             value={confirmPassword}
+            required
             onChange={(e) => setConfirmPassword(e.target.value)}
             className="input-bg w-full px-4 py-2 text-gray-900 bg-gray-100  focus:outline-none focus:ring-2 focus:ring-blue-500"
             data-val="true"
@@ -94,12 +122,9 @@ function ResetPasswordPage() {
               togglePasswordVisibility("ConfirmPassword", "ConfirmPasswordIcon")
             }
           ></i>
-
-          <span
-            className="text-red-500 text-start w-full field-validation-valid"
-            data-valmsg-for="Comfirm_Password"
-            data-valmsg-replace="true"
-          ></span>
+          <div className="hidden text-red-500 font-bold" id="error">
+            {errorMessage}
+          </div>
         </div>
 
         <button
