@@ -3,13 +3,38 @@ import GoogleImg from "../../assets/images/Google.webp";
 import "./styles.css";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import handleSigninSubmit from "../../services/Signin";
+// import { useNavigate } from "react-router-dom";
 
 function SignInPage() {
   const { t } = useTranslation();
   const [passwordVisible, setPasswordVisible] = useState(false);
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // const navigate = useNavigate();
+
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Your logic here
+    const res = await handleSigninSubmit(email, password);
+
+    if (res.success) {
+      alert("Signin successful");
+
+      // Redirect to another page
+      // navigate("/");
+    } else {
+      alert(`Signin failed: ${res.message}`);
+
+      // show error to user
+    }
   };
 
   return (
@@ -28,17 +53,19 @@ function SignInPage() {
               {t("signin.signin")}
             </h1>
           </div>
-          <form data-ajax="true" method="post" action="/signin">
+          <form onSubmit={handleSubmit}>
             <div className="mb-4 flex flex-col">
               <label htmlFor="email" className="sr-only">
                 {t("signin.email")}
               </label>
               <input
                 type="email"
-                name="EmailAddress"
+                name="emailAddress"
                 autoComplete="on"
                 id="email"
                 placeholder={t("signin.email")}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="input-bg w-full px-4 py-2 text-gray-900 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 data-val="true"
                 data-val-email="The EmailAddress field is not a valid e-mail address."
@@ -56,10 +83,12 @@ function SignInPage() {
               </label>
               <input
                 type={passwordVisible ? "text" : "password"}
-                name="Password"
+                name="password"
                 autoComplete="on"
                 id="password"
                 placeholder={t("signin.password")}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="input-bg w-full px-4 py-2 text-gray-900 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 pe-10"
                 data-val="true"
                 data-val-required="This field is required."
