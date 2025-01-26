@@ -14,12 +14,17 @@ function ForgotPasswordPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const redirectUrl = `${window.location.origin}/resetPassword`;
+
     // Call the service here
-    const res = await forgotPasswordService(email);
-    console.log(res);
+    const res = await forgotPasswordService(email, redirectUrl);
 
     if (res?.success) {
-      navigate(`/forgotPassword/${encodeURIComponent(email)}`);
+      navigate(
+        `/forgotPassword/confirmEmail?email=${encodeURIComponent(
+          email
+        )}&url=${encodeURIComponent(redirectUrl)}`
+      );
     } else {
       document.getElementById("error").style.display = "block";
     }

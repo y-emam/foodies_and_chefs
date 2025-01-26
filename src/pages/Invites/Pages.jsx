@@ -34,7 +34,7 @@ function InvitesPage() {
             </lable>
 
             <select
-              onchange="this.form.submit()"
+              onChange="this.form.submit()"
               name="status"
               className="text-xs	 md:text-xl appearance-none    w-full px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-[#FFFFFF4D]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
             >

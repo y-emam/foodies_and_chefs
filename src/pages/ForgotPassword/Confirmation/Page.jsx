@@ -1,13 +1,31 @@
 import { useTranslation } from "react-i18next";
 import LogoImg from "../../../assets/images/logo.webp";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import forgotPasswordService from "../../../services/forgotPassword";
 
 function ForgotPasswordConfirmationPage() {
   const { t } = useTranslation();
-  const { email } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const handleResend = () => {
-    window.location.href = "/signin";
+  // Parse the query string
+  const params = new URLSearchParams(location.search);
+  const email = params.get("email");
+  const redirectUrl = params.get("url");
+
+  const handleResend = async () => {
+    // Call the service here
+    const res = await forgotPasswordService(email, redirectUrl);
+
+    if (res?.success) {
+      navigate(
+        `/forgotPassword/confirmEmail?email=${encodeURIComponent(
+          email
+        )}&url=${encodeURIComponent(redirectUrl)}`
+      );
+    } else {
+      document.getElementById("error").style.display = "block";
+    }
   };
 
   return (
@@ -28,11 +46,7 @@ function ForgotPasswordConfirmationPage() {
           </h3>
         </div>
 
-        <form
-          method="post"
-          className="text-center my-6"
-          action="/forgotPassword"
-        >
+        <div className="text-center my-6">
           <input
             type="hidden"
             name="Email"
@@ -48,11 +62,12 @@ function ForgotPasswordConfirmationPage() {
               type="submit"
               style={{ font: "inherit" }}
               className="bg-transparent text-main-color font-medium hover:underline"
+              onClick={handleResend}
             >
               {t("forgotPassword.confirmationPage.resend")}
             </button>
           </p>
-        </form>
+        </div>
         <div className="text-center my-6">
           <a className="text-white hover:underline" href="/signin">
             <i className="fa-solid fa-arrow-left mx-2"></i>

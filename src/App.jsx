@@ -16,6 +16,7 @@ import InvitesPage from "./pages/Invites/Pages";
 import Navbar from "./components/Navbar/Component";
 import VerifyOtpPage from "./pages/VerifyOtp/Page";
 import ForgotPasswordConfirmationPage from "./pages/ForgotPassword/Confirmation/Page";
+import ResetPasswordPage from "./pages/ResetPassword/Page";
 
 function App() {
   useEffect(() => {
@@ -36,12 +37,13 @@ function App() {
           {/* Authentication */}
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/verifyOtp" element={<VerifyOtpPage />} />
           <Route path="/forgotPassword" element={<ForgotPasswordPage />} />
           <Route
-            path="/forgotPassword/:email"
+            path="/forgotPassword/confirmEmail"
             element={<ForgotPasswordConfirmationPage />}
           />
-          <Route path="/verifyOtp" element={<VerifyOtpPage />} />
+          <Route path="/resetPassword" element={<ResetPasswordPage />} />
 
           {/* Events */}
           <Route path="/events" element={<EventsPage />} />

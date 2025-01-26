@@ -24,7 +24,7 @@ function ProfileForm({ isEditable, userDataInp }) {
     fileInput.type = "file";
     fileInput.accept = "image/*";
 
-    fileInput.onchange = (event) => {
+    fileInput.onChange = (event) => {
       const file = event.target.files[0];
       if (file) {
         console.log("File selected:", file.name);
