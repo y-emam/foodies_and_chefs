@@ -12,8 +12,13 @@ const handleSigninSubmit = async (email, password) => {
 
         console.log(signinData);
 
+
         if (signinData.success) {
+            // store token in local storage
             localStorage.setItem("token", signinData.token);
+
+            // store user data in local storage
+            localStorage.setItem("user", JSON.stringify(signinData.data));
         }
 
         return signinData;

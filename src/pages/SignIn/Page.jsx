@@ -4,16 +4,17 @@ import "./styles.css";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import handleSigninSubmit from "../../services/Signin";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SignInPage() {
   const { t } = useTranslation();
+
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -26,14 +27,11 @@ function SignInPage() {
     const res = await handleSigninSubmit(email, password);
 
     if (res.success) {
-      alert("Signin successful");
-
-      // Redirect to another page
-      // navigate("/");
+      // Redirect to home page
+      navigate("/");
     } else {
-      alert(`Signin failed: ${res.message}`);
-
       // show error to user
+      document.getElementById("error").style.display = "block";
     }
   };
 
@@ -132,11 +130,9 @@ function SignInPage() {
             >
               {t("signin.signin")}
             </button>
-            <input
-              name="__RequestVerificationToken"
-              type="hidden"
-              value="CfDJ8ICOFCB3jYVCrhBqO-ZqA5YoxEDKKSqieTgalOPmxUpXDvJuUM-WLDLz_Zek3VuBbFws8CiTpml6lFp6xUtmVmrdqsqGfabz4IftZIh4_8f8gbU6Zvl6HWWuMi35WsfLoFpwGhea_yHiIjGlK-0Ga-g"
-            />
+            <div className="hidden text-red-500 font-bold" id="error">
+              <span>Invalid Username or Password</span>
+            </div>
           </form>
           <div className="flex items-center justify-center my-4 w-3/4 mx-auto">
             <div className="border-t border-white flex-grow mr-3"></div>
