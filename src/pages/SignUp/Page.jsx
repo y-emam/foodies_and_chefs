@@ -99,7 +99,7 @@ function SignUpPage() {
                   {/* Input with Datalist */}
                   <input
                     name="CountryCode"
-                    autocomplete="+20"
+                    autoComplete="+20"
                     list="countryCodeList"
                     id="countryCodeInput"
                     value="&#x2B;20"
@@ -117,7 +117,7 @@ function SignUpPage() {
                   <datalist
                     id="countryCodeList"
                     className="rounded-s-none"
-                    autocomplete="off"
+                    autoComplete="off"
                   >
                     <option value="&#x2B;44">&#x2B;44</option>
                     <option value="&#x2B;49">&#x2B;49</option>
@@ -265,7 +265,7 @@ function SignUpPage() {
                 className="accent-[#6555FF]  hover:accent-[#6555FF] w-5 h-5 "
                 value="Chef"
                 id="Foodies"
-                autocomplete="off"
+                autoComplete="off"
                 checked
                 disabled
               />
@@ -285,7 +285,7 @@ function SignUpPage() {
                 type="checkbox"
                 className="accent-[#6555FF] hover:accent-[#6555FF] w-5 h-5 "
                 id="Chefs"
-                autocomplete="off"
+                autoComplete="off"
                 data-val="true"
                 data-val-required="The Role field is required."
                 value="true"

@@ -17,7 +17,8 @@
     "forgotPassword": "Forgot Password?",
     "dontHaveAccount": "Don't have an account?",
     "createAccount": "Create Account",
-    "signinWithGoogle": "Sign in with Google"
+    "signinWithGoogle": "Sign in with Google",
+    "invalidCredentials": "Invalid Username Or Password."
   },
   "signup": {
     "signup": "Sign Up",
@@ -42,12 +43,20 @@
     "in": "in"
   },
   "forgotPassword": {
+    "confirmationPage": {
+      "checkYourEmail": "Check your email",
+      "description": "We'll send your reset instructions to your email.",
+      "didntReceiveEmail": "Didn't receive the email?",
+      "resend": "Resend",
+      "backToSignin": "Back to Sign In"
+    },
     "forgotPassword": "Forgot Password",
     "description": "No worries, we'll send your reset instructions",
     "email": "Email",
     "emailPlaceholder": "Enter email",
     "sendResetLink": "Send Reset Link",
-    "backToSignin": "Back to Sign In"
+    "backToSignin": "Back to Sign In",
+    "invalidEmail": "Email not Found."
   },
   "home": {
     "header": {

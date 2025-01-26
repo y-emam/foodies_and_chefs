@@ -17,7 +17,8 @@
     "forgotPassword": "نسيت كلمة المرور؟",
     "dontHaveAccount": "ليس لديك حساب؟",
     "createAccount": "إنشاء حساب",
-    "signinWithGoogle": "تسجيل الدخول باستخدام جوجل"
+    "signinWithGoogle": "تسجيل الدخول باستخدام جوجل",
+    "invalidCredentials": "اسم المستخدم أو كلمة المرور غير صحيحة."
   },
   "signup": {
     "signup": "إنشاء حساب",
@@ -42,12 +43,20 @@
     "in": "خلال"
   },
   "forgotPassword": {
+    "confirmationPage": {
+      "checkYourEmail": "تحقق من بريدك الإلكتروني",
+      "description": "سنرسل تعليمات إعادة التعيين إلى بريدك الإلكتروني.",
+      "didntReceiveEmail": "لم تستلم البريد الإلكتروني؟",
+      "resend": "إعادة الإرسال",
+      "backToSignin": "العودة إلى تسجيل الدخول"
+    },
     "forgotPassword": "نسيت كلمة المرور",
     "description": "سنرسل تعليمات إعادة التعيين",
     "email": "البريد الإلكتروني",
     "emailPlaceholder": "أدخل بريدك",
     "sendResetLink": "إرسال الرابط",
-    "backToSignin": "العودة للتسجيل"
+    "backToSignin": "العودة للتسجيل",
+    "invalidEmail": "البريد الإلكتروني غير موجود."
   },
   "home": {
     "header": {

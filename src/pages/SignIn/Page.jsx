@@ -134,7 +134,7 @@ function SignInPage() {
               {t("signin.signin")}
             </button>
             <div className="hidden text-red-500 font-bold" id="error">
-              <span>Invalid Username or Password</span>
+              {t("signin.invalidCredentials")}
             </div>
           </form>
           <div className="flex items-center justify-center my-4 w-3/4 mx-auto">

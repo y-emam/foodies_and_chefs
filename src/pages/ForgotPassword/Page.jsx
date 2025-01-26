@@ -1,9 +1,29 @@
 import { useTranslation } from "react-i18next";
 import LogoImg from "../../assets/images/logo.webp";
 import "./styles.css";
+import { useState } from "react";
+import forgotPasswordService from "../../services/forgotPassword";
+import { useNavigate } from "react-router-dom";
 
 function ForgotPasswordPage() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Call the service here
+    const res = await forgotPasswordService(email);
+    console.log(res);
+
+    if (res?.success) {
+      navigate(`/forgotPassword/${encodeURIComponent(email)}`);
+    } else {
+      document.getElementById("error").style.display = "block";
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-cover bg-center hero-section">
@@ -13,7 +33,7 @@ function ForgotPasswordPage() {
 
       <form
         className="flex flex-col p-8 rounded-lg sm:w-75 md:w-full max-w-md z-10 bg-[#000000A3] h-[50vh] md:h-[80vh] justify-center"
-        action="/forgotPassword"
+        onSubmit={handleSubmit}
         method="post"
       >
         <div className="text-center mb-6">
@@ -25,16 +45,16 @@ function ForgotPasswordPage() {
           </h3>
         </div>
         <div className="mb-4 flex flex-col">
-          <label for="email" className="text-white text-start mb-2">
+          <label htmlFor="email" className="text-white text-start mb-2">
             {t("forgotPassword.email")}
           </label>
           <input
-            name="Email"
+            name="email"
             type="email"
-            autocomplete="on"
-            id="email"
+            autoComplete="on"
             placeholder={t("forgotPassword.emailPlaceholder")}
-            value=""
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="input-bg w-full px-4 py-2 text-gray-900 bg-gray-100  focus:outline-none focus:ring-2 focus:ring-blue-500"
             data-val="true"
             data-val-email="The Email field is not a valid e-mail address."
@@ -53,17 +73,15 @@ function ForgotPasswordPage() {
         >
           {t("forgotPassword.sendResetLink")}
         </button>
+        <div className="hidden text-red-500 font-bold" id="error">
+          {t("forgotPassword.invalidEmail")}
+        </div>
         <div className="text-center my-6">
           <a className="text-white" href="/signin">
             <i className="fa-solid fa-arrow-left mx-2"></i>
             {t("forgotPassword.backToSignin")}
           </a>
         </div>
-        <input
-          name="__RequestVerificationToken"
-          type="hidden"
-          value="CfDJ8ICOFCB3jYVCrhBqO-ZqA5YtuVGx3j7FSR6UJnX0y9MgLf-f9F5Emxmj2sLkWjufgem6ZSt6cKOmGFkTwjigJoJ2qV8WKLCq6NiJn_leV5Og-9AqiE1Cbvu8prtfz_C_YnD-EcVl8FicqBUy0sMd46A"
-        />
       </form>
     </div>
   );
