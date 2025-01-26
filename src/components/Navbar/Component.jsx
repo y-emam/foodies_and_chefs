@@ -228,7 +228,7 @@ function Navbar() {
 
                 <img
                   className="icon rounded-full w-12 h-12 object-cover"
-                  src={userData?.image || ProfileTempImg}
+                  src={userData?.profileImage || ProfileTempImg}
                   alt="profileImage"
                 />
               </button>
