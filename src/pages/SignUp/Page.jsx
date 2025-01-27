@@ -2,9 +2,144 @@ import LogoImg from "../../assets/images/logo.webp";
 import GoogleImg from "../../assets/images/Google.webp";
 import "./styles.css";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import signupService from "../../services/signup";
 
 function SignUpPage() {
   const { t } = useTranslation();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [countryCode, setcountryCode] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [role, setRole] = useState("");
+  const [error, setError] = useState(null);
+
+  const togglePasswordVisibility = (id, iconId) => {
+    const input = document.getElementById(id);
+    const icon = document.getElementById(iconId);
+
+    if (!input || !icon) {
+      return;
+    }
+
+    if (input.type === "password") {
+      input.type = "text";
+      icon.classList.remove("fa-eye");
+      icon.classList.add("fa-eye-slash");
+    } else {
+      input.type = "password";
+      icon.classList.remove("fa-eye-slash");
+      icon.classList.add("fa-eye");
+    }
+  };
+
+  const filterCountryCodes = () => {
+    const originalCountryCodes = [
+      "+44",
+      "+49",
+      "+33",
+      "+39",
+      "+34",
+      "+31",
+      "+41",
+      "+46",
+      "+351",
+      "+36",
+      "+43",
+      "+32",
+      "+420",
+      "+45",
+      "+353",
+      "+372",
+      "+370",
+      "+371",
+      "+381",
+      "+386",
+      "+358",
+      "+359",
+      "+380",
+      "+373",
+      "+354",
+      "+372",
+      "+387",
+      "+1",
+      "+1",
+      "+55",
+      "+52",
+      "+57",
+      "+54",
+      "+56",
+      "+51",
+      "+598",
+      "+505",
+      "+503",
+      "+504",
+      "+595",
+      "+1-787",
+      "+1-809",
+      "+20",
+      "+966",
+      "+971",
+      "+98",
+      "+964",
+      "+963",
+      "+970",
+      "+965",
+      "+966",
+      "+968",
+      "+974",
+    ]; // Get original country code list
+    const input = document
+      .getElementById("countryCodeInput")
+      .value.toLowerCase();
+    const dataList = document.getElementById("countryCodeList");
+    const errorElement = document.getElementById("countryCodeError");
+
+    // Clear current datalist options
+    dataList.innerHTML = "";
+    let matchFound = false;
+
+    // Filter country codes based on input and add them back to datalist
+    originalCountryCodes.forEach(function (code) {
+      if (code.toLowerCase().includes(input)) {
+        const option = document.createElement("option");
+        option.value = code;
+        dataList.appendChild(option);
+        matchFound = true;
+      }
+    });
+
+    // If no matches, show error message, otherwise hide it
+    if (!matchFound) {
+      errorElement.classList.remove("hidden");
+    } else {
+      errorElement.classList.add("hidden");
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (password !== confirmPassword) {
+      setError("Password does not match");
+      return;
+    }
+
+    // Call API to sign up user
+    const res = await signupService({
+      firstName,
+      lastName,
+      email,
+      countryCode,
+      phone,
+      password,
+      confirmPassword,
+      role,
+    });
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center   hero-section backdrop-filter">
@@ -20,12 +155,10 @@ function SignUpPage() {
         </div>
 
         {/* Sign Up Form */}
-        <form
+        <div
           data-ajax="true"
-          method="post"
           className="md:min-h-screen space-y-4 p-8 px-1 md:px-14 bg-[#0000008F] backdrop-filter backdrop-blur md:backdrop-blur-none"
           style={{ zIndex: "1", borderRadius: "15px" }}
-          action="/signup"
         >
           {/* Sign Up Heading */}
           <h2 className="text-white text-5xl mb-10    text-center font-extrabold">
@@ -42,10 +175,11 @@ function SignUpPage() {
                 data-val="true"
                 data-val-regex="Invalid format"
                 data-val-regex-pattern="^[\u0621-\u064A\u0660-\u0669a-zA-Z\s]&#x2B;$"
-                data-val-required=" this field is required."
+                data-val-required="This field is required."
                 id="FirstName"
                 name="FirstName"
-                value=""
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
               />
               <span
                 className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
@@ -61,10 +195,11 @@ function SignUpPage() {
                 data-val="true"
                 data-val-regex="Invalid format"
                 data-val-regex-pattern="^[\u0621-\u064A\u0660-\u0669a-zA-Z\s]&#x2B;$"
-                data-val-required=" this field is required."
+                data-val-required="This field is required."
                 id="LastName"
                 name="LastName"
-                value=""
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
               />
               <span
                 className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
@@ -83,9 +218,10 @@ function SignUpPage() {
                 className="h-[3rem] md:h-[4.125rem] w-full px-3 py-2 pe-0 text-white bg-black bg-opacity-25 text-[0.7rem] lg:text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                 data-val="true"
                 data-val-email="The Email field is not a valid e-mail address."
-                data-val-required=" this field is required."
+                data-val-required="This field is required."
                 id="Email"
-                value=""
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <span
                 className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
@@ -105,12 +241,12 @@ function SignUpPage() {
                     value="&#x2B;20"
                     pattern="^\+\d{1,3}$"
                     className="h-[3rem] md:h-[4.125rem] text-[0.7rem] lg:text-sm w-full appearance-none inline-flex items-center pl-2 md:px-2 bg-[#00000036] text-white text-sm border border-white border-e-0 rounded-s-[15px] rounded-e-none"
-                    oninput="filterCountryCodes()"
+                    onInput={filterCountryCodes}
                     type="text"
                     data-val="true"
                     data-val-regex="Invalid Country Code format"
                     data-val-regex-pattern="^\&#x2B;\d{1,3}$"
-                    data-val-required=" this field is required."
+                    data-val-required="This field is required."
                   />
 
                   {/* Datalist for country codes */}
@@ -182,12 +318,13 @@ function SignUpPage() {
                   maxLength="11"
                   type="text"
                   placeholder={t("signup.phoneNumber")}
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   className="h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036] text-[0.7rem] lg:text-sm  border-t border-r border-b border-white rounded-e-[15px] rounded-s-none "
                   data-val="true"
                   data-val-phone="The Phone field is not a valid phone number."
-                  data-val-required=" this field is required."
+                  data-val-required="This field is required."
                   id="Phone"
-                  value=""
                 />
               </div>
               <span
@@ -213,13 +350,18 @@ function SignUpPage() {
                   type="password"
                   id="password"
                   placeholder={t("signup.password")}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                   data-val="true"
-                  data-val-required=" this field is required."
+                  data-val-required="This field is required."
                 />
                 <i
+                  id="password-icon"
                   className="fas fa-eye absolute top-4 md:top-5  rtl:left-3 ltr:right-3 md:text-lg text-white cursor-pointer"
-                  onClick="togglePasswordVisibility('password', this)"
+                  onClick={() =>
+                    togglePasswordVisibility("password", "password-icon")
+                  }
                 ></i>
               </div>
               <span
@@ -231,72 +373,85 @@ function SignUpPage() {
             <div className="flex flex-col w-1/2 ">
               <div className="relative w-full">
                 <input
-                  name="Comfirm_Password"
+                  name="confirmPassword"
                   type="password"
                   id="confirm-password"
                   placeholder={t("signup.confirmPassword")}
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                   className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                   data-val="true"
                   data-val-equalto="The password and confirmation password do not match."
                   data-val-equalto-other="*.Password"
-                  data-val-required=" this field is required."
+                  data-val-required="This field is required."
                 />
                 <i
+                  id="confirm-password-icon"
                   className="fas fa-eye absolute top-4 md:top-5  rtl:left-3 ltr:right-3 md:text-lg text-white cursor-pointer"
-                  onClick="togglePasswordVisibility('confirm-password', this)"
+                  onClick={() =>
+                    togglePasswordVisibility(
+                      "confirm-password",
+                      "confirm-password-icon"
+                    )
+                  }
                 ></i>
               </div>
               <span
                 className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
                 data-valmsg-for="Comfirm_Password"
                 data-valmsg-replace="true"
-              ></span>
+              >
+                {error}
+              </span>
             </div>
           </div>
 
+          {/* Foodie and Chef Checkbox part */}
           <div
             className="flex justify-around space-x-4 items-center m-auto p-4 border border-white w-full"
             style={{ borderRadius: "15px" }}
           >
+            {/* Foodies Option */}
             <div className="flex items-center justify-center">
               <input
                 name="Role"
-                type="checkbox"
-                className="accent-[#6555FF]  hover:accent-[#6555FF] w-5 h-5 "
-                value="Chef"
+                type="radio"
+                className="hidden peer"
                 id="Foodies"
-                autoComplete="off"
-                checked
-                disabled
+                value="Foodies"
+                onChange={(e) => setRole(e.target.value)}
+                defaultChecked
               />
               <label
-                id="foodies"
-                className="inline-flex items-center cursor-pointer mx-2 text-white font-bold text-xl md:text-2xl"
-                for="Foodies"
+                htmlFor="Foodies"
+                className="flex items-center justify-center w-6 h-6 border-2 border-white rounded-sm cursor-pointer peer-checked:bg-[#6555FF] peer-checked:text-white peer-checked:border-[#6555FF] text-xl font-bold transition duration-200"
               >
-                Foodies
+                ✔
               </label>
+              <span className="mx-2 text-white font-bold text-xl md:text-2xl">
+                Foodies
+              </span>
             </div>
 
             {/* Chefs Option */}
             <div className="flex items-center justify-center">
               <input
                 name="Role"
-                type="checkbox"
-                className="accent-[#6555FF] hover:accent-[#6555FF] w-5 h-5 "
+                type="radio"
+                className="hidden peer"
                 id="Chefs"
-                autoComplete="off"
-                data-val="true"
-                data-val-required="The Role field is required."
-                value="true"
+                value="Chefs"
+                onChange={(e) => setRole(e.target.value)}
               />
               <label
-                id="chefs"
-                className="inline-flex items-center cursor-pointer mx-2 text-white font-bold text-xl	 md:text-2xl"
-                for="Chefs"
+                htmlFor="Chefs"
+                className="flex items-center justify-center w-6 h-6 border-2 border-white rounded-sm cursor-pointer peer-checked:bg-[#6555FF] peer-checked:text-white peer-checked:border-[#6555FF] text-xl font-bold transition duration-200"
               >
-                chef
+                ✔
               </label>
+              <span className="mx-2 text-white font-bold text-xl md:text-2xl">
+                Chefs
+              </span>
             </div>
           </div>
 
@@ -304,13 +459,13 @@ function SignUpPage() {
 
           {/* Sign Up Button */}
           <button
-            type="submit"
             style={{ height: "40.76px" }}
             className="w-full  bg-[#4136A3] mt-6 text-white font-bold text-2xl  focus:outline-none focus:ring-2 focus:ring-blue-500"
+            onClick={handleSubmit}
           >
             {t("signup.signup")}
           </button>
-          <p className="text-base	font-medium	 text-white text-start">
+          <p className="text-base	font-medium	text-white text-start">
             {t("signup.alreadyHaveAccount")}{" "}
             <a className="text-blue-500 hover:underline" href="/signin">
               {t("signup.signin")}
@@ -337,13 +492,8 @@ function SignUpPage() {
               {t("signup.signupWithGoogle")}
             </a>
           </div>
-          <input
-            name="__RequestVerificationToken"
-            type="hidden"
-            value="CfDJ8ICOFCB3jYVCrhBqO-ZqA5aTopWx47EN1eVOjs1sDvUOYKZ8_suBkUTQCWX_Z0idNsq2VAgNRxfVIoGeOtBoAsAYBAvSIy0imxjdpGLvtMcvcxlV72rLNmqX1iLAgVui04C65sPlgTJVFkwEzcdwOlM"
-          />
           <input name="Role" type="hidden" value="false" />
-        </form>
+        </div>
       </div>
     </div>
   );
