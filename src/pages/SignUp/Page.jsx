@@ -145,9 +145,8 @@ function SignUpPage() {
 
     if (!res) {
       setError("An error occurred. Please try again later.");
-    } else if (res.success) {
-      // Redirect to verifyOtp
-      naviagte("/verifyOtp");
+    } else if (res.success && res.data.userId) {
+      naviagte("/verifyOtp?userId=" + res.data.userId);
     } else {
       setError(res.message);
     }

@@ -137,7 +137,9 @@ function SignInPage() {
             >
               {t("signin.signin")}
             </button>
-            <div className="hidden text-red-500 font-bold" id="error"></div>
+            <div className="hidden text-red-500 font-bold" id="error">
+              {error}
+            </div>
           </form>
           <div className="flex items-center justify-center my-4 w-3/4 mx-auto">
             <div className="border-t border-white flex-grow mr-3"></div>

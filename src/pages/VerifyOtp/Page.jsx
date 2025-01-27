@@ -2,14 +2,19 @@ import { useEffect, useState } from "react";
 import LogoImg from "../../assets/images/logo.webp";
 import "./styles.css";
 import { useTranslation } from "react-i18next";
+import verifyOtpService from "../../services/verifyOtp";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function VerifyOtpPage() {
   const { t } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [email, setEmail] = useState("yasser@gmail.com");
   const [resetTimerLeft, setResetTimerLeft] = useState(60);
   const [isResetDisabled, setIsResetDisabled] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     setEmail((email) =>
@@ -60,6 +65,22 @@ function VerifyOtpPage() {
     setIsResetDisabled(true);
   };
 
+  const handleConfirm = async () => {
+    const queryParams = new URLSearchParams(location.search);
+    const userId = queryParams.get("userId");
+
+    const res = await verifyOtpService(otp.join(""), userId);
+
+    if (!res) {
+      setError(t("Failed to verify OTP, please try again"));
+    } else if (res.success) {
+      // Redirect to the next page
+      navigate("/signin");
+    } else {
+      setError(res.message);
+    }
+  };
+
   return (
     <main className="min-h-screen overflow-auto" id="app-body">
       <div className="min-h-screen flex items-center justify-center bg-cover bg-center hero-section">
@@ -97,21 +118,16 @@ function VerifyOtpPage() {
                 autoFocus={index === 0} // Focus on the first input initially
               />
             ))}
-
-            {/* Repeat for other OTP inputs */}
           </div>
-
-          <span
-            id="error"
-            className="hidden font-medium text-red-600 text-[10px] md:text-[12px] mb-6"
-          >
-            {t("verifyOtp.invalidCode")}
-          </span>
+          <div id="error" className="font-medium text-lg text-red-500 mb-6">
+            {error}
+          </div>
 
           {/* Confirm Button */}
           <button
             id="confirm-btn"
             className="flex justify-center items-center m-auto w-72 h-12 bg-[#4136A3] text-white text-xl rounded-lg shadow-md hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3] focus:outline-none"
+            onClick={handleConfirm}
           >
             <span id="btn-text">{t("verifyOtp.confirm")}</span>
             <div id="loading-spinner" className="hidden spinner"></div>
