@@ -3,31 +3,68 @@ import XIcon from "../../assets/images/X.svg";
 import InstagramIcon from "../../assets/images/instagram.svg";
 import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 import "./styles.css";
+import editProfileService from "../../services/editProfile";
+import { useState } from "react";
 
-function ProfileForm({ isEditable, userDataInp }) {
-  const [userData, setUserData] = useState(null);
+function ProfileForm({ isEditable, userData, setUserData }) {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setUserData(userDataInp);
-  }, [userDataInp]);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [error, setError] = useState("");
 
-  useEffect(() => {}, [userData, userDataInp]);
+  // const uploadImage = () => {
+  //   // Example: Open a file dialog or trigger upload functionality
+  //   const fileInput = document.createElement("input");
+  //   fileInput.type = "file";
+  //   fileInput.accept = "image/*";
 
-  const uploadImage = () => {
-    // Example: Open a file dialog or trigger upload functionality
-    const fileInput = document.createElement("input");
-    fileInput.type = "file";
-    fileInput.accept = "image/*";
+  //   fileInput.onChange = (event) => {
+  //     const file = event.target.files[0];
+  //     if (file) {
+  //       console.log("File selected:", file.name);
+  //     }
+  //   };
+  // };
 
-    fileInput.onChange = (event) => {
-      const file = event.target.files[0];
-      if (file) {
-        console.log("File selected:", file.name);
-      }
-    };
+  const uploadImage = async (file) => {
+    if (!file) return;
+
+    try {
+      // Convert the image to Base64 ($binary)
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = async () => {
+        const base64String = reader.result.split(",")[1]; // Remove the data URL prefix
+
+        // Prepare multipart/form-data
+        const formData = new FormData();
+        formData.append("image", base64String); // Key must match backend's expected field name
+        formData.append("filename", file.name);
+      };
+    } catch (err) {
+      console.error("Error uploading image:", err);
+    }
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setSelectedFile(file);
+      uploadImage(file);
+    }
+  };
+
+  const handleUserUpdate = async () => {
+    const res = await editProfileService(userData);
+
+    if (!res) {
+      setError("Failed to update profile. Please try again.");
+    } else if (res.success) {
+      navigate("/profile");
+    } else {
+      setError(res.message);
+    }
   };
 
   return (
@@ -39,13 +76,25 @@ function ProfileForm({ isEditable, userDataInp }) {
         {/* Profile Picture */}
         <div className="flex justify-center items-center ">
           <img
+            id="profileImagePicker"
             className="w-2/12 h-full rounded-full object-cover"
-            src={userData?.img ? userData.img : ProfileTempImg}
+            src={
+              userData?.profileImage ? userData.profileImage : ProfileTempImg
+            }
             alt="profileImage"
+            onChange={handleFileChange}
           />
         </div>
-        <div className="m-auto">
+        <div className="m-auto ">
           <button
+            className="bg-[#CFCFCF] text-lg text-black w-40 h-[55px] p-2 rounded-[5px] flex items-center justify-center"
+            onClick={() => {
+              document.getElementById("profileImagePicker").click();
+            }}
+          >
+            <span>Change Photo</span>
+          </button>
+          {/* <button
             className="bg-[#CFCFCF] text-lg text-black w-40 h-[55px] p-2 rounded-[5px] flex items-center justify-center"
             onClick={() => {
               if (isEditable) {
@@ -60,7 +109,13 @@ function ProfileForm({ isEditable, userDataInp }) {
             ) : (
               <span>Edit your profile</span>
             )}
-          </button>
+          </button> */}
+          <div
+            className="text-center text-lg text-red-500 font-bold"
+            id="error"
+          >
+            {error}
+          </div>
         </div>
       </div>
 
@@ -75,6 +130,9 @@ function ProfileForm({ isEditable, userDataInp }) {
             name="FirstName"
             id="FirstName"
             value={userData?.firstName}
+            onChange={(e) =>
+              setUserData({ ...userData, firstName: e.target.value })
+            }
           />
         </div>
         <div className="flex md:space-x-44 space-x-5 my-5  ">
@@ -86,6 +144,9 @@ function ProfileForm({ isEditable, userDataInp }) {
             name="LastName"
             id="LastName"
             value={userData?.lastName}
+            onChange={(e) =>
+              setUserData({ ...userData, lastName: e.target.value })
+            }
           />
         </div>
         <div className="flex md:space-x-44 space-x-5 my-5">
@@ -97,6 +158,9 @@ function ProfileForm({ isEditable, userDataInp }) {
             name="Email"
             id="Email"
             value={userData?.email}
+            onChange={(e) =>
+              setUserData({ ...userData, email: e.target.value })
+            }
           />
         </div>
         <div className="flex md:space-x-44 space-x-5 my-5 ">
@@ -108,6 +172,9 @@ function ProfileForm({ isEditable, userDataInp }) {
             name="PhoneNumber"
             id="PhoneNumber"
             value={userData?.phoneNumber}
+            onChange={(e) =>
+              setUserData({ ...userData, phoneNumber: e.target.value })
+            }
           />
         </div>
         <div className="flex md:space-x-44 space-x-5 my-5  ">
@@ -119,6 +186,9 @@ function ProfileForm({ isEditable, userDataInp }) {
             name="Counry"
             id="Counry"
             value={userData?.country}
+            onChange={(e) =>
+              setUserData({ ...userData, country: e.target.value })
+            }
           />
         </div>
         <div className="flex md:space-x-44 space-x-5 my-5  ">
@@ -130,6 +200,7 @@ function ProfileForm({ isEditable, userDataInp }) {
             name="City"
             id="City"
             value={userData?.city}
+            onChange={(e) => setUserData({ ...userData, city: e.target.value })}
           />
         </div>
         <div className="flex md:space-x-44 space-x-5 my-5  ">
@@ -140,6 +211,7 @@ function ProfileForm({ isEditable, userDataInp }) {
             name="Discription"
             id="Discription"
             value={userData?.bio}
+            onChange={(e) => setUserData({ ...userData, bio: e.target.value })}
           ></textarea>
         </div>
       </div>
