@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 function VerifyOtpPage() {
   const { t } = useTranslation();
 
+  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [email, setEmail] = useState("yasser@gmail.com");
   const [resetTimerLeft, setResetTimerLeft] = useState(60);
   const [isResetDisabled, setIsResetDisabled] = useState(true);
@@ -30,6 +31,29 @@ function VerifyOtpPage() {
       setIsResetDisabled(false);
     }
   }, [resetTimerLeft]);
+
+  const handleOtpChange = (e, index) => {
+    const value = e.target.value;
+    if (/[^0-9]/.test(value)) return; // Only allow numbers
+
+    const newOtp = [...otp];
+    newOtp[index] = value;
+    setOtp(newOtp);
+
+    // Move to next input when a digit is entered
+    if (value && index < otp.length - 1) {
+      const nextInput = document.getElementById(`otp-input-${index + 1}`);
+      nextInput && nextInput.focus();
+    }
+  };
+
+  const handleOtpKeyDown = (e, index) => {
+    // Go to the previous input if backspace is pressed
+    if (e.key === "Backspace" && index > 0 && !otp[index]) {
+      const prevInput = document.getElementById(`otp-input-${index - 1}`);
+      prevInput && prevInput.focus();
+    }
+  };
 
   const handleReset = () => {
     setResetTimerLeft(60);
@@ -60,36 +84,20 @@ function VerifyOtpPage() {
             className="flex justify-center space-x-4 mb-5 text-white"
             dir="auto"
           >
-            <input
-              type="text"
-              maxLength="1"
-              className="otp-input w-8 h-8 md:w-12 md:h-12 text-2xl text-center border-2 border-gray-500 bg-gray-600 bg-opacity-10 rounded-lg focus:border-orange-500 focus:ring-1 focus:ring-orange-400 focus:outline-none"
-            />
-            <input
-              type="text"
-              maxLength="1"
-              className="otp-input w-8 h-8 md:w-12 md:h-12 text-2xl text-center border-2 border-gray-500 bg-gray-600 bg-opacity-10 rounded-lg focus:border-orange-500 focus:ring-1 focus:ring-orange-400 focus:outline-none"
-            />
-            <input
-              type="text"
-              maxLength="1"
-              className="otp-input w-8 h-8 md:w-12 md:h-12 text-2xl text-center border-2 border-gray-500 bg-gray-600 bg-opacity-10 rounded-lg focus:border-orange-500 focus:ring-1 focus:ring-orange-400 focus:outline-none"
-            />
-            <input
-              type="text"
-              maxLength="1"
-              className="otp-input w-8 h-8 md:w-12 md:h-12 text-2xl text-center border-2 border-gray-500 bg-gray-600 bg-opacity-10 rounded-lg focus:border-orange-500 focus:ring-1 focus:ring-orange-400 focus:outline-none"
-            />
-            <input
-              type="text"
-              maxLength="1"
-              className="otp-input w-8 h-8 md:w-12 md:h-12 text-2xl text-center border-2 border-gray-500 bg-gray-600 bg-opacity-10 rounded-lg focus:border-orange-500 focus:ring-1 focus:ring-orange-400 focus:outline-none"
-            />
-            <input
-              type="text"
-              maxLength="1"
-              className="otp-input w-8 h-8 md:w-12 md:h-12 text-2xl text-center border-2 border-gray-500 bg-gray-600 bg-opacity-10 rounded-lg focus:border-orange-500 focus:ring-1 focus:ring-orange-400 focus:outline-none"
-            />
+            {otp.map((digit, index) => (
+              <input
+                key={index}
+                id={`otp-input-${index}`}
+                type="text"
+                value={digit}
+                maxLength={1}
+                className="w-12 h-12 text-2xl text-center border-2 border-gray-500 bg-gray-600 bg-opacity-10 rounded-lg focus:border-orange-500 focus:ring-1 focus:ring-orange-400 focus:outline-none"
+                onChange={(e) => handleOtpChange(e, index)}
+                onKeyDown={(e) => handleOtpKeyDown(e, index)}
+                autoFocus={index === 0} // Focus on the first input initially
+              />
+            ))}
+
             {/* Repeat for other OTP inputs */}
           </div>
 
