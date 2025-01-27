@@ -62,7 +62,7 @@ function ResetPasswordPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-cover bg-center hero-section ">
-      <div className="absolute md:top-1 top-5  left-5 md:left-9 z-20">
+      <div className="absolute md:top-1 top-5 rtl:right-5 md:rtl:right-9 ltr:left-5 md:ltr:left-9 z-20">
         <img className="h-auto w-1/4 md:w-1/6" src={LogoImg} alt="Logo" />
       </div>
 
