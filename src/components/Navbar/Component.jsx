@@ -4,9 +4,10 @@ import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import LanguageButton from "../LanguageButton/Components";
 import "./styles.css";
 import { useEffect, useState } from "react";
-import isJwtTokenValid from "../../utils/token/isTokenValid";
+import isJwtTokenValid from "../../utils/validateToken";
 import signoutService from "../../services/Signout";
 import { useNavigate } from "react-router-dom";
+import resetLocalStorage from "../../utils/resetLocalStorage";
 
 function Navbar() {
   const { t } = useTranslation();
@@ -16,14 +17,26 @@ function Navbar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const validateJwtToken = () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        const isValid = isJwtTokenValid(token);
 
-    if (isJwtTokenValid(token)) {
-      setIsSignedIn(true);
+        if (isValid) {
+          setIsSignedIn(true);
+          setUserData(JSON.parse(localStorage.getItem("userData")));
+        } else {
+          setIsSignedIn(false);
 
-      setUserData(JSON.parse(localStorage.getItem("user")));
-    }
-  }, []);
+          resetLocalStorage();
+
+          navigate("/signin");
+        }
+      }
+    };
+
+    validateJwtToken();
+  }, [navigate]);
 
   const toggleDropDown = (dropdownId) => {
     const element = document.getElementById("CreateEventMenu");
