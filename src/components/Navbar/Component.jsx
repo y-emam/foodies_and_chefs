@@ -29,8 +29,6 @@ function Navbar() {
           setIsSignedIn(false);
 
           resetLocalStorage();
-
-          navigate("/signin");
         }
       }
     };
