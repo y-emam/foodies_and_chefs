@@ -46,7 +46,9 @@ function ResetPasswordPage() {
       confirmPassword
     );
 
-    if (res.success) {
+    if (!res) {
+      setErrorMessage("An error occurred. Please try again later.");
+    } else if (res && res.success) {
       navigate("/signin");
     } else {
       // show error to user

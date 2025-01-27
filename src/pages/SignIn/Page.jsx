@@ -14,6 +14,7 @@ function SignInPage() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -27,7 +28,9 @@ function SignInPage() {
     // Your logic here
     const res = await signinService(email, password);
 
-    if (res.success) {
+    if (!res) {
+      setError("An error occurred. Please try again later.");
+    } else if (res.success) {
       // Redirect to home page
       navigate("/");
 
@@ -35,7 +38,7 @@ function SignInPage() {
       window.location.reload();
     } else {
       // show error to user
-      document.getElementById("error").style.display = "block";
+      setError(t("signin.invalidCredentials"));
     }
   };
 
@@ -134,9 +137,7 @@ function SignInPage() {
             >
               {t("signin.signin")}
             </button>
-            <div className="hidden text-red-500 font-bold" id="error">
-              {t("signin.invalidCredentials")}
-            </div>
+            <div className="hidden text-red-500 font-bold" id="error"></div>
           </form>
           <div className="flex items-center justify-center my-4 w-3/4 mx-auto">
             <div className="border-t border-white flex-grow mr-3"></div>

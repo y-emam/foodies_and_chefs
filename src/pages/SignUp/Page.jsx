@@ -4,17 +4,20 @@ import "./styles.css";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import signupService from "../../services/signup";
+import { useNavigate } from "react-router-dom";
 
 function SignUpPage() {
   const { t } = useTranslation();
+  const naviagte = useNavigate();
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [countryCode, setcountryCode] = useState("");
+  const [countryCode, setcountryCode] = useState("+20");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("Foodies");
   const [error, setError] = useState(null);
 
   const togglePasswordVisibility = (id, iconId) => {
@@ -139,6 +142,15 @@ function SignUpPage() {
       confirmPassword,
       role,
     });
+
+    if (!res) {
+      setError("An error occurred. Please try again later.");
+    } else if (res.success) {
+      // Redirect to verifyOtp
+      naviagte("/verifyOtp");
+    } else {
+      setError(res.message);
+    }
   };
 
   return (
@@ -182,7 +194,7 @@ function SignUpPage() {
                 onChange={(e) => setFirstName(e.target.value)}
               />
               <span
-                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
+                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm field-validation-valid"
                 data-valmsg-for="FirstName"
                 data-valmsg-replace="true"
               ></span>
@@ -191,7 +203,7 @@ function SignUpPage() {
               <input
                 type="text"
                 placeholder={t("signup.lastName")}
-                className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white   bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
+                className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036] focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                 data-val="true"
                 data-val-regex="Invalid format"
                 data-val-regex-pattern="^[\u0621-\u064A\u0660-\u0669a-zA-Z\s]&#x2B;$"
@@ -202,7 +214,7 @@ function SignUpPage() {
                 onChange={(e) => setLastName(e.target.value)}
               />
               <span
-                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
+                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm field-validation-valid"
                 data-valmsg-for="LastName"
                 data-valmsg-replace="true"
               ></span>
@@ -224,7 +236,7 @@ function SignUpPage() {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <span
-                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
+                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm field-validation-valid"
                 data-valmsg-for="Email"
                 data-valmsg-replace="true"
               ></span>
@@ -238,7 +250,9 @@ function SignUpPage() {
                     autoComplete="+20"
                     list="countryCodeList"
                     id="countryCodeInput"
-                    value="&#x2B;20"
+                    // value="&#x2B;20"
+                    value={countryCode}
+                    onChange={(e) => setcountryCode(e.target.value)}
                     pattern="^\+\d{1,3}$"
                     className="h-[3rem] md:h-[4.125rem] text-[0.7rem] lg:text-sm w-full appearance-none inline-flex items-center pl-2 md:px-2 bg-[#00000036] text-white text-sm border border-white border-e-0 rounded-s-[15px] rounded-e-none"
                     onInput={filterCountryCodes}
@@ -320,7 +334,7 @@ function SignUpPage() {
                   placeholder={t("signup.phoneNumber")}
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036] text-[0.7rem] lg:text-sm  border-t border-r border-b border-white rounded-e-[15px] rounded-s-none "
+                  className="h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036] text-[0.7rem] lg:text-sm  border-t border-r border-b border-white rounded-e-[15px] rounded-s-none"
                   data-val="true"
                   data-val-phone="The Phone field is not a valid phone number."
                   data-val-required="This field is required."
@@ -328,13 +342,13 @@ function SignUpPage() {
                 />
               </div>
               <span
-                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
+                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm field-validation-valid"
                 data-valmsg-for="Phone"
                 data-valmsg-replace="true"
               ></span>
               <p
                 id="countryCodeError"
-                className=" hidden text-red-500 text-start w-full text-[0.7rem] lg:text-sm "
+                className="hidden text-red-500 text-start w-full text-[0.7rem] lg:text-sm "
               >
                 {t("signup.invalidCountryCode")}.
               </p>
@@ -352,20 +366,20 @@ function SignUpPage() {
                   placeholder={t("signup.password")}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
+                  className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036] focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                   data-val="true"
                   data-val-required="This field is required."
                 />
                 <i
                   id="password-icon"
-                  className="fas fa-eye absolute top-4 md:top-5  rtl:left-3 ltr:right-3 md:text-lg text-white cursor-pointer"
+                  className="fas fa-eye absolute top-4 md:top-5 rtl:left-3 ltr:right-3 md:text-lg text-white cursor-pointer"
                   onClick={() =>
                     togglePasswordVisibility("password", "password-icon")
                   }
                 ></i>
               </div>
               <span
-                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
+                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm field-validation-valid"
                 data-valmsg-for="Password"
                 data-valmsg-replace="true"
               ></span>
@@ -379,7 +393,7 @@ function SignUpPage() {
                   placeholder={t("signup.confirmPassword")}
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036]   focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
+                  className="text-[0.7rem] lg:text-sm h-[3rem] md:h-[4.125rem] w-full px-4 py-2 text-white bg-[#00000036] focus:outline-none focus:ring-2 focus:ring-slate-500 border border-white"
                   data-val="true"
                   data-val-equalto="The password and confirmation password do not match."
                   data-val-equalto-other="*.Password"
@@ -387,7 +401,7 @@ function SignUpPage() {
                 />
                 <i
                   id="confirm-password-icon"
-                  className="fas fa-eye absolute top-4 md:top-5  rtl:left-3 ltr:right-3 md:text-lg text-white cursor-pointer"
+                  className="fas fa-eye absolute top-4 md:top-5 rtl:left-3 ltr:right-3 md:text-lg text-white cursor-pointer"
                   onClick={() =>
                     togglePasswordVisibility(
                       "confirm-password",
@@ -397,7 +411,7 @@ function SignUpPage() {
                 ></i>
               </div>
               <span
-                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm   field-validation-valid"
+                className="text-red-500 text-start w-full text-[0.7rem] lg:text-sm field-validation-valid"
                 data-valmsg-for="Comfirm_Password"
                 data-valmsg-replace="true"
               >
@@ -460,7 +474,7 @@ function SignUpPage() {
           {/* Sign Up Button */}
           <button
             style={{ height: "40.76px" }}
-            className="w-full  bg-[#4136A3] mt-6 text-white font-bold text-2xl  focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full  bg-[#4136A3] mt-6 text-white font-bold text-2xl focus:outline-none focus:ring-2 focus:ring-blue-500"
             onClick={handleSubmit}
           >
             {t("signup.signup")}
@@ -485,7 +499,7 @@ function SignUpPage() {
               id="element1"
               name="provider"
               style={{ height: "39.42px", color: "#464343" }}
-              className="w-full mt-4 bg-white text-xl	  font-bold	 py-2 rounded-lg flex items-center justify-center shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-4 bg-white text-xl	font-bold py-2 rounded-lg flex items-center justify-center shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
               href="/ExternalLogin?provider=Google&amp;role=Foodies"
             >
               <img src={GoogleImg} alt="Google Icon" className="w-5 h-5 mr-2" />
