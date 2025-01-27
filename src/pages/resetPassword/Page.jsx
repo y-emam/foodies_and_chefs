@@ -2,8 +2,11 @@ import { useState } from "react";
 import LogoImg from "../../assets/images/logo.webp";
 import { useLocation, useNavigate } from "react-router-dom";
 import resetPasswordService from "../../services/resetPassword";
+import { useTranslation } from "react-i18next";
 
 function ResetPasswordPage() {
+  const { t } = useTranslation();
+
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -65,21 +68,23 @@ function ResetPasswordPage() {
 
       <div className="flex flex-col p-8 rounded-lg sm:w-75 md:w-full max-w-md z-10 bg-[#000000A3] h-[60vh] md:h-[80vh] justify-center ">
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold text-white">Forget password</h1>
+          <h1 className="text-3xl font-bold text-white">
+            {t("resetPassword.resetPassword")}
+          </h1>
           <h3 className="text-[16px] font-medium text-[#9D9D9D]">
-            No worries, we&#x2019;ll send your reset instructions
+            {t("resetPassword.description")}
           </h3>
         </div>
         <div className="mb-4 flex flex-col relative">
           <label htmlFor="NewPassword" className="text-white text-start">
-            Password
+            {t("resetPassword.password")}
           </label>
           <input
             name="NewPassword"
             type="password"
             autoComplete="on"
             id="NewPassword"
-            placeholder="New Password"
+            placeholder={t("resetPassword.newPassword")}
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
@@ -102,12 +107,14 @@ function ResetPasswordPage() {
           ></span>
         </div>
         <div className="mb-4 flex flex-col relative">
-          <label className="text-white text-start">Confirm Password</label>
+          <label className="text-white text-start">
+            {t("resetPassword.confirmPassword")}
+          </label>
           <input
             type="password"
             autoComplete="on"
             id="ConfirmPassword"
-            placeholder="Confirm Password"
+            placeholder={t("resetPassword.confirmPassword")}
             value={confirmPassword}
             required
             onChange={(e) => setConfirmPassword(e.target.value)}
@@ -135,11 +142,12 @@ function ResetPasswordPage() {
           className="w-full mt-6 text-white font-bold  focus:outline-none focus:ring-2 focus:ring-blue-500"
           onClick={handleSubmit}
         >
-          Reset Password
+          {t("resetPassword.resetPassword")}
         </button>
         <div className="text-center my-6">
           <a className="text-white" href="/signin">
-            <i className="fa-solid fa-arrow-left mx-2"></i>Back to log in
+            <i className="fa-solid fa-arrow-left mx-2"></i>
+            {t("resetPassword.backToSignin")}
           </a>
         </div>
       </div>

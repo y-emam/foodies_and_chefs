@@ -58,6 +58,14 @@
     "backToSignin": "العودة للتسجيل",
     "invalidEmail": "البريد الإلكتروني غير موجود."
   },
+  "resetPassword": {
+    "resetPassword": "تغيير كلمة المرور",
+    "description": "أدخل كلمة المرور الجديدة.",
+    "password": "كلمة المرور",
+    "newPassword": "كلمة المرور الجديدة",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "backToSignin": "العودة لتسجيل الدخول"
+  },
   "home": {
     "header": {
       "welcome": "مرحباً بك في",

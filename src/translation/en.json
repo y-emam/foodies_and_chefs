@@ -58,6 +58,14 @@
     "backToSignin": "Back to Sign In",
     "invalidEmail": "Email not Found."
   },
+  "resetPassword": {
+    "resetPassword": "Reset Password",
+    "description": "Enter your new Password.",
+    "password": "Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "backToSignin": "Back to Sign In"
+  },
   "home": {
     "header": {
       "welcome": "Welcome to",
