@@ -51,7 +51,7 @@ function EventsPage() {
                   </a>
                   <a
                     className=" md:h-[35px] h-[24px] md:w-[85px] w-[44px]  bg-white text-[#FA8836] p-0.5 md:p-0 my-auto  border-[3px] border-white     font-bold md:text-[18px] text-[10px] 	 hover:bg-[#000000]   hover:border-[3px] hover:border-[#000000] rounded-[40px]"
-                    href={`/Home/ChefOffers?eventId=${event.id}`}
+                    href={`/events/${event.id}`}
                   >
                     Show
                   </a>
