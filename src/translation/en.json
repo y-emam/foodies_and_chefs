@@ -138,6 +138,7 @@
     "location": "Location",
     "locationPlaceholder": "Choose Location",
     "setYourLocation": "Set Your Location",
-    "createEvent": "Create Event"
+    "createEvent": "Create Event",
+    "updateEvent": "Update Event"
   }
 }

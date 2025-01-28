@@ -20,6 +20,7 @@ import ResetPasswordPage from "./pages/ResetPassword/Page";
 import MenusPage from "./pages/Menus/Page";
 import EditEventsPage from "./pages/Events/Edit/Page";
 import GoogleMapsPage from "./pages/GoogleMaps/Page";
+import ShowEventPage from "./pages/Events/Show/Page";
 
 function App() {
   useEffect(() => {
@@ -51,7 +52,8 @@ function App() {
           {/* Events */}
           <Route path="/events" element={<EventsPage />} />
           <Route path="/events/create" element={<CreateEventsPage />} />
-          <Route path="/events/:eventId" element={<EditEventsPage />} />
+          <Route path="/events/:eventId" element={<ShowEventPage />} />
+          <Route path="/events/edit/:eventId" element={<EditEventsPage />} />
 
           {/* Menu Pages */}
           {/* Commented because low performance */}

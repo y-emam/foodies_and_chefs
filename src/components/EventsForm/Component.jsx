@@ -424,7 +424,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 type="submit"
                 className="bg-[#6555FF] rounded-[35px]  w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]  "
               >
-                {t("events.createEvent")}
+                {isNewEvent ? t("events.createEvent") : t("events.updateEvent")}
               </button>
             </div>
           </form>

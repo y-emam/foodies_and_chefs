@@ -138,6 +138,7 @@
     "location": "الموقع",
     "locationPlaceholder": "اختر الموقع",
     "setYourLocation": "حدد موقعك",
-    "createEvent": "إنشاء الحدث"
+    "createEvent": "إنشاء الحدث",
+    "updateEvent": "تحديث الحدث"
   }
 }
