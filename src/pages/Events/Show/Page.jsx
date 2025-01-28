@@ -196,7 +196,7 @@ function ShowEventPage() {
                   </td>
 
                   <td class="flex justify-end md:justify-center ">
-                    <button class="block text-black bg-[#5CC24C] w-[45px] md:w-[113px] h-[16px] md:h-[36px] md:text-xl text-[0.5rem] text-center   font-medium rounded-[15px] hover:bg-[#5CC24C] border-[3px] border-[#5CC24C] drop-shadow-md shadow-[#5CC24C] hover:bg-transparent  hover:border-[3px] hover:border-[#5CC24C] hover:text-[#5CC24C]">
+                    <button class="block text-white bg-[#6555FF] w-[45px] md:w-[113px] h-[16px] md:h-[36px] md:text-xl text-[0.5rem] text-center font-medium rounded-[15px] border-[3px] border-[#6555FF] drop-shadow-md shadow-[#6555FF]">
                       Send
                     </button>
                   </td>
