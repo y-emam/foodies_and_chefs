@@ -21,3 +21,18 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none; /* Removes the spinner in WebKit browsers */
   margin: 0; /* Removes any margin */
 }
+
+/* Custom styling to hide the default date picker icon */
+.custom-date-icon::-webkit-calendar-picker-indicator {
+  background-color: thistle;
+}
+
+/* For Firefox */
+.custom-date-icon::-moz-calendar-picker-indicator {
+  background-color: thistle;
+}
+
+/* For IE */
+.custom-date-icon::-ms-expand {
+  background-color: thistle;
+}

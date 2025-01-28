@@ -3,14 +3,49 @@ import ArrowUpSVG from "../../assets/images/ArrowUp.svg";
 import ArrowDownSVG from "../../assets/images/ArrowDown.svg";
 import { useTranslation } from "react-i18next";
 import "./styles.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import convertTo12HourFormat from "../../utils/convertTo12HourFormat";
 
 function EventsForm({ isNewEvent, event, setEvent }) {
   const { t } = useTranslation();
 
+  const today = new Date();
+  const todayDate = today.toISOString().split("T")[0]; // Converts to yyyy-mm-dd format
+  const [eventEndTime, setEventEndTime] = useState("");
+
   useEffect(() => {
     console.log(event);
   }, [event]);
+
+  useEffect(() => {
+    const calculateNewTime = (startTime, hours, minutes) => {
+      if (!startTime || hours === undefined || minutes === undefined) {
+        return null; // Handle missing inputs appropriately
+      }
+
+      // Parse the starting time (24-hour format)
+      const [startHour, startMinute] = startTime.split(":").map(Number);
+
+      // Create a Date object with the starting time
+      const eventDate = new Date();
+      eventDate.setHours(startHour, startMinute, 0, 0); // Set hour and minute, reset seconds/milliseconds
+
+      // Add the event duration
+      eventDate.setHours(eventDate.getHours() + hours);
+      eventDate.setMinutes(eventDate.getMinutes() + minutes);
+
+      // Format the new time in 12-hour format with AM/PM
+      const newHour = eventDate.getHours();
+      const newMinutes = eventDate.getMinutes();
+      const formattedHour = ((newHour + 11) % 12) + 1; // Convert 24-hour to 12-hour format
+      const formattedMinutes = String(newMinutes).padStart(2, "0");
+      const period = newHour >= 12 ? "PM" : "AM";
+
+      return `${formattedHour}:${formattedMinutes} ${period}`;
+    };
+
+    setEventEndTime(calculateNewTime(event.time, event.hours, event.minutes));
+  }, [event.time, event.hours, event.minutes]);
 
   const openMapsPage = () => {
     window.open("/googleMap", "mapsWindow", "width=1000,height=800");
@@ -82,19 +117,14 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     name="Date"
                     type="date"
                     id="event-date"
-                    className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-85 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 text-sm form-control  w-full  p-2"
+                    className="text-white focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-85 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 text-sm form-control w-full p-2 custom-date-icon"
                     required
-                    min={Date.now()}
+                    min={todayDate}
                     value={event?.date}
                     onChange={(e) =>
                       setEvent({ ...event, date: e.target.value })
                     }
                   />
-                  <span
-                    className=" lato-bold font-medium text-red-600 text-[10px] md:text-[12px] field-validation-valid"
-                    data-valmsg-for="Date"
-                    data-valmsg-replace="true"
-                  ></span>
                 </div>
                 <div className="ms-1.5 md:ms-0 flex flex-col w-1/2">
                   <label for="event-time" className="section-title">
@@ -103,13 +133,15 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                   <input
                     name="StartTime"
                     type="time"
-                    value="03:40"
                     min="13:40"
                     id="event-time"
-                    className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-85 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 form-control  w-full  text-sm"
+                    className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-85 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 form-control w-full text-sm custom-date-icon"
                     required
+                    value={event?.time}
+                    onChange={(e) =>
+                      setEvent({ ...event, time: e.target.value })
+                    }
                   />
-                  <span className=" lato-bold font-medium text-red-600 text-[10px] md:text-[12px] field-validation-valid"></span>
                 </div>
               </div>
 
@@ -238,14 +270,17 @@ function EventsForm({ isNewEvent, event, setEvent }) {
               id="duration-output"
               className="  lato-bold font-medium text-[#FFFFFF] text-[13px] md:text-[12px] my-5"
             >
-              This event will take place on 1/21/2025, From 01:40 PM until 01:40
-              PM.
-              {/* {event.date &&
+              {/* This event will take place on 1/21/2025, From 01:40 PM until 01:40
+              PM. */}
+              {(event.date &&
                 event.time &&
-                event.hours &&
-                event.minutes &&
-                `This event will take place on ${event.date}, From ${event.time} PM until 01:40
-              PM.`} */}
+                (event.hours || event.minutes) &&
+                `This event will take place on ${
+                  event.date
+                }, From ${convertTo12HourFormat(
+                  event.time
+                )} until ${eventEndTime}.`) ||
+                "Select a date and time."}
             </p>
             <div className="flex md:flex-row flex-col mb-5 h-20 space-y-4 md:space-y-0 md:h-auto">
               <div className="flex justify-start items-center text-start md:w-1/3 w-full mb-2 md:mb-0">

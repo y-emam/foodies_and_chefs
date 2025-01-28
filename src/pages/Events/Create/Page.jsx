@@ -6,8 +6,6 @@ function CreateEventsPage() {
 
   useEffect(() => {
     setEvent({
-      date: new Date(),
-      time: new Date(),
       hours: 0,
       minutes: 0,
       minGuests: 1,
