@@ -19,6 +19,7 @@ import ForgotPasswordConfirmationPage from "./pages/ForgotPassword/Confirmation/
 import ResetPasswordPage from "./pages/ResetPassword/Page";
 import MenusPage from "./pages/Menus/Page";
 import EditEventsPage from "./pages/Events/Edit/Page";
+import GoogleMapsPage from "./pages/GoogleMaps/Page";
 
 function App() {
   useEffect(() => {
@@ -64,6 +65,9 @@ function App() {
 
           {/* Invites Pages */}
           <Route path="/invites" element={<InvitesPage />} />
+
+          {/* Google Maps Page */}
+          <Route path="/googleMap" element={<GoogleMapsPage />} />
 
           {/* Handling any other route */}
           <Route path="*" element={<NoPage />} />

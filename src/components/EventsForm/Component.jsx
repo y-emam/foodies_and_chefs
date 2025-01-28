@@ -12,11 +12,15 @@ function EventsForm({ isNewEvent, event, setEvent }) {
     console.log(event);
   }, [event]);
 
+  const openMapsPage = () => {
+    window.open("/googleMap", "mapsWindow", "width=1000,height=800");
+  };
+
   return (
     <div className="mainbg overflow-auto min-h-screen pt-4">
       <main className="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0 " id="overlay">
         <section className="CreateEventpgMobile w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-20  ">
-          <form method="post" dir="auto" action="/" noValidate="novalidate">
+          <form dir="auto">
             <div className="mb-1 ">
               <label
                 for="event-name"
@@ -32,8 +36,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 id="event-name"
                 className="opacity-70 h-[47.02px] border border-[#FFFFFF4D]  bg-[#444444] form-control w-full  p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
                 placeholder={t("events.namePlaceholder")}
-                data-val="true"
-                data-val-required=" this field is required."
+                required
                 value={event?.name}
                 onChange={(e) => setEvent({ ...event, name: e.target.value })}
               />
@@ -54,8 +57,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 id="event-Description"
                 className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full   p-3"
                 placeholder={t("events.descriptionPlaceholder")}
-                data-val="true"
-                data-val-required=" this field is required."
+                required
                 value={event?.description}
                 onChange={(e) =>
                   setEvent({ ...event, description: e.target.value })
@@ -82,15 +84,12 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     id="event-date"
                     className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-85 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 text-sm form-control  w-full  p-2"
                     required
-                    data-val="true"
-                    data-val-required=" this field is required."
                     min={Date.now()}
                     value={event?.date}
                     onChange={(e) =>
                       setEvent({ ...event, date: e.target.value })
                     }
                   />
-                  <input name="__Invariant" type="hidden" value="Date" />
                   <span
                     className=" lato-bold font-medium text-red-600 text-[10px] md:text-[12px] field-validation-valid"
                     data-valmsg-for="Date"
@@ -108,14 +107,9 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     min="13:40"
                     id="event-time"
                     className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-85 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 form-control  w-full  text-sm"
-                    data-val="true"
-                    data-val-required=" this field is required."
+                    required
                   />
-                  <span
-                    className=" lato-bold font-medium text-red-600 text-[10px] md:text-[12px] field-validation-valid"
-                    data-valmsg-for="StartTime"
-                    data-valmsg-replace="true"
-                  ></span>
+                  <span className=" lato-bold font-medium text-red-600 text-[10px] md:text-[12px] field-validation-valid"></span>
                 </div>
               </div>
 
@@ -126,8 +120,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                   value=""
                   name="EndTime"
                   id="EndTime"
-                  data-val="true"
-                  data-val-required="The EndTime field is required."
+                  required
                 />
 
                 <div className="flex flex-col w-full relative">
@@ -139,10 +132,9 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     id="hours"
                     name="Hours"
                     className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 text-sm form-control p-2"
+                    required
                     placeholder="0"
                     step="1"
-                    data-val="true"
-                    data-val-required="The Hours field is required."
                     value={event?.hours}
                     onChange={(e) => {
                       if (e.target.value < 0) e.target.value = 0;
@@ -191,11 +183,10 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     id="minutes"
                     name="Minutes"
                     className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 text-sm form-control p-2"
+                    required
                     placeholder="0"
                     min="0"
                     max="59"
-                    data-val="true"
-                    data-val-required="The Minutes field is required."
                     value={event?.minutes}
                     onChange={(e) => {
                       if (e.target.value < 0) e.target.value = 0;
@@ -203,7 +194,6 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                       setEvent({ ...event, minutes: e.target.value });
                     }}
                   />
-                  <input name="__Invariant" type="hidden" value="Minutes" />
                   {/* Increment and decrement buttons for minutes input */}
                   <div className="absolute top-7 flex flex-col items-center justify-center pr-3 rtl:left-2 ltr:right-0">
                     <button
@@ -282,18 +272,12 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     type="number"
                     id="Minimum"
                     className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-3 text-sm form-control w-full"
-                    data-val="true"
-                    data-val-required=" this field is required."
+                    required
                     value={event?.minGuests || 1}
                     onChange={(e) => {
                       if (e.target.value < 1) e.target.value = 1;
                       setEvent({ ...event, minGuests: e.target.value });
                     }}
-                  />
-                  <input
-                    name="__Invariant"
-                    type="hidden"
-                    value="MinNumberOfInvetation"
                   />
                   <span
                     className="lato-bold font-medium text-red-600 text-[10px] md:text-[12px] field-validation-valid"
@@ -351,19 +335,13 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     type="number"
                     step="1"
                     className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-3 text-sm form-control w-full"
+                    required
                     min="1"
-                    data-val="true"
-                    data-val-required=" this field is required."
                     value={event?.maxGuests || 1}
                     onChange={(e) => {
                       if (e.target.value < 1) e.target.value = 1;
                       setEvent({ ...event, maxGuests: e.target.value });
                     }}
-                  />
-                  <input
-                    name="__Invariant"
-                    type="hidden"
-                    value="MaxNumberOfInvetation"
                   />
                   <span
                     className="lato-bold font-medium text-red-600 text-[10px] md:text-[12px] field-validation-valid"
@@ -402,29 +380,6 @@ function EventsForm({ isNewEvent, event, setEvent }) {
             </div>
 
             <div className="relative mb-1" dir="auto">
-              <input
-                id="Longitude"
-                type="number"
-                className="hidden"
-                name="Longitude"
-                data-val="true"
-                data-val-number="The field Longitude must be a number."
-                data-val-required="The Longitude field is required."
-                value=""
-              />
-              <input name="__Invariant" type="hidden" value="Longitude" />
-              <input
-                id="Latitude"
-                type="number"
-                className="hidden"
-                name="Latitude"
-                data-val="true"
-                data-val-number="The field Latitude must be a number."
-                data-val-required="The Latitude field is required."
-                value=""
-              />
-              <input name="__Invariant" type="hidden" value="Latitude" />
-
               {/* Label for the location input */}
               <label
                 for="event-location"
@@ -454,7 +409,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
               {/* Button to open the map and set location */}
               <div className="absolute top-2 flex flex-col items-center justify-center pr-3 pt-6 rtl:left-2 ltr:right-0 rtl:right-auto ltr:left-auto">
                 <button
-                  onClick="openMapsPage()"
+                  onClick={openMapsPage}
                   style={{ borderRadius: "10px" }}
                   type="button"
                   className="p-2 leading-3 bg-[#242424] text-xs lato-bold font-medium w-33 h-8 text-white rounded-md flex items-center justify-center focus:outline-none"
@@ -464,12 +419,6 @@ function EventsForm({ isNewEvent, event, setEvent }) {
               </div>
             </div>
 
-            <input
-              type="hidden"
-              name="Localtime"
-              id="localtime"
-              value="2025-01-21T11:40:41.770Z"
-            />
             <div className="flex justify-center">
               <button
                 type="submit"
@@ -478,7 +427,6 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 {t("events.createEvent")}
               </button>
             </div>
-            <input name="__RequestVerificationToken" type="hidden" />
           </form>
         </section>
         <section className="w-5/12 hidden md:flex justify-center ltr:border-l rtl: border-r border-[#FA8836]">
