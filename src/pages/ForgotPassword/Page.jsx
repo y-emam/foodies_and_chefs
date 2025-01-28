@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import LogoImg from "../../assets/images/logo.webp";
 import "./styles.css";
 import { useState } from "react";
-import forgotPasswordService from "../../services/forgotPassword";
+import forgotPasswordService from "../../services/authentication/forgotPassword";
 import { useNavigate } from "react-router-dom";
 
 function ForgotPasswordPage() {

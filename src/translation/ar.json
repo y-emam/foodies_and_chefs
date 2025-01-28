@@ -140,5 +140,10 @@
     "setYourLocation": "حدد موقعك",
     "createEvent": "إنشاء الحدث",
     "updateEvent": "تحديث الحدث"
+  },
+  "global": {
+    "showcaseYourTalent": "أعرض موهبتك",
+    "edit": "تعديل",
+    "show": "عرض"
   }
 }

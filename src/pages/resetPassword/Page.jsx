@@ -1,7 +1,7 @@
 import { useState } from "react";
 import LogoImg from "../../assets/images/logo.webp";
 import { useLocation, useNavigate } from "react-router-dom";
-import resetPasswordService from "../../services/resetPassword";
+import resetPasswordService from "../../services/authentication/resetPassword";
 import { useTranslation } from "react-i18next";
 
 function ResetPasswordPage() {

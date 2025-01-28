@@ -3,7 +3,7 @@ import GoogleImg from "../../assets/images/Google.webp";
 import "./styles.css";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import signupService from "../../services/signup";
+import signupService from "../../services/authentication/signup";
 import { useNavigate } from "react-router-dom";
 
 function SignUpPage() {

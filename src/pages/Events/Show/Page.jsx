@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import FacebookImg from "../../../assets/images/facebook.svg";
 import InstagramImg from "../../../assets/images/instagram.svg";
 import XImg from "../../../assets/images/X.svg";
@@ -9,7 +9,7 @@ import DisXImg from "../../../assets/images/DisX.svg";
 import "./styles.css";
 
 function ShowEventPage() {
-  const { eventId } = useParams();
+  // const { eventId } = useParams();
   const [event, setEvent] = useState({});
   const [chefs, setChefs] = useState([]);
 
@@ -57,6 +57,12 @@ function ShowEventPage() {
       location: "Cairo Festival",
       seatsRemaining: 50,
     });
+
+    // const updateEvent = async (eventId) => {
+    //   const res = await getEventByEventId(eventId);
+    // };
+
+    // updateEvent(eventId);
   }, []);
 
   return (

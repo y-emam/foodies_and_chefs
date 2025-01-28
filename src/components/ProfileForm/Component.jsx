@@ -4,7 +4,7 @@ import InstagramIcon from "../../assets/images/instagram.svg";
 import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
-import editProfileService from "../../services/editProfile";
+import editProfileService from "../../services/profile/editProfile";
 import { useState } from "react";
 
 function ProfileForm({ isEditable, userData, setUserData }) {

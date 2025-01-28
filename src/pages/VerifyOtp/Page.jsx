@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import LogoImg from "../../assets/images/logo.webp";
 import "./styles.css";
 import { useTranslation } from "react-i18next";
-import verifyOtpService from "../../services/verifyOtp";
+import verifyOtpService from "../../services/authentication/verifyOtp";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function VerifyOtpPage() {

@@ -140,5 +140,10 @@
     "setYourLocation": "Set Your Location",
     "createEvent": "Create Event",
     "updateEvent": "Update Event"
+  },
+  "global": {
+    "showcaseYourTalent": "Showcase your talent",
+    "edit": "Edit",
+    "show": "Show"
   }
 }

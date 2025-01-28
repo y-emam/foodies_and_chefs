@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import EventsForm from "../../../components/EventsForm/Component";
 import { useEffect, useState } from "react";
-import { getEventByEventId } from "../../../services/events";
+import { getEventByEventId } from "../../../services/events/events";
 
 function EditEventsPage() {
   const { eventId } = useParams();

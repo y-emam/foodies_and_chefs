@@ -5,7 +5,7 @@ import LanguageButton from "../LanguageButton/Components";
 import "./styles.css";
 import { useEffect, useState } from "react";
 import isJwtTokenValid from "../../utils/validateToken";
-import signoutService from "../../services/signout";
+import signoutService from "../../services/authentication/signout";
 import { useNavigate } from "react-router-dom";
 import resetLocalStorage from "../../utils/resetLocalStorage";
 

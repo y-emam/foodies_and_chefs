@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import LogoImg from "../../../assets/images/logo.webp";
 import { useLocation, useNavigate } from "react-router-dom";
-import forgotPasswordService from "../../../services/forgotPassword";
+import forgotPasswordService from "../../../services/authentication/forgotPassword";
 
 function ForgotPasswordConfirmationPage() {
   const { t } = useTranslation();

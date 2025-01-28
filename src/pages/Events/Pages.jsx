@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 // TODO change this to dish2 image
 import DishImg2 from "../../assets/images/dish.webp";
+import { useTranslation } from "react-i18next";
 
 function EventsPage() {
+  const { t } = useTranslation();
+
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -23,7 +26,7 @@ function EventsPage() {
           <section className="min-h-screen space-y-6 md:min-h-full flex flex-col w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
             <div class="w-full flex flex-col justify-center items-center ">
               <h2 class="zeyada-regular text-main-color md:text-7xl text-5xl text-center">
-                Showcase your talent
+                {t("global.showcaseYourTalent")}
               </h2>
             </div>
             {events.map((event) => (
@@ -47,13 +50,13 @@ function EventsPage() {
                     className="md:h-[35px] h-[24px] md:w-[85px] w-[44px] bg-white text-[#FA8836] p-0.5 md:p-0 my-auto  border-[3px] border-white   font-bold md:text-[18px] text-[10px]  hover:bg-[#000000]  hover:border-[3px] hover:border-[#000000] rounded-[40px]	"
                     href={`/Home/EditEvent?eventId=${event.id}`}
                   >
-                    Edit
+                    {t("global.edit")}
                   </a>
                   <a
                     className=" md:h-[35px] h-[24px] md:w-[85px] w-[44px]  bg-white text-[#FA8836] p-0.5 md:p-0 my-auto  border-[3px] border-white     font-bold md:text-[18px] text-[10px] 	 hover:bg-[#000000]   hover:border-[3px] hover:border-[#000000] rounded-[40px]"
                     href={`/events/${event.id}`}
                   >
-                    Show
+                    {t("global.show")}
                   </a>
                 </div>
               </div>
