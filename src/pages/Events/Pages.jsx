@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 // TODO change this to dish2 image
 import DishImg2 from "../../assets/images/dish.webp";
-import "./styles.css";
 
 function EventsPage() {
   const [events, setEvents] = useState([]);
@@ -22,6 +21,11 @@ function EventsPage() {
         {/* <Sidebar */}
         <main className="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0" id="overlay">
           <section className="min-h-screen space-y-6 md:min-h-full flex flex-col w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
+            <div class="w-full flex flex-col justify-center items-center ">
+              <h2 class="zeyada-regular text-main-color md:text-7xl text-5xl text-center">
+                Showcase your talent
+              </h2>
+            </div>
             {events.map((event) => (
               <div
                 className="bg-[#FA8836] h-[53px] flex justify-between w-full items-center p-6 "

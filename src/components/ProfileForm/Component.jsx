@@ -86,19 +86,19 @@ function ProfileForm({ isEditable, userData, setUserData }) {
           />
         </div>
         <div className="m-auto ">
-          <button
+          {/* <button
             className="bg-[#CFCFCF] text-lg text-black w-40 h-[55px] p-2 rounded-[5px] flex items-center justify-center"
             onClick={() => {
               document.getElementById("profileImagePicker").click();
             }}
           >
             <span>Change Photo</span>
-          </button>
-          {/* <button
-            className="bg-[#CFCFCF] text-lg text-black w-40 h-[55px] p-2 rounded-[5px] flex items-center justify-center"
+          </button> */}
+          <button
+            className="bg-[#CFCFCF] text-lg font-bold text-black w-40 h-[55px] p-2 rounded-[5px] flex items-center justify-center"
             onClick={() => {
               if (isEditable) {
-                uploadImage();
+                document.getElementById("profileImagePicker").click();
               } else {
                 navigate("/profile/edit");
               }
@@ -107,9 +107,11 @@ function ProfileForm({ isEditable, userData, setUserData }) {
             {isEditable ? (
               <span>Change Photo</span>
             ) : (
-              <span>Edit your profile</span>
+              <span>
+                Edit profile<i class="mx-2 fa-solid fa-pen-to-square"></i>
+              </span>
             )}
-          </button> */}
+          </button>
           <div
             className="text-center text-lg text-red-500 font-bold"
             id="error"

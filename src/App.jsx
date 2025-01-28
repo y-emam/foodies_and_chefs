@@ -17,6 +17,8 @@ import Navbar from "./components/Navbar/Component";
 import VerifyOtpPage from "./pages/VerifyOtp/Page";
 import ForgotPasswordConfirmationPage from "./pages/ForgotPassword/Confirmation/Page";
 import ResetPasswordPage from "./pages/ResetPassword/Page";
+import MenusPage from "./pages/Menus/Page";
+import EditEventsPage from "./pages/Events/Edit/Page";
 
 function App() {
   useEffect(() => {
@@ -48,10 +50,11 @@ function App() {
           {/* Events */}
           <Route path="/events" element={<EventsPage />} />
           <Route path="/events/create" element={<CreateEventsPage />} />
+          <Route path="/events/:eventId" element={<EditEventsPage />} />
 
           {/* Menu Pages */}
           {/* Commented because low performance */}
-          {/* <Route path="/menus" element={<MenusPage />} /> */}
+          <Route path="/menus" element={<MenusPage />} />
 
           {/* <Route path="/menus/create" element={<CreateMenuPage />} /> */}
 

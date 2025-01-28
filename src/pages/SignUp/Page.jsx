@@ -428,12 +428,13 @@ function SignUpPage() {
             <div className="flex items-center justify-center">
               <input
                 name="Role"
-                type="radio"
+                type="checkbox"
                 className="hidden peer"
                 id="Foodies"
                 value="Foodies"
                 onChange={(e) => setRole(e.target.value)}
                 defaultChecked
+                disabled
               />
               <label
                 htmlFor="Foodies"
@@ -450,7 +451,7 @@ function SignUpPage() {
             <div className="flex items-center justify-center">
               <input
                 name="Role"
-                type="radio"
+                type="checkbox"
                 className="hidden peer"
                 id="Chefs"
                 value="Chefs"
