@@ -21,6 +21,7 @@ import MenusPage from "./pages/Menus/Page";
 import EditEventsPage from "./pages/Events/Edit/Page";
 import GoogleMapsPage from "./pages/GoogleMaps/Page";
 import ShowEventPage from "./pages/Events/Show/Page";
+import CreateMenuPage from "./pages/Menus/Create/Page";
 
 function App() {
   useEffect(() => {
@@ -58,8 +59,7 @@ function App() {
           {/* Menu Pages */}
           {/* Commented because low performance */}
           <Route path="/menus" element={<MenusPage />} />
-
-          {/* <Route path="/menus/create" element={<CreateMenuPage />} /> */}
+          <Route path="/menus/create" element={<CreateMenuPage />} />
 
           {/* Profile Pages */}
           <Route path="/profile" element={<ProfilePage />} />
