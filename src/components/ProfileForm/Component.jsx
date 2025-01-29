@@ -4,72 +4,55 @@ import InstagramIcon from "../../assets/images/instagram.svg";
 import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
-// import editProfileService from "../../services/profile/editProfile";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import uploadFileService from "../../services/uploadFileService";
+import isJwtTokenValid from "../../utils/validateToken";
+import uploadProfilePicture from "../../services/profile/uploadProfilePicture";
 
 function ProfileForm({ isEditable, userData, setUserData }) {
   const navigate = useNavigate();
 
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [file, setFile] = useState(null);
   const [error, setError] = useState("");
+  const [preview, setPreview] = useState(
+    userData?.profileImage
+      ? `http://khaledyk-001-site6.atempurl.com/${userData.profileImage}`
+      : "default_profile_image.png" // Replace with a placeholder
+  );
+  const fileInputRef = useRef(null);
 
-  // const uploadImage = () => {
-  //   // Example: Open a file dialog or trigger upload functionality
-  //   const fileInput = document.createElement("input");
-  //   fileInput.type = "file";
-  //   fileInput.accept = "image/*";
+  const uploadImage = async () => {
+    const token = localStorage.getItem("token");
 
-  //   fileInput.onChange = (event) => {
-  //     const file = event.target.files[0];
-  //     if (file) {
-  //       console.log("File selected:", file.name);
-  //     }
-  //   };
-  // };
+    if (!token || !isJwtTokenValid(token)) {
+      return;
+    }
 
-  const uploadImage = async (file) => {
-    if (!file) return;
+    if (file && token) {
+      const res = await uploadProfilePicture(file, token);
 
-    try {
-      // Convert the image to Base64 ($binary)
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = async () => {
-        const base64String = reader.result.split(",")[1]; // Remove the data URL prefix
-
-        // Prepare multipart/form-data
-        const formData = new FormData();
-        formData.append("image", base64String); // Key must match backend's expected field name
-        formData.append("filename", file.name);
-      };
-    } catch (err) {
-      console.error("Error uploading image:", err);
+      if (!res || !res.success) {
+        setError("Failed to upload image. Please try again.");
+      } else {
+        setUserData((prevData) => ({ ...prevData, profileImage: res.data }));
+      }
     }
   };
 
   const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setSelectedFile(file);
-      uploadImage(file);
+    const selectedFile = event.target.files[0];
+    if (selectedFile) {
+      setFile(selectedFile);
+      setPreview(URL.createObjectURL(selectedFile)); // Preview image before upload
     }
   };
 
-  useEffect(() => {
-    console.log(userData);
-  }, [userData]);
+  // Trigger file input when button is clicked
+  const handleButtonClick = () => {
+    fileInputRef.current.click();
 
-  // const handleUserUpdate = async () => {
-  //   const res = await editProfileService(userData);
-
-  //   if (!res) {
-  //     setError("Failed to update profile. Please try again.");
-  //   } else if (res.success) {
-  //     navigate("/profile");
-  //   } else {
-  //     setError(res.message);
-  //   }
-  // };
+    uploadImage();
+  };
 
   return (
     <section className="CreateEventpgMobile min-h-screen mainbg relative md:min-h-full flex flex-col w-full items-center p-3 md:p-5 z-10 text-start lato-bold md:pl-10">
@@ -78,52 +61,34 @@ function ProfileForm({ isEditable, userData, setUserData }) {
         <h1>{isEditable ? "Edit Profile" : "Profile"}</h1>
 
         {/* Profile Picture */}
-        <div className="flex justify-center items-center ">
-          <img
-            id="profileImagePicker"
-            className="w-2/12 h-full rounded-full object-cover"
-            src={
-              userData?.profileImage
-                ? `http://khaledyk-001-site6.atempurl.com/${userData.profileImage}`
-                : ProfileTempImg
-            }
-            alt="profileImage"
+        <div className="relative flex flex-col justify-center items-center">
+          <label htmlFor="fileInput">
+            <img
+              className="w-32 h-32 rounded-full object-cover cursor-pointer"
+              src={preview}
+              alt="Profile"
+            />
+          </label>
+          <input
+            type="file"
+            accept="image/*"
+            ref={fileInputRef}
+            className="hidden"
             onChange={handleFileChange}
           />
-        </div>
-        <div className="m-auto ">
-          {/* <button
-            className="bg-[#CFCFCF] text-lg text-black w-40 h-[55px] p-2 rounded-[5px] flex items-center justify-center"
-            onClick={() => {
-              document.getElementById("profileImagePicker").click();
-            }}
-          >
-            <span>Change Photo</span>
-          </button> */}
+
+          {/* Upload Button */}
           <button
-            className="bg-[#CFCFCF] text-lg font-bold text-black w-40 h-[55px] p-2 rounded-[5px] flex items-center justify-center"
-            onClick={() => {
-              if (isEditable) {
-                document.getElementById("profileImagePicker").click();
-              } else {
-                navigate("/profile/edit");
-              }
-            }}
+            className="bg-gray-300 text-lg font-bold text-black w-40 h-[55px] p-2 rounded flex items-center justify-center mt-4"
+            onClick={() =>
+              isEditable ? handleButtonClick() : navigate("/profile/edit")
+            }
           >
-            {isEditable ? (
-              <span>Change Photo</span>
-            ) : (
-              <span>
-                Edit profile<i className="mx-2 fa-solid fa-pen-to-square"></i>
-              </span>
-            )}
+            {isEditable ? "Change Photo" : "Edit Profile"}
           </button>
-          <div
-            className="text-center text-lg text-red-500 font-bold"
-            id="error"
-          >
-            {error}
-          </div>
+
+          {/* Error Message */}
+          {error && <div className="text-red-500 font-bold mt-2">{error}</div>}
         </div>
       </div>
 
@@ -214,7 +179,7 @@ function ProfileForm({ isEditable, userData, setUserData }) {
         <div className="flex md:space-x-44 space-x-5 my-5  ">
           <label className="md:w-2/12 w-3/12  ">Bio</label>
           <textarea
-            className="md:w-5/12 w-7/12   bg-[#D9D9D933] rounded-md h-72  "
+            className="md:w-5/12 w-7/12 bg-[#D9D9D933] rounded-md h-72  "
             disabled={!isEditable}
             name="Discription"
             id="Discription"
@@ -246,13 +211,13 @@ function ProfileForm({ isEditable, userData, setUserData }) {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0_6763_4714)">
+              <g clipPath="url(#clip0_6763_4714)">
                 <path
                   d="M17.5 6.5H17.51M7 2H17C19.7614 2 22 4.23858 22 7V17C22 19.7614 19.7614 22 17 22H7C4.23858 22 2 19.7614 2 17V7C2 4.23858 4.23858 2 7 2ZM16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61992 14.1902 8.22773 13.4229 8.09407 12.5922C7.9604 11.7616 8.09207 10.9099 8.47033 10.1584C8.84859 9.40685 9.45419 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87659 12.63 8C13.4789 8.12588 14.2649 8.52146 14.8717 9.12831C15.4785 9.73515 15.8741 10.5211 16 11.37Z"
                   stroke="white"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </g>
               <defs>
