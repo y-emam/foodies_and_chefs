@@ -1,32 +1,34 @@
+import "./styles.css";
+
 function ShowOfferPage() {
   return (
-    <main class="   min-h-[32rem] md:flex md:gap-10 mt-0 p-0 " id="overlay">
-      <section class="min-h-screen  md:space-y-20 space-y-10 md:min-h-full flex flex-col w-full items-center justify-center    p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
-        <div class="flex flex-col space-y-10  h-full items-center justifiy-center">
-          <h1 class="signika-negative font-bold name-text	md:text-[40px] text-lg py-5">
+    <main
+      className="show-offers-page min-h-[32rem] md:flex md:gap-10 mt-0 p-0"
+      id="overlay"
+    >
+      <section className="min-h-screen  md:space-y-20 space-y-10 md:min-h-full flex flex-col w-full items-center justify-center    p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
+        <div className="flex flex-col space-y-10  h-full items-center justifiy-center">
+          <h1 className="signika-negative font-bold name-text	md:text-[40px] text-lg py-5">
             Hello , Chef Yasser
           </h1>
-          <p class="Monotype-Corsiva text-[#FFB37D] md:text-xl text-sm  italic font-normal 	">
+          <p className="Monotype-Corsiva text-[#FFB37D] md:text-xl text-sm  italic font-normal 	">
             “We are honored to invite you to dazzle our guests with your
             signature dishes at this exclusive event. Your talent will add an
             unforgettable magic touch!”
           </p>
         </div>
-        <form
+        <div
           data-ajax="true"
-          class="flex flex-col space-y-10  h-full self-start mx=0 md:mx-24 font-extrabold text-2xl md:w-10/12 w-full  "
-          action="/Chef/UpdatechefPrice"
-          method="post"
+          className="flex flex-col space-y-10  h-full self-start mx=0 md:mx-24 font-extrabold text-2xl md:w-10/12 w-full  "
         >
-          <div class="flex items-center text-[0.7rem] md:text-2xl ">
-            <span class="mx-2">
+          <div className="flex items-center text-[0.7rem] md:text-2xl ">
+            <span className="mx-2">
               <svg
                 width="22"
                 height="22"
                 viewBox="0 0 22 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <mask
                   id="mask0_6164_23"
@@ -49,26 +51,21 @@ function ShowOfferPage() {
                     width="1"
                     height="1"
                   >
-                    <use
-                      xlink:href="#image0_6164_23"
-                      transform="scale(0.00195312)"
-                    />
+                    <use transform="scale(0.00195312)" />
                   </pattern>
-                  <image id="image0_6164_23" width="512" height="512" />
                 </defs>
               </svg>
             </span>
             <span>Host Name: Yasser Emam</span>
           </div>
-          <div class="flex items-center text-[0.7rem] md:text-2xl ">
-            <span class="mx-2">
+          <div className="flex items-center text-[0.7rem] md:text-2xl ">
+            <span className="mx-2">
               <svg
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <mask
                   id="mask0_6164_20"
@@ -91,26 +88,21 @@ function ShowOfferPage() {
                     width="1"
                     height="1"
                   >
-                    <use
-                      xlink:href="#image0_6164_20"
-                      transform="scale(0.00195312)"
-                    />
+                    <use transform="scale(0.00195312)" />
                   </pattern>
-                  <image id="image0_6164_20" width="512" height="512" />
                 </defs>
               </svg>
             </span>
             <span>Host Email: yasseremam2002@gmail.com</span>
           </div>
-          <div class="flex items-center text-[0.7rem] md:text-2xl ">
-            <span class="mx-2">
+          <div className="flex items-center text-[0.7rem] md:text-2xl ">
+            <span className="mx-2">
               <svg
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <mask
                   id="mask0_6164_17"
@@ -139,26 +131,21 @@ function ShowOfferPage() {
                     width="1"
                     height="1"
                   >
-                    <use
-                      xlink:href="#image0_6164_17"
-                      transform="scale(0.00195312)"
-                    />
+                    <use transform="scale(0.00195312)" />
                   </pattern>
-                  <image id="image0_6164_17" width="512" height="512" />
                 </defs>
               </svg>
             </span>
             <span>Host Phone: &#x2B;201091720988</span>
           </div>
-          <div class="flex items-center text-[0.7rem] md:text-2xl ">
-            <span class="mx-2">
+          <div className="flex items-center text-[0.7rem] md:text-2xl ">
+            <span className="mx-2">
               <svg
                 width="22"
                 height="22"
                 viewBox="0 0 22 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <mask
                   id="mask0_6164_23"
@@ -181,27 +168,22 @@ function ShowOfferPage() {
                     width="1"
                     height="1"
                   >
-                    <use
-                      xlink:href="#image0_6164_23"
-                      transform="scale(0.00195312)"
-                    />
+                    <use transform="scale(0.00195312)" />
                   </pattern>
-                  <image id="image0_6164_23" width="512" height="512" />
                 </defs>
               </svg>
             </span>
             <span>Event Name: Graduation Event</span>
           </div>
 
-          <div class="flex items-center text-[0.7rem] md:text-2xl">
-            <span class="mx-2">
+          <div className="flex items-center text-[0.7rem] md:text-2xl">
+            <span className="mx-2">
               <svg
                 width="22"
                 height="22"
                 viewBox="0 0 22 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <mask
                   id="mask0_6164_23"
@@ -224,26 +206,21 @@ function ShowOfferPage() {
                     width="1"
                     height="1"
                   >
-                    <use
-                      xlink:href="#image0_6164_23"
-                      transform="scale(0.00195312)"
-                    />
+                    <use transform="scale(0.00195312)" />
                   </pattern>
-                  <image id="image0_6164_23" width="512" height="512" />
                 </defs>
               </svg>
             </span>
             <span>Description: We celeberate our graduation from collage</span>
           </div>
-          <div class="flex items-center text-[0.7rem] md:text-2xl ">
-            <span class="mx-2">
+          <div className="flex items-center text-[0.7rem] md:text-2xl ">
+            <span className="mx-2">
               <svg
                 width="22"
                 height="22"
                 viewBox="0 0 22 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <mask
                   id="mask0_6164_23"
@@ -266,27 +243,22 @@ function ShowOfferPage() {
                     width="1"
                     height="1"
                   >
-                    <use
-                      xlink:href="#image0_6164_23"
-                      transform="scale(0.00195312)"
-                    />
+                    <use transform="scale(0.00195312)" />
                   </pattern>
-                  <image id="image0_6164_23" width="512" height="512" />
                 </defs>
               </svg>
             </span>
             <span>Number of guests: Minimum (10 to 50) Maximum</span>
           </div>
-          <div class="md:flex flex-col md:flex-row space-y-5 md:space-y-0 text-[0.7rem] md:text-2xl ">
-            <div class="flex ">
-              <span class="mx-2">
+          <div className="md:flex flex-col md:flex-row space-y-5 md:space-y-0 text-[0.7rem] md:text-2xl ">
+            <div className="flex ">
+              <span className="mx-2">
                 <svg
                   width="28"
                   height="28"
                   viewBox="0 0 28 28"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
                 >
                   <rect
                     width="28"
@@ -300,26 +272,21 @@ function ShowOfferPage() {
                       width="1"
                       height="1"
                     >
-                      <use
-                        xlink:href="#image0_6107_4739"
-                        transform="scale(0.00195312)"
-                      />
+                      <use transform="scale(0.00195312)" />
                     </pattern>
-                    <image id="image0_6107_4739" width="512" height="512" />
                   </defs>
                 </svg>
               </span>
               <span>Date: Fri 07-Feb-2025 </span>
             </div>
-            <div class="flex md:mx-10 mx-0">
-              <span class="mx-2">
+            <div className="flex md:mx-10 mx-0">
+              <span className="mx-2">
                 <svg
                   width="28"
                   height="28"
                   viewBox="0 0 28 28"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
                 >
                   <rect
                     width="28"
@@ -333,12 +300,8 @@ function ShowOfferPage() {
                       width="1"
                       height="1"
                     >
-                      <use
-                        xlink:href="#image0_6107_4742"
-                        transform="scale(0.00195312)"
-                      />
+                      <use transform="scale(0.00195312)" />
                     </pattern>
-                    <image id="image0_6107_4742" width="512" height="512" />
                   </defs>
                 </svg>
               </span>
@@ -347,15 +310,14 @@ function ShowOfferPage() {
               </span>
             </div>
           </div>
-          <div class="flex items-start justify-start text-[0.7rem] md:text-2xl ">
-            <span class="mx-2">
+          <div className="flex items-start justify-start text-[0.7rem] md:text-2xl ">
+            {/* <span className="mx-2">
               <svg
                 width="28"
                 height="28"
                 viewBox="0 0 28 28"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <rect width="28" height="28" fill="url(#pattern0_6107_4745)" />
                 <defs>
@@ -365,37 +327,34 @@ function ShowOfferPage() {
                     width="1"
                     height="1"
                   >
-                    <use
-                      xlink:href="#image0_6107_4745"
-                      transform="scale(0.00195312)"
-                    />
+                    <use transform="scale(0.00195312)" />
                   </pattern>
-                  <image id="image0_6107_4745" width="512" height="512" />
+                  
                 </defs>
               </svg>
-            </span>
+            </span> */}
             <span>
               Location: Dusit Hotel, New Cairo 1, Cairo Governorate 4730203,
               Egypt
             </span>
           </div>
 
-          <div class="flex relative w-full h-64 justify-center items-center">
+          <div className="flex relative w-full h-64 justify-center items-center">
             <div
               id="map"
-              class="absolute w-full h-60"
+              className="absolute w-full h-60"
               style={{ backgroundColor: "orange", zIndex: 10 }}
             >
               <input
                 id="lat"
                 value="30.025556460937867"
-                class="form-control hidden"
+                className="form-control hidden"
                 readonly
               />
               <input
                 id="log"
                 value="31.455230712890625"
-                class="form-control hidden"
+                className="form-control hidden"
                 readonly
               />
             </div>
@@ -408,24 +367,24 @@ function ShowOfferPage() {
             data-val-required="The EventID field is required."
             id="EventID"
           />
-          <div class="flex  flex-col space-y-2  justify-around   md:items-center items-start border-y border-[#FA8836] py-10 ">
-            <div class="flex md:flex-row  flex-col  justify-around   md:items-center items-start w-full"></div>
+          <div className="flex  flex-col space-y-2  justify-around   md:items-center items-start border-y border-[#FA8836] py-10 ">
+            <div className="flex md:flex-row  flex-col  justify-around   md:items-center items-start w-full"></div>
 
-            <div class="flex md:flex-row  flex-col  justify-around   md:items-center items-start w-full">
-              <div class="flex justify-between md: mx-0 space-x-10 w-full  ">
+            <div className="flex md:flex-row  flex-col  justify-around   md:items-center items-start w-full">
+              <div className="flex justify-between md: mx-0 space-x-10 w-full  ">
                 <label
                   for="price"
-                  class="text-white font-semibold text-[12px] md:text-[27px] "
+                  className="text-white font-semibold text-[12px] md:text-[27px] "
                 >
                   Cost/Guest:
                 </label>
-                <div class="flex items-center   justify-center md:w-5/12 w-8/12">
+                <div className="flex items-center   justify-center md:w-5/12 w-8/12">
                   {/* Price Input */}
                   <input
                     name="price"
                     id="Price"
                     type="number"
-                    class="w-1/2 bg-[#D9D9D954] text-white border border-[#C0C0C0] rounded-none h-[20px] md:h-[34px] p-2 md:text-[15px] text-[7px]    focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-1/2 bg-[#D9D9D954] text-white border border-[#C0C0C0] rounded-none h-[20px] md:h-[34px] p-2 md:text-[15px] text-[7px]    focus:outline-none focus:ring-2 focus:ring-orange-500"
                     data-val="true"
                     data-val-number="The field price must be a number."
                     data-val-required="The price field is required."
@@ -436,7 +395,7 @@ function ShowOfferPage() {
                   <select
                     name="ChefCurrancy"
                     id="currancy"
-                    class="md:w-1/2  hover:text-black bg-[#D9D9D954] border border-[#C0C0C0] border-l-0  text-white h-[20px] md:h-[34px] md:text-[15px] text-[7px]       p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="md:w-1/2  hover:text-black bg-[#D9D9D954] border border-[#C0C0C0] border-l-0  text-white h-[20px] md:h-[34px] md:text-[15px] text-[7px]       p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
                     data-val="true"
                     data-val-required="The ChefCurrancy field is required."
                   >
@@ -485,9 +444,9 @@ function ShowOfferPage() {
                   </select>
                 </div>
               </div>
-              <div class=" mx-3 md:mx-0 flex space-x-10 w-full justify-center">
+              <div className=" mx-3 md:mx-0 flex space-x-10 w-full justify-center">
                 <a
-                  class="w-5/12  bg-[#FA8836] h-[36px] md:text-xl text-[0.5rem] text-center px-3 font-medium rounded-[15px]  hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836]"
+                  className="w-5/12  bg-[#FA8836] h-[36px] md:text-xl text-[0.5rem] text-center px-3 font-medium rounded-[15px]  hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836]"
                   href="/Chef/UpdateEventChefMenu?menuId=%20a7640780-0981-4245-ac8d-6995276caece"
                 >
                   Show menu
@@ -496,22 +455,22 @@ function ShowOfferPage() {
             </div>
           </div>
 
-          <div class="flex items-center justify-around">
-            <label for="Note" class="text-[0.7rem] md:text-2xl">
+          <div className="flex items-center justify-around">
+            <label for="Note" className="text-[0.7rem] md:text-2xl">
               Notes :{" "}
             </label>
             <textarea
               disabled
               id="Note"
               name="Notes"
-              class="text-xs	 md:text-xl appearance-none  md:w-1/2 w-2/3 px-4 py-2 rounded-[10px] text-white opacity-70 h-[70px] md:h-[101px]    border border-[#FA8836]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
+              className="text-xs	 md:text-xl appearance-none  md:w-1/2 w-2/3 px-4 py-2 rounded-[10px] text-white opacity-70 h-[70px] md:h-[101px]    border border-[#FA8836]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
             ></textarea>
           </div>
-          <div class="flex items-center justify-around">
-            <div class="text-[0.7rem] md:text-2xl">Status:</div>
-            <div class=" md:w-1/2 w-2/3 px-4 py-2">
+          <div className="flex items-center justify-around">
+            <div className="text-[0.7rem] md:text-2xl">Status:</div>
+            <div className=" md:w-1/2 w-2/3 px-4 py-2">
               <span
-                class="bg-[#848484] w-1/2 md:w-[113px] h-[36px] md:text-lg px-3	 text-[0.5rem] text-center p-1 font-medium rounded-[15px]"
+                className="bg-[#848484] w-1/2 md:w-[113px] h-[36px] md:text-lg px-3	 text-[0.5rem] text-center p-1 font-medium rounded-[15px]"
                 href=""
               >
                 Pending
@@ -526,15 +485,15 @@ function ShowOfferPage() {
             id="id"
             value="fffebc64-3908-491a-87a3-7132683cf380"
           />
-          <div class="flex items-center  justify-center">
+          <div className="flex items-center  justify-center">
             <button
               type="submit"
-              class="bg-[#6555FF] rounded-[15px]  w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]  "
+              className="bg-[#6555FF] rounded-[15px]  w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]  "
             >
               Update
             </button>
           </div>
-        </form>
+        </div>
       </section>
     </main>
   );

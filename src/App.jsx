@@ -23,6 +23,7 @@ import GoogleMapsPage from "./pages/GoogleMaps/Page";
 import ShowEventPage from "./pages/Events/Show/Page";
 import CreateMenuPage from "./pages/Menus/Create/Page";
 import OffersPage from "./pages/Offers/Page";
+import ShowOfferPage from "./pages/Offers/ShowOffer/Page";
 
 function App() {
   useEffect(() => {
@@ -71,6 +72,7 @@ function App() {
 
           {/* Offers Pages */}
           <Route path="/offers" element={<OffersPage />} />
+          <Route path="/showOffer/:offerId" element={<ShowOfferPage />} />
 
           {/* Google Maps Page */}
           <Route path="/googleMap" element={<GoogleMapsPage />} />

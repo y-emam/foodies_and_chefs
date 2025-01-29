@@ -59,16 +59,16 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                   required
                 />
               </div>
-              <div class=" relative mb-1">
-                <label class="Interl section-title" for="AmuseBoucheDec">
+              <div className=" relative mb-1">
+                <label className="Interl section-title" for="AmuseBoucheDec">
                   Amuse-bouche
                 </label>
-                <div class="Interl focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[66px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full   ">
+                <div className="Interl focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[66px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full   ">
                   <textarea
                     value=""
                     name="AmuseBoucheDec"
                     type="text"
-                    class=" Interl focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[66px] border border-[#FFFFFF4D] bg-[#444444] form-control w-7/12  p-3"
+                    className=" Interl focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[66px] border border-[#FFFFFF4D] bg-[#444444] form-control w-7/12  p-3"
                     placeholder="Description:"
                     data-val="true"
                     data-val-required=" this field is required."
@@ -76,24 +76,24 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                   ></textarea>
                 </div>
                 <span
-                  class=" Interl font-medium text-red-600 text-[10px] md:text-[12px] h-[27.5px] field-validation-valid"
+                  className=" Interl font-medium text-red-600 text-[10px] md:text-[12px] h-[27.5px] field-validation-valid"
                   data-valmsg-for="AmuseBoucheDec"
                   data-valmsg-replace="true"
                 ></span>
-                <div class="absolute top-4 end-12 md:end-32 flex flex-col items-center justify-center rtl:pl-3 ltr:pr-3 pt-6">
+                <div className="absolute top-4 end-12 md:end-32 flex flex-col items-center justify-center rtl:pl-3 ltr:pr-3 pt-6">
                   <label
                     for="AmuseBoucheImage"
                     name="AmuseBoucheImage"
-                    class="AmuseBoucheImageLable lg:block p-2 leading-3 bg-[#242424] text-xsm font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
+                    className="AmuseBoucheImageLable lg:block p-2 leading-3 bg-[#242424] text-xsm font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
                   >
                     Choose Image
                   </label>
                   <label
                     for="AmuseBoucheImage"
                     name="AmuseBoucheImage"
-                    class="AmuseBoucheImageLable lg:hidden p-2 leading-3 bg-[#242424] text-xsm font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
+                    className="AmuseBoucheImageLable lg:hidden p-2 leading-3 bg-[#242424] text-xsm font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
                   >
-                    <i class="fa-solid fa-upload"></i>
+                    <i className="fa-solid fa-upload"></i>
                   </label>
                   <input
                     id="AmuseBoucheImage"
@@ -102,20 +102,20 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                     style={{ display: "none" }}
                   />
                 </div>
-                <div class="absolute lg:block top-4 end-2 md:end-2  flex flex-col items-center justify-center ltr:pr-3 rtl:pl-3 pt-6">
+                <div className="absolute lg:block top-4 end-2 md:end-2  flex flex-col items-center justify-center ltr:pr-3 rtl:pl-3 pt-6">
                   <button
                     type="button"
                     id="ShowAmuseBoucheImage"
                     name="ShowAmuseBoucheImage"
-                    class="btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
+                    className="btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
                   ></button>
                 </div>
-                <div class="absolute lg:hidden top-4 right-0 flex flex-col items-center justify-center pr-3 pt-6">
+                <div className="absolute lg:hidden top-4 right-0 flex flex-col items-center justify-center pr-3 pt-6">
                   <button
                     type="button"
                     id="ShowAmuseBoucheImageMobile"
                     name="ShowAmuseBoucheImageMobile"
-                    class=" btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
+                    className=" btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
                   ></button>
                 </div>
               </div>

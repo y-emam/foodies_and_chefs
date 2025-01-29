@@ -220,7 +220,7 @@ function ShowEventPage() {
 
             <tfoot className="bg-[#D9D9D926] rounded-b-[5px]">
               <tr>
-                <td colspan="7">
+                <td colSpan="7">
                   <div className="flex justify-center mt-6 gap-2   p-2 rounded-b-md">
                     <button
                       disabled
