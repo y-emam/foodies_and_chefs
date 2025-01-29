@@ -40,6 +40,7 @@ function MenusPage() {
               <div
                 className="bg-[#FA8836] h-[53px] flex justify-between w-full items-center p-6 "
                 style={{ borderRadius: "16px" }}
+                key={event.id}
               >
                 <div className="font-bold text-xl flex gap-0 md:gap-2 flex-col md:flex-row">
                   <span className="font-bold md:text-[18px] text-[14px] mx-2">

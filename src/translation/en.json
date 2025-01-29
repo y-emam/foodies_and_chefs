@@ -121,7 +121,19 @@
       "draft": "Draft",
       "pending": "Pending"
     },
-    "noInvites": "You don't have any invites yet."
+    "noInvites": "You don't have any invites."
+  },
+  "offers": {
+    "offers": "Offers",
+    "status": "status",
+    "statusType": {
+      "all": "All",
+      "confirmed": "Confirmed",
+      "declined": "Declined",
+      "draft": "Draft",
+      "pending": "Pending"
+    },
+    "noOffers": "You don't have any offers."
   },
   "events": {
     "name": "Event Name",

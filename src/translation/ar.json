@@ -121,7 +121,19 @@
       "draft": "مسودة",
       "pending": "قيد الانتظار"
     },
-    "noInvites": "ليس لديك أي دعوات بعد."
+    "noInvites": "ليس لديك أي دعوات."
+  },
+  "offers": {
+    "offers": "العروض",
+    "status": "الحالة",
+    "statusType": {
+      "all": "الكل",
+      "confirmed": "مؤكد",
+      "declined": "مرفوض",
+      "draft": "مسودة",
+      "pending": "قيد الانتظار"
+    },
+    "noOffers": "ليس لديك أي عروض."
   },
   "events": {
     "name": "اسم الحدث",
