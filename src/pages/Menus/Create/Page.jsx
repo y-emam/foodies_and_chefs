@@ -1,5 +1,11 @@
+import MenusForm from "../../../components/MenusForm/Component";
+
 function CreateMenuPage() {
-  return <div>Create Menu Page</div>;
+  return (
+    <div>
+      <MenusForm />
+    </div>
+  );
 }
 
 export default CreateMenuPage;

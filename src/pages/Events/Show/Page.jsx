@@ -67,96 +67,98 @@ function ShowEventPage() {
 
   return (
     <main
-      class="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0 "
+      className="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0 "
       id="main-show-event"
     >
-      <section class="min-h-screen  md:space-y-14 space-y-5 md:min-h-full flex flex-col w-full items-center p-3 md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans">
-        <div class="bg-[#D9D9D926] md:w-12/12 w-full flex flex-col plus-jakarta-sans text-[13px] md:text-[23px] p-3 py-6 space-y-5 border border-[#FA8836] rounded-[5px]">
-          <div class="flex">
-            <span class="md:w-2/12  w-7/12">Event name: </span>
-            <span class="w-10/12">{event?.name}</span>
+      <section className="min-h-screen  md:space-y-14 space-y-5 md:min-h-full flex flex-col w-full items-center p-3 md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans">
+        <div className="bg-[#D9D9D926] md:w-12/12 w-full flex flex-col plus-jakarta-sans text-[13px] md:text-[23px] p-3 py-6 space-y-5 border border-[#FA8836] rounded-[5px]">
+          <div className="flex">
+            <span className="md:w-2/12  w-7/12">Event name: </span>
+            <span className="w-10/12">{event?.name}</span>
           </div>
-          <div class="flex">
-            <span class="md:w-2/12 w-7/12">Description: </span>
-            <span class="w-10/12">{event?.description}</span>
+          <div className="flex">
+            <span className="md:w-2/12 w-7/12">Description: </span>
+            <span className="w-10/12">{event?.description}</span>
           </div>
-          <div class="flex">
-            <span class="md:w-2/12  w-7/12">Date and time:</span>
-            <span class="w-10/12 tracking-wide" id="duration-output">
+          <div className="flex">
+            <span className="md:w-2/12  w-7/12">Date and time:</span>
+            <span className="w-10/12 tracking-wide" id="duration-output">
               This event will take place on {event.date} From {event.startDate}{" "}
               until {event.endDate}
             </span>
           </div>
-          <div class="flex">
-            <span class="md:w-2/12  w-7/12">Number of guests:</span>
-            <span class="w-10/12">{`${event?.minGuests} to ${event?.maxGuests} Guests`}</span>
+          <div className="flex">
+            <span className="md:w-2/12  w-7/12">Number of guests:</span>
+            <span className="w-10/12">{`${event?.minGuests} to ${event?.maxGuests} Guests`}</span>
           </div>
-          <div class="flex">
-            <span class="md:w-2/12  w-7/12">Location: </span>
-            <span class="w-10/12">{event?.location}</span>
+          <div className="flex">
+            <span className="md:w-2/12  w-7/12">Location: </span>
+            <span className="w-10/12">{event?.location}</span>
           </div>
-          <div class="flex">
-            <span class="md:w-2/12  w-7/12">Number of seats remaining: </span>
-            <span class="w-10/12  m-auto">{event?.seatsRemaining}</span>
+          <div className="flex">
+            <span className="md:w-2/12  w-7/12">
+              Number of seats remaining:{" "}
+            </span>
+            <span className="w-10/12  m-auto">{event?.seatsRemaining}</span>
           </div>
         </div>
 
-        <p class="plus-jakarta-sans text-[15px] md:text-[26px]    md:pb-4 md:w-1/2 w-full">
+        <p className="plus-jakarta-sans text-[15px] md:text-[26px]    md:pb-4 md:w-1/2 w-full">
           To create a culinary menu for your event, choose one or more of the
           following options:
         </p>
-        <ul class="plus-jakarta-sans text-[15px] md:text-[26px] border-b border-[#FA8836] pb-5 w-full">
-          <li class="my-3">
+        <ul className="plus-jakarta-sans text-[15px] md:text-[26px] border-b border-[#FA8836] pb-5 w-full">
+          <li className="my-3">
             1- Send a culinary request for proposal to one or more of our
             renowned chefs
           </li>
-          <li class="my-3">
+          <li className="my-3">
             2- Share a culinary request for proposal through a link with chefs
             who are not on our list.
           </li>
-          <li class="my-3">
+          <li className="my-3">
             3- As a skilled chef, you may add one of your own menus to this
             event
           </li>
         </ul>
-        <p class="plus-jakarta-sans text-[15px] md:text-[26px]  w-full text-start">
+        <p className="plus-jakarta-sans text-[15px] md:text-[26px]  w-full text-start">
           1- Request an offer from our renowned chefs.
         </p>
-        <div class="w-full">
-          <table class="w-full rounded-[5px] overflow-hidden">
-            <thead class="bg-[#D89D7240]  rounded-t-[5px]">
-              <tr class="grid md:grid-cols-5 grid-cols-5 gap-2 md:gap-1 my-5 text-center">
-                <th class="md:text-[22px] text-[0.5rem] w-full mx-3 md:text-start text-start">
+        <div className="w-full">
+          <table className="w-full rounded-[5px] overflow-hidden">
+            <thead className="bg-[#D89D7240]  rounded-t-[5px]">
+              <tr className="grid md:grid-cols-5 grid-cols-5 gap-2 md:gap-1 my-5 text-center">
+                <th className="md:text-[22px] text-[0.5rem] w-full mx-3 md:text-start text-start">
                   Chef&#x2019;s Name
                 </th>
 
-                <th class="md:text-xl text-[0.5rem]">Country &amp; City</th>
+                <th className="md:text-xl text-[0.5rem]">Country &amp; City</th>
 
-                <th class="md:text-xl text-[0.5rem] col-span-2 md:col-span-1">
+                <th className="md:text-xl text-[0.5rem] col-span-2 md:col-span-1">
                   Social links
                 </th>
-                <th class="md:text-xl text-[0.5rem]">Send Invite</th>
-                <th class="md:text-xl text-[0.5rem]">Favourite</th>
+                <th className="md:text-xl text-[0.5rem]">Send Invite</th>
+                <th className="md:text-xl text-[0.5rem]">Favourite</th>
               </tr>
             </thead>
-            <tbody class="bg-[#D9D9D926]">
+            <tbody className="bg-[#D9D9D926]">
               {chefs.map((chef) => (
-                <tr class="grid md:grid-cols-5 grid-cols-6 gap-2 md:gap-2 my-5 text-center">
-                  <td class="text-start md:text-start md:text-[22px] mx-3 font-semibold text-[0.5rem] w-full">
+                <tr className="grid md:grid-cols-5 grid-cols-6 gap-2 md:gap-2 my-5 text-center">
+                  <td className="text-start md:text-start md:text-[22px] mx-3 font-semibold text-[0.5rem] w-full">
                     <a href={`/chef/${chef.id}`} className="text-[#FA8836]">
                       {chef.name}
                     </a>
                   </td>
-                  <td class="md:text-[22px] text-[0.5rem] font-semibold text-center ">
+                  <td className="md:text-[22px] text-[0.5rem] font-semibold text-center ">
                     {`${chef.country}, ${chef.city}`}
                   </td>
 
-                  <td class="md:text-[22px] text-[0.5rem] font-semibold col-span-2 md:col-span-1">
-                    <div class="flex rounded-[10px]  p-1 md:p-3 px-2 justify-center items-center w-9/12 m-auto border border-[#949494] bg-[#222222]">
+                  <td className="md:text-[22px] text-[0.5rem] font-semibold col-span-2 md:col-span-1">
+                    <div className="flex rounded-[10px]  p-1 md:p-3 px-2 justify-center items-center w-9/12 m-auto border border-[#949494] bg-[#222222]">
                       {chef.socialLinks.facebook ? (
                         <a href={chef.socialLinks.facebook}>
                           <img
-                            class="w-1/2 m-auto"
+                            className="w-1/2 m-auto"
                             src={FacebookImg}
                             alt="Facebook"
                           />
@@ -164,7 +166,7 @@ function ShowEventPage() {
                       ) : (
                         <div>
                           <img
-                            class="w-1/2 m-auto"
+                            className="w-1/2 m-auto"
                             src={DisFacebookImg}
                             alt="Facebook"
                           />
@@ -174,7 +176,7 @@ function ShowEventPage() {
                       {chef.socialLinks.instagram ? (
                         <a href={chef.socialLinks.instagram}>
                           <img
-                            class="w-1/2 m-auto"
+                            className="w-1/2 m-auto"
                             src={InstagramImg}
                             alt="Instagram"
                           />
@@ -182,7 +184,7 @@ function ShowEventPage() {
                       ) : (
                         <div>
                           <img
-                            class="w-1/2 m-auto"
+                            className="w-1/2 m-auto"
                             src={DisInstagramImg}
                             alt="Instagram"
                           />
@@ -191,41 +193,41 @@ function ShowEventPage() {
 
                       {chef.socialLinks.X ? (
                         <a href={chef.socialLinks.X}>
-                          <img class="w-1/2 m-auto" src={XImg} alt="X" />
+                          <img className="w-1/2 m-auto" src={XImg} alt="X" />
                         </a>
                       ) : (
                         <div>
-                          <img class="w-1/2 m-auto" src={DisXImg} alt="X" />
+                          <img className="w-1/2 m-auto" src={DisXImg} alt="X" />
                         </div>
                       )}
                     </div>
                   </td>
 
-                  <td class="flex justify-end md:justify-center ">
-                    <button class="block text-white bg-[#6555FF] w-[45px] md:w-[113px] h-[16px] md:h-[36px] md:text-xl text-[0.5rem] text-center font-medium rounded-[15px] border-[3px] border-[#6555FF] drop-shadow-md shadow-[#6555FF]">
+                  <td className="flex justify-end md:justify-center ">
+                    <button className="block text-white bg-[#6555FF] w-[45px] md:w-[113px] h-[16px] md:h-[36px] md:text-xl text-[0.5rem] text-center font-medium rounded-[15px] border-[3px] border-[#6555FF] drop-shadow-md shadow-[#6555FF]">
                       Send
                     </button>
                   </td>
-                  <td class="flex justify-center ">
+                  <td className="flex justify-center ">
                     <i
                       id="fav-Icone"
-                      class="text-main-color fa-regular fa-heart md:text-3xl"
+                      className="text-main-color fa-regular fa-heart md:text-3xl"
                     ></i>
                   </td>
                 </tr>
               ))}
             </tbody>
 
-            <tfoot class="bg-[#D9D9D926] rounded-b-[5px]">
+            <tfoot className="bg-[#D9D9D926] rounded-b-[5px]">
               <tr>
                 <td colspan="7">
-                  <div class="flex justify-center mt-6 gap-2   p-2 rounded-b-md">
+                  <div className="flex justify-center mt-6 gap-2   p-2 rounded-b-md">
                     <button
                       disabled
-                      class="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-1  px-2  md:px-3 py-1 rounded-md"
+                      className="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-1  px-2  md:px-3 py-1 rounded-md"
                     >
                       <svg
-                        class="rtl:block ltr:hidden"
+                        className="rtl:block ltr:hidden"
                         width="8"
                         height="13"
                         viewBox="0 0 8 13"
@@ -239,7 +241,7 @@ function ShowEventPage() {
                       </svg>
 
                       <svg
-                        class="ltr:block rtl:hidden"
+                        className="ltr:block rtl:hidden"
                         width="8"
                         height="13"
                         viewBox="0 0 8 13"
@@ -254,48 +256,48 @@ function ShowEventPage() {
                     </button>
 
                     <a
-                      class="bg-orange-500 text-white font-semibold text-[10px] md:text-[16px] pt-2 md:pt-1  px-2  md:px-3 py-1 rounded-md"
+                      className="bg-orange-500 text-white font-semibold text-[10px] md:text-[16px] pt-2 md:pt-1  px-2  md:px-3 py-1 rounded-md"
                       href="/Home/ChefOffers?eventId=d11453f6-3629-49b8-8bc7-08dd3fb439ca&amp;pagechef=1"
                     >
                       1
                     </a>
                     <a
-                      class="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-1  px-2  md:px-3 py-1 rounded-md"
+                      className="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-1  px-2  md:px-3 py-1 rounded-md"
                       href="/Home/ChefOffers?eventId=d11453f6-3629-49b8-8bc7-08dd3fb439ca&amp;pagechef=2"
                     >
                       2
                     </a>
                     <a
-                      class="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-1  px-2  md:px-3 py-1 rounded-md"
+                      className="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-1  px-2  md:px-3 py-1 rounded-md"
                       href="/Home/ChefOffers?eventId=d11453f6-3629-49b8-8bc7-08dd3fb439ca&amp;pagechef=3"
                     >
                       3
                     </a>
                     <a
-                      class="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-1  px-2  md:px-3 py-1 rounded-md"
+                      className="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-1  px-2  md:px-3 py-1 rounded-md"
                       href="/Home/ChefOffers?eventId=d11453f6-3629-49b8-8bc7-08dd3fb439ca&amp;pagechef=4"
                     >
                       4
                     </a>
                     <button
                       disabled
-                      class="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-1  px-2  md:px-3 py-1 rounded-md"
+                      className="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-1  px-2  md:px-3 py-1 rounded-md"
                     >
                       ...
                     </button>
                     <a
-                      class="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-1  px-2  md:px-3 py-1 rounded-md"
+                      className="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-1  px-2  md:px-3 py-1 rounded-md"
                       href="/Home/ChefOffers?eventId=d11453f6-3629-49b8-8bc7-08dd3fb439ca&amp;pagechef=6"
                     >
                       6
                     </a>
 
                     <a
-                      class="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-2  px-2  md:px-3 py-1 rounded-md"
+                      className="bg-white text-black font-semibold text-[10px] md:text-[16px] pt-1.5 md:pt-2  px-2  md:px-3 py-1 rounded-md"
                       href="/Home/ChefOffers?eventId=d11453f6-3629-49b8-8bc7-08dd3fb439ca&amp;pagechef=2"
                     >
                       <svg
-                        class="ltr:block rtl:hidden"
+                        className="ltr:block rtl:hidden"
                         width="8"
                         height="13"
                         viewBox="0 0 8 13"
@@ -309,7 +311,7 @@ function ShowEventPage() {
                       </svg>
 
                       <svg
-                        class="rtl:block ltr:hidden"
+                        className="rtl:block ltr:hidden"
                         width="8"
                         height="13"
                         viewBox="0 0 8 13"
@@ -329,22 +331,22 @@ function ShowEventPage() {
           </table>
         </div>
         {/* copy link Table */}
-        <p class="plus-jakarta-sans text-[15px] md:text-[26px] border-t border-[#FA8836] w-full text-start pt-5 font-bold">
+        <p className="plus-jakarta-sans text-[15px] md:text-[26px] border-t border-[#FA8836] w-full text-start pt-5 font-bold">
           2-Invite your favourite chef to submit their offer via this link
         </p>
-        <div class="relative w-full flex justify-center items-center ">
-          <div class="border-2 border-[#FA883669] text-center p-0.5 bg-[#73737354] w-full lg:w-3/4 lg:h-16 h-[38px] rounded-[30px] flex justify-between items-center">
-            <button class="md:mx-7 mx-2 mb-1 md:mb-0 bg-transparent">
-              <i class="fa-solid fa-link text-[#C9CED6] md:text-[20px] text-[10px]"></i>
+        <div className="relative w-full flex justify-center items-center ">
+          <div className="border-2 border-[#FA883669] text-center p-0.5 bg-[#73737354] w-full lg:w-3/4 lg:h-16 h-[38px] rounded-[30px] flex justify-between items-center">
+            <button className="md:mx-7 mx-2 mb-1 md:mb-0 bg-transparent">
+              <i className="fa-solid fa-link text-[#C9CED6] md:text-[20px] text-[10px]"></i>
             </button>
-            <span class="hidden" id="linkToCopy">
+            <span className="hidden" id="linkToCopy">
               You have been invited to submit a culinary proposal for an
               exclusive venue. Please share your offer via this link:
               https://khaledyk-001-site4.atempurl.com/Chef/OrderPage/d11453f6-3629-49b8-8bc7-08dd3fb439ca
             </span>
 
             <span
-              class="lg:py-8 py-0 lg:h-[85px] h-[27px] md:text-[15px] text-[9px] text-[#CFCFCF] font-bold"
+              className="lg:py-8 py-0 lg:h-[85px] h-[27px] md:text-[15px] text-[9px] text-[#CFCFCF] font-bold"
               asp-controller="Chef"
               asp-action="OrderPage"
               asp-route-id="d11453f6-3629-49b8-8bc7-08dd3fb439ca"
@@ -354,57 +356,57 @@ function ShowEventPage() {
             </span>
             <button
               id="copyLinkButton"
-              class="lg:h-[57px] h-[34px]  w-[90px]  md:w-[164px]  bg-[#FA8836] text-white lg:p-2 p-0 lg:text-sm text-[0.5rem] font-bold hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836] rounded-[40px]"
+              className="lg:h-[57px] h-[34px]  w-[90px]  md:w-[164px]  bg-[#FA8836] text-white lg:p-2 p-0 lg:text-sm text-[0.5rem] font-bold hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836] rounded-[40px]"
             >
               Copy Link
             </button>
           </div>
         </div>
-        <p class="plus-jakarta-sans text-[15px] md:text-[26px] border-t border-[#FA8836] pt-5 w-full font-bold">
+        <p className="plus-jakarta-sans text-[15px] md:text-[26px] border-t border-[#FA8836] pt-5 w-full font-bold">
           3- Showcase your talent by adding your own menu.
         </p>
         <form
           action="/Home/SetMySelfChef"
-          class="flex flex-col items-center justify-center w-full space-x-5 border-b border-[#FA8836] pb-5"
+          className="flex flex-col items-center justify-center w-full space-x-5 border-b border-[#FA8836] pb-5"
         >
           <input
             type="hidden"
             name="EventId"
             value="d11453f6-3629-49b8-8bc7-08dd3fb439ca"
           />
-          <div class="flex  items-center justify-center w-full space-x-5 ">
-            <label for="Menu" class="text-[0.7rem] md:text-2xl">
+          <div className="flex  items-center justify-center w-full space-x-5 ">
+            <label for="Menu" className="text-[0.7rem] md:text-2xl">
               Menu
             </label>
             <select
               id="Menu"
               name="MenuId"
-              class="text-xs	 md:text-xl appearance-none  md:w-5/12 w-2/3 px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-[#FA8836]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
+              className="text-xs	 md:text-xl appearance-none  md:w-5/12 w-2/3 px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-[#FA8836]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
             >
               <option
                 value="b755d17d-62f0-444a-5280-08dd3a30e7f0"
-                class=" checked:bg-orange-100 bg-white text-black "
+                className=" checked:bg-orange-100 bg-white text-black "
               >
                 Menu Name
               </option>
             </select>
           </div>
-          <div class="plus-jakarta-sans text-[12px] md:text-[20px] w-full text-start pt-5 font-bold">
+          <div className="plus-jakarta-sans text-[12px] md:text-[20px] w-full text-start pt-5 font-bold">
             Please note:
             <br />
             Adding your own menu will override options 1 and 2.
           </div>
-          <div class="flex justify-center">
+          <div className="flex justify-center">
             <button
               type="submit"
-              class="bg-[#6555FF] rounded-[15px] md:text-[30px]  w-[273px] md:w-[390px] h-[42px] md:h-[60px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]  "
+              className="bg-[#6555FF] rounded-[15px] md:text-[30px]  w-[273px] md:w-[390px] h-[42px] md:h-[60px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]  "
             >
               Use My Menu
             </button>
           </div>
         </form>
         {/* Chefs request Table */}
-        <div class="w-full flex justify-center items-center text-xs	 md:text-3xl m-15 font-bold		">
+        <div className="w-full flex justify-center items-center text-xs	 md:text-3xl m-15 font-bold		">
           your request for a culinary offer has not been accepted
           by&#xA0;any&#xA0;chef&#xA0;yet.
         </div>

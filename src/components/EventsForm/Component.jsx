@@ -60,7 +60,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
       <main className="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0 " id="overlay">
         <section className="CreateEventpgMobile w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-20  ">
           <form dir="auto">
-            <div className="mb-1 ">
+            <div className="mb-1">
               <label
                 for="event-name"
                 className="section-title lato-bold font-medium"
@@ -103,7 +103,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 }
               />
               <span
-                className=" lato-bold font-medium text-red-600 text-[10px] md:text-[12px] field-validation-valid"
+                className="lato-bold font-medium text-red-600 text-[10px] md:text-[12px] field-validation-valid"
                 data-valmsg-for="EventDescription"
                 data-valmsg-replace="true"
               ></span>

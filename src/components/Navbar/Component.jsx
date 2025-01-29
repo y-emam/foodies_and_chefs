@@ -12,19 +12,20 @@ import resetLocalStorage from "../../utils/resetLocalStorage";
 function Navbar() {
   const { t } = useTranslation();
   const [isSignedIn, setIsSignedIn] = useState(false);
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState("");
 
   const navigate = useNavigate();
 
   useEffect(() => {
     const validateJwtToken = () => {
       const token = localStorage.getItem("token");
+
       if (token) {
         const isValid = isJwtTokenValid(token);
 
         if (isValid) {
           setIsSignedIn(true);
-          setUserData(JSON.parse(localStorage.getItem("userData")));
+          setUserData(JSON.parse(localStorage.getItem("user")));
         } else {
           setIsSignedIn(false);
 
@@ -34,7 +35,7 @@ function Navbar() {
     };
 
     validateJwtToken();
-  }, [navigate]);
+  }, []);
 
   const toggleDropDown = (dropdownId) => {
     const element = document.getElementById("CreateEventMenu");
@@ -239,7 +240,11 @@ function Navbar() {
 
                 <img
                   className="icon rounded-full w-12 h-12 object-cover"
-                  src={userData?.profileImage || ProfileTempImg}
+                  src={
+                    userData?.profileImage
+                      ? `http://khaledyk-001-site6.atempurl.com/${userData.profileImage}`
+                      : ProfileTempImg
+                  }
                   alt="profileImage"
                 />
               </button>

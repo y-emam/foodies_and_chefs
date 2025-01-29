@@ -5,7 +5,7 @@ import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 // import editProfileService from "../../services/profile/editProfile";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function ProfileForm({ isEditable, userData, setUserData }) {
   const navigate = useNavigate();
@@ -55,6 +55,10 @@ function ProfileForm({ isEditable, userData, setUserData }) {
     }
   };
 
+  useEffect(() => {
+    console.log(userData);
+  }, [userData]);
+
   // const handleUserUpdate = async () => {
   //   const res = await editProfileService(userData);
 
@@ -79,7 +83,9 @@ function ProfileForm({ isEditable, userData, setUserData }) {
             id="profileImagePicker"
             className="w-2/12 h-full rounded-full object-cover"
             src={
-              userData?.profileImage ? userData.profileImage : ProfileTempImg
+              userData?.profileImage
+                ? `http://khaledyk-001-site6.atempurl.com/${userData.profileImage}`
+                : ProfileTempImg
             }
             alt="profileImage"
             onChange={handleFileChange}
@@ -108,7 +114,7 @@ function ProfileForm({ isEditable, userData, setUserData }) {
               <span>Change Photo</span>
             ) : (
               <span>
-                Edit profile<i class="mx-2 fa-solid fa-pen-to-square"></i>
+                Edit profile<i className="mx-2 fa-solid fa-pen-to-square"></i>
               </span>
             )}
           </button>
