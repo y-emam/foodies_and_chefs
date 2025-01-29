@@ -44,8 +44,12 @@ function EventsForm({ isNewEvent, event, setEvent }) {
       return `${formattedHour}:${formattedMinutes} ${period}`;
     };
 
-    setEventEndTime(calculateNewTime(event.time, event.hours, event.minutes));
-  }, [event.time, event.hours, event.minutes]);
+    if (event) {
+      setEventEndTime(
+        calculateNewTime(event?.time, event.hours, event.minutes)
+      );
+    }
+  }, [event]);
 
   const openMapsPage = () => {
     window.open("/googleMap", "mapsWindow", "width=1000,height=800");
@@ -69,7 +73,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 type="text"
                 maxLength="30"
                 id="event-name"
-                className="opacity-70 h-[47.02px] border border-[#FFFFFF4D]  bg-[#444444] form-control w-full  p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
+                className="opacity-90 placeholder-gray-400 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full p-3 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
                 placeholder={t("events.namePlaceholder")}
                 required
                 value={event?.name}
@@ -90,7 +94,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 maxLength="100"
                 type="text"
                 id="event-Description"
-                className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full   p-3"
+                className="opacity-90 placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full p-3"
                 placeholder={t("events.descriptionPlaceholder")}
                 required
                 value={event?.description}
@@ -117,7 +121,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     name="Date"
                     type="date"
                     id="event-date"
-                    className="text-white focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-85 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 text-sm form-control w-full p-2 custom-date-icon"
+                    className="opacity-90 placeholder-gray-400 text-white focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 text-sm form-control w-full p-2 custom-date-icon"
                     required
                     min={todayDate}
                     value={event?.date}
@@ -135,7 +139,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     type="time"
                     min="13:40"
                     id="event-time"
-                    className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-85 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 form-control w-full text-sm custom-date-icon"
+                    className="opacity-90 placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 form-control w-full text-sm custom-date-icon"
                     required
                     value={event?.time}
                     onChange={(e) =>
@@ -163,7 +167,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     type="number"
                     id="hours"
                     name="Hours"
-                    className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 text-sm form-control p-2"
+                    className="opacity-90 placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 text-sm form-control p-2"
                     required
                     placeholder="0"
                     step="1"
@@ -214,7 +218,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     type="number"
                     id="minutes"
                     name="Minutes"
-                    className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 text-sm form-control p-2"
+                    className="opacity-90 placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 text-sm form-control p-2"
                     required
                     placeholder="0"
                     min="0"
@@ -272,7 +276,8 @@ function EventsForm({ isNewEvent, event, setEvent }) {
             >
               {/* This event will take place on 1/21/2025, From 01:40 PM until 01:40
               PM. */}
-              {(event.date &&
+              {(event &&
+                event.date &&
                 event.time &&
                 (event.hours || event.minutes) &&
                 `This event will take place on ${
@@ -306,7 +311,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     step="1"
                     type="number"
                     id="Minimum"
-                    className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-3 text-sm form-control w-full"
+                    className="opacity-90 placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-3 text-sm form-control w-full"
                     required
                     value={event?.minGuests || 1}
                     onChange={(e) => {
@@ -369,7 +374,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     id="Maximum"
                     type="number"
                     step="1"
-                    className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-3 text-sm form-control w-full"
+                    className="opacity-90 placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-3 text-sm form-control w-full"
                     required
                     min="1"
                     value={event?.maxGuests || 1}
@@ -429,7 +434,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 name="GeneralLocation"
                 type="text"
                 id="event-location"
-                className="focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full p-3 rtl:text-right ltr:text-left"
+                className="opacity-90 placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full p-3 rtl:text-right ltr:text-left"
                 placeholder={t("events.locationPlaceholder")}
                 data-val="true"
                 data-val-required=" this field is required."

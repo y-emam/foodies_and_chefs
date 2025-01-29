@@ -4,7 +4,7 @@ import InstagramIcon from "../../assets/images/instagram.svg";
 import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
-import editProfileService from "../../services/profile/editProfile";
+// import editProfileService from "../../services/profile/editProfile";
 import { useState } from "react";
 
 function ProfileForm({ isEditable, userData, setUserData }) {
@@ -55,17 +55,17 @@ function ProfileForm({ isEditable, userData, setUserData }) {
     }
   };
 
-  const handleUserUpdate = async () => {
-    const res = await editProfileService(userData);
+  // const handleUserUpdate = async () => {
+  //   const res = await editProfileService(userData);
 
-    if (!res) {
-      setError("Failed to update profile. Please try again.");
-    } else if (res.success) {
-      navigate("/profile");
-    } else {
-      setError(res.message);
-    }
-  };
+  //   if (!res) {
+  //     setError("Failed to update profile. Please try again.");
+  //   } else if (res.success) {
+  //     navigate("/profile");
+  //   } else {
+  //     setError(res.message);
+  //   }
+  // };
 
   return (
     <section className="CreateEventpgMobile min-h-screen mainbg relative md:min-h-full flex flex-col w-full items-center p-3 md:p-5 z-10 text-start lato-bold md:pl-10">
