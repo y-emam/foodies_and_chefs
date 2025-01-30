@@ -49,25 +49,23 @@ function HomePage() {
       id="overlay"
     >
       <section className="playwrite-us-modern   py-16 box-border">
-        <div className="flex md:justify-center items-center md:gap-10 gap-0 mt-10 mb-12 flex-col md:flex-row">
-          <div className="flex flex-col items-start w-[80%] md:w-[62%] justify-center space-y-10   ">
-            <p className="mx-2 px-5 text-center text-2xl md:text-3xl lg:text-4xl font-bold leading-3">
-              Where <div className="mb-2" />
-              <span className="text-main-color">
-                Exquisite Taste and Talent
-              </span>
-              <div className="mb-2" />
-              Meet Experience
-            </p>
-            <p className="playwrite-us-modern text-sm md:text-lg lg:text-xl text-justify leading-10 mx-2 px-5">
-              Connect with top chefs, explore diverse cuisines, enjoy
-              personalized culinary experiences and enjoy gourmet meals. Whether
-              it’s a private or social event we bring the best to your table.
+        <div className="flex md:justify-center items-center md:gap-10 gap-0  mb-12 flex-col md:flex-row">
+          <div className="flex flex-col items-center w-[80%] md:w-[62%] justify-center space-y-10   ">
+            <img
+              className="md:max-w-56 max-w-40 object-cover"
+              src={LogoImg}
+              alt="HomeLogo"
+            />
+
+            <p className="playwrite-us-modern text-xl md:text-2xl text-justify leading-10 mx-2	px-5">
+              {t("home.header.welcome")}{" "}
+              <span className="text-main-color">Foodies & Chefs</span>{" "}
+              {t("home.header.description")}
             </p>
           </div>
           <div className="md:w-[32%] max-w-full content-end m-0">
             <img
-              className="max-w-[80%] hidden md:block scale-x-[-1]"
+              className="max-w-[80%] rounded-tl-[50px] rounded-br-[50px] hidden md:block"
               src={ChefImg}
               alt="ChefImg"
             />

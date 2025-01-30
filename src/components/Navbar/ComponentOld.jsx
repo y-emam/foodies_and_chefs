@@ -8,7 +8,6 @@ import isJwtTokenValid from "../../utils/validateToken";
 import signoutService from "../../services/authentication/signout";
 import { useNavigate } from "react-router-dom";
 import resetLocalStorage from "../../utils/resetLocalStorage";
-import LogoImg from "../../assets/images/logo.webp";
 
 function Navbar() {
   const { t } = useTranslation();
@@ -61,7 +60,7 @@ function Navbar() {
 
   return (
     <nav>
-      <header className="relative flex justify-between items-center py-3 mx-4 md:mx-10 max-h-24">
+      <header className="relative flex justify-between items-center py-3 mx-4 md:mx-10">
         <div className="flex items-center gap-5">
           {/* Mobile Menu Toggle Button */}
           <div className="block md:hidden">
@@ -88,17 +87,18 @@ function Navbar() {
           </div>
 
           {/* Dropdown Menu and Links (Hidden on Mobile) */}
-          <div className="hidden md:flex justify-between w-auto items-center gap-5 text-black">
-            <div>
-              <a
-                className="menu-item px-[18px]"
-                style={{ borderRadius: "35px" }}
-                href="/"
-              >
-                <img className="h-14 object-cover" src={LogoImg} alt="logo" />
-              </a>
-            </div>
-            <ul className="z-20 absolute w-[50%] flex flex-row justify-around gap-10 items-center left-1/2 -translate-x-1/2">
+          <div className="hidden md:flex items-center gap-5 text-black">
+            <ul className="flex gap-10 items-center ">
+              <li>
+                <a
+                  className="menu-item text-white font-bold text-lg hover:text-orange-500 px-[18px] py-[9px] bg-[#FA8836]"
+                  style={{ borderRadius: "35px" }}
+                  href="/"
+                >
+                  {t("navbar.home")}
+                </a>
+              </li>
+
               <div className="relative cursor-pointer">
                 <button
                   className="px-[18px] py-[9px] flex items-center bg-transparent gap-2 text-white font-bold text-lg hover:text-orange-500 rounded-[35px] "
@@ -107,7 +107,7 @@ function Navbar() {
                   }}
                   style={{ borderRadius: "35px" }}
                 >
-                  {t("navbar.events")}
+                  {t("navbar.createEvent")}
                   <img src={CompleteArrowDownImg} alt="icon" />
                 </button>
 
@@ -117,25 +117,35 @@ function Navbar() {
                 >
                   <a
                     className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
+                    href="/events/create"
+                  >
+                    {t("navbar.createEvent")}
+                  </a>
+                  <a
+                    className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
                     href="/events"
                   >
                     {t("navbar.events")}
                   </a>
-                  <a
-                    className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
-                    href="/invites"
-                  >
-                    {t("navbar.invites")}
-                  </a>
                 </div>
               </div>
+
+              <li>
+                <a
+                  className="menu-item text-white font-bold text-lg hover:text-orange-500"
+                  style={{ borderRadius: "35px" }}
+                  href="/invites"
+                >
+                  {t("navbar.invites")}
+                </a>
+              </li>
               <li>
                 <a
                   className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
                   style={{ borderRadius: "35px" }}
                   href="/menus"
                 >
-                  {t("navbar.menus")}
+                  {t("navbar.myMenus")}
                 </a>
               </li>
               <li>
@@ -280,14 +290,22 @@ function Navbar() {
           <ul className="space-y-4">
             <li>
               <a
-                className="menu-item px-[18px] flex justify-center items-center"
+                className="menu-item text-white font-bold text-lg hover:text-black px-[18px] py-[9px] bg-[#FA8836]"
                 style={{ borderRadius: "35px" }}
                 href="/"
               >
-                <img className="h-14 object-cover" src={LogoImg} alt="logo" />
+                {t("navbar.home")}
               </a>
             </li>
             <ul className="mt-10 border-y border-[#FA8836]">
+              <li>
+                <a
+                  className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
+                  href="/events/create"
+                >
+                  {t("navbar.createEvent")}
+                </a>
+              </li>
               <li>
                 <a
                   className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
@@ -296,22 +314,22 @@ function Navbar() {
                   {t("navbar.events")}
                 </a>
               </li>
-              <li>
-                <a
-                  className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
-                  href="/invites"
-                >
-                  {t("navbar.invites")}
-                </a>
-              </li>
             </ul>
 
             <li>
               <a
                 className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
+                href="/invites"
+              >
+                {t("navbar.invites")}
+              </a>
+            </li>
+            <li>
+              <a
+                className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
                 href="/menus"
               >
-                {t("navbar.menus")}
+                {t("navbar.myMenus")}
               </a>
             </li>
             <li>
