@@ -20,7 +20,7 @@ function EventsPage() {
 
   return (
     <div className="mainbg overflow-hidden min-h-screen">
-      <div b-10f7mt3975 className="w-full  mx-3 my-3 border-custom">
+      <div className="w-full  mx-3 my-3 border-custom">
         {/* <Sidebar */}
         <main className="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0" id="overlay">
           <section className="min-h-screen space-y-6 md:min-h-full flex flex-col w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">

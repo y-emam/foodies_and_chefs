@@ -8,11 +8,7 @@ function EditProfilePage() {
 
   return (
     <div>
-      <main
-        b-10f7mt3975
-        className="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0"
-        id="overlay"
-      >
+      <main className="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0" id="overlay">
         <ProfileForm
           isEditable={true}
           userData={userData}

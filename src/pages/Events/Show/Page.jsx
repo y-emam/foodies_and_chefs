@@ -342,7 +342,7 @@ function ShowEventPage() {
             <span className="hidden" id="linkToCopy">
               You have been invited to submit a culinary proposal for an
               exclusive venue. Please share your offer via this link:
-              https://khaledyk-001-site4.atempurl.com/Chef/OrderPage/d11453f6-3629-49b8-8bc7-08dd3fb439ca
+              https://khaledyk-001-site6.atempurl.com/Chef/OrderPage/d11453f6-3629-49b8-8bc7-08dd3fb439ca
             </span>
 
             <span

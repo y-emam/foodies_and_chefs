@@ -4,31 +4,38 @@ import InstagramIcon from "../../assets/images/instagram.svg";
 import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
-import { useEffect, useRef, useState } from "react";
-import uploadFileService from "../../services/uploadFileService";
+import { useRef, useState } from "react";
 import isJwtTokenValid from "../../utils/validateToken";
 import uploadProfilePicture from "../../services/profile/uploadProfilePicture";
 
 function ProfileForm({ isEditable, userData, setUserData }) {
   const navigate = useNavigate();
 
-  const [file, setFile] = useState(null);
+  // const [file, setFile] = useState(null);
   const [error, setError] = useState("");
   const [preview, setPreview] = useState(
     userData?.profileImage
       ? `http://khaledyk-001-site6.atempurl.com/${userData.profileImage}`
-      : "default_profile_image.png" // Replace with a placeholder
+      : ProfileTempImg // Replace with a placeholder
   );
   const fileInputRef = useRef(null);
 
-  const uploadImage = async () => {
+  const uploadImage = async (file) => {
     const token = localStorage.getItem("token");
+
+    console.log("validating token");
 
     if (!token || !isJwtTokenValid(token)) {
       return;
     }
 
+    console.log("Token is valid");
+
+    console.log("File:", file);
+    console.log("Token", token);
+
     if (file && token) {
+      console.log("Uploading image...");
       const res = await uploadProfilePicture(file, token);
 
       if (!res || !res.success) {
@@ -42,16 +49,19 @@ function ProfileForm({ isEditable, userData, setUserData }) {
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
     if (selectedFile) {
-      setFile(selectedFile);
+      // setFile(selectedFile);
+
+      uploadImage(selectedFile); // upload the image
+
       setPreview(URL.createObjectURL(selectedFile)); // Preview image before upload
     }
   };
 
   // Trigger file input when button is clicked
   const handleButtonClick = () => {
-    fileInputRef.current.click();
+    console.log("Button clicked");
 
-    uploadImage();
+    fileInputRef.current.click();
   };
 
   return (
@@ -247,9 +257,9 @@ function ProfileForm({ isEditable, userData, setUserData }) {
               <path
                 d="M23.9987 2.25H19.9987C18.2306 2.25 16.5349 2.84263 15.2847 3.89752C14.0344 4.95242 13.332 6.38316 13.332 7.875V11.25H9.33203V15.75H13.332V24.75H18.6654V15.75H22.6654L23.9987 11.25H18.6654V7.875C18.6654 7.57663 18.8058 7.29048 19.0559 7.07951C19.3059 6.86853 19.6451 6.75 19.9987 6.75H23.9987V2.25Z"
                 stroke="white"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>
@@ -274,9 +284,9 @@ function ProfileForm({ isEditable, userData, setUserData }) {
               <path
                 stroke="white"
                 fill="white"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z"
               />
             </svg>

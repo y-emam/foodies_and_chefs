@@ -4,9 +4,13 @@ const uploadProfilePicture = async (file, token) => {
     try {
         let res = await uploadFileService(file, token);
 
+        console.log("Upload Profile Picture");
+
         console.log(res);
 
         if (res.success) {
+            const imageUrl = res.data;
+
             // set the new profile picture
             res = await fetch("http://khaledyk-001-site6.atempurl.com/User/UploadProfileImage", {
                 method: "POST",
@@ -14,7 +18,8 @@ const uploadProfilePicture = async (file, token) => {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
                 },
-                body: JSON.stringify({ imageUrl: res.data }),
+                mode: "no-cors",
+                body: JSON.stringify({ imageUrl }),
             });
 
             const data = await res.json();
