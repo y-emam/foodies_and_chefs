@@ -37,12 +37,18 @@ function HomePage() {
     const value = e.target.value.toLowerCase(); // Normalize the input
     setSearchTerm(value);
 
+    if (value.trim() === "") {
+      setFilteredChefs(chefs);
+      return;
+    }
+
     // Filter the chefs based on the name or location
     const updatedChefs = chefs.filter(
       (chef) =>
         chef.name.toLowerCase().includes(value) ||
         chef.location.toLowerCase().includes(value)
     );
+
     setFilteredChefs(updatedChefs);
   };
 
@@ -208,7 +214,7 @@ function HomePage() {
         <div className="flex flex-col space-y-10 border-t-2 border-main-color py-12 mx-6 ">
           <div className="flex justify-between flex-wrap space-y-5 md:space-y-0">
             <h2 className="text-start text-main-color text-3xl md:text-5xl">
-              {t("home.meetOurChefs.title")}
+              Our Top Chefs
             </h2>
             <div className="flex w-full md:w-fit justify-end md:justify-start">
               <div className="flex ltr:flex-row rtl:flex-row-reverse">

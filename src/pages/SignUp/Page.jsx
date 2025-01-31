@@ -438,12 +438,12 @@ function SignUpPage() {
               />
               <label
                 htmlFor="Foodies"
-                className="flex items-center justify-center w-6 h-6 border-2 border-white rounded-sm cursor-pointer peer-checked:bg-[#6555FF] peer-checked:text-white peer-checked:border-[#6555FF] text-xl font-bold transition duration-200"
+                className="flex items-center justify-center w-6 h-6 border-2 border-white rounded-sm peer-checked:bg-[#757575] peer-checked:text-white peer-checked:border-[#757575] text-xl font-bold transition duration-200 cursor-not-allowed"
               >
                 ✔
               </label>
               <span className="mx-2 text-white font-bold text-xl md:text-2xl">
-                Foodies
+                Foodie
               </span>
             </div>
 
@@ -464,7 +464,7 @@ function SignUpPage() {
                 ✔
               </label>
               <span className="mx-2 text-white font-bold text-xl md:text-2xl">
-                Chefs
+                Chef
               </span>
             </div>
           </div>
