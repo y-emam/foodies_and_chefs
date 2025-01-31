@@ -37,7 +37,7 @@ function EventsPage() {
                 className="text-white text-center font-bold text-xl plus-jakarta-sans w-2/6 bg-[#FA8836] h-[53px] flex justify-center items-center mb-2 hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836] rounded-[16px]"
                 href="/events/create"
               >
-                Add Event
+                Create Event
               </a>
             </div>
             {events.map((event) => (
