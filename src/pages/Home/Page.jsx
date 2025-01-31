@@ -9,6 +9,7 @@ import OurMissionImg from "../../assets/images/ourMission.webp";
 import ServiceImg1 from "../../assets/images/ServiceImg1.webp";
 import ServiceImg2 from "../../assets/images/ServiceImg2.jpg";
 import ServiceImg3 from "../../assets/images/ServiceImg3.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const chefs = [
   { name: "Ahmed Hassan", location: "Alexandria, Egypt", image: ChefTempImg },
@@ -25,10 +26,49 @@ const chefs = [
   { name: "Amgad Yasser", location: "Luxor, Egypt", image: ChefTempImg },
 ];
 
+const howItWorksSteps = [
+  {
+    icon: "fa-solid fa-magnifying-glass",
+    title: "Create Event",
+    description: "Fill out event details.",
+  },
+  {
+    icon: "fa-solid fa-utensils",
+    title: "Choose Chef",
+    description: "Select a menu that suits your event and taste.",
+  },
+
+  {
+    icon: "fa-solid fa-share-from-square",
+    title: "Send Request",
+    description: "Send culinary request to chosen chefs.",
+  },
+  {
+    icon: "fa-solid fa-handshake",
+    title: "Receive Chef Offers",
+    description: "Receive chef offers for your event.",
+  },
+  {
+    icon: "fa-solid fa-circle-check",
+    title: "Confirm Offer",
+    description: "Connect with chef and confirm offer and event details.",
+  },
+  {
+    icon: "fa-solid fa-money-bill",
+    title: "Pay Deposit",
+    description:
+      "Secure your booking by paying a 30% deposit directly to the cheif.",
+  },
+  {
+    icon: "fa-solid fa-envelope",
+    title: "Send RSVPs",
+    description: "Once confirmed by guests, sit back and relax.",
+  },
+];
+
 function HomePage() {
-  // translation function
   const { t } = useTranslation();
-  const steps = t("home.howItWorks.steps", { returnObjects: true });
+  // const steps = t("home.howItWorks.steps", { returnObjects: true });
 
   const [searchTerm, setSearchTerm] = useState(""); // State to hold the search input
   const [filteredChefs, setFilteredChefs] = useState(chefs);
@@ -195,22 +235,25 @@ function HomePage() {
 
         {/* How It works */}
         <div className="flex flex-col space-y-10 min-h-52 border-t-2 border-main-color py-12 mx-6">
-          <h2 className="text-center md:text-start text-main-color text-4xl">
-            {t("home.howItWorks.title")}
+          <h2 className="font-bold text-center text-white text-2xl sm:text-3xl lg:text-4xl">
+            How It Works:{" "}
+            <span className="text-main-color">Host Your Event</span> With Ease
           </h2>
-          <div className="grid grid-rows-6 grid-cols-1 md:grid-rows-3 md:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3  gap-10 mx-5 ">
-            {steps.map((step, index) => (
-              <p
+          <div className="flex flex-col sm:flex-row justify-around items-center flex-wrap gap-8 sm:gap-10">
+            {howItWorksSteps.map((step, index) => (
+              <div
                 key={index}
-                className="flex flex-col space-y-10 border-2 rounded-3xl h-72 justify-center border-main-color content-end text-justify px-3"
+                className="flex flex-col items-center space-y-2 max-w-full sm:max-w-32"
               >
-                <span>{step.title}</span>
-                <span>{step.description}</span>
-                <span>{step.action}</span>
-              </p>
+                <i className={`${step.icon} text-main-color`} />
+                <h2 className="text-sm font-bold">{step.title}</h2>
+                <p className="text-xs text-center">{step.description}</p>
+              </div>
             ))}
           </div>
         </div>
+
+        {/* Top Chefs */}
         <div className="flex flex-col space-y-10 border-t-2 border-main-color py-12 mx-6 ">
           <div className="flex justify-between flex-wrap space-y-5 md:space-y-0">
             <h2 className="text-start text-main-color text-3xl md:text-5xl">
