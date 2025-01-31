@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import DishImg2 from "../../assets/images/dish.webp";
-import { useTranslation } from "react-i18next";
 
 function MenusForm({ isNewMenu, menu, setMenu }) {
-  const { t } = useTranslation();
-
-  const [events, setEvents] = useState([]);
+  const [, setEvents] = useState([]);
 
   useEffect(() => {
     setEvents([
