@@ -9,7 +9,6 @@ import OurMissionImg from "../../assets/images/ourMission.webp";
 import ServiceImg1 from "../../assets/images/ServiceImg1.webp";
 import ServiceImg2 from "../../assets/images/ServiceImg2.jpg";
 import ServiceImg3 from "../../assets/images/ServiceImg3.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const chefs = [
   { name: "Ahmed Hassan", location: "Alexandria, Egypt", image: ChefTempImg },
