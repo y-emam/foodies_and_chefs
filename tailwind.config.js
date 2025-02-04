@@ -8,7 +8,11 @@ module.exports = {
     extend: {
       colors: {
         'main-color': 'rgb(250 136 54)',
-      }
+      },
+      clipPath: {
+        rhombus: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+      },
+
     },
   },
   plugins: [],

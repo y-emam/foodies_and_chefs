@@ -1,29 +1,20 @@
 import GroupChefsImg from "../../assets/images/GroupChefsImg.webp";
-import ChefSlider from "../../components/ChefSlider/Component";
-import ChefTempImg from "../../assets/images/chefTemp.webp";
 import "./stylesHome.css";
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import HeaderImg from "../../assets/images/HomePageImage.webp";
 import OurMissionImg from "../../assets/images/ourMission.webp";
 import ServiceImg1 from "../../assets/images/ServiceImg1.webp";
 import ServiceImg2 from "../../assets/images/ServiceImg2.jpg";
 import ServiceImg3 from "../../assets/images/ServiceImg3.png";
-
-const chefs = [
-  { name: "Ahmed Hassan", location: "Alexandria, Egypt", image: ChefTempImg },
-  { name: "Fatima Mahmoud", location: "Giza, Egypt", image: ChefTempImg },
-  { name: "Omar Abdelrahman", location: "Luxor, Egypt", image: ChefTempImg },
-  { name: "Sara Adel", location: "Aswan, Egypt", image: ChefTempImg },
-  { name: "Khaled Youssef", location: "Hurghada, Egypt", image: ChefTempImg },
-  { name: "Layla Mostafa", location: "Mansoura, Egypt", image: ChefTempImg },
-  { name: "Hassan Alaa", location: "Port Said, Egypt", image: ChefTempImg },
-  { name: "Waleed Sayed", location: "Ismailia, Egypt", image: ChefTempImg },
-  { name: "Yasser Emam", location: "Cairo, Egypt", image: ChefTempImg },
-  { name: "Ahmed Khaled", location: "Alexandria, Egypt", image: ChefTempImg },
-  { name: "Fareed", location: "New Cairo, Egypt", image: ChefTempImg },
-  { name: "Amgad Yasser", location: "Luxor, Egypt", image: ChefTempImg },
-];
+import FourImagesGroup from "../../components/FourImagesGroup/Component";
+import Img1 from "../../assets/images/img1.webp";
+import Img2 from "../../assets/images/img2.webp";
+import Img3 from "../../assets/images/img3.webp";
+import Img4 from "../../assets/images/img4.webp";
+import Img5 from "../../assets/images/img5.webp";
+import Img6 from "../../assets/images/img6.jpeg";
+import Img7 from "../../assets/images/img7.jpeg";
+import Img8 from "../../assets/images/img8.jpeg";
 
 const howItWorksSteps = [
   {
@@ -66,30 +57,7 @@ const howItWorksSteps = [
 ];
 
 function HomePage() {
-  const { t } = useTranslation();
-  // const steps = t("home.howItWorks.steps", { returnObjects: true });
-
-  const [searchTerm, setSearchTerm] = useState(""); // State to hold the search input
-  const [filteredChefs, setFilteredChefs] = useState(chefs);
-
-  const handleSearch = (e) => {
-    const value = e.target.value.toLowerCase(); // Normalize the input
-    setSearchTerm(value);
-
-    if (value.trim() === "") {
-      setFilteredChefs(chefs);
-      return;
-    }
-
-    // Filter the chefs based on the name or location
-    const updatedChefs = chefs.filter(
-      (chef) =>
-        chef.name.toLowerCase().includes(value) ||
-        chef.location.toLowerCase().includes(value)
-    );
-
-    setFilteredChefs(updatedChefs);
-  };
+  // const { t } = useTranslation();
 
   return (
     <main
@@ -129,7 +97,7 @@ function HomePage() {
         </div>
 
         {/* Our Mission */}
-        <div className="flex md:justify-center items-center md:gap-10 gap-0 py-14 my-12 flex-col md:flex-row border-t-2 border-main-color">
+        <div className="flex md:justify-center items-center md:gap-10 gap-0 py-14 lg:px-5 my-12 flex-col md:flex-row border-t-2 border-main-color">
           <div className="md:w-[32%] max-w-full content-end m-0">
             <img
               className="max-w-[80%] hidden md:block shadow-md shadow-main-color rounded-xl"
@@ -252,32 +220,42 @@ function HomePage() {
           </div>
         </div>
 
-        {/* Top Chefs */}
-        <div className="flex flex-col space-y-10 border-t-2 border-main-color py-12 mx-6 ">
-          <div className="flex justify-between flex-wrap space-y-5 md:space-y-0">
-            <h2 className="text-start text-main-color text-3xl md:text-5xl">
-              Our Top Chefs
-            </h2>
-            <div className="flex w-full md:w-fit justify-end md:justify-start">
-              <div className="flex ltr:flex-row rtl:flex-row-reverse">
-                <div className="border-y-2 border-l-2 border-main-color rounded-l-full text-l px-2 py-1 h-9 bg-transparent flex items-center">
-                  <i className="fa-solid fa-magnifying-glass text-lg"></i>
-                </div>
-                <input
-                  placeholder={t("home.meetOurChefs.searchPlaceholder")}
-                  className="bg-transparent text-main-color border-2 border-main-color border-l-0 rounded-r-full h-9 flex-grow px-3 focus:outline-none"
-                  value={searchTerm}
-                  onChange={handleSearch}
-                />
-              </div>
-            </div>
-          </div>
+        {/* Join Our Community */}
+        <div className="flex flex-col items-center justify-center px-4 md:px-10 lg:px-14 border-t-2 border-main-color">
+          {/* Top Image Group */}
+          <FourImagesGroup
+            className="self-center md:self-start md:ml-10 lg:ml-20 lg:top-32"
+            img1={Img1}
+            img2={Img2}
+            img3={Img3}
+            img4={Img4}
+          />
 
-          <div className="flex items-center justify-center w-full">
-            <div className="container w-full">
-              <ChefSlider chefs={filteredChefs} />
-            </div>
-          </div>
+          {/* Heading */}
+          <h2 className="text-center text-main-color text-2xl md:text-3xl lg:text-4xl font-bold mt-10">
+            Join Our Community
+          </h2>
+
+          {/* Description */}
+          <p className="max-w-[90%] md:max-w-[70%] lg:max-w-[50%] playwrite-us-modern text-sm md:text-lg lg:text-xl text-center leading-6 mt-3">
+            Showcase your talent, connect with food lovers, and grow your
+            culinary career. Sign up now to become part of our exclusive
+            network!
+          </p>
+
+          {/* Button */}
+          <button className="mt-5 bg-transparent text-lg border-2 border-main-color px-4 py-2 rounded-md hover:bg-main-color hover:text-white transition-all duration-300">
+            Join as Chef
+          </button>
+
+          {/* Bottom Image Group */}
+          <FourImagesGroup
+            className="self-center md:self-end md:right-20 md:bottom-20 md:mr-10 lg:mr-14 mt-10 lg:-mt-10"
+            img1={Img5}
+            img2={Img6}
+            img3={Img7}
+            img4={Img8}
+          />
         </div>
       </section>
     </main>
