@@ -1,7 +1,7 @@
 import { useState } from "react";
 import MenusForm from "../../../components/MenusForm/Component";
 
-function CreateMenuPage() {
+function EditMenuPage() {
   const [menu, setMenu] = useState({
     name: "",
     description: "",
@@ -10,9 +10,9 @@ function CreateMenuPage() {
 
   return (
     <div>
-      <MenusForm isNewMenu={true} menu={menu} setMenu={setMenu} />
+      <MenusForm isNewMenu={false} menu={menu} setMenu={setMenu} />
     </div>
   );
 }
 
-export default CreateMenuPage;
+export default EditMenuPage;
