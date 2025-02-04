@@ -85,7 +85,9 @@ function VerifyOtpPage() {
     <main className="min-h-screen overflow-auto" id="app-body">
       <div className="min-h-screen flex items-center justify-center bg-cover bg-center hero-section">
         <div className="absolute md:top-1 top-5 rtl:right-5 md:rtl:right-9 ltr:left-5 md:ltr:left-9 z-20">
-          <img className="h-auto w-1/4 md:w-1/6" src={LogoImg} alt="Logo" />
+          <a href="/">
+            <img className="h-auto w-1/4 md:w-1/6" src={LogoImg} alt="Logo" />
+          </a>
         </div>
 
         <div className="p-8 rounded-lg sm:w-75 md:w-full max-w-md z-10 h-96 bg-black bg-opacity-60">

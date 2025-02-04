@@ -153,16 +153,18 @@ function SignUpPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center   hero-section backdrop-filter">
-      <div className="lg:grid lg:grid-cols-2 w-full max-w-md lg:max-w-full space-y-6 md:space-y-0 rounded-lg z-10 mt-0   ">
+    <div className="min-h-screen flex items-center justify-center hero-section backdrop-filter">
+      <div className="lg:grid lg:grid-cols-2 w-full max-w-md lg:max-w-full space-y-6 md:space-y-0 rounded-lg z-10 mt-0">
         {/* Logo and Title */}
 
-        <div className="text-center lg:flex lg:flex-col lg:justify-center items-center   ">
-          <img
-            className="object-cover w-1/3 lg:w-1/2"
-            src={LogoImg}
-            alt="Logo"
-          />
+        <div className="text-center lg:flex lg:flex-col lg:justify-center items-center">
+          <a href="/">
+            <img
+              className="object-cover w-1/3 lg:w-1/2"
+              src={LogoImg}
+              alt="Logo"
+            />
+          </a>
         </div>
 
         {/* Sign Up Form */}

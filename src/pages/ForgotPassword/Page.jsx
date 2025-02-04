@@ -33,7 +33,9 @@ function ForgotPasswordPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-cover bg-center hero-section">
       <div className="absolute md:top-1 top-5 ltr:left-5 rtl:right-5 md:ltr:left-9 md:rtl:right-9 z-20">
-        <img className="h-auto w-1/4 md:w-1/6" src={LogoImg} alt="Logo" />
+        <a href="/">
+          <img className="h-auto w-1/4 md:w-1/6" src={LogoImg} alt="Logo" />
+        </a>
       </div>
 
       <form

@@ -13,7 +13,6 @@ import Footer from "./components/Footer/Component";
 import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
 import InvitesPage from "./pages/Invites/Pages";
-import Navbar from "./components/Navbar/Component";
 import VerifyOtpPage from "./pages/VerifyOtp/Page";
 import ForgotPasswordConfirmationPage from "./pages/ForgotPassword/Confirmation/Page";
 import ResetPasswordPage from "./pages/ResetPassword/Page";
@@ -24,6 +23,7 @@ import ShowEventPage from "./pages/Events/Show/Page";
 import CreateMenuPage from "./pages/Menus/Create/Page";
 import OffersPage from "./pages/Offers/Page";
 import ShowOfferPage from "./pages/Offers/ShowOffer/Page";
+import NavbarHider from "./components/Navbar/Hider/Component";
 
 function App() {
   useEffect(() => {
@@ -34,7 +34,7 @@ function App() {
     <div className="App">
       <Router>
         {/* Navbar */}
-        <Navbar />
+        <NavbarHider />
 
         {/* Routes */}
         <Routes>
