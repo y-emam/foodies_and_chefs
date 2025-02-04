@@ -340,9 +340,9 @@ function ShowEventPage() {
               <i className="fa-solid fa-link text-[#C9CED6] md:text-[20px] text-[10px]"></i>
             </button>
             <span className="hidden" id="linkToCopy">
-              You have been invited to submit a culinary proposal for an
+              {`You have been invited to submit a culinary proposal for an
               exclusive venue. Please share your offer via this link:
-              https://khaledyk-001-site6.atempurl.com/Chef/OrderPage/d11453f6-3629-49b8-8bc7-08dd3fb439ca
+              https://${process.env.REACT_APP_API_DOMAIN}/Chef/OrderPage/d11453f6-3629-49b8-8bc7-08dd3fb439ca`}
             </span>
 
             <span

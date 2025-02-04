@@ -15,7 +15,7 @@ function ProfileForm({ isEditable, userData, setUserData }) {
   const [error, setError] = useState("");
   const [preview, setPreview] = useState(
     userData?.profileImage
-      ? `http://khaledyk-001-site6.atempurl.com/${userData.profileImage}`
+      ? `http://${process.env.REACT_APP_API_DOMAIN}/${userData.profileImage}`
       : ProfileTempImg // Replace with a placeholder
   );
   const fileInputRef = useRef(null);

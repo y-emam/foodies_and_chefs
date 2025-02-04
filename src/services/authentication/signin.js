@@ -1,6 +1,6 @@
 const signinService = async (email, password) => {
     try {
-        const res = await fetch("http://khaledyk-001-site6.atempurl.com/User/SignIn", {
+        const res = await fetch(`http://${process.env.REACT_APP_API_DOMAIN}/User/SignIn`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -12,7 +12,7 @@ const uploadProfilePicture = async (file, token) => {
             const imageUrl = res.data;
 
             // set the new profile picture
-            res = await fetch("http://khaledyk-001-site6.atempurl.com/User/UploadProfileImage", {
+            res = await fetch(`http://${process.env.REACT_APP_API_DOMAIN}/User/UploadProfileImage`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

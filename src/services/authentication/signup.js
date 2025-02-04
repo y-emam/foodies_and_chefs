@@ -1,6 +1,6 @@
 const signupService = async (data) => {
     try {
-        const response = await fetch('http://khaledyk-001-site6.atempurl.com/User/SignUp', {
+        const response = await fetch(`http://${process.env.REACT_APP_API_DOMAIN}/User/SignUp`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

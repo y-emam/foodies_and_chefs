@@ -1,6 +1,6 @@
 const resetPasswordService = async (email, token, password, confirmPassword) => {
     try {
-        const res = await fetch(`http://khaledyk-001-site6.atempurl.com/User/ResetPassword`, {
+        const res = await fetch(`http://${process.env.REACT_APP_API_DOMAIN}/User/ResetPassword`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

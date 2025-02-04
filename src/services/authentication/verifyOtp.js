@@ -1,6 +1,6 @@
 const verifyOtpService = async (otp, userId) => {
     try {
-        const res = await fetch("http://khaledyk-001-site6.atempurl.com/User/VerifyOtp", {
+        const res = await fetch(`http://${process.env.REACT_APP_API_DOMAIN}/User/VerifyOtp`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

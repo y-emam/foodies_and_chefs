@@ -232,7 +232,7 @@ function Navbar() {
                   className="icon rounded-full w-12 h-12 object-cover"
                   src={
                     userData?.profileImage
-                      ? `http://khaledyk-001-site6.atempurl.com/${userData.profileImage}`
+                      ? `http://${process.env.REACT_APP_API_DOMAIN}/${userData.profileImage}`
                       : ProfileTempImg
                   }
                   alt="profileImage"

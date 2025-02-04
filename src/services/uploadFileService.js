@@ -3,7 +3,7 @@ const uploadFileService = async (file, token) => {
         const formData = new FormData();
         formData.append("file", file);
 
-        const res = await fetch("http://khaledyk-001-site6.atempurl.com/Upload/UploadFile", {
+        const res = await fetch(`http://${process.env.REACT_APP_API_DOMAIN}/Upload/UploadFile`, {
             method: "POST",
             body: formData,
             headers: {
