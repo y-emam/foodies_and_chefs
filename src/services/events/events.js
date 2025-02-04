@@ -1,4 +1,4 @@
-export const getEventByEventId = async (eventId) => {
+export const getEventByEventIdService = async (eventId) => {
     return {
         "id": eventId,
         name: "Event Name",
@@ -10,4 +10,21 @@ export const getEventByEventId = async (eventId) => {
         minGuests: 1,
         maxGuests: 2,
     };
+}
+
+export const getAllEventsService = async (pageNum = 1, pageSize = 5) => {
+    try {
+        const res = await fetch(`http://khaledyk-001-site6.atempurl.com/Home/GetMyEvents?page=${pageNum}&pageSize=${pageSize}`, {
+            method: "GET",
+            mode: 'cors'
+        });
+
+        const eventsData = await res.json();
+
+        console.log(eventsData);
+
+        return eventsData;
+    } catch (err) {
+        return err.response;
+    }
 }

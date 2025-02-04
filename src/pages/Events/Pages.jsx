@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 // TODO change this to dish2 image
 import DishImg2 from "../../assets/images/dish.webp";
 import { useTranslation } from "react-i18next";
+import { getAllEventsService } from "../../services/events/events";
 
 function EventsPage() {
   const { t } = useTranslation();
@@ -9,6 +10,14 @@ function EventsPage() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
+    const getAllEvents = async () => {
+      const res = await getAllEventsService(1, 10);
+
+      console.log(res);
+    };
+
+    getAllEvents();
+
     setEvents([
       {
         id: "5cac8011-c94a-4f11-5285-08dd3a229010",
