@@ -1,7 +1,7 @@
 import "./styles.css";
 import logo from "../../assets/images/logo.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
   return (
@@ -23,14 +23,14 @@ function Footer() {
             >
               <FontAwesomeIcon icon={faFacebook} size="1x" />
             </a>
-            {/* <a
-              href="/"
+            <a
+              href="https://www.instagram.com/foodiesnchefs"
               target="_blank"
               rel="noreferrer"
               className="social-icon"
             >
               <FontAwesomeIcon icon={faInstagram} size="1x" />
-            </a> */}
+            </a>
           </div>
         </div>
 

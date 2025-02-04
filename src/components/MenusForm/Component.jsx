@@ -3,23 +3,8 @@ import DishImg2 from "../../assets/images/dish.webp";
 import { X } from "lucide-react";
 
 function MenusForm({ isNewMenu, menu, setMenu }) {
-  // const [, setEvents] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState(null);
-
-  // useEffect(() => {
-  //   setEvents([
-  //     {
-  //       id: "5cac8011-c94a-4f11-5285-08dd3a229010",
-  //       name: "Festival",
-  //       date: "Tue 21-Jan-2025 15:49",
-  //     },
-  //   ]);
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log(menu);
-  // }, [menu]);
 
   return (
     <div className="mainbg overflow-hidden min-h-screen">
@@ -69,81 +54,81 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
               />
             </div>
             <hr className="w-full bg-main-color h-1 my-4 border-none" />
-            {menu?.items?.map((item, index) => (
+            {menu?.courses?.map((course, index) => (
               <div key={index} className="flex flex-col gap-2 mb-4">
                 <div className="flex flex-col gap-2">
                   <label className="section-title flex flex-row justify-between pr-4">
-                    Item {index + 1}
+                    Course {index + 1}
                     <i
                       className="fa-solid fa-trash-can text-lg text-main-color hover:text-red-500 cursor-pointer"
                       onClick={() => {
-                        const newItems = [...menu.items];
-                        newItems.splice(index, 1);
-                        setMenu({ ...menu, items: newItems });
+                        const newCourses = [...menu.courses];
+                        newCourses.splice(index, 1);
+                        setMenu({ ...menu, courses: newCourses });
                       }}
                     />
                   </label>
                   <input
                     maxLength="100"
                     type="text"
-                    id="AmuseBouche"
-                    name="AmuseBouche"
+                    id="CourseName"
+                    name="CourseName"
                     className="opacity-90 rounded-none placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] bg-[#444444] form-control w-full p-3"
-                    placeholder="Item Name"
-                    value={item.name}
+                    placeholder="Course Name"
+                    value={course.name}
                     required
                     onChange={(e) => {
-                      const newItems = [...menu.items];
-                      newItems[index].name = e.target.value;
-                      setMenu({ ...menu, items: newItems });
+                      const newCourses = [...menu.courses];
+                      newCourses[index].name = e.target.value;
+                      setMenu({ ...menu, courses: newCourses });
                     }}
                   />
                 </div>
                 <div className="relative mb-1">
                   <div className="Interl focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[66px] bg-[#444444] w-full">
                     <textarea
-                      id="ItemDesc"
-                      name="ItemDesc"
+                      id="CourseDesc"
+                      name="CourseDesc"
                       type="text"
                       className="Interl focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[66px] border border-[#FFFFFF4D] bg-[#444444] w-full p-3"
-                      placeholder="Item Description"
-                      value={item.description}
+                      placeholder="Course Description"
+                      value={course.description}
                       required
                       onChange={(e) => {
-                        const newItems = [...menu.items];
-                        newItems[index].description = e.target.value;
-                        setMenu({ ...menu, items: newItems });
+                        const newCourses = [...menu.courses];
+                        newCourses[index].description = e.target.value;
+                        setMenu({ ...menu, courses: newCourses });
                       }}
                     ></textarea>
                   </div>
                   <div className="flex flex-row w-full justify-start items-center gap-4 mt-4">
                     <div>
                       <label
-                        htmlFor={`ItemImg ${index}`}
-                        name={`ItemImg ${index}`}
+                        htmlFor={`CourseImg ${index}`}
+                        name={`CourseImg ${index}`}
                         className={`hidden lg:block w-38 py-1 px-2 rounded-md text-lg text-center text-white font-medium hover:bg-main-dark-color cursor-pointer ${
-                          item.image ? "bg-main-color" : "bg-[#444444]"
+                          course.image ? "bg-main-color" : "bg-[#444444]"
                         }`}
                       >
                         Choose Image
                       </label>
                       <label
-                        htmlFor={`ItemImg ${index}`}
+                        htmlFor={`CourseImg ${index}`}
                         className={`lg:hidden p-2 text-sm font-medium w-33 h-8 text-white rounded-md flex items-center justify-center focus:outline-none hover:bg-main-dark-color cursor-pointer ${
-                          item.image ? "bg-main-color" : "bg-[#444444]"
+                          course.image ? "bg-main-color" : "bg-[#444444]"
                         }`}
                       >
                         <i className="fa-solid fa-upload" />
                       </label>
                       <input
                         type="file"
-                        id={`ItemImg ${index}`}
-                        name={`ItemImg ${index}`}
+                        id={`CourseImg ${index}`}
+                        name={`CourseImg ${index}`}
                         required
                         onChange={(e) => {
-                          const newItems = [...menu.items];
-                          newItems[index].image = e.target.files[0];
-                          setMenu({ ...menu, items: newItems });
+                          const newCourses = [...menu.courses];
+                          newCourses[index].image = e.target.files[0];
+                          setMenu({ ...menu, courses: newCourses });
                         }}
                         style={{ display: "none" }}
                       />
@@ -151,13 +136,13 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                     <div>
                       <button
                         type="button"
-                        id={`ShowItemImg ${index}`}
-                        name={`ShowItemImg ${index}`}
+                        id={`ShowCourseImg ${index}`}
+                        name={`ShowCourseImg ${index}`}
                         className={`hidden lg:block w-38 py-1 px-2 rounded-md text-lg text-center text-white font-medium hover:bg-main-dark-color cursor-pointer ${
-                          item.image ? "bg-main-color" : "bg-[#444444]"
+                          course.image ? "bg-main-color" : "bg-[#444444]"
                         }`}
                         onClick={() => {
-                          setModalImg(URL.createObjectURL(item.image));
+                          setModalImg(URL.createObjectURL(course.image));
                           setIsModalOpen(true);
                         }}
                       >
@@ -165,13 +150,13 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                       </button>
                       <button
                         type="button"
-                        id={`ShowItemImg ${index}`}
-                        name={`ShowItemImg ${index}`}
+                        id={`ShowCourseImg ${index}`}
+                        name={`ShowCourseImg ${index}`}
                         className={`lg:hidden p-2 text-sm font-medium w-33 h-8 text-white rounded-md flex items-center justify-center focus:outline-none hover:bg-main-dark-color cursor-pointer ${
-                          item.image ? "bg-main-color" : "bg-[#444444]"
+                          course.image ? "bg-main-color" : "bg-[#444444]"
                         }`}
                         onClick={() => {
-                          setModalImg(URL.createObjectURL(item.image));
+                          setModalImg(URL.createObjectURL(course.image));
                           setIsModalOpen(true);
                         }}
                       >
@@ -186,14 +171,21 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
               <button
                 className="px-4 py-2 mt-10 text-lg font-bold bg-main-color hover:bg-[#CF5600]"
                 onClick={() => {
-                  const newItems = [...menu.items];
-                  newItems.push({ name: "", description: "", image: null });
-                  setMenu({ ...menu, items: newItems });
+                  const newCourses = [...menu.courses];
+                  newCourses.push({ name: "", description: "", image: null });
+                  setMenu({ ...menu, courses: newCourses });
                 }}
               >
-                Add Item
+                Add Course
               </button>
             </div>
+            <button
+              type="submit"
+              style={{ height: "40.76px" }}
+              className="w-full mt-20 text-white font-bold focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              Add Menu
+            </button>
           </div>
           {/* Modal */}
           {isModalOpen && (

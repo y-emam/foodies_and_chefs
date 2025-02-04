@@ -5,7 +5,7 @@ function EditMenuPage() {
   const [menu, setMenu] = useState({
     name: "",
     description: "",
-    items: [],
+    courses: [],
   });
 
   return (
