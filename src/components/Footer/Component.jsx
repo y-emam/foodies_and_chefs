@@ -1,7 +1,7 @@
 import "./styles.css";
 import logo from "../../assets/images/logo.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
   return (
@@ -20,26 +20,36 @@ function Footer() {
               target="_blank"
               rel="noreferrer"
               className="social-icon"
-              aria-label="Go to homepage"
             >
               <FontAwesomeIcon icon={faFacebook} size="1x" />
             </a>
-            <a href="/" className="social-icon" aria-label="Go to homepage">
+            {/* <a
+              href="/"
+              target="_blank"
+              rel="noreferrer"
+              className="social-icon"
+            >
               <FontAwesomeIcon icon={faInstagram} size="1x" />
-            </a>
+            </a> */}
           </div>
         </div>
 
         <div className="footer-right">
           <ul>
             <li>
-              <a href="/">Events</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="/">Invites</a>
+              <a href="/events">Events</a>
             </li>
             <li>
-              <a href="/">About</a>
+              <a href="/invites">Invites</a>
+            </li>
+            <li>
+              <a href="/menus">Menus</a>
+            </li>
+            <li>
+              <a href="/offers">Offers</a>
             </li>
           </ul>
         </div>
