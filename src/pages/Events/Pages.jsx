@@ -38,7 +38,7 @@ function EventsPage() {
                 {t("global.showcaseYourTalent")}
               </h2>
               <h2 className="plus-jakarta-sans md:text-4xl text-2xl text-center">
-                Create your menus here
+                Create your events here
               </h2>
             </div>
             <div className="w-full flex justify-center items-center mb-6 mt-0">
@@ -46,7 +46,7 @@ function EventsPage() {
                 className="text-white text-center font-bold text-xl plus-jakarta-sans w-2/6 bg-[#FA8836] h-[53px] flex justify-center items-center mb-2 hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836] rounded-[16px]"
                 href="/events/create"
               >
-                Create Event
+                Add Event
               </a>
             </div>
             {events.map((event) => (

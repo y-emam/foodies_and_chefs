@@ -1,8 +1,11 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import DishImg2 from "../../assets/images/dish.webp";
+import { X } from "lucide-react";
 
 function MenusForm({ isNewMenu, menu, setMenu }) {
   // const [, setEvents] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImg, setModalImg] = useState(null);
 
   // useEffect(() => {
   //   setEvents([
@@ -153,6 +156,10 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                         className={`hidden lg:block w-38 py-1 px-2 rounded-md text-lg text-center text-white font-medium hover:bg-main-dark-color cursor-pointer ${
                           item.image ? "bg-main-color" : "bg-[#444444]"
                         }`}
+                        onClick={() => {
+                          setModalImg(URL.createObjectURL(item.image));
+                          setIsModalOpen(true);
+                        }}
                       >
                         Show Image
                       </button>
@@ -163,6 +170,10 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                         className={`lg:hidden p-2 text-sm font-medium w-33 h-8 text-white rounded-md flex items-center justify-center focus:outline-none hover:bg-main-dark-color cursor-pointer ${
                           item.image ? "bg-main-color" : "bg-[#444444]"
                         }`}
+                        onClick={() => {
+                          setModalImg(URL.createObjectURL(item.image));
+                          setIsModalOpen(true);
+                        }}
                       >
                         <i className="fa-solid fa-image" />
                       </button>
@@ -184,6 +195,27 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
               </button>
             </div>
           </div>
+          {/* Modal */}
+          {isModalOpen && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+              <div className="relative">
+                {/* Close Button */}
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="absolute top-2 right-2 bg-white p-1 rounded-full shadow-md"
+                >
+                  <X className="w-6 h-6 text-gray-800" />
+                </button>
+
+                {/* Image */}
+                <img
+                  src={modalImg}
+                  alt="Preview"
+                  className="max-w-full max-h-[90vh] rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+          )}
         </section>
         <section className="w-5/12 hidden md:flex justify-end">
           <img
