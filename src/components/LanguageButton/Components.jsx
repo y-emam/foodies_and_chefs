@@ -17,7 +17,9 @@ function LanguageButton() {
       onClick={() => handleLanguageChange(i18n.language === "en" ? "ar" : "en")}
       style={{ cursor: "pointer" }}
     >
-      <span>{i18n.language === "en" ? "اللغة العربية" : "English"}</span>
+      <span>
+        <i class="fa-solid fa-globe" /> {i18n.language === "en" ? "Ar" : "En"}
+      </span>
     </button>
   );
 }
