@@ -122,7 +122,7 @@ function OffersPage() {
                     </td>
                     <td className="w-full h-3/4 flex justify-center">
                       <a
-                        className="text-white bg-[#FA8836] w-[50px] md:w-[113px] h-[20px] md:h-[36px] md:text-xl text-[0.5rem] text-center p-0 font-medium rounded-[15px]  hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836]"
+                        className="text-white bg-main-color w-[50px] md:w-[113px] h-[20px] md:h-[36px] md:text-xl text-[0.5rem] text-center p-0 font-medium rounded-[15px]  hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color"
                         href={`/showOffer/${offer.id}`}
                       >
                         Show

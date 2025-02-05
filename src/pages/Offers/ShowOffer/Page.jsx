@@ -367,7 +367,7 @@ function ShowOfferPage() {
             data-val-required="The EventID field is required."
             id="EventID"
           />
-          <div className="flex  flex-col space-y-2  justify-around   md:items-center items-start border-y border-[#FA8836] py-10 ">
+          <div className="flex  flex-col space-y-2  justify-around   md:items-center items-start border-y border-main-color py-10 ">
             <div className="flex md:flex-row  flex-col  justify-around   md:items-center items-start w-full"></div>
 
             <div className="flex md:flex-row  flex-col  justify-around   md:items-center items-start w-full">
@@ -446,7 +446,7 @@ function ShowOfferPage() {
               </div>
               <div className=" mx-3 md:mx-0 flex space-x-10 w-full justify-center">
                 <a
-                  className="w-5/12  bg-[#FA8836] h-[36px] md:text-xl text-[0.5rem] text-center px-3 font-medium rounded-[15px]  hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836]"
+                  className="w-5/12 text-white bg-main-color h-[36px] md:text-xl text-lg text-center px-3 font-medium rounded-[15px] hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color"
                   href="/Chef/UpdateEventChefMenu?menuId=%20a7640780-0981-4245-ac8d-6995276caece"
                 >
                   Show menu
@@ -463,7 +463,7 @@ function ShowOfferPage() {
               disabled
               id="Note"
               name="Notes"
-              className="text-xs	 md:text-xl appearance-none  md:w-1/2 w-2/3 px-4 py-2 rounded-[10px] text-white opacity-70 h-[70px] md:h-[101px]    border border-[#FA8836]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
+              className="text-xs	 md:text-xl appearance-none  md:w-1/2 w-2/3 px-4 py-2 rounded-[10px] text-white opacity-70 h-[70px] md:h-[101px] border border-main-color bg-[#444444] form-control p-3 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
             ></textarea>
           </div>
           <div className="flex items-center justify-around">

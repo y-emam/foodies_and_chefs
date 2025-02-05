@@ -14,7 +14,7 @@ function GoogleMapsPage() {
       <div className="flex justify-around">
         <button
           id="sendbtn"
-          className="bg-[#FA8836] rounded-[35px] w-[273px] h-[42px] mt-4 hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836]"
+          className="bg-main-color rounded-[35px] w-[273px] h-[42px] mt-4 hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent hover:border-[3px] hover:border-main-color hover:text-main-color"
         >
           Set Location
         </button>

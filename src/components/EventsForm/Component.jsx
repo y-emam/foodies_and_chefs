@@ -469,7 +469,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
             </div>
           </form>
         </section>
-        <section className="w-5/12 hidden md:flex justify-center ltr:border-l rtl: border-r border-[#FA8836]">
+        <section className="w-5/12 hidden md:flex justify-center ltr:border-l rtl: border-r border-main-color">
           <img
             src={DishImg}
             className="w-[30rem] h-auto object-cover"

@@ -71,7 +71,7 @@ function ShowEventPage() {
       id="main-show-event"
     >
       <section className="min-h-screen  md:space-y-14 space-y-5 md:min-h-full flex flex-col w-full items-center p-3 md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans">
-        <div className="bg-[#D9D9D926] md:w-12/12 w-full flex flex-col plus-jakarta-sans text-[13px] md:text-[23px] p-3 py-6 space-y-5 border border-[#FA8836] rounded-[5px]">
+        <div className="bg-[#D9D9D926] md:w-12/12 w-full flex flex-col plus-jakarta-sans text-[13px] md:text-[23px] p-3 py-6 space-y-5 border border-main-color rounded-[5px]">
           <div className="flex">
             <span className="md:w-2/12  w-7/12">Event name: </span>
             <span className="w-10/12">{event?.name}</span>
@@ -107,7 +107,7 @@ function ShowEventPage() {
           To create a culinary menu for your event, choose one or more of the
           following options:
         </p>
-        <ul className="plus-jakarta-sans text-[15px] md:text-[26px] border-b border-[#FA8836] pb-5 w-full">
+        <ul className="plus-jakarta-sans text-[15px] md:text-[26px] border-b border-main-color pb-5 w-full">
           <li className="my-3">
             1- Send a culinary request for proposal to one or more of our
             renowned chefs
@@ -145,7 +145,7 @@ function ShowEventPage() {
               {chefs.map((chef) => (
                 <tr className="grid md:grid-cols-5 grid-cols-6 gap-2 md:gap-2 my-5 text-center">
                   <td className="text-start md:text-start md:text-[22px] mx-3 font-semibold text-[0.5rem] w-full">
-                    <a href={`/chef/${chef.id}`} className="text-[#FA8836]">
+                    <a href={`/chef/${chef.id}`} className="text-main-color">
                       {chef.name}
                     </a>
                   </td>
@@ -331,7 +331,7 @@ function ShowEventPage() {
           </table>
         </div>
         {/* copy link Table */}
-        <p className="plus-jakarta-sans text-[15px] md:text-[26px] border-t border-[#FA8836] w-full text-start pt-5 font-bold">
+        <p className="plus-jakarta-sans text-[15px] md:text-[26px] border-t border-main-color w-full text-start pt-5 font-bold">
           2-Invite your favourite chef to submit their offer via this link
         </p>
         <div className="relative w-full flex justify-center items-center ">
@@ -356,18 +356,18 @@ function ShowEventPage() {
             </span>
             <button
               id="copyLinkButton"
-              className="lg:h-[57px] h-[34px]  w-[90px]  md:w-[164px]  bg-[#FA8836] text-white lg:p-2 p-0 lg:text-sm text-[0.5rem] font-bold hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836] rounded-[40px]"
+              className="lg:h-[57px] h-[34px]  w-[90px]  md:w-[164px]  bg-main-color text-white lg:p-2 p-0 lg:text-sm text-[0.5rem] font-bold hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color rounded-[40px]"
             >
               Copy Link
             </button>
           </div>
         </div>
-        <p className="plus-jakarta-sans text-[15px] md:text-[26px] border-t border-[#FA8836] pt-5 w-full font-bold">
+        <p className="plus-jakarta-sans text-[15px] md:text-[26px] border-t border-main-color pt-5 w-full font-bold">
           3- Showcase your talent by adding your own menu.
         </p>
         <form
           action="/Home/SetMySelfChef"
-          className="flex flex-col items-center justify-center w-full space-x-5 border-b border-[#FA8836] pb-5"
+          className="flex flex-col items-center justify-center w-full space-x-5 border-b border-main-color pb-5"
         >
           <input
             type="hidden"
@@ -381,7 +381,7 @@ function ShowEventPage() {
             <select
               id="Menu"
               name="MenuId"
-              className="text-xs	 md:text-xl appearance-none  md:w-5/12 w-2/3 px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-[#FA8836]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
+              className="text-xs	 md:text-xl appearance-none  md:w-5/12 w-2/3 px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-main-color  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
             >
               <option
                 value="b755d17d-62f0-444a-5280-08dd3a30e7f0"

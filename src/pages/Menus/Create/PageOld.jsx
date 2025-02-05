@@ -85,7 +85,7 @@ function CreateMenuPage() {
                   for="AmuseBoucheImage"
                   name="AmuseBoucheImage"
                   style={{ borderRadius: "10px" }}
-                  className="AmuseBoucheImageLable lg:block p-2.5 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
+                  className="AmuseBoucheImageLable lg:block p-2.5 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-main-color"
                 >
                   Choose Image
                 </label>
@@ -93,7 +93,7 @@ function CreateMenuPage() {
                   for="AmuseBoucheImage"
                   name="AmuseBoucheImage"
                   style={{ borderRadius: "10px" }}
-                  className="AmuseBoucheImageLable lg:hidden p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
+                  className="AmuseBoucheImageLable lg:hidden p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-main-color"
                 >
                   <i className="fa-solid fa-upload"></i>
                 </label>
@@ -110,7 +110,7 @@ function CreateMenuPage() {
                   id="ShowAmuseBoucheImage"
                   name="ShowAmuseBoucheImage"
                   style={{ borderRadius: "10px" }}
-                  className=" btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
+                  className=" btn-show-image hover:bg-main-color p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
                 >
                   Show Image
                 </button>
@@ -121,7 +121,7 @@ function CreateMenuPage() {
                   id="ShowAmuseBoucheImageMobile"
                   name="ShowAmuseBoucheImageMobile"
                   style={{ borderRadius: "10px" }}
-                  className=" btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
+                  className=" btn-show-image hover:bg-main-color p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
                 >
                   <i className="fa-solid fa-image"></i>
                 </button>
@@ -153,7 +153,7 @@ function CreateMenuPage() {
                 <label
                   for="AppetizerImage"
                   style={{ borderRadius: "10px" }}
-                  className="AppetizerImageLable lg:block p-2.5 leading-3 bg-[#242424] text-xsm  Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
+                  className="AppetizerImageLable lg:block p-2.5 leading-3 bg-[#242424] text-xsm  Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-main-color"
                 >
                   Choose Image
                 </label>
@@ -161,7 +161,7 @@ function CreateMenuPage() {
                   for="AppetizerImage"
                   name="AppetizerImage"
                   style={{ borderRadius: "10px" }}
-                  className="AppetizerImageLable lg:hidden p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
+                  className="AppetizerImageLable lg:hidden p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-main-color"
                 >
                   <i className="fa-solid fa-upload"></i>
                 </label>
@@ -178,7 +178,7 @@ function CreateMenuPage() {
                   id="ShowAppetizerImage"
                   name="ShowAppetizerImage"
                   style={{ borderRadius: "10px" }}
-                  className="btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
+                  className="btn-show-image hover:bg-main-color p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
                 >
                   Show Image
                 </button>
@@ -189,7 +189,7 @@ function CreateMenuPage() {
                   id="ShowAppetizerImageMobile"
                   name="ShowAppetizerImageMobile"
                   style={{ borderRadius: "10px" }}
-                  className=" btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
+                  className=" btn-show-image hover:bg-main-color p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
                 >
                   <i className="fa-solid fa-image"></i>
                 </button>
@@ -219,7 +219,7 @@ function CreateMenuPage() {
                 <label
                   for="SaladImage"
                   style={{ borderRadius: "10px" }}
-                  className="SaladImageLable lg:block p-2.5 leading-3 bg-[#242424] text-xsm  Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
+                  className="SaladImageLable lg:block p-2.5 leading-3 bg-[#242424] text-xsm  Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-main-color"
                 >
                   Choose Image
                 </label>
@@ -227,7 +227,7 @@ function CreateMenuPage() {
                   for="SaladImage"
                   name="SaladImage"
                   style={{ borderRadius: "10px" }}
-                  className="SaladImageLable lg:hidden p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
+                  className="SaladImageLable lg:hidden p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-main-color"
                 >
                   <i className="fa-solid fa-upload"></i>
                 </label>
@@ -244,7 +244,7 @@ function CreateMenuPage() {
                   id="ShowSaladImage"
                   name="ShowSaladImage"
                   style={{ borderRadius: "10px" }}
-                  className="btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
+                  className="btn-show-image hover:bg-main-color p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
                 >
                   Show Image
                 </button>
@@ -255,7 +255,7 @@ function CreateMenuPage() {
                   id="ShowSaladImageMobile"
                   name="ShowSaladImage"
                   style={{ borderRadius: "10px" }}
-                  className=" btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
+                  className=" btn-show-image hover:bg-main-color p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
                 >
                   <i className="fa-solid fa-image"></i>
                 </button>
@@ -285,7 +285,7 @@ function CreateMenuPage() {
                 <label
                   for="MainCourseImage"
                   style={{ borderRadius: "10px" }}
-                  className="MainCourseImageLable lg:block p-2.5 leading-3 bg-[#242424] text-xsm  Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
+                  className="MainCourseImageLable lg:block p-2.5 leading-3 bg-[#242424] text-xsm  Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-main-color"
                 >
                   Choose Image
                 </label>
@@ -293,7 +293,7 @@ function CreateMenuPage() {
                   for="MainCourseImage"
                   name="MainCourseImage"
                   style={{ borderRadius: "10px" }}
-                  className="MainCourseImageLable lg:hidden p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
+                  className="MainCourseImageLable lg:hidden p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-main-color"
                 >
                   <i className="fa-solid fa-upload"></i>
                 </label>
@@ -310,7 +310,7 @@ function CreateMenuPage() {
                   id="ShowMainCourseImage"
                   name="AmuseBoucheImage"
                   style={{ borderRadius: "10px" }}
-                  className="btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
+                  className="btn-show-image hover:bg-main-color p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
                 >
                   Show Image
                 </button>
@@ -321,7 +321,7 @@ function CreateMenuPage() {
                   id="ShowMainCourseImageMobile"
                   name="AmuseBoucheImage"
                   style={{ borderRadius: "10px" }}
-                  className=" btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
+                  className=" btn-show-image hover:bg-main-color p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
                 >
                   <i className="fa-solid fa-image"></i>
                 </button>
@@ -351,7 +351,7 @@ function CreateMenuPage() {
                 <label
                   for="DessertImage"
                   style={{ borderRadius: "10px" }}
-                  className="DessertImageLable lg:block p-2.5 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836]"
+                  className="DessertImageLable lg:block p-2.5 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-main-color"
                 >
                   Choose Image
                 </label>
@@ -359,7 +359,7 @@ function CreateMenuPage() {
                   for="DessertImage"
                   name="DessertImage"
                   style={{ borderRadius: "10px" }}
-                  className="DessertImageLable lg:hidden p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-[#FA8836] "
+                  className="DessertImageLable lg:hidden p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none hover:bg-main-color "
                 >
                   <i className="fa-solid fa-upload"></i>
                 </label>
@@ -377,7 +377,7 @@ function CreateMenuPage() {
                   id="ShowDessertImage"
                   name="AmuseBoucheImage"
                   style={{ borderRadius: "10px" }}
-                  className="btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
+                  className="btn-show-image hover:bg-main-color p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
                 >
                   Show Image
                 </button>
@@ -388,7 +388,7 @@ function CreateMenuPage() {
                   id="ShowDessertImageMobile"
                   name="AmuseBoucheImage"
                   style={{ borderRadius: "10px" }}
-                  className=" btn-show-image hover:bg-[#FA8836] p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
+                  className=" btn-show-image hover:bg-main-color p-2 leading-3 bg-[#242424] text-xsm Interl font-medium w-33 h-8  text-white  rounded-md flex items-center justify-center focus:outline-none"
                 >
                   <i className="fa-solid fa-image"></i>
                 </button>
@@ -410,7 +410,7 @@ function CreateMenuPage() {
           </form>
         </section>
         {/* 
-        <section className="w-5/12 hidden lg:flex items-center border-l border-[#FA8836]">
+        <section className="w-5/12 hidden lg:flex items-center border-l border-main-color">
           <img
             id="mainImage"
             src="/Newassets/dish.png"

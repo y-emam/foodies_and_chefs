@@ -169,7 +169,7 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
             ))}
             <div className="flex justify-center items-center gap-4">
               <button
-                className="px-4 py-2 mt-10 text-lg font-bold bg-main-color hover:bg-[#CF5600]"
+                className="px-4 py-2 mt-10 text-lg font-bold bg-main-color hover:bg-main-dark-color"
                 onClick={() => {
                   const newCourses = [...menu.courses];
                   newCourses.push({ name: "", description: "", image: null });

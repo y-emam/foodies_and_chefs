@@ -91,7 +91,7 @@ function Navbar() {
             <ul className="flex gap-10 items-center ">
               <li>
                 <a
-                  className="menu-item text-white font-bold text-lg hover:text-orange-500 px-[18px] py-[9px] bg-[#FA8836]"
+                  className="menu-item text-white font-bold text-lg hover:text-orange-500 px-[18px] py-[9px] bg-main-color"
                   style={{ borderRadius: "35px" }}
                   href="/"
                 >
@@ -290,14 +290,14 @@ function Navbar() {
           <ul className="space-y-4">
             <li>
               <a
-                className="menu-item text-white font-bold text-lg hover:text-black px-[18px] py-[9px] bg-[#FA8836]"
+                className="menu-item text-white font-bold text-lg hover:text-black px-[18px] py-[9px] bg-main-color"
                 style={{ borderRadius: "35px" }}
                 href="/"
               >
                 {t("navbar.home")}
               </a>
             </li>
-            <ul className="mt-10 border-y border-[#FA8836]">
+            <ul className="mt-10 border-y border-main-color">
               <li>
                 <a
                   className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"

@@ -201,7 +201,7 @@ function ProfileForm({ isEditable, userData, setUserData }) {
 
       {/* Social Links */}
       {isEditable ? (
-        <div className="self-start  w-full border-t-2 border-[#FA8836] md:text-[22px]  text-[15px]">
+        <div className="self-start  w-full border-t-2 border-main-color md:text-[22px]  text-[15px]">
           <h1 className="text-start my-14 ">Social links</h1>
           <div className="flex md:space-x-44 space-x-5 my-5 relative">
             <label className="w-2/12"> </label>
@@ -294,14 +294,14 @@ function ProfileForm({ isEditable, userData, setUserData }) {
           <div className="flex justify-center mt-10 mb-10">
             <button
               type="submit"
-              className="bg-[#FA8836] md:p-5 hover:p-4 rounded-[20px]  md:w-5/12 w-1/2 md:h-[70px] h-[35px] mt-4 drop-shadow-md shadow-[#FA8836] hover:bg-transparent hover:border-4 hover:border-[#FA8836] hover:text-[#FA8836] text-center  "
+              className="bg-main-color md:p-5 hover:p-4 rounded-[20px]  md:w-5/12 w-1/2 md:h-[70px] h-[35px] mt-4 drop-shadow-md shadow-main-color hover:bg-transparent hover:border-4 hover:border-main-color hover:text-main-color text-center  "
             >
               Done
             </button>
           </div>
         </div>
       ) : (
-        <div className="self-start    w-full border-t-2 border-[#FA8836] md:text-[22px]  text-[15px]">
+        <div className="self-start    w-full border-t-2 border-main-color md:text-[22px]  text-[15px]">
           <h1 className="text-start my-5 ">Social links</h1>
           <div className="flex rounded-[10px]   p-3 px-2 justify-center items-center md:w-1/4 w-1/2 m-auto border border-[#949494] bg-[#222222] ">
             {userData?.facebook && (

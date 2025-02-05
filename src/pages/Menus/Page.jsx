@@ -30,7 +30,7 @@ function MenusPage() {
             </div>
             <div className="w-full flex justify-center items-center mb-6 mt-0">
               <a
-                className="text-white text-center font-bold text-xl plus-jakarta-sans w-2/6 bg-[#FA8836] h-[53px] flex justify-center items-center mb-2 hover:bg-[#CF5600] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836] rounded-[16px]"
+                className="text-white text-center font-bold text-xl plus-jakarta-sans w-2/6 bg-main-color h-[53px] flex justify-center items-center mb-2 hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color rounded-[16px]"
                 href="/menus/create"
               >
                 Add menu
@@ -38,7 +38,7 @@ function MenusPage() {
             </div>
             {menus.map((event) => (
               <div
-                className="bg-[#FA8836] h-[53px] flex justify-between w-full items-center p-6 "
+                className="bg-main-color h-[53px] flex justify-between w-full items-center p-6 "
                 style={{ borderRadius: "16px" }}
                 key={event.id}
               >
@@ -55,13 +55,13 @@ function MenusPage() {
                   dir="auto"
                 >
                   <a
-                    className="md:h-[35px] h-[24px] md:w-[85px] w-[44px] bg-white text-[#FA8836] p-0.5 md:p-0 my-auto  border-[3px] border-white   font-bold md:text-[18px] text-[10px]  hover:bg-[#000000]  hover:border-[3px] hover:border-[#000000] rounded-[40px]	"
+                    className="md:h-[35px] h-[24px] md:w-[85px] w-[44px] bg-white text-main-color p-0.5 md:p-0 my-auto  border-[3px] border-white   font-bold md:text-[18px] text-[10px]  hover:bg-[#000000]  hover:border-[3px] hover:border-[#000000] rounded-[40px]	"
                     href={`/Home/EditEvent?eventId=${event.id}`}
                   >
                     Edit
                   </a>
                   <a
-                    className=" md:h-[35px] h-[24px] md:w-[85px] w-[44px]  bg-white text-[#FA8836] p-0.5 md:p-0 my-auto  border-[3px] border-white     font-bold md:text-[18px] text-[10px] 	 hover:bg-[#000000]   hover:border-[3px] hover:border-[#000000] rounded-[40px]"
+                    className=" md:h-[35px] h-[24px] md:w-[85px] w-[44px]  bg-white text-main-color p-0.5 md:p-0 my-auto  border-[3px] border-white     font-bold md:text-[18px] text-[10px] 	 hover:bg-[#000000]   hover:border-[3px] hover:border-[#000000] rounded-[40px]"
                     href={`/Home/ChefOffers?eventId=${event.id}`}
                   >
                     Show
@@ -144,7 +144,7 @@ function MenusPage() {
               </button>
             </div>
           </section>
-          <section className="w-5/12 hidden md:flex justify-end ltr:border-l rtl: border-r border-[#FA8836]">
+          <section className="w-5/12 hidden md:flex justify-end ltr:border-l rtl: border-r border-main-color">
             <img
               src={DishImg2}
               className="w-[30rem] h-auto object-cover"

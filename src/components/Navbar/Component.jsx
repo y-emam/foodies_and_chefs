@@ -287,7 +287,7 @@ function Navbar() {
                 <img className="h-14 object-cover" src={LogoImg} alt="logo" />
               </a>
             </li>
-            <ul className="mt-10 border-y border-[#FA8836]">
+            <ul className="mt-10 border-y border-main-color">
               <li>
                 <a
                   className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
