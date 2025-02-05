@@ -20,8 +20,8 @@
   -webkit-text-fill-color: transparent;
 }
 
-.show-offers-page {
-  background-image: url("../../../assets/images/mainbg.webp");
+.order-bg {
+  background-image: url("../../../assets/images/OrderBg.svg");
   background-size: cover;
   background-repeat: repeat-y;
 }

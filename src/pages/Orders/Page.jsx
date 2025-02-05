@@ -44,13 +44,13 @@ function OrderPage() {
               <div class="flex items-center text-[0.7rem] md:text-2xl">
                 <ProfileSVG />
                 <span>
-                  Description:: An annual technology conference featuring
+                  Description: An annual technology conference featuring
                   keynotes, workshops, and networking opportunities.
                 </span>
               </div>
               <div class="flex items-center text-[0.7rem] md:text-2xl ">
                 <ProfileSVG />
-                <span>Number of guests:: Minimum (50 to 500) Maximum</span>
+                <span>Number of guests: Minimum (50 to 500) Maximum</span>
               </div>
               <div class="md:flex flex-col md:flex-row space-y-5 md:space-y-0 text-[0.7rem] md:text-2xl ">
                 <div class="flex ">
@@ -64,7 +64,7 @@ function OrderPage() {
               </div>
               <div class="flex items-center   text-[0.7rem] md:text-2xl ">
                 <LocationSVG />
-                <span class="text-start">Location:: San Francisco, CA</span>
+                <span class="text-start">Location: San Francisco, CA</span>
               </div>
 
               <div
