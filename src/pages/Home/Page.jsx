@@ -14,49 +14,49 @@ import Img5 from "../../assets/images/img5.webp";
 import Img6 from "../../assets/images/img6.jpeg";
 import Img7 from "../../assets/images/img7.jpeg";
 import Img8 from "../../assets/images/img8.jpeg";
+import { useTranslation } from "react-i18next";
 
 const howItWorksSteps = [
   {
     icon: "fa-solid fa-magnifying-glass",
-    title: "Create Event",
-    description: "Fill out event details.",
+    title: "home.howItWorks.steps.step1.title",
+    description: "home.howItWorks.steps.step1.description",
   },
   {
     icon: "fa-solid fa-utensils",
-    title: "Choose Chef",
-    description: "Select a menu that suits your event and taste.",
+    title: "home.howItWorks.steps.step2.title",
+    description: "home.howItWorks.steps.step2.description",
   },
 
   {
     icon: "fa-solid fa-share-from-square",
-    title: "Send Request",
-    description: "Send culinary request to chosen chefs.",
+    title: "home.howItWorks.steps.step3.title",
+    description: "home.howItWorks.steps.step3.description",
   },
   {
     icon: "fa-solid fa-handshake",
-    title: "Receive Chef Offers",
-    description: "Receive chef offers for your event.",
+    title: "home.howItWorks.steps.step4.title",
+    description: "home.howItWorks.steps.step4.description",
   },
   {
     icon: "fa-solid fa-circle-check",
-    title: "Confirm Offer",
-    description: "Connect with chef and confirm offer and event details.",
+    title: "home.howItWorks.steps.step5.title",
+    description: "home.howItWorks.steps.step5.description",
   },
   {
     icon: "fa-solid fa-money-bill",
-    title: "Pay Deposit",
-    description:
-      "Secure your booking by paying a 30% deposit directly to the cheif.",
+    title: "home.howItWorks.steps.step6.title",
+    description: "home.howItWorks.steps.step6.description",
   },
   {
     icon: "fa-solid fa-envelope",
-    title: "Send RSVPs",
-    description: "Once confirmed by guests, sit back and relax.",
+    title: "home.howItWorks.steps.step7.title",
+    description: "home.howItWorks.steps.step7.description",
   },
 ];
 
 function HomePage() {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <main
@@ -68,17 +68,15 @@ function HomePage() {
         <div className="flex md:justify-center items-center md:gap-10 gap-0 my-12 flex-col md:flex-row">
           <div className="flex flex-col items-start w-[80%] md:w-[62%] justify-center space-y-10">
             <p className="mx-2 text-center self-center text-2xl md:text-3xl lg:text-4xl font-bold">
-              Where <div className="mb-2" />
+              {t("home.header.where")} <div className="mb-2" />
               <span className="text-main-color">
-                Exquisite Taste and Talent
+                {t("home.header.highlight")}
               </span>
               <div className="mb-2" />
-              Meet Experience
+              {t("home.header.meetExperience")}
             </p>
             <p className="playwrite-us-modern text-sm md:text-lg lg:text-xl text-justify leading-10 mx-2 px-5">
-              Connect with top chefs, explore diverse cuisines, enjoy
-              personalized culinary experiences and enjoy gourmet meals. Whether
-              it’s a private or social event we bring the best to your table.
+              {t("home.header.description")}
             </p>
           </div>
           <div className="md:w-[32%] max-w-full content-end m-0">
@@ -106,16 +104,18 @@ function HomePage() {
           </div>
           <div className="flex flex-col items-start w-[80%] md:w-[62%] justify-center space-y-10">
             <p className="mx-2 text-center text-2xl md:text-3xl lg:text-4xl font-bold">
-              <span className="text-main-color">Our Culinary Mission</span>
+              <span className="text-main-color">{t("home.mission.title")}</span>
             </p>
             <p className="playwrite-us-modern text-sm md:text-lg lg:text-xl text-justify leading-5 mx-2 px-5">
-              <span className="text-main-color">About Us: </span>We bridge the
-              gap between culinary enthusiasts and talented chefs, creating a
-              space where culinary creativity thrives.
+              <span className="text-main-color">
+                {t("home.mission.details.about")}:{" "}
+              </span>
+              {t("home.mission.details.aboutDescription")}
               <div className="mb-4" />
-              <span className="text-main-color">Mission: </span>We are committed
-              to delivering exceptional food experiences, fostering community
-              engagement, and driving innovation in the culinary world.
+              <span className="text-main-color">
+                {t("home.mission.details.mission")}:{" "}
+              </span>
+              {t("home.mission.details.missionDescription")}
             </p>
           </div>
         </div>
@@ -125,15 +125,12 @@ function HomePage() {
           {/* Text Section */}
           <div className="flex flex-col items-center w-[90%] md:w-[80%] text-center space-y-6">
             <p className="text-2xl md:text-3xl lg:text-4xl font-bold md:self-start">
-              <span className="text-main-color">Our Culinary Services</span>
+              <span className="text-main-color">
+                {t("home.services.title")}
+              </span>
             </p>
             <p className="playwrite-us-modern text-sm md:text-lg lg:text-xl">
-              Discover a world of culinary delights with our exclusive services.
-              Whether you’re looking to host a private event with a personal
-              chef, enjoy Gourmet meals delivered to your door, or want a full
-              catering service, we have something for every foodie. Our platform
-              connects you with professional chefs who bring diverse cuisines
-              and unique experiences.
+              {t("home.services.description")}
             </p>
           </div>
 
@@ -145,13 +142,14 @@ function HomePage() {
                 alt="ChefImg"
               />
               <div className="border-2 rounded-3xl w-56 py-4 px-4 mt-4 text-center">
-                <h2 className="text-lg font-bold">Order Gourmet Meals</h2>
-                <p className="text-xs leading-5 px-2 mt-2 text-left">
-                  Savor exceptional, ready-to-eat meals crafted by top chefs.
-                  Choose from a wide range of dishes.
+                <h2 className="text-lg font-bold">
+                  {t("home.services.details.service1.title")}
+                </h2>
+                <p className="text-xs leading-5 px-2 mt-2 text-start">
+                  {t("home.services.details.service1.description")}
                 </p>
                 <button className="mt-3 bg-transparent text-lg border-2 border-x-main-color border-y-gray-500 px-2 py-1">
-                  Explore
+                  {t("home.services.details.service1.button")}
                 </button>
               </div>
             </div>
@@ -163,15 +161,15 @@ function HomePage() {
               />
               <div className="border-2 rounded-3xl w-56 py-2 px-4 mt-4">
                 <h2 className="text-lg font-bold">
-                  Private Chef Booking Experience
+                  {t("home.services.details.service2.title")}
                 </h2>
                 <div className="mb-4" />
-                <p className="text-xs leading-5 px-4 text-left">
-                  Book top-tier pro chefs for unique private or public events.
+                <p className="text-xs leading-5 px-4 text-start">
+                  {t("home.services.details.service2.description")}
                 </p>
                 <div className="mb-10" />
                 <button className="bg-transparent text-lg border-2 border-x-main-color border-y-gray-500 px-2 py-1">
-                  Meet Chefs
+                  {t("home.services.details.service2.button")}
                 </button>
               </div>
             </div>
@@ -183,16 +181,15 @@ function HomePage() {
               />
               <div className="border-2 rounded-3xl w-56 py-2 px-4 mt-4">
                 <h2 className="text-lg font-bold">
-                  Exquisite Catering for Every Occasion
+                  {t("home.services.details.service3.title")}
                 </h2>
                 <div className="mb-2" />
-                <p className="text-xs leading-5 px-4 text-left">
-                  Our chefs provide full catering, delivering a gourmet
-                  experience that impresses guests.
+                <p className="text-xs leading-5 px-4 text-start">
+                  {t("home.services.details.service3.description")}
                 </p>
                 <div className="mb-6" />
                 <button className="bg-transparent text-lg border-2 border-x-main-color border-y-gray-500 px-2 py-1">
-                  Host Event
+                  {t("home.services.details.service3.button")}
                 </button>
               </div>
             </div>
@@ -202,8 +199,11 @@ function HomePage() {
         {/* How It works */}
         <div className="flex flex-col space-y-10 min-h-52 border-t-2 border-main-color py-12 mx-6">
           <h2 className="font-bold text-center text-white text-2xl sm:text-3xl lg:text-4xl">
-            How It Works:{" "}
-            <span className="text-main-color">Host Your Event</span> With Ease
+            {t("home.howItWorks.title")}:{" "}
+            <span className="text-main-color">
+              {t("home.howItWorks.highlight")}
+            </span>{" "}
+            {t("home.howItWorks.description")}
           </h2>
           <div className="flex flex-col sm:flex-row justify-around items-center flex-wrap gap-8 sm:gap-10">
             {howItWorksSteps.map((step, index) => (
@@ -212,8 +212,8 @@ function HomePage() {
                 className="flex flex-col items-center space-y-2 max-w-full sm:max-w-32"
               >
                 <i className={`${step.icon} text-main-color`} />
-                <h2 className="text-sm font-bold">{step.title}</h2>
-                <p className="text-xs text-center">{step.description}</p>
+                <h2 className="text-sm font-bold">{t(step.title)}</h2>
+                <p className="text-xs text-center">{t(step.description)}</p>
               </div>
             ))}
           </div>
@@ -223,7 +223,7 @@ function HomePage() {
         <div className="flex flex-col items-center justify-center px-4 md:px-10 lg:px-14 border-t-2 border-main-color">
           {/* Top Image Group */}
           <FourImagesGroup
-            className="self-center md:self-start md:ml-10 lg:ml-20 lg:top-32"
+            className="self-center md:self-start md:ms-10 lg:ms-20 lg:top-32"
             img1={Img1}
             img2={Img2}
             img3={Img3}
@@ -232,24 +232,22 @@ function HomePage() {
 
           {/* Heading */}
           <h2 className="text-center text-main-color text-2xl md:text-3xl lg:text-4xl font-bold mt-10">
-            Join Our Community
+            {t("home.joinCommunity.title")}
           </h2>
 
           {/* Description */}
           <p className="max-w-[90%] md:max-w-[70%] lg:max-w-[50%] playwrite-us-modern text-sm md:text-lg lg:text-xl text-center leading-6 mt-3">
-            Showcase your talent, connect with food lovers, and grow your
-            culinary career. Sign up now to become part of our exclusive
-            network!
+            {t("home.joinCommunity.description")}
           </p>
 
           {/* Button */}
           <button className="mt-5 bg-transparent text-lg border-2 border-main-color px-4 py-2 rounded-md hover:bg-main-color hover:text-white transition-all duration-300">
-            Join as Chef
+            {t("home.joinCommunity.button")}
           </button>
 
           {/* Bottom Image Group */}
           <FourImagesGroup
-            className="self-center md:self-end md:right-20 md:bottom-20 md:mr-10 lg:mr-14 mt-10 lg:-mt-10"
+            className="self-center md:self-end md:end-20 md:bottom-20 md:me-10 lg:me-14 mt-10 lg:-mt-10"
             img1={Img5}
             img2={Img6}
             img3={Img7}

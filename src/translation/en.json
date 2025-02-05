@@ -68,47 +68,80 @@
   },
   "home": {
     "header": {
-      "welcome": "Welcome to",
-      "description": "where unforgettable dining experiences begin. Discover top chefs, book personalized events, and elevate your gatherings with ease."
+      "where": "Where",
+      "highlight": "Exquisite Taste and Talent",
+      "meetExperience": "Meet Experience",
+      "description": "Connect with top chefs, explore diverse cuisines, enjoy personalized culinary experiences and enjoy gourmet meals. Whether it’s a private or social event we bring the best to your table."
+    },
+    "mission": {
+      "title": "Our Culinary Mission",
+      "details": {
+        "about": "About Us",
+        "aboutDescription": "We bridge the gap between culinary enthusiasts and talented chefs, creating a space where culinary creativity thrives.",
+        "mission": "Mission",
+        "missionDescription": "We are committed to delivering exceptional food experiences, fostering community engagement, and driving innovation in the culinary world."
+      }
+    },
+    "services": {
+      "title": "Our Culinary Services",
+      "description": "Discover a world of culinary delights with our exclusive services. Whether you’re looking to host a private event with a personal chef, enjoy Gourmet meals delivered to your door, or want a full catering service, we have something for every foodie. Our platform connects you with professional chefs who bring diverse cuisines and unique experiences.",
+      "details": {
+        "service1": {
+          "title": "Order Gourmet Meals",
+          "description": "Savor exceptional, ready-to-eat meals crafted by top chefs. Choose from a wide range of dishes.",
+          "button": "Explore"
+        },
+        "service2": {
+          "title": "Private Chef Booking Experience",
+          "description": "Book top-tier pro chefs for unique private or public events.",
+          "button": "Meet Chefs"
+        },
+        "service3": {
+          "title": "Exquisite Catering for Every Occasion",
+          "description": "Our chefs provide full catering, delivering a gourmet experience that impresses guests.",
+          "button": "Host Event"
+        }
+      }
     },
     "howItWorks": {
-      "title": "How It Works!",
-      "steps": [
-        {
-          "title": "Personalize your events!",
-          "description": "Fill in your event details, date, time, and location. Create event.",
-          "action": "CreateEvent."
+      "title": "How It Works",
+      "highlight": "Host Your Event",
+      "description": "With Ease",
+      "steps": {
+        "step1": {
+          "title": "Create Event",
+          "description": "Fill out event details."
         },
-        {
-          "title": "Choose your Cuisine!",
-          "description": "Choose your desired menu from our renowned chefs.",
-          "action": "Receive Offers"
+        "step2": {
+          "title": "Choose Chef",
+          "description": "Select a menu that suits your event and taste."
         },
-        {
-          "title": "Chat with chefs!",
-          "description": "Message your chef, confirm menu and cost.",
-          "action": "Confirm Offer"
+        "step3": {
+          "title": "Send Request",
+          "description": "Send culinary request to chosen chefs."
         },
-        {
-          "title": "Book experience",
-          "description": "Happy with your chef and menu, submit payment via the agreed-upon method.",
-          "action": "Process payment"
+        "step4": {
+          "title": "Receive Chef Offers",
+          "description": "Receive chef offers for your event."
         },
-        {
-          "title": "Send and confirm RSVP to your guests",
-          "description": "All done! Get ready for an unforgettable experience!",
-          "action": "Enjoy"
+        "step5": {
+          "title": "Confirm Offer",
+          "description": "Connect with chef and confirm offer and event details."
         },
-        {
-          "title": "Meet Our Chefs!",
-          "description": "Personalize your event and start chatting with our chefs!",
-          "action": ""
+        "step6": {
+          "title": "Pay Deposit",
+          "description": "Secure your booking by paying a 30% deposit directly to the cheif."
+        },
+        "step7": {
+          "title": "Send RSVPs",
+          "description": "Once confirmed by guests, sit back and relax."
         }
-      ]
+      }
     },
-    "meetOurChefs": {
-      "title": "Meet Our Chefs!",
-      "searchPlaceholder": "Search for Chefs"
+    "joinCommunity": {
+      "title": "Join Our Community",
+      "description": "Showcase your talent, connect with food lovers, and grow your culinary career. Sign up now to become part of our exclusive network!",
+      "button": "Join as Chef"
     }
   },
   "invites": {
