@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import DishImg2 from "../../assets/images/dish.webp";
-// import Dish3Img from "../../assets/images/image3.svg";
-// import "./styles.css";
+import { useTranslation } from "react-i18next";
 
 function MenusPage() {
+  const { t } = useTranslation();
+
   const [menus, setMenus] = useState([]);
 
   useEffect(() => {
@@ -22,10 +23,10 @@ function MenusPage() {
           <section className="min-h-screen space-y-6 md:min-h-full flex flex-col w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
             <div className="w-full flex flex-col justify-center items-center ">
               <h2 className="zeyada-regular text-main-color md:text-7xl text-5xl text-center">
-                Showcase your talent
+                {t("menus.title")}
               </h2>
               <h2 className="plus-jakarta-sans md:text-4xl text-2xl text-center">
-                Create your menus here
+                {t("menus.subtitle")}
               </h2>
             </div>
             <div className="w-full flex justify-center items-center mb-6 mt-0">
@@ -33,7 +34,7 @@ function MenusPage() {
                 className="text-white text-center font-bold text-xl plus-jakarta-sans w-2/6 bg-main-color h-[53px] flex justify-center items-center mb-2 hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color rounded-[16px]"
                 href="/menus/create"
               >
-                Add menu
+                {t("menus.addMenu")}
               </a>
             </div>
             {menus.map((event) => (
@@ -58,13 +59,13 @@ function MenusPage() {
                     className="md:h-[35px] h-[24px] md:w-[85px] w-[44px] bg-white text-main-color p-0.5 md:p-0 my-auto  border-[3px] border-white   font-bold md:text-[18px] text-[10px]  hover:bg-[#000000]  hover:border-[3px] hover:border-[#000000] rounded-[40px]	"
                     href={`/Home/EditEvent?eventId=${event.id}`}
                   >
-                    Edit
+                    {t("menus.edit")}
                   </a>
                   <a
                     className=" md:h-[35px] h-[24px] md:w-[85px] w-[44px]  bg-white text-main-color p-0.5 md:p-0 my-auto  border-[3px] border-white     font-bold md:text-[18px] text-[10px] 	 hover:bg-[#000000]   hover:border-[3px] hover:border-[#000000] rounded-[40px]"
                     href={`/Home/ChefOffers?eventId=${event.id}`}
                   >
-                    Show
+                    {t("menus.show")}
                   </a>
                 </div>
               </div>

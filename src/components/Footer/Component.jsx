@@ -2,8 +2,11 @@ import "./styles.css";
 import logo from "../../assets/images/logo.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer>
       <div className="footer-container">
@@ -37,19 +40,19 @@ function Footer() {
         <div className="footer-right">
           <ul>
             <li>
-              <a href="/">Home</a>
+              <a href="/">{t("navigation.home")}</a>
             </li>
             <li>
-              <a href="/events">Events</a>
+              <a href="/events">{t("navigation.events")}</a>
             </li>
             <li>
-              <a href="/invites">Invites</a>
+              <a href="/invites">{t("navigation.invites")}</a>
             </li>
             <li>
-              <a href="/menus">Menus</a>
+              <a href="/menus">{t("navigation.menus")}</a>
             </li>
             <li>
-              <a href="/offers">Offers</a>
+              <a href="/offers">{t("navigation.offers")}</a>
             </li>
           </ul>
         </div>
@@ -57,7 +60,7 @@ function Footer() {
 
       <hr />
       <div className="footer-bottom">
-        <p>&copy; 2025 Your Company. All rights reserved.</p>
+        <p>{t("navigation.copyrights")}</p>
       </div>
     </footer>
   );

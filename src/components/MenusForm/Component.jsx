@@ -1,8 +1,11 @@
 import { useState } from "react";
 import DishImg2 from "../../assets/images/dish.webp";
 import { X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function MenusForm({ isNewMenu, menu, setMenu }) {
+  const { t } = useTranslation();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState(null);
 
@@ -16,36 +19,38 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                 <span className="border-main-color w-1/2 block border-[1px]" />
                 <span className="border-main-color w-3/4 block border-[1px]" />
               </div>
-              <h2 className="text-2xl">Menu</h2>
+              <h2 className="text-2xl">{t("menus.form.title")}</h2>
               <div className="flex flex-col w-1/3 gap-2">
                 <span className="border-main-color w-1/2 block border-[1px]" />
                 <span className="border-main-color w-3/4 block border-[1px]" />
               </div>
             </div>
-            <h3 className="uppercase text-sm">Choose your food</h3>
+            <h3 className="uppercase text-sm">{t("menus.form.subtitle")}</h3>
           </div>
           <div>
             <div className="mb-1">
-              <label className="section-title">Name</label>
+              <label className="section-title">{t("menus.form.name")}</label>
               <input
                 maxLength="100"
                 type="text"
                 id="event-Description"
                 className="opacity-90 rounded-none placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] bg-[#444444] form-control w-full p-3"
-                placeholder="Menu Name"
+                placeholder={t("menus.form.namePlaceholder")}
                 required
                 value={menu?.name}
                 onChange={(e) => setMenu({ ...menu, name: e.target.value })}
               />
             </div>
             <div className="mb-1">
-              <label className="section-title">Description</label>
+              <label className="section-title">
+                {t("menus.form.description")}
+              </label>
               <input
                 maxLength="100"
                 type="text"
                 id="event-Description"
                 className="opacity-90 rounded-none placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] bg-[#444444] form-control w-full p-3"
-                placeholder="Menu Description"
+                placeholder={t("menus.form.descriptionPlaceholder")}
                 required
                 value={menu?.description}
                 onChange={(e) =>
@@ -58,7 +63,7 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
               <div key={index} className="flex flex-col gap-2 mb-4">
                 <div className="flex flex-col gap-2">
                   <label className="section-title flex flex-row justify-between pr-4">
-                    Course {index + 1}
+                    {t("menus.form.course")} {index + 1}
                     <i
                       className="fa-solid fa-trash-can text-lg text-main-color hover:text-red-500 cursor-pointer"
                       onClick={() => {
@@ -74,7 +79,7 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                     id="CourseName"
                     name="CourseName"
                     className="opacity-90 rounded-none placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] bg-[#444444] form-control w-full p-3"
-                    placeholder="Course Name"
+                    placeholder={t("menus.form.courseNamePlaceholder")}
                     value={course.name}
                     required
                     onChange={(e) => {
@@ -91,7 +96,7 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                       name="CourseDesc"
                       type="text"
                       className="Interl focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-70 h-[66px] border border-[#FFFFFF4D] bg-[#444444] w-full p-3"
-                      placeholder="Course Description"
+                      placeholder={t("menus.form.courseDescriptionPlaceholder")}
                       value={course.description}
                       required
                       onChange={(e) => {
@@ -110,7 +115,7 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                           course.image ? "bg-main-color" : "bg-[#444444]"
                         }`}
                       >
-                        Choose Image
+                        {t("menus.form.chooseImage")}
                       </label>
                       <label
                         htmlFor={`CourseImg ${index}`}
@@ -146,7 +151,7 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                           setIsModalOpen(true);
                         }}
                       >
-                        Show Image
+                        {t("menus.form.showImage")}
                       </button>
                       <button
                         type="button"
@@ -176,7 +181,7 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                   setMenu({ ...menu, courses: newCourses });
                 }}
               >
-                Add Course
+                {t("menus.form.addCourse")}
               </button>
             </div>
             <button
@@ -184,7 +189,7 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
               style={{ height: "40.76px" }}
               className="w-full mt-20 text-white font-bold focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              Add Menu
+              {t("menus.form.addMenu")}
             </button>
           </div>
           {/* Modal */}

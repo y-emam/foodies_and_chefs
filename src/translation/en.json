@@ -1,5 +1,10 @@
 {
-  "navbar": {
+  "global": {
+    "showcaseYourTalent": "Showcase your talent",
+    "edit": "Edit",
+    "show": "Show"
+  },
+  "navigation": {
     "home": "Home",
     "createEvent": "Create Event",
     "events": "Events",
@@ -8,7 +13,8 @@
     "offers": "Offers",
     "signin": "Sign In",
     "signout": "Sign Out",
-    "profile": "Profile"
+    "profile": "Profile",
+    "copyrights": "© 2025 Foodies and Chefs. All rights reserved."
   },
   "signin": {
     "signin": "Sign In",
@@ -186,9 +192,26 @@
     "createEvent": "Create Event",
     "updateEvent": "Update Event"
   },
-  "global": {
-    "showcaseYourTalent": "Showcase your talent",
+  "menus": {
+    "title": "Showcase Your Talent",
+    "subtitle": "Create your menu here.",
+    "addMenu": "Add Menu",
     "edit": "Edit",
-    "show": "Show"
+    "show": "Show",
+    "form": {
+      "title": "Menu",
+      "subtitle": "Choose your food",
+      "name": "Name",
+      "namePlaceholder": "Menu Name",
+      "description": "Description",
+      "descriptionPlaceholder": "Menu Description",
+      "course": "Course",
+      "courseNamePlaceholder": "Course Name",
+      "courseDescriptionPlaceholder": "Course Description",
+      "chooseImage": "Choose Image",
+      "showImage": "Show Image",
+      "addCourse": "Add Course",
+      "addMenu": "Add Menu"
+    }
   }
 }

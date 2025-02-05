@@ -1,5 +1,10 @@
 {
-  "navbar": {
+  "global": {
+    "showcaseYourTalent": "أعرض موهبتك",
+    "edit": "تعديل",
+    "show": "عرض"
+  },
+  "navigation": {
     "home": "الصفحة الرئيسية",
     "createEvent": "انشاء مناسبه",
     "events": "المناسبات",
@@ -8,7 +13,8 @@
     "offers": "العروض",
     "signin": "الدخول",
     "signout": "تسجيل خروج",
-    "profile": "الملف الشخصى"
+    "profile": "الملف الشخصى",
+    "copyrights": "© 2025 فوديز آند شيفز. جميع الحقوق محفوظة."
   },
   "signin": {
     "signin": "تسجيل الدخول",
@@ -186,9 +192,26 @@
     "createEvent": "إنشاء الحدث",
     "updateEvent": "تحديث الحدث"
   },
-  "global": {
-    "showcaseYourTalent": "أعرض موهبتك",
+  "menus": {
+    "title": "عرض مهاراتك",
+    "subtitle": "أنشئ قائمتك هنا.",
+    "addMenu": "إضافة قائمة",
     "edit": "تعديل",
-    "show": "عرض"
+    "show": "عرض",
+    "form": {
+      "title": "القائمة",
+      "subtitle": "اختر طعامك",
+      "name": "الاسم",
+      "namePlaceholder": "اسم القائمة",
+      "description": "الوصف",
+      "descriptionPlaceholder": "وصف القائمة",
+      "course": "الطبق",
+      "courseNamePlaceholder": "اسم الطبق",
+      "courseDescriptionPlaceholder": "وصف الطبق",
+      "chooseImage": "اختر صورة",
+      "showImage": "عرض الصورة",
+      "addCourse": "إضافة طبق",
+      "addMenu": "إضافة قائمة"
+    }
   }
 }

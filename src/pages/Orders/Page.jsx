@@ -89,14 +89,6 @@ function OrderPage() {
                   />
                 </div>
               </div>
-              <input
-                type="hidden"
-                name="EventID"
-                value="64475382-4e05-4669-17b1-08dd44dd8ea3"
-                data-val="true"
-                data-val-required="The EventID field is required."
-                id="EventID"
-              />
               <div class="flex items-center border-y border-[#FA8836] py-10 ">
                 <div class="flex justify-around w-full">
                   <label
@@ -113,7 +105,6 @@ function OrderPage() {
                       type="number"
                       class="w-1/2 bg-[#D9D9D954] text-white border border-[#C0C0C0] rounded-none h-[20px] md:h-[34px] p-2 md:text-[15px] text-[7px] focus:outline-none focus:ring-2 focus:ring-orange-500"
                     />
-                    <input name="__Invariant" type="hidden" value="price" />
                     {/* <!-- Currency Dropdown --> */}
                     <select
                       name="ChefCurrancy"
@@ -219,12 +210,6 @@ function OrderPage() {
                   Save
                 </a>
               </div>
-
-              <input
-                name="__RequestVerificationToken"
-                type="hidden"
-                value="CfDJ8GtJKlfmJQlGrItpOZxEVy422T4l_-HmxNOQS8w5XgbTZ7rwYaL5hOdjRxlf0kNQOC_QuU-iW30F0ND3oh3sCSBeayIANKtHcxwNt-6mbuRN2ySkvjHWPCpNN95_c93J7tWCqN7CefPi1A1dqIWHGglTY6s-hBAqe7bVPBg_SXj2L9AoV6bisJ20QUSqIbrUBg"
-              />
             </div>
           </section>
         </main>
