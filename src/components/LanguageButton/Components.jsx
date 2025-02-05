@@ -18,7 +18,8 @@ function LanguageButton() {
       style={{ cursor: "pointer" }}
     >
       <span>
-        <i class="fa-solid fa-globe" /> {i18n.language === "en" ? "Ar" : "En"}
+        <i className="fa-solid fa-globe" />{" "}
+        {i18n.language === "en" ? "Ar" : "En"}
       </span>
     </button>
   );
