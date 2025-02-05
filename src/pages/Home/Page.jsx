@@ -1,6 +1,5 @@
 import GroupChefsImg from "../../assets/images/GroupChefsImg.webp";
-import "./stylesHome.css";
-// import { useTranslation } from "react-i18next";
+import "./styles.css";
 import HeaderImg from "../../assets/images/HomePageImage.webp";
 import OurMissionImg from "../../assets/images/ourMission.webp";
 import ServiceImg1 from "../../assets/images/ServiceImg1.webp";
