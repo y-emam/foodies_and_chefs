@@ -6,12 +6,12 @@ function ShowOfferPage() {
       className="show-offers-page min-h-[32rem] md:flex md:gap-10 mt-0 p-0"
       id="overlay"
     >
-      <section className="min-h-screen  md:space-y-20 space-y-10 md:min-h-full flex flex-col w-full items-center justify-center    p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
+      <section className="min-h-screen  md:space-y-20 space-y-10 md:min-h-full flex flex-col w-full items-center justify-center p-3 md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
         <div className="flex flex-col space-y-10  h-full items-center justifiy-center">
           <h1 className="signika-negative font-bold name-text	md:text-[40px] text-lg py-5">
             Hello , Chef Yasser
           </h1>
-          <p className="Monotype-Corsiva text-[#FFB37D] md:text-xl text-sm  italic font-normal 	">
+          <p className="Monotype-Corsiva text-[#FFB37D] text-xl italic font-normal">
             “We are honored to invite you to dazzle our guests with your
             signature dishes at this exclusive event. Your talent will add an
             unforgettable magic touch!”
@@ -23,13 +23,7 @@ function ShowOfferPage() {
         >
           <div className="flex items-center text-[0.7rem] md:text-2xl ">
             <span className="mx-2">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 22 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                 <mask
                   id="mask0_6164_23"
                   style={{ maskType: "alpha" }}
@@ -60,13 +54,7 @@ function ShowOfferPage() {
           </div>
           <div className="flex items-center text-[0.7rem] md:text-2xl ">
             <span className="mx-2">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <mask
                   id="mask0_6164_20"
                   style={{ maskType: "alpha" }}
@@ -97,13 +85,7 @@ function ShowOfferPage() {
           </div>
           <div className="flex items-center text-[0.7rem] md:text-2xl ">
             <span className="mx-2">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <mask
                   id="mask0_6164_17"
                   style={{ maskType: "alpha" }}
@@ -140,13 +122,7 @@ function ShowOfferPage() {
           </div>
           <div className="flex items-center text-[0.7rem] md:text-2xl ">
             <span className="mx-2">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 22 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                 <mask
                   id="mask0_6164_23"
                   style={{ maskType: "alpha" }}
@@ -178,13 +154,7 @@ function ShowOfferPage() {
 
           <div className="flex items-center text-[0.7rem] md:text-2xl">
             <span className="mx-2">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 22 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                 <mask
                   id="mask0_6164_23"
                   style={{ maskType: "alpha" }}
@@ -215,13 +185,7 @@ function ShowOfferPage() {
           </div>
           <div className="flex items-center text-[0.7rem] md:text-2xl ">
             <span className="mx-2">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 22 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                 <mask
                   id="mask0_6164_23"
                   style={{ maskType: "alpha" }}
@@ -253,13 +217,7 @@ function ShowOfferPage() {
           <div className="md:flex flex-col md:flex-row space-y-5 md:space-y-0 text-[0.7rem] md:text-2xl ">
             <div className="flex ">
               <span className="mx-2">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
                   <rect
                     width="28"
                     height="28"
@@ -281,13 +239,7 @@ function ShowOfferPage() {
             </div>
             <div className="flex md:mx-10 mx-0">
               <span className="mx-2">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
                   <rect
                     width="28"
                     height="28"
@@ -311,14 +263,8 @@ function ShowOfferPage() {
             </div>
           </div>
           <div className="flex items-start justify-start text-[0.7rem] md:text-2xl ">
-            {/* <span className="mx-2">
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 28 28"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+            <span className="mx-2">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
                 <rect width="28" height="28" fill="url(#pattern0_6107_4745)" />
                 <defs>
                   <pattern
@@ -329,10 +275,9 @@ function ShowOfferPage() {
                   >
                     <use transform="scale(0.00195312)" />
                   </pattern>
-                  
                 </defs>
               </svg>
-            </span> */}
+            </span>
             <span>
               Location: Dusit Hotel, New Cairo 1, Cairo Governorate 4730203,
               Egypt
