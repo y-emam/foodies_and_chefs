@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// TODO change this to dish2 image
 import DishImg2 from "../../assets/images/dish.webp";
 import { useTranslation } from "react-i18next";
 import { getAllEventsService } from "../../services/events/events";
@@ -38,7 +37,7 @@ function EventsPage() {
                 {t("global.showcaseYourTalent")}
               </h2>
               <h2 className="plus-jakarta-sans md:text-4xl text-2xl text-center">
-                Create your events here
+                {t("events.subtitle")}
               </h2>
             </div>
             <div className="w-full flex justify-center items-center mb-6 mt-0">
@@ -46,7 +45,7 @@ function EventsPage() {
                 className="text-white text-center font-bold text-xl plus-jakarta-sans w-2/6 bg-main-color h-[53px] flex justify-center items-center mb-2 hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color rounded-[16px]"
                 href="/events/create"
               >
-                Add Event
+                {t("events.addEvent")}
               </a>
             </div>
             {events.map((event) => (

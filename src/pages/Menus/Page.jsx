@@ -23,7 +23,7 @@ function MenusPage() {
           <section className="min-h-screen space-y-6 md:min-h-full flex flex-col w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans ">
             <div className="w-full flex flex-col justify-center items-center ">
               <h2 className="zeyada-regular text-main-color md:text-7xl text-5xl text-center">
-                {t("menus.title")}
+                {t("global.showcaseYourTalent")}
               </h2>
               <h2 className="plus-jakarta-sans md:text-4xl text-2xl text-center">
                 {t("menus.subtitle")}
@@ -59,13 +59,13 @@ function MenusPage() {
                     className="md:h-[35px] h-[24px] md:w-[85px] w-[44px] bg-white text-main-color p-0.5 md:p-0 my-auto  border-[3px] border-white   font-bold md:text-[18px] text-[10px]  hover:bg-[#000000]  hover:border-[3px] hover:border-[#000000] rounded-[40px]	"
                     href={`/Home/EditEvent?eventId=${event.id}`}
                   >
-                    {t("menus.edit")}
+                    {t("global.edit")}
                   </a>
                   <a
                     className=" md:h-[35px] h-[24px] md:w-[85px] w-[44px]  bg-white text-main-color p-0.5 md:p-0 my-auto  border-[3px] border-white     font-bold md:text-[18px] text-[10px] 	 hover:bg-[#000000]   hover:border-[3px] hover:border-[#000000] rounded-[40px]"
                     href={`/Home/ChefOffers?eventId=${event.id}`}
                   >
-                    {t("menus.show")}
+                    {t("global.show")}
                   </a>
                 </div>
               </div>

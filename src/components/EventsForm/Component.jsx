@@ -65,7 +65,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 for="event-name"
                 className="section-title lato-bold font-medium"
               >
-                {t("events.name")}
+                {t("events.form.name")}
               </label>
 
               <input
@@ -74,7 +74,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 maxLength="30"
                 id="event-name"
                 className="opacity-90 placeholder-gray-400 h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full p-3 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
-                placeholder={t("events.namePlaceholder")}
+                placeholder={t("events.form.namePlaceholder")}
                 required
                 value={event?.name}
                 onChange={(e) => setEvent({ ...event, name: e.target.value })}
@@ -87,7 +87,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
             </div>
             <div className="mb-1">
               <label for="event-Description" className="section-title">
-                {t("events.description")}
+                {t("events.form.description")}
               </label>
               <input
                 name="EventDescription"
@@ -95,7 +95,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 type="text"
                 id="event-Description"
                 className="opacity-90 placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full p-3"
-                placeholder={t("events.descriptionPlaceholder")}
+                placeholder={t("events.form.descriptionPlaceholder")}
                 required
                 value={event?.description}
                 onChange={(e) =>
@@ -115,7 +115,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     for="event-date"
                     className="section-title lato-bold font-medium"
                   >
-                    {t("events.date")}
+                    {t("events.form.date")}
                   </label>
                   <input
                     name="Date"
@@ -132,7 +132,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 </div>
                 <div className="ms-1.5 md:ms-0 flex flex-col w-1/2">
                   <label for="event-time" className="section-title">
-                    {t("events.time")}
+                    {t("events.form.time")}
                   </label>
                   <input
                     name="StartTime"
@@ -161,7 +161,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
 
                 <div className="flex flex-col w-full relative">
                   <label for="hours" className="section-title">
-                    {t("events.hours")}
+                    {t("events.form.hours")}
                   </label>
                   <input
                     type="number"
@@ -212,7 +212,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
 
                 <div className="flex flex-col w-full relative rtl">
                   <label for="minutes" className="section-title">
-                    {t("events.minutes")}
+                    {t("events.form.minutes")}
                   </label>
                   <input
                     type="number"
@@ -293,7 +293,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                   for="event-invitees"
                   className="section-title rtl:text-right ltr:text-left"
                 >
-                  {t("events.noGuests")}
+                  {t("events.form.noGuests")}
                 </label>
               </div>
 
@@ -304,7 +304,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     for="Minimum"
                     className="section-title rtl:text-right ltr:text-left"
                   >
-                    {t("events.minimum")}
+                    {t("events.form.minimum")}
                   </label>
                   <input
                     name="MinNumberOfInvetation"
@@ -367,7 +367,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     for="Maximum"
                     className="section-title rtl:text-right ltr:text-left"
                   >
-                    {t("events.maximum")}
+                    {t("events.form.maximum")}
                   </label>
                   <input
                     name="MaxNumberOfInvetation"
@@ -425,7 +425,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 for="event-location"
                 className="section-title rtl:text-right ltr:text-left"
               >
-                {t("events.location")}
+                {t("events.form.location")}
               </label>
 
               {/* General Location input field */}
@@ -435,7 +435,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 type="text"
                 id="event-location"
                 className="opacity-90 placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] form-control w-full p-3 rtl:text-right ltr:text-left"
-                placeholder={t("events.locationPlaceholder")}
+                placeholder={t("events.form.locationPlaceholder")}
                 data-val="true"
                 data-val-required=" this field is required."
               />
@@ -454,7 +454,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                   type="button"
                   className="p-2 leading-3 bg-[#242424] text-xs lato-bold font-medium w-33 h-8 text-white rounded-md flex items-center justify-center focus:outline-none"
                 >
-                  {t("events.setYourLocation")}
+                  {t("events.form.setYourLocation")}
                 </button>
               </div>
             </div>
@@ -464,7 +464,9 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                 type="submit"
                 className="bg-[#6555FF] rounded-[35px]  w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]  "
               >
-                {isNewEvent ? t("events.createEvent") : t("events.updateEvent")}
+                {isNewEvent
+                  ? t("events.form.createEvent")
+                  : t("events.form.updateEvent")}
               </button>
             </div>
           </form>
