@@ -49,11 +49,11 @@ function ShowOfferPage() {
                   keynotes, workshops, and networking opportunities.
                 </span>
               </div>
-              <div class="flex items-center text-[0.7rem] md:text-2xl ">
+              <div class="flex items-center text-[0.7rem] md:text-2xl">
                 <ProfileSVG />
                 <span>Number of guests: Minimum (50 to 500) Maximum</span>
               </div>
-              <div class="md:flex flex-col md:flex-row space-y-5 md:space-y-0 text-[0.7rem] md:text-2xl ">
+              <div class="md:flex flex-col md:flex-row space-y-5 md:space-y-0 text-[0.7rem] md:text-2xl">
                 <div class="flex ">
                   <DateSVG />
                   <span>Date: Mon 15-Sep-2025 </span>
@@ -74,23 +74,6 @@ function ShowOfferPage() {
                 class="flex relative w-full h-64 justify-center items-center rtl:direction-rtl ltr:direction-ltr"
               >
                 <LocationMap latitude={"30.030886"} longitude={"31.405792"} />
-                {/* <div
-                  id="map"
-                  class="absolute w-full h-60 bg-orange-500 z-10 ltr:left-0 rtl:right-0"
-                >
-                  <input
-                    id="lat"
-                    value="37.7749"
-                    class="hidden form-control"
-                    readonly
-                  />
-                  <input
-                    id="log"
-                    value="-122.4194"
-                    class="hidden form-control"
-                    readonly
-                  />
-                </div> */}
               </div>
 
               <div class="flex items-center border-y border-[#FA8836] py-10 ">
@@ -107,16 +90,18 @@ function ShowOfferPage() {
                       name="price"
                       id="Price"
                       type="number"
+                      value="500.00"
                       class="w-1/2 bg-[#D9D9D954] text-white border border-[#C0C0C0] rounded-none h-[20px] md:h-[34px] p-2 md:text-[15px] text-[7px] focus:outline-none focus:ring-2 focus:ring-orange-500"
                     />
-                    <input name="__Invariant" type="hidden" value="price" />
                     {/* <!-- Currency Dropdown --> */}
                     <select
                       name="ChefCurrancy"
                       id="currancy"
                       class="md:w-1/2  hover:text-black bg-[#D9D9D954] border border-[#C0C0C0] border-s-0  text-white h-[20px] md:h-[34px] md:text-[15px] text-[7px] p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
                     >
-                      <option value="AED">AED</option>
+                      <option value="AED" selected>
+                        AED
+                      </option>
                       <option value="ARS">ARS</option>
                       <option value="BGN">BGN</option>
                       <option value="BHD">BHD</option>
