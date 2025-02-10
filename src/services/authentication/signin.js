@@ -6,7 +6,6 @@ const signinService = async (email, password) => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ emailAddress: email, password, returnUrl: "/" }),
-
         });
 
         const signinData = await res.json();

@@ -6,7 +6,7 @@ const uploadFileService = async (file, token) => {
         const res = await fetch(`https://${process.env.REACT_APP_API_DOMAIN}/Upload/UploadFile`, {
             method: "POST",
             headers: {
-                Authorization: `Bearer ${token}`,
+                "Authorization": `Bearer ${token}`,
             },
             body: formData,
         });

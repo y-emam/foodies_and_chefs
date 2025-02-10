@@ -16,7 +16,7 @@ const uploadProfilePicture = async (file, token) => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
+                    "Authorization": `Bearer ${token}`,
                 },
                 mode: "no-cors",
                 body: JSON.stringify({ imageUrl }),

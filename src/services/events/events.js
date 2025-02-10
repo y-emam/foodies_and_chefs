@@ -12,11 +12,15 @@ export const getEventByEventIdService = async (eventId) => {
     };
 }
 
-export const getAllEventsService = async (pageNum = 1, pageSize = 5) => {
+export const getAllEventsService = async (pageNum = 1, pageSize = 10) => {
     try {
-        const res = await fetch(`http://${process.env.REACT_APP_API_DOMAIN}/Home/GetMyEvents?page=${pageNum}&pageSize=${pageSize}`, {
-            method: "GET",
-            mode: 'cors'
+        const token = localStorage.getItem("token");
+        console.log(token);
+
+        const res = await fetch("http://khaledyk-001-site6.atempurl.com/Home/GetMyEvents?page=1&pageSize=10", {
+            headers: {
+                "Authorization": `Bearer ${token}`,
+            }
         });
 
         const eventsData = await res.json();
@@ -25,6 +29,29 @@ export const getAllEventsService = async (pageNum = 1, pageSize = 5) => {
 
         return eventsData;
     } catch (err) {
-        return err.response;
+        console.log(err);
+    }
+}
+
+export const createEventService = async (event) => {
+    try {
+        const token = localStorage.getItem("token")
+        console.log(token);
+
+        const res = await fetch("http://khaledyk-001-site6.atempurl.com/Home/CreateEvent", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(event),
+        })
+
+        const data = await res.json();
+
+        console.log(data);
+
+        return data
+    } catch (err) {
+        console.log(err);
     }
 }
