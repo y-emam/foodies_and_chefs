@@ -12,7 +12,11 @@ function EventsPage() {
     const getAllEvents = async () => {
       const res = await getAllEventsService(1, 10);
 
-      console.log(res);
+      if (res && res.success) {
+        console.log(res.data.data);
+
+        setEvents(res.data.data);
+      }
     };
 
     getAllEvents();
@@ -48,15 +52,15 @@ function EventsPage() {
                 {t("events.addEvent")}
               </a>
             </div>
-            {events.map((event) => (
+            {events.map((event, ind) => (
               <div
                 className="bg-main-color h-[53px] flex justify-between w-full items-center p-6 "
                 style={{ borderRadius: "16px" }}
-                key={event.id}
+                key={ind}
               >
-                <div className="font-bold text-xl flex gap-0 md:gap-2 flex-col md:flex-row">
+                <div className="font-bold text-xl md:w-full flex gap-0 md:gap-2 flex-col md:flex-row">
                   <span className="font-bold md:text-[18px] text-[14px] mx-2">
-                    {event.name}
+                    {event.eventName}
                   </span>
                   <span className="date font-bold	md:text-[18px] text-[12px]">
                     {event.date}
@@ -68,13 +72,13 @@ function EventsPage() {
                 >
                   <a
                     className="md:h-[35px] h-[24px] md:w-[85px] w-[44px] bg-white text-main-color p-0.5 md:p-0 my-auto  border-[3px] border-white   font-bold md:text-[18px] text-[10px]  hover:bg-[#000000]  hover:border-[3px] hover:border-[#000000] rounded-[40px]	"
-                    href={`/events/edit/${event.id}`}
+                    href={`/events/edit/${event.eventId}`}
                   >
                     {t("global.edit")}
                   </a>
                   <a
                     className=" md:h-[35px] h-[24px] md:w-[85px] w-[44px]  bg-white text-main-color p-0.5 md:p-0 my-auto  border-[3px] border-white     font-bold md:text-[18px] text-[10px] 	 hover:bg-[#000000]   hover:border-[3px] hover:border-[#000000] rounded-[40px]"
-                    href={`/events/${event.id}`}
+                    href={`/events/${event.eventId}`}
                   >
                     {t("global.show")}
                   </a>
@@ -159,7 +163,7 @@ function EventsPage() {
           <section className="w-5/12 hidden md:flex justify-end ltr:border-l rtl: border-r border-main-color">
             <img
               src={DishImg2}
-              className="w-[30rem] h-auto object-cover"
+              className="h-[40rem] object-cover"
               alt="FoodImage"
             />
           </section>

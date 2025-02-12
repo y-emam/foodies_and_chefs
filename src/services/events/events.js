@@ -1,32 +1,35 @@
 export const getEventByEventIdService = async (eventId) => {
-    return {
-        "id": eventId,
-        name: "Event Name",
-        description: "Event Description",
-        date: "2021-09-01",
-        time: "12:00",
-        hours: 0,
-        minutes: 0,
-        minGuests: 1,
-        maxGuests: 2,
-    };
+    try {
+        const token = localStorage.getItem("token");
+
+        const res = await fetch(`https://${process.env.REACT_APP_API_DOMAIN}/Home/GetEventById?eventId=${eventId}`, {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`,
+            }
+        });
+
+        const eventData = await res.json();
+
+        return eventData;
+    } catch (err) {
+        console.log(`Failed to get event by event id: ${eventId}`);
+        console.log(err);
+    }
 }
 
 export const getAllEventsService = async (pageNum = 1, pageSize = 10) => {
     try {
         const token = localStorage.getItem("token");
-        console.log(token);
 
-        const res = await fetch("https://khaledyk-001-site6.atempurl.com/Home/GetMyEvents?page=1&pageSize=10", {
+        const res = await fetch(`https://${process.env.REACT_APP_API_DOMAIN}/Home/GetMyEvents?page=${pageNum}&pageSize=${pageSize}`, {
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsiRm9vZGllcyIsIkNoZWYiXSwiZXhwIjoxNzM5MjIxMTE5fQ.AmIOvU2FBqV28F-JzbelU7FdbzrTRzHQUL-wDdmeO08`,
+                "Authorization": `Bearer ${token}`,
             }
         });
 
         const eventsData = await res.json();
-
-        console.log(eventsData);
 
         return eventsData;
     } catch (err) {
@@ -43,7 +46,7 @@ export const createEventService = async (event) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsiRm9vZGllcyIsIkNoZWYiXSwiZXhwIjoxNzM5MjE5NzQxfQ.EWEsgiXkmAu0SCXNVAyAuvkXHN6wveXhf8WW1O7E_UU`,
+                "Authorization": `Bearer ${token}`,
             },
             body: JSON.stringify({
                 "eventName": "Event 1",
