@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import "./styles.css";
 import { useEffect, useState } from "react";
 import convertTo12HourFormat from "../../utils/convertTo12HourFormat";
+import { createEventService } from "../../services/events/events";
 
 function EventsForm({ isNewEvent, event, setEvent }) {
   const { t } = useTranslation();
@@ -55,11 +56,21 @@ function EventsForm({ isNewEvent, event, setEvent }) {
     window.open("/googleMap", "mapsWindow", "width=1000,height=800");
   };
 
+  const handleSubmit = async () => {
+    try {
+      const res = await createEventService(event);
+
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="mainbg overflow-auto min-h-screen pt-4">
       <main className="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0 " id="overlay">
         <section className="CreateEventpgMobile w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-20  ">
-          <form dir="auto">
+          <div dir="auto">
             <div className="mb-1">
               <label
                 for="event-name"
@@ -461,7 +472,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
 
             <div className="flex justify-center">
               <button
-                type="submit"
+                onClick={handleSubmit}
                 className="bg-[#6555FF] rounded-[35px]  w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]  "
               >
                 {isNewEvent
@@ -469,7 +480,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                   : t("events.form.updateEvent")}
               </button>
             </div>
-          </form>
+          </div>
         </section>
         <section className="w-5/12 hidden md:flex justify-center ltr:border-l rtl: border-r border-main-color">
           <img
