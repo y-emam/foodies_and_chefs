@@ -56,7 +56,7 @@ function EventsPage() {
             style={{ borderRadius: "16px" }}
             key={ind}
           >
-            <div className="font-bold text-xl md:w-full flex justify-between gap-0 md:gap-2 flex-col md:flex-row mr-4">
+            <div className="font-bold text-xl md:w-full flex justify-between gap-0 md:gap-2 flex-col md:flex-row me-4">
               <span className="font-bold md:text-[18px] text-[14px]">
                 {event.eventName}
               </span>

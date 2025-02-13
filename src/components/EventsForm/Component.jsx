@@ -326,11 +326,13 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     step="1"
                     type="number"
                     id="Minimum"
+                    placeholder="Minimum Guests"
+                    min={1}
                     className="opacity-90 placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-3 text-sm form-control w-full"
                     required
-                    value={event?.minNumberOfInvetation || 1}
+                    value={event?.minNumberOfInvetation}
                     onChange={(e) => {
-                      if (e.target.value < 1) e.target.value = 1;
+                      if (e.target.value < 0) e.target.value = 0;
                       setEvent({
                         ...event,
                         minNumberOfInvetation: e.target.value,
@@ -391,10 +393,10 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                     step="1"
                     className="opacity-90 placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-3 text-sm form-control w-full"
                     required
-                    min="1"
-                    value={event?.maxNumberOfInvetation || 1}
+                    placeholder="Maximum Guests"
+                    value={event?.maxNumberOfInvetation}
                     onChange={(e) => {
-                      if (e.target.value < 1) e.target.value = 1;
+                      if (e.target.value < 0) e.target.value = 0;
                       setEvent({
                         ...event,
                         maxNumberOfInvetation: e.target.value,
