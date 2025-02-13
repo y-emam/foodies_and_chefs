@@ -2,10 +2,15 @@ import DishImg from "../../assets/images/dish.webp";
 import { useEffect, useState } from "react";
 import "./styles.css";
 import { useTranslation } from "react-i18next";
+import checkSignIn from "../../utils/checkSignIn";
 
 function OffersPage() {
   const { t } = useTranslation();
   const [offers, setOffers] = useState([]);
+
+  useEffect(() => {
+    checkSignIn();
+  });
 
   useEffect(() => {
     setOffers([
