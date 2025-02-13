@@ -167,7 +167,6 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                   <input
                     name="StartTime"
                     type="time"
-                    min="13:40"
                     id="event-time"
                     className="opacity-90 placeholder-gray-400 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none h-[47.02px] border border-[#FFFFFF4D] bg-[#444444] px-1 form-control w-full text-sm custom-date-icon"
                     required
