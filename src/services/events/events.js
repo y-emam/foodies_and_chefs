@@ -33,6 +33,7 @@ export const getAllEventsService = async (pageNum = 1, pageSize = 10) => {
 
         return eventsData;
     } catch (err) {
+        console.log("Failed to get all events");
         console.log(err);
     }
 }
@@ -40,7 +41,6 @@ export const getAllEventsService = async (pageNum = 1, pageSize = 10) => {
 export const createEventService = async (event) => {
     try {
         const token = localStorage.getItem("token")
-        console.log(token);
 
         const res = await fetch(`https://${process.env.REACT_APP_API_DOMAIN}/Home/CreateEvent`, {
             method: "POST",
@@ -57,6 +57,35 @@ export const createEventService = async (event) => {
 
         return data
     } catch (err) {
+        console.log("Failed to create event");
+        console.log(err);
+    }
+}
+
+export const updateEventService = async (event) => {
+    try {
+        const token = localStorage.getItem("token")
+
+        console.log(event);
+
+
+        const res = await fetch(`https://${process.env.REACT_APP_API_DOMAIN}/Home/EditEvent`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`,
+            },
+            body: JSON.stringify(event),
+        })
+
+        const data = await res.json();
+
+        console.log(data);
+
+        return data;
+
+    } catch (err) {
+        console.log("Failed to update event");
         console.log(err);
     }
 }

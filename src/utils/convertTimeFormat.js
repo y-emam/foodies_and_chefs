@@ -54,3 +54,24 @@ export const convertTimeIsoTo24H = (timeIso) => {
 
 }
 
+export const getHoursAndMinutesDifference = (startTime, endTime) => {
+    // Convert start and end times to Date objects
+    const startDate = new Date(startTime);
+    let endDate = new Date(endTime);
+
+    // Check if endDate is earlier than startDate (i.e., the time spans to the next day)
+    if (endDate < startDate) {
+        // Add 24 hours to the endDate
+        endDate = new Date(endDate.getTime() + 24 * 60 * 60 * 1000);
+    }
+
+    // Get the difference in milliseconds
+    const differenceInMs = endDate - startDate;
+
+    // Convert milliseconds to hours and minutes
+    const totalMinutes = Math.floor(differenceInMs / (1000 * 60));
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+
+    return { hours, minutes };
+};

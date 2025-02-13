@@ -8,7 +8,10 @@ import {
   convertTime24HTo12H,
   convertTime24HToIso,
 } from "../../utils/convertTimeFormat";
-import { createEventService } from "../../services/events/events";
+import {
+  createEventService,
+  updateEventService,
+} from "../../services/events/events";
 import checkSignIn from "../../utils/checkSignIn";
 
 function EventsForm({ isNewEvent, event, setEvent }) {
@@ -59,18 +62,31 @@ function EventsForm({ isNewEvent, event, setEvent }) {
     window.open("/googleMap", "mapsWindow", "width=1000,height=800");
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     try {
-      const res = await createEventService({
+      const eventToSubmit = {
         ...event,
         date: new Date(event.date).toISOString(),
-        endTime: convertTime24HToIso(event.date, endTime),
         startTime: convertTime24HToIso(event.date, event.startTime),
-      });
+        endTime: convertTime24HToIso(event.date, endTime),
+      };
 
-      if (res && res.success) {
-        // Redirect to the events page
-        window.location.href = `/events/${res.data.id}`;
+      if (isNewEvent) {
+        const res = await createEventService(eventToSubmit);
+
+        if (res && res.success) {
+          // Redirect to the events page
+          window.location.href = `/events/${res.data.id}`;
+        }
+      } else {
+        const res = await updateEventService(eventToSubmit);
+
+        if (res && res.success) {
+          // Redirect to the events page
+          // window.location.href = `/events/${res.data.id}`;
+        }
       }
     } catch (err) {
       console.log(err);
@@ -81,7 +97,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
     <div className="mainbg overflow-auto min-h-screen pt-4">
       <main className="min-h-[80dvh] md:flex md:gap-10 mt-0 p-0 " id="overlay">
         <section className="CreateEventpgMobile w-full  md:w-7/12 p-3  md:p-5 z-10 text-start lato-bold md:pl-20  ">
-          <form dir="auto">
+          <form dir="auto" onSubmit={handleSubmit}>
             <div className="mb-1">
               <label
                 htmlFor="event-name"
@@ -454,7 +470,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
 
             <div className="flex justify-center">
               <button
-                onClick={handleSubmit}
+                type="submit"
                 className="bg-[#6555FF] rounded-[35px]  w-[273px] h-[42px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]  "
               >
                 {isNewEvent
