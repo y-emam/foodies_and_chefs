@@ -48,18 +48,7 @@ export const createEventService = async (event) => {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${token}`,
             },
-            body: JSON.stringify({
-                "eventName": "Event 1",
-                "eventDescription": "An annual technology conference featuring keynotes, workshops, and networking opportunities.",
-                "date": "2025-09-15T00:00:00Z",
-                "startTime": "2025-09-15T09:00:00Z",
-                "endTime": "2025-09-15T17:00:00Z",
-                "minNumberOfInvetation": 50.0,
-                "maxNumberOfInvetation": 500.0,
-                "generalLocation": "San Francisco, CA",
-                "latitude": 37.7749,
-                "longitude": -122.4194
-            }),
+            body: JSON.stringify(event),
         })
 
         const data = await res.json();

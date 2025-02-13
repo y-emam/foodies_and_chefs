@@ -2,11 +2,16 @@ import { useEffect, useState } from "react";
 import DishImg2 from "../../assets/images/dish.webp";
 import { useTranslation } from "react-i18next";
 import { getAllEventsService } from "../../services/events/events";
+import checkSignIn from "../../utils/checkSignIn";
 
 function EventsPage() {
   const { t } = useTranslation();
 
   const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    checkSignIn();
+  });
 
   useEffect(() => {
     const getAllEvents = async () => {
@@ -20,14 +25,6 @@ function EventsPage() {
     };
 
     getAllEvents();
-
-    setEvents([
-      {
-        id: "5cac8011-c94a-4f11-5285-08dd3a229010",
-        name: "Festival",
-        date: "Tue 21-Jan-2025 15:49",
-      },
-    ]);
   }, []);
 
   return (
@@ -58,12 +55,12 @@ function EventsPage() {
                 style={{ borderRadius: "16px" }}
                 key={ind}
               >
-                <div className="font-bold text-xl md:w-full flex gap-0 md:gap-2 flex-col md:flex-row">
-                  <span className="font-bold md:text-[18px] text-[14px] mx-2">
+                <div className="font-bold text-xl md:w-full flex justify-between gap-0 md:gap-2 flex-col md:flex-row mr-4">
+                  <span className="font-bold md:text-[18px] text-[14px]">
                     {event.eventName}
                   </span>
                   <span className="date font-bold	md:text-[18px] text-[12px]">
-                    {event.date}
+                    {event.date ? event.date.split("T")[0] : ""}
                   </span>
                 </div>
                 <div

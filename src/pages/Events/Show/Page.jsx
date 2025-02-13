@@ -96,12 +96,12 @@ function ShowEventPage() {
             <span className="md:w-2/12  w-7/12">Location: </span>
             <span className="w-10/12">{event?.generalLocation}</span>
           </div>
-          <div className="flex">
+          {/* <div className="flex">
             <span className="md:w-2/12  w-7/12">
               Number of seats remaining:
             </span>
             <span className="w-10/12  m-auto">{event?.seatsRemaining}</span>
-          </div>
+          </div> */}
         </div>
 
         <p className="plus-jakarta-sans text-[15px] md:text-[26px]    md:pb-4 md:w-1/2 w-full">
