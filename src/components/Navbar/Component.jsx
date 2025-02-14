@@ -146,7 +146,14 @@ function Navbar() {
                   {t("navigation.offers")}
                 </a>
               </li>
-
+              <li>
+                <a
+                  className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
+                  href="/offers"
+                >
+                  {t("navigation.MeetOurChefs")}
+                </a>
+              </li>
               <li>
                 <LanguageButton />
               </li>
@@ -314,6 +321,7 @@ function Navbar() {
                 {t("navigation.menus")}
               </a>
             </li>
+            
             <li>
               <a
                 className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
@@ -322,7 +330,15 @@ function Navbar() {
                 {t("navigation.offers")}
               </a>
             </li>
-
+            
+            <li>
+              <a
+                className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
+                href="/offers"
+              >
+                {t("navigation.MeetOurChefs")}
+              </a>
+            </li>
             <li>
               <LanguageButton />
             </li>

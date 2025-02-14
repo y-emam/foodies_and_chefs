@@ -337,7 +337,7 @@ function MeetOurChefs() {
           </div>
           <div className="my-5 text-black flex flex-col justify-center items-center ">
             <h2 className="  text-3xl md:text-4xl ">{t("meetOurChefs.NeedMoreHelp")}</h2>
-            <span className="p-2 border-t-2 border-main-color  my-2 ">Contact Us</span>
+            <span className="p-2 border-t-2 border-main-color  my-2 ">{t("ContactUs")}</span>
           </div>
 
           </div>

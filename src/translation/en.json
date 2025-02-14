@@ -11,6 +11,7 @@
     "invites": "Invites",
     "menus": "Menus",
     "offers": "Offers",
+    "MeetOurChefs":"Meet Our Chefs",
     "signin": "Sign In",
     "signout": "Sign Out",
     "profile": "Profile",
@@ -237,8 +238,7 @@
     "DiscoverHowOurChefs":"Discover how our chefs feel about joining our community and using our dashboard to manage their connections.",
     "NeedMoreHelp":"Need More Help?",
     "RecentEvents":"Recent Events ",
-    "CheckOutWhat":"Check out what our community is up too! Be inspired by exceptional culinary experience. From intimate dinners to grand celebrations, see how our chefs are making every event unforgettable."
-
-  
+    "CheckOutWhat":"Check out what our community is up too! Be inspired by exceptional culinary experience. From intimate dinners to grand celebrations, see how our chefs are making every event unforgettable.",
+    "ContactUs":"Contact Us"
   }
 }
