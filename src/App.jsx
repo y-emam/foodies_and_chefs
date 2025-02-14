@@ -25,7 +25,7 @@ import OffersPage from "./pages/Offers/Page";
 import ShowOfferPage from "./pages/Offers/ShowOffer/Page";
 import NavbarHider from "./components/Navbar/Hider/Component";
 import OrderPage from "./pages/Orders/Page";
-
+import MeetOurChefs from './pages/meetOurChefs/Pages'
 function App() {
   useEffect(() => {
     document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
@@ -41,7 +41,7 @@ function App() {
         <Routes>
           {/* Home Page */}
           <Route path="/" element={<HomePage />} />
-
+          <Route path="/MeetOurChefs" element={<MeetOurChefs />} />
           {/* Authentication */}
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
