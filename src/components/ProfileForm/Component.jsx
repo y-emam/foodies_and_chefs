@@ -18,7 +18,7 @@ function ProfileForm({ isEditable, userData, setUserData }) {
   const [profilePicError, setProfilePicError] = useState("");
   const [preview, setPreview] = useState(
     userData?.profileImageLink
-      ? `https://${process.env.REACT_APP_API_DOMAIN}/${userData.profileImageLink}`
+      ? `${process.env.REACT_APP_API_DOMAIN}/${userData.profileImageLink}`
       : ProfileTempImg // Replace with a placeholder
   );
   const fileInputRef = useRef(null);
