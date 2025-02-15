@@ -49,21 +49,6 @@ export const addMenuService = async (menu) => {
             menuToUpload.courses[i].image = res.data;
         }
 
-        console.log(menuToUpload);
-
-        console.log({
-            menuName: menuToUpload.name,
-            description: menuToUpload.description,
-            dishes: menuToUpload.courses.map(course => {
-                return {
-                    cuisineName: course.name,
-                    description: course.description,
-                    dishesImage: course.image
-                }
-            })
-        });
-
-
         // upload the menu itself
         const res = await fetch(`${process.env.REACT_APP_API_DOMAIN}/Chef/AddChefMenu`,
             {
@@ -91,6 +76,21 @@ export const addMenuService = async (menu) => {
         return data
     } catch (err) {
         console.log("Failed to create Menu.");
+        console.log(err);
+    }
+}
+
+export const getMenuByIdService = async (menuId) => {
+    try {
+        // const res = await fetch(`${process.env.REACT_APP_API_DOMAIN}/Chef/ChefMenu/${menuId}`,
+        //     {
+        //         method: 'GET',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         }
+        //     })
+    } catch (err) {
+        console.log("Failed to get Menu by ID.");
         console.log(err);
     }
 }

@@ -63,6 +63,7 @@ function App() {
           {/* Commented because low performance */}
           <Route path="/menus" element={<MenusPage />} />
           <Route path="/menus/create" element={<CreateMenuPage />} />
+          <Route path="/menus/edit/:menuId" element={<CreateMenuPage />} />
 
           {/* Profile Pages */}
           <Route path="/profile" element={<ProfilePage />} />

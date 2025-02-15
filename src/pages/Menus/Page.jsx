@@ -64,10 +64,10 @@ function MenusPage() {
                   >
                     <div className="font-bold text-xl flex gap-0 md:gap-2 flex-col md:flex-row">
                       <span className="font-bold md:text-[18px] text-[14px] mx-2">
-                        {event.name}
+                        {event.menuName}
                       </span>
                       <span className="date font-bold	md:text-[18px] text-[12px]">
-                        {event.date}
+                        {event.createAt?.split("T")[0]}
                       </span>
                     </div>
                     <div

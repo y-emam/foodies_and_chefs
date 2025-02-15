@@ -1,11 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenusForm from "../../../components/MenusForm/Component";
+import checkSignIn from "../../../utils/checkSignIn";
+import { getMenuByIdService } from "../../../services/menus/menus";
+import { useParams } from "react-router-dom";
 
 function EditMenuPage() {
+  const { menuId } = useParams();
   const [menu, setMenu] = useState({
-    name: "",
+    menuName: "",
     description: "",
-    courses: [],
+    dishes: [],
+  });
+
+  useEffect(() => {
+    checkSignIn();
+  });
+
+  useEffect(() => {
+    const getMenu = async () => {
+      // Add your code here
+      const res = await getMenuByIdService(menuId);
+
+      if (res && res.success) {
+        setMenu(res.data);
+      }
+    };
+
+    getMenu();
   });
 
   return (
