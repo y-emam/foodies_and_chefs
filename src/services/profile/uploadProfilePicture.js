@@ -4,10 +4,6 @@ const uploadProfilePicture = async (file, token) => {
     try {
         let res = await uploadFileService(file, token);
 
-        console.log("Upload Profile Picture");
-
-        console.log(res);
-
         if (res.success) {
             const imageUrl = res.data;
 
@@ -18,13 +14,12 @@ const uploadProfilePicture = async (file, token) => {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${token}`,
                 },
-                mode: "no-cors",
                 body: JSON.stringify({ imageUrl }),
             });
 
             const data = await res.json();
 
-            console.log("Profile Picture Upload");
+            console.log("Chnaged Profile Picture");
             console.log(data);
 
             return data;

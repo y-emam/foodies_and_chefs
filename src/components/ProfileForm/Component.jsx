@@ -4,10 +4,11 @@ import InstagramIcon from "../../assets/images/instagram.svg";
 import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import isJwtTokenValid from "../../utils/validateToken";
 import uploadProfilePicture from "../../services/profile/uploadProfilePicture";
 import editProfileService from "../../services/profile/editProfile";
+import checkSignIn from "../../utils/checkSignIn";
 
 function ProfileForm({ isEditable, userData, setUserData }) {
   const navigate = useNavigate();
@@ -16,34 +17,44 @@ function ProfileForm({ isEditable, userData, setUserData }) {
   const [error, setError] = useState("");
   const [profilePicError, setProfilePicError] = useState("");
   const [preview, setPreview] = useState(
-    userData?.profileImage
-      ? `http://${process.env.REACT_APP_API_DOMAIN}/${userData.profileImage}`
+    userData?.profileImageLink
+      ? `https://${process.env.REACT_APP_API_DOMAIN}/${userData.profileImageLink}`
       : ProfileTempImg // Replace with a placeholder
   );
   const fileInputRef = useRef(null);
 
+  // check if signed in or not
+  useEffect(() => {
+    checkSignIn();
+  });
+
   const uploadImage = async (file) => {
     const token = localStorage.getItem("token");
-
-    console.log("validating token");
 
     if (!token || !isJwtTokenValid(token)) {
       return;
     }
 
-    console.log("Token is valid");
-
-    console.log("File:", file);
-    console.log("Token", token);
-
     if (file && token) {
-      console.log("Uploading image...");
       const res = await uploadProfilePicture(file, token);
 
       if (!res || !res.success) {
         setProfilePicError("Failed to upload image. Please try again.");
       } else {
-        setUserData((prevData) => ({ ...prevData, profileImage: res.data }));
+        setUserData((prevData) => {
+          prevData.profileImageLink = res.data.profileImageLink;
+
+          return prevData;
+        });
+
+        // update localstorage with new image
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            ...userData,
+            profileImageLink: res.data.profileImageLink,
+          })
+        );
       }
     }
   };
