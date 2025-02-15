@@ -73,7 +73,11 @@ function ShowOfferPage() {
                 id="container"
                 class="flex relative w-full h-64 justify-center items-center rtl:direction-rtl ltr:direction-ltr"
               >
-                <LocationMap latitude={"30.030886"} longitude={"31.405792"} />
+                <LocationMap
+                  location={"Cairo Festival"}
+                  latitude={"30.030886"}
+                  longitude={"31.405792"}
+                />
               </div>
 
               <div class="flex items-center border-y border-[#FA8836] py-10 ">
