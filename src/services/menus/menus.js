@@ -1,3 +1,5 @@
+import uploadFileService from "../uploadFileService";
+
 export const getAllMenusService = async (page = 1, pageSize = 5) => {
     try {
         const token = localStorage.getItem("token");
@@ -22,18 +24,65 @@ export const getAllMenusService = async (page = 1, pageSize = 5) => {
 }
 
 
-export const createMenuService = async (menu) => {
+export const addMenuService = async (menu) => {
     try {
         const token = localStorage.getItem("token");
 
+        // create a copy of menu so that I don't remove the image from the original menu object
+        const menuToUpload = JSON.parse(JSON.stringify(menu));
+
+        // upload images of the menu first
+        for (let i = 0; i < menu.courses.length; i++) {
+            if (!menu.courses[i].image) {
+                menu.courses[i].image = "";
+                continue;
+            }
+
+            const course = menu.courses[i];
+            const formData = new FormData();
+            formData.append('file', course.image);
+
+            const res = await uploadFileService(course.image);
+
+            console.log(res);
+
+            menuToUpload.courses[i].image = res.data;
+        }
+
+        console.log(menuToUpload);
+
+        console.log({
+            menuName: menuToUpload.name,
+            description: menuToUpload.description,
+            dishes: menuToUpload.courses.map(course => {
+                return {
+                    cuisineName: course.name,
+                    description: course.description,
+                    dishesImage: course.image
+                }
+            })
+        });
+
+
+        // upload the menu itself
         const res = await fetch(`${process.env.REACT_APP_API_DOMAIN}/Chef/AddChefMenu`,
             {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'content-type': 'application/json',
                     Authorization: `Bearer ${token}`
                 },
-                body: JSON.stringify(menu)
+                body: JSON.stringify({
+                    menuName: menuToUpload.name,
+                    description: menuToUpload.description,
+                    dishes: menuToUpload.courses.map(course => {
+                        return {
+                            cuisineName: course.name,
+                            description: course.description,
+                            dishesImage: course.image
+                        }
+                    })
+                })
             }
         )
 

@@ -2,7 +2,7 @@ import uploadFileService from "../uploadFileService";
 
 const uploadProfilePicture = async (file, token) => {
     try {
-        let res = await uploadFileService(file, token);
+        let res = await uploadFileService(file);
 
         if (res.success) {
             const imageUrl = res.data;

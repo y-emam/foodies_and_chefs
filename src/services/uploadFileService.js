@@ -1,5 +1,7 @@
-const uploadFileService = async (file, token) => {
+const uploadFileService = async (file) => {
     try {
+        const token = localStorage.getItem("token");
+
         const formData = new FormData();
         formData.append("file", file);
 
