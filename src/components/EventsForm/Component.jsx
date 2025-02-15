@@ -85,7 +85,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
 
         if (res && res.success) {
           // Redirect to the events page
-          // window.location.href = `/events/${res.data.id}`;
+          window.location.href = `/events/${res.data.eventId}`;
         }
       }
     } catch (err) {

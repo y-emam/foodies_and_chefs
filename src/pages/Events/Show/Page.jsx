@@ -9,11 +9,16 @@ import DisInstagramImg from "../../../assets/images/DisInstagram.svg";
 import DisXImg from "../../../assets/images/DisX.svg";
 import "./styles.css";
 import { getEventByEventIdService } from "../../../services/events/events";
+import checkSignIn from "../../../utils/checkSignIn";
 
 function ShowEventPage() {
   const { eventId } = useParams();
   const [event, setEvent] = useState({});
   const [chefs, setChefs] = useState([]);
+
+  useEffect(() => {
+    checkSignIn();
+  });
 
   useEffect(() => {
     setChefs([
@@ -53,8 +58,6 @@ function ShowEventPage() {
       const res = await getEventByEventIdService(eventId);
 
       if (res && res.success) {
-        console.log(res.data);
-
         setEvent(res.data);
       }
     };
@@ -78,19 +81,23 @@ function ShowEventPage() {
             <span className="w-10/12">{event?.eventDescription}</span>
           </div>
           <div className="flex">
-            <span className="md:w-2/12  w-7/12">Date and time:</span>
-            <span className="w-10/12 tracking-wide" id="duration-output">
-              This event will take place on
-              <span className="text-main-color">{event.date}</span>
-              <br /> From{" "}
-              <span className="text-main-color">{event.startTime} </span>
-              <br />
-              until <span className="text-main-color">{event.endTime}</span>
-            </span>
+            <span className="md:w-2/12  w-7/12">Time:</span>
+            {event?.date && (
+              <span className="w-10/12 tracking-wide" id="duration-output">
+                This event will take place on{" "}
+                <span className="text-main-color">{event.date}</span>
+                <br /> From{" "}
+                <span className="text-main-color">{event.startTime} </span>
+                <br />
+                until <span className="text-main-color">{event.endTime}</span>
+              </span>
+            )}
           </div>
           <div className="flex">
             <span className="md:w-2/12  w-7/12">Number of guests:</span>
-            <span className="w-10/12">{`${event?.minNumberOfInvetation} to ${event?.maxNumberOfInvetation} Guests`}</span>
+            {event?.minNumberOfInvetation && (
+              <span className="w-10/12">{`${event?.minNumberOfInvetation} to ${event?.maxNumberOfInvetation} Guests`}</span>
+            )}
           </div>
           <div className="flex">
             <span className="md:w-2/12  w-7/12">Location: </span>
