@@ -15,7 +15,9 @@ function MenusPage() {
 
   useEffect(() => {
     const getMenus = async () => {
-      const res = await getAllMenusService();
+      const page = 1;
+      const pageSize = 5;
+      const res = await getAllMenusService(page, pageSize);
 
       if (res && res.success) {
         setMenus(res.data.data);
