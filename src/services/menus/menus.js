@@ -20,3 +20,28 @@ export const getAllMenusService = async (page = 1, pageSize = 5) => {
         console.log(err);
     }
 }
+
+
+export const createMenuService = async (menu) => {
+    try {
+        const token = localStorage.getItem("token");
+
+        const res = await fetch(`${process.env.REACT_APP_API_DOMAIN}/Chef/AddChefMenu`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify(menu)
+            }
+        )
+
+        const data = await res.json();
+
+        return data
+    } catch (err) {
+        console.log("Failed to create Menu.");
+        console.log(err);
+    }
+}
