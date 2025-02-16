@@ -1,7 +1,7 @@
 import "./styles.css";
 
 function LoadingSpinner() {
-  return <div>Loading Spinner</div>;
+  return <span class="loader"></span>;
 }
 
 export default LoadingSpinner;

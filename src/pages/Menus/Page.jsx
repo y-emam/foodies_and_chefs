@@ -3,11 +3,13 @@ import DishImg2 from "../../assets/images/dish.webp";
 import { useTranslation } from "react-i18next";
 import checkSignIn from "../../utils/checkSignIn";
 import { getAllMenusService } from "../../services/menus/menus";
+import LoadingSpinner from "../../components/Spinner/Component";
 
 function MenusPage() {
   const { t } = useTranslation();
 
   const [menus, setMenus] = useState([]);
+  const [isMenusLoading, setIsMenusLoading] = useState(false);
 
   useEffect(() => {
     checkSignIn();
@@ -15,6 +17,8 @@ function MenusPage() {
 
   useEffect(() => {
     const getMenus = async () => {
+      setIsMenusLoading(true);
+
       const page = 1;
       const pageSize = 5;
       const res = await getAllMenusService(page, pageSize);
@@ -22,6 +26,8 @@ function MenusPage() {
       if (res && res.success) {
         setMenus(res.data.data);
       }
+
+      setIsMenusLoading(false);
     };
 
     getMenus();
@@ -49,11 +55,19 @@ function MenusPage() {
               </a>
             </div>
             {menus.length <= 0 ? (
-              <div>
-                <h2 className="text-white md:text-4xl text-s my-20 font-bold text-center">
-                  You Don't have any menus yet.
-                </h2>
-              </div>
+              <>
+                {isMenusLoading ? (
+                  <div className="flex justify-center items-center">
+                    <LoadingSpinner />
+                  </div>
+                ) : (
+                  <div>
+                    <h2 className="text-white md:text-4xl text-s my-20 font-bold text-center">
+                      You Don't have any menus yet.
+                    </h2>
+                  </div>
+                )}
+              </>
             ) : (
               <>
                 {menus.map((event) => (
