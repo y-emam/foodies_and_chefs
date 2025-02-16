@@ -13,7 +13,6 @@ import checkSignIn from "../../utils/checkSignIn";
 function ProfileForm({ isEditable, userData, setUserData }) {
   const navigate = useNavigate();
 
-  // const [file, setFile] = useState(null);
   const [error, setError] = useState("");
   const [profilePicError, setProfilePicError] = useState("");
   const [preview, setPreview] = useState(
@@ -351,22 +350,36 @@ function ProfileForm({ isEditable, userData, setUserData }) {
           <div className="self-start w-full border-t-2 border-main-color md:text-[22px]  text-[15px]">
             <h1 className="text-start my-5 ">Social links</h1>
             <div className="flex rounded-[10px]   p-3 px-2 justify-center items-center md:w-1/4 w-1/2 m-auto border border-[#949494] bg-[#222222] ">
-              {userData?.facebook && (
-                <a href={userData.facebook}>
-                  <img className="w-1/2 m-auto" src={FacebookIcon} alt="X" />
-                </a>
-              )}
-
-              {userData?.twitter && (
-                <a href={userData.twitter}>
-                  <img className="w-1/2 m-auto" src={XIcon} alt="X" />
-                </a>
-              )}
-
-              {userData?.instagram && (
-                <a href={userData.instagram}>
-                  <img className="w-1/2 m-auto" src={InstagramIcon} alt="X" />
-                </a>
+              {userData.insragramAccount ||
+              userData.facebookAccount ||
+              userData.xAccount ? (
+                <>
+                  {userData?.facebook && (
+                    <a href={userData.facebook}>
+                      <img
+                        className="w-1/2 m-auto"
+                        src={FacebookIcon}
+                        alt="X"
+                      />
+                    </a>
+                  )}
+                  {userData?.twitter && (
+                    <a href={userData.twitter}>
+                      <img className="w-1/2 m-auto" src={XIcon} alt="X" />
+                    </a>
+                  )}
+                  {userData?.instagram && (
+                    <a href={userData.instagram}>
+                      <img
+                        className="w-1/2 m-auto"
+                        src={InstagramIcon}
+                        alt="X"
+                      />
+                    </a>
+                  )}
+                </>
+              ) : (
+                <h3>No Social Media</h3>
               )}
             </div>
           </div>
