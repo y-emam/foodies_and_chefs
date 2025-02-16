@@ -3,11 +3,13 @@ import DishImg2 from "../../assets/images/dish.webp";
 import { useTranslation } from "react-i18next";
 import { getAllEventsService } from "../../services/events/events";
 import checkSignIn from "../../utils/checkSignIn";
+import LoadingSpinner from "../../components/Spinner/Component";
 
 function EventsPage() {
   const { t } = useTranslation();
 
   const [events, setEvents] = useState([]);
+  const [isEventsLoading, setIsEventsLoading] = useState(false);
 
   useEffect(() => {
     checkSignIn();
@@ -15,13 +17,21 @@ function EventsPage() {
 
   useEffect(() => {
     const getAllEvents = async () => {
-      const res = await getAllEventsService(1, 10);
+      setIsEventsLoading(true);
 
-      if (res && res.success) {
-        console.log(res.data.data);
+      try {
+        const res = await getAllEventsService(1, 10);
 
-        setEvents(res.data.data);
+        if (res && res.success) {
+          console.log(res.data.data);
+
+          setEvents(res.data.data);
+        }
+      } catch (err) {
+        console.log(err);
       }
+
+      setIsEventsLoading(false);
     };
 
     getAllEvents();
@@ -51,11 +61,19 @@ function EventsPage() {
           </a>
         </div>
         {events && events.length <= 0 ? (
-          <div>
-            <h2 className="text-white md:text-4xl text-s my-20 font-bold text-center">
-              You Don't have any Events yet.
-            </h2>
-          </div>
+          <>
+            {isEventsLoading ? (
+              <div className="flex justify-center items-center">
+                <LoadingSpinner />
+              </div>
+            ) : (
+              <div>
+                <h2 className="text-white md:text-4xl text-s my-20 font-bold text-center">
+                  You Don't have any Events yet.
+                </h2>
+              </div>
+            )}
+          </>
         ) : (
           <>
             {events.map((event, ind) => (

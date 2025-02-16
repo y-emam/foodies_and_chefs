@@ -19,12 +19,16 @@ function MenusPage() {
     const getMenus = async () => {
       setIsMenusLoading(true);
 
-      const page = 1;
-      const pageSize = 5;
-      const res = await getAllMenusService(page, pageSize);
+      try {
+        const page = 1;
+        const pageSize = 5;
+        const res = await getAllMenusService(page, pageSize);
 
-      if (res && res.success) {
-        setMenus(res.data.data);
+        if (res && res.success) {
+          setMenus(res.data.data);
+        }
+      } catch (err) {
+        console.log(err);
       }
 
       setIsMenusLoading(false);
