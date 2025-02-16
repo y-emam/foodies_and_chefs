@@ -472,21 +472,21 @@ function MeetOurChefs() {
               class="w-full h-auto rounded-lg"
               alt="ChefEventImage"
             />
-            <img src={Img2} class="w-full h-auto rounded-lg" />
-            <img src={Img3} class="w-full h-auto rounded-lg" />
-            <img src={Img4} class="w-full h-auto rounded-lg" />
-            <img src={Img5} class="w-full h-auto rounded-lg" />
-            <img src={Img6} class="w-full h-auto rounded-lg" />
-            <img src={Img7} class="w-full h-auto rounded-lg" />
-            <img src={Img8} class="w-full h-auto rounded-lg" />
-            <img src={Img1} class="w-full h-auto rounded-lg" />
+            <img src={Img2} class="w-full h-auto rounded-lg" alt="" />
+            <img src={Img3} class="w-full h-auto rounded-lg" alt="" />
+            <img src={Img4} class="w-full h-auto rounded-lg" alt="" />
+            <img src={Img5} class="w-full h-auto rounded-lg" alt="" />
+            <img src={Img6} class="w-full h-auto rounded-lg" alt="" />
+            <img src={Img7} class="w-full h-auto rounded-lg" alt="" />
+            <img src={Img8} class="w-full h-auto rounded-lg" alt="" />
+            <img src={Img1} class="w-full h-auto rounded-lg" alt="" />
           </div>
         </div>
         <div className="  rounded-3xl w-full p-20  flex flex-col gap-3">
           <h2 className="text-start text-main-color text-3xl md:text-5xl">
             {t("meetOurChefs.WhatOurChefsareSaying")}
           </h2>
-          <p className="m-auto w-fit my-3 text-xl w-3/4 text-black">
+          <p className="m-auto my-3 text-xl w-3/4 text-black">
             {t("meetOurChefs.DiscoverHowOurChefs")}
           </p>
           <div>
