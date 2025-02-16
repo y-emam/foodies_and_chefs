@@ -73,7 +73,7 @@ function Navbar() {
       <header className="relative flex justify-between items-center py-3 mx-4 md:mx-10 max-h-24">
         <div className="flex items-center gap-5">
           {/* Mobile Menu Toggle Button */}
-          <div className="block md:hidden">
+          <div className="block lg:hidden">
             <button
               id="menu-btn"
               className="focus:outline-none bg-transparent"
@@ -97,7 +97,7 @@ function Navbar() {
           </div>
 
           {/* Dropdown Menu and Links (Hidden on Mobile) */}
-          <div className="hidden md:flex justify-between w-auto items-center gap-5 text-black">
+          <div className="hidden lg:flex justify-between w-auto items-center gap-5 text-black">
             <div>
               <a
                 className="menu-item px-[18px]"
@@ -251,9 +251,9 @@ function Navbar() {
         )}
       </header>
 
-      {/* Sidebar (Visble on Mobile Only*/}
+      {/* Sidebar (Visble on Mobile Only)*/}
       <div
-        className="hide-sidebar md:hidden fixed inset-y-0 ltr:left-0 rtl:right-0 z-40 w-1/2 bg-[#2E2E2E] text-white transform transition-transform duration-300 ease-in-out"
+        className="hide-sidebar lg:hidden fixed inset-y-0 ltr:left-0 rtl:right-0 z-40 w-1/2 bg-[#2E2E2E] text-white transform transition-transform duration-300 ease-in-out"
         id="mobile-nav"
       >
         <div className="p-4">
