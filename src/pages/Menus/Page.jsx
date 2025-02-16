@@ -63,7 +63,7 @@ function MenusPage() {
                     key={event.id}
                   >
                     <div className="font-bold text-xl flex gap-0 md:gap-2 flex-col md:flex-row">
-                      <span className="font-bold md:text-[18px] text-[14px] mx-2">
+                      <span className="font-bold md:text-[18px] text-[14px]">
                         {event.menuName}
                       </span>
                       <span className="date font-bold	md:text-[18px] text-[12px]">
@@ -75,16 +75,10 @@ function MenusPage() {
                       dir="auto"
                     >
                       <a
-                        className="md:h-[35px] h-[24px] md:w-[85px] w-[44px] bg-white text-main-color p-0.5 md:p-0 my-auto  border-[3px] border-white font-bold md:text-[18px] text-[10px]  hover:bg-[#000000]  hover:border-[3px] hover:border-[#000000] rounded-[40px]	"
-                        href={`/Home/EditEvent?eventId=${event.id}`}
+                        className=" md:h-[35px] h-[24px] md:w-[14rem] w-[6rem]  bg-white text-main-color p-0.5 md:p-0 my-auto border-[3px] border-white font-bold md:text-[18px] text-[10px] hover:bg-[#000000] hover:border-[3px] hover:border-[#000000] rounded-[40px]"
+                        href={`/menus/edit/${event.id}`}
                       >
-                        {t("global.edit")}
-                      </a>
-                      <a
-                        className=" md:h-[35px] h-[24px] md:w-[85px] w-[44px]  bg-white text-main-color p-0.5 md:p-0 my-auto  border-[3px] border-white font-bold md:text-[18px] text-[10px] 	 hover:bg-[#000000]   hover:border-[3px] hover:border-[#000000] rounded-[40px]"
-                        href={`/Home/ChefOffers?eventId=${event.id}`}
-                      >
-                        {t("global.show")}
+                        {t("menus.showMenu")}
                       </a>
                     </div>
                   </div>

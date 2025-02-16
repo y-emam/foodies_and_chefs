@@ -3,9 +3,9 @@ import MenusForm from "../../../components/MenusForm/Component";
 
 function CreateMenuPage() {
   const [menu, setMenu] = useState({
-    menuName: "",
+    name: "",
     description: "",
-    dishes: [],
+    courses: [],
   });
 
   return (
