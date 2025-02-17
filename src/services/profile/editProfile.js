@@ -25,7 +25,7 @@ const editProfileService = async (userData) => {
         // Convert JSON object to query string
         const queryParams = new URLSearchParams(userData).toString();
 
-        const url = `${process.env.REACT_APP_API_DOMAIN}/User/EditProfile?${queryParams}`;
+        const url = `${process.env.REACT_APP_API_URL}/User/EditProfile?${queryParams}`;
 
         const res = await fetch(url, {
             method: 'POST',

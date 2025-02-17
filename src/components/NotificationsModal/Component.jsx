@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import NotificationImg from "../../assets/images/NotificationFoodiesLogo.svg";
+import getNotificationDuration from "../../utils/getNotificationDuration";
 
 function NotificationsModal({ notifications, toggleNotifications }) {
   return (
@@ -51,11 +53,11 @@ function NotificationsModal({ notifications, toggleNotifications }) {
                     alt="NotificationFoodiesLogo"
                   />
                   <div className="flex flex-col items-start justify-center w-8/12">
-                    <h1 className="font-semibold md:text-base text-sm">
-                      {notification?.title}
+                    <h1 className="font-bold text-black md:text-base text-sm">
+                      {notification?.senderName}
                     </h1>
                     <p className="font-medium md:text-sm text-[0.6rem] text-[#8A8787] text-start">
-                      {notification?.description}
+                      {notification?.message}
                     </p>
                   </div>
                 </div>
@@ -63,7 +65,7 @@ function NotificationsModal({ notifications, toggleNotifications }) {
                   className="absolute bottom-1 font-medium text-[9px] text-[#8A8787] md:w-3/12 w-3/12 sm:text-[12px] md:text-[13px] lg:text-[14px] end-0"
                   data-time="Thu Jan 16 2025 13:31:28 GMT+0200 (Eastern European Standard Time)"
                 >
-                  25 day ago
+                  {getNotificationDuration(notification?.createdAt)}
                 </div>
               </a>
             ))}

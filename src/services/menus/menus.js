@@ -4,7 +4,7 @@ export const getAllMenusService = async (page = 1, pageSize = 5) => {
     try {
         const token = localStorage.getItem("token");
 
-        const res = await fetch(`${process.env.REACT_APP_API_DOMAIN}/Chef/ChefMenu?page=${page}&pageSize=${pageSize}`,
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/Chef/ChefMenu?page=${page}&pageSize=${pageSize}`,
             {
                 method: 'GET',
                 headers: {
@@ -50,7 +50,7 @@ export const addMenuService = async (menu) => {
         }
 
         // upload the menu itself
-        const res = await fetch(`${process.env.REACT_APP_API_DOMAIN}/Chef/AddChefMenu`,
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/Chef/AddChefMenu`,
             {
                 method: 'POST',
                 headers: {
@@ -84,7 +84,7 @@ export const getMenuByIdService = async (menuId) => {
     try {
         const token = localStorage.getItem("token")
 
-        const res = await fetch(`${process.env.REACT_APP_API_DOMAIN}/Chef/GetMenuById?MenuId=${menuId}`, {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/Chef/GetMenuById?MenuId=${menuId}`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`

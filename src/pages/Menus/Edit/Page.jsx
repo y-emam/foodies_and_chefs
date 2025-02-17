@@ -34,7 +34,7 @@ function EditMenuPage() {
             return {
               name: course.cuisineName,
               description: course.description,
-              image: `${process.env.REACT_APP_API_DOMAIN}/${course.dishesImage}`,
+              image: `${process.env.REACT_APP_API_URL}/${course.dishesImage}`,
             };
           }),
         });

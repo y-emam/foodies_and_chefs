@@ -14,7 +14,7 @@ const uploadProfilePicture = async (file, token) => {
             const queryParams = new URLSearchParams(jsonData).toString();
 
             // set the new profile picture
-            res = await fetch(`${process.env.REACT_APP_API_DOMAIN}/User/EditProfile?${queryParams}`, {
+            res = await fetch(`${process.env.REACT_APP_API_URL}/User/EditProfile?${queryParams}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

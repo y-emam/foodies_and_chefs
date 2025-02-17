@@ -10,12 +10,15 @@ import { useNavigate } from "react-router-dom";
 import resetLocalStorage from "../../utils/resetLocalStorage";
 import LogoImg from "../../assets/images/logo.webp";
 import NotificationsModal from "../NotificationsModal/Component";
+import * as signalR from "@microsoft/signalr";
+import { updateNotifications } from "../../services/Notifications/notifications";
 
 function Navbar() {
   const { t } = useTranslation();
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [userData, setUserData] = useState("");
-  const [notifications] = useState([]);
+  const [notifications, setNotifications] = useState([]);
+  const [connection, setConnection] = useState(null);
   const [showNotifications, setShowNotifications] = useState(false);
 
   const navigate = useNavigate();
@@ -62,11 +65,40 @@ function Navbar() {
     overlay.classList.toggle("hidden");
   };
 
+  // Toggle Notifications
   const toggleNotifications = useCallback(() => {
     console.log("toggleNotification");
 
     setShowNotifications((prev) => !prev);
   }, []);
+
+  // Initialize SignalR connection
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    const newConnection = new signalR.HubConnectionBuilder()
+      .withUrl(`${process.env.REACT_APP_API_URL}/notificationHub`, {
+        accessTokenFactory: () => token, // Include token here
+        transport: signalR.HttpTransportType.WebSockets,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        skipNegotiation: true,
+      })
+      .withAutomaticReconnect() // Optional: Automatically reconnect on disconnect
+      .configureLogging(signalR.LogLevel.Information) // Enable detailed logging
+      .build();
+
+    setConnection(newConnection);
+  }, []);
+
+  useEffect(() => {
+    const connect = async () => {
+      await updateNotifications(connection, setNotifications);
+    };
+
+    connect();
+  }, [connection]);
 
   return (
     <nav>
@@ -219,7 +251,7 @@ function Navbar() {
                   className="icon rounded-full w-12 h-12 object-cover"
                   src={
                     userData?.profileImageLink
-                      ? `${process.env.REACT_APP_API_DOMAIN}/${userData.profileImageLink}`
+                      ? `${process.env.REACT_APP_API_URL}/${userData.profileImageLink}`
                       : ProfileTempImg
                   }
                   alt="profileImage"
