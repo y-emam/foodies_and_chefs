@@ -25,6 +25,7 @@ function EditMenuPage() {
       if (res && res.success) {
         const newMenu = res.data;
 
+        // The Change in Menu structure is because Backend API is returning different structure
         setMenu({
           name: newMenu.menuName,
           description: newMenu.description,
@@ -37,21 +38,6 @@ function EditMenuPage() {
             };
           }),
         });
-
-        console.log("====================================");
-        console.log({
-          name: newMenu.menuName,
-          description: newMenu.description,
-          id: newMenu.id,
-          courses: newMenu.dishes.map((course) => {
-            return {
-              name: course.cuisineName,
-              description: course.description,
-              image: `${process.env.REACT_APP_API_DOMAIN}/${course.dishesImage}`,
-            };
-          }),
-        });
-        console.log("====================================");
       }
     };
 
