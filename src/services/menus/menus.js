@@ -82,13 +82,20 @@ export const addMenuService = async (menu) => {
 
 export const getMenuByIdService = async (menuId) => {
     try {
-        // const res = await fetch(`${process.env.REACT_APP_API_DOMAIN}/Chef/ChefMenu/${menuId}`,
-        //     {
-        //         method: 'GET',
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         }
-        //     })
+        const token = localStorage.getItem("token")
+
+        const res = await fetch(`${process.env.REACT_APP_API_DOMAIN}/Chef/GetMenuById?MenuId=${menuId}`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        })
+
+        const data = await res.json();
+
+        console.log(data);
+
+        return data;
     } catch (err) {
         console.log("Failed to get Menu by ID.");
         console.log(err);

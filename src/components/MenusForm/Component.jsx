@@ -120,22 +120,20 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                   />
                 </div>
                 <div className="relative mb-1">
-                  <div className="Interl focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-80 h-[66px] bg-[#444444] w-full">
-                    <textarea
-                      id="CourseDesc"
-                      name="CourseDesc"
-                      type="text"
-                      className="Interl focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-90 h-[66px] bg-[#444444] w-full p-3"
-                      placeholder={t("menus.form.courseDescriptionPlaceholder")}
-                      value={course.description}
-                      required
-                      onChange={(e) => {
-                        const newCourses = [...menu.courses];
-                        newCourses[index].description = e.target.value;
-                        setMenu({ ...menu, courses: newCourses });
-                      }}
-                    ></textarea>
-                  </div>
+                  <textarea
+                    id="CourseDesc"
+                    name="CourseDesc"
+                    type="text"
+                    className="Interl focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none opacity-90 h-[66px] bg-[#444444] w-full p-3"
+                    placeholder={t("menus.form.courseDescriptionPlaceholder")}
+                    value={course.description}
+                    required
+                    onChange={(e) => {
+                      const newCourses = [...menu.courses];
+                      newCourses[index].description = e.target.value;
+                      setMenu({ ...menu, courses: newCourses });
+                    }}
+                  ></textarea>
                   <div className="flex flex-row w-full justify-start items-center gap-4 mt-4">
                     <div>
                       <label
@@ -176,8 +174,15 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                           course.image ? "bg-main-color" : "bg-[#444444]"
                         }`}
                         onClick={() => {
-                          setModalImg(URL.createObjectURL(course.image));
-                          setIsModalOpen(true);
+                          if (!course.image) return;
+
+                          if (typeof course.image === "string") {
+                            setModalImg(course.image);
+                            setIsModalOpen(true);
+                          } else {
+                            setModalImg(URL.createObjectURL(course.image));
+                            setIsModalOpen(true);
+                          }
                         }}
                       >
                         {t("menus.form.showImage")}
@@ -190,8 +195,15 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                           course.image ? "bg-main-color" : "bg-[#444444]"
                         }`}
                         onClick={() => {
-                          setModalImg(URL.createObjectURL(course.image));
-                          setIsModalOpen(true);
+                          if (!course.image) return;
+
+                          if (typeof course.image === "string") {
+                            setModalImg(course.image);
+                            setIsModalOpen(true);
+                          } else {
+                            setModalImg(URL.createObjectURL(course.image));
+                            setIsModalOpen(true);
+                          }
                         }}
                       >
                         <i className="fa-solid fa-image" />

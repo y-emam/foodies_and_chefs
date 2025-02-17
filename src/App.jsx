@@ -26,6 +26,7 @@ import ShowOfferPage from "./pages/Offers/ShowOffer/Page";
 import NavbarHider from "./components/Navbar/Hider/Component";
 import OrderPage from "./pages/Orders/Page";
 import MeetOurChefs from "./pages/MeetOurChefs/Page";
+import EditMenuPage from "./pages/Menus/Edit/Page";
 function App() {
   useEffect(() => {
     document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
@@ -63,7 +64,7 @@ function App() {
           {/* Commented because low performance */}
           <Route path="/menus" element={<MenusPage />} />
           <Route path="/menus/create" element={<CreateMenuPage />} />
-          <Route path="/menus/edit/:menuId" element={<CreateMenuPage />} />
+          <Route path="/menus/edit/:menuId" element={<EditMenuPage />} />
 
           {/* Profile Pages */}
           <Route path="/profile" element={<ProfilePage />} />

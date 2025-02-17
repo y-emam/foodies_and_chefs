@@ -30,19 +30,19 @@ function MeetOurChefs() {
         <p className="text-black">{t("meetOurChefs.IndulgeInaCulinary")}</p>
         <div className="text-black flex md:flex-row flex-col gap-5 justify-center items-center *:w-1/4 md:*:w-full">
           <div className="flex flex-col gap-2 items-center  ">
-            <i class="fa-solid fa-check text-main-color text-3xl"></i>
+            <i className="fa-solid fa-check text-main-color text-3xl"></i>
 
             <h3 className="text-xl">{t("meetOurChefs.CustomizedMenus")}</h3>
             <p>{t("meetOurChefs.OurChefsCraft")}</p>
           </div>
           <div className="flex flex-col gap-2 items-center  ">
-            <i class="fa-solid fa-check text-main-color text-3xl"></i>
+            <i className="fa-solid fa-check text-main-color text-3xl"></i>
 
             <h3 className="text-xl">{t("meetOurChefs.FineDining")}</h3>
             <p>{t("meetOurChefs.EnjoyGourmet")}</p>
           </div>
           <div className="flex flex-col gap-2 items-center ">
-            <i class="fa-solid fa-check text-main-color text-3xl"></i>
+            <i className="fa-solid fa-check text-main-color text-3xl"></i>
             <h3 className="text-xl">{t("meetOurChefs.UniqueCulinary")}</h3>
             <p>{t("meetOurChefs.DelightYourGuests")}</p>
           </div>
@@ -79,21 +79,21 @@ function MeetOurChefs() {
               />
               <span className="text-xl">
                 {" "}
-                <i class="fa-regular fa-heart text-main-color "></i> Chef Marco
-                Rossi
+                <i className="fa-regular fa-heart text-main-color "></i> Chef
+                Marco Rossi
               </span>
               <span className="text-sm">French Delicacies</span>
               <div className="flex gap-2">
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Order")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Book")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Catering")}
                 </span>
               </div>
@@ -113,21 +113,21 @@ function MeetOurChefs() {
               />
               <span className="text-xl">
                 {" "}
-                <i class="fa-regular fa-heart text-main-color "></i> Chef Marco
-                Rossi
+                <i className="fa-regular fa-heart text-main-color "></i> Chef
+                Marco Rossi
               </span>
               <span className="text-sm">French Delicacies</span>
               <div className="flex gap-2">
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Order")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Book")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Catering")}
                 </span>
               </div>
@@ -147,21 +147,21 @@ function MeetOurChefs() {
               />
               <span className="text-xl">
                 {" "}
-                <i class="fa-regular fa-heart text-main-color "></i> Chef Marco
-                Rossi
+                <i className="fa-regular fa-heart text-main-color "></i> Chef
+                Marco Rossi
               </span>
               <span className="text-sm">French Delicacies</span>
               <div className="flex gap-2">
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Order")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Book")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Catering")}
                 </span>
               </div>
@@ -181,21 +181,21 @@ function MeetOurChefs() {
               />
               <span className="text-xl">
                 {" "}
-                <i class="fa-regular fa-heart text-main-color "></i> Chef Marco
-                Rossi
+                <i className="fa-regular fa-heart text-main-color "></i> Chef
+                Marco Rossi
               </span>
               <span className="text-sm">French Delicacies</span>
               <div className="flex gap-2">
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Order")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Book")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Catering")}
                 </span>
               </div>
@@ -215,21 +215,21 @@ function MeetOurChefs() {
               />
               <span className="text-xl">
                 {" "}
-                <i class="fa-regular fa-heart text-main-color "></i> Chef Marco
-                Rossi
+                <i className="fa-regular fa-heart text-main-color "></i> Chef
+                Marco Rossi
               </span>
               <span className="text-sm">French Delicacies</span>
               <div className="flex gap-2">
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Order")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Book")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Catering")}
                 </span>
               </div>
@@ -249,21 +249,21 @@ function MeetOurChefs() {
               />
               <span className="text-xl">
                 {" "}
-                <i class="fa-regular fa-heart text-main-color "></i> Chef Marco
-                Rossi
+                <i className="fa-regular fa-heart text-main-color "></i> Chef
+                Marco Rossi
               </span>
               <span className="text-sm">French Delicacies</span>
               <div className="flex gap-2">
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Order")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Book")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Catering")}
                 </span>
               </div>
@@ -283,21 +283,21 @@ function MeetOurChefs() {
               />
               <span className="text-xl">
                 {" "}
-                <i class="fa-regular fa-heart text-main-color "></i> Chef Marco
-                Rossi
+                <i className="fa-regular fa-heart text-main-color "></i> Chef
+                Marco Rossi
               </span>
               <span className="text-sm">French Delicacies</span>
               <div className="flex gap-2">
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Order")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Book")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Catering")}
                 </span>
               </div>
@@ -317,21 +317,21 @@ function MeetOurChefs() {
               />
               <span className="text-xl">
                 {" "}
-                <i class="fa-regular fa-heart text-main-color "></i> Chef Marco
-                Rossi
+                <i className="fa-regular fa-heart text-main-color "></i> Chef
+                Marco Rossi
               </span>
               <span className="text-sm">French Delicacies</span>
               <div className="flex gap-2">
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Order")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Book")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Catering")}
                 </span>
               </div>
@@ -351,21 +351,21 @@ function MeetOurChefs() {
               />
               <span className="text-xl">
                 {" "}
-                <i class="fa-regular fa-heart text-main-color "></i> Chef Marco
-                Rossi
+                <i className="fa-regular fa-heart text-main-color "></i> Chef
+                Marco Rossi
               </span>
               <span className="text-sm">French Delicacies</span>
               <div className="flex gap-2">
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Order")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Book")}
                 </span>
                 <span className="text-sm">
-                  <i class="fa-solid fa-check text-main-color "></i>{" "}
+                  <i className="fa-solid fa-check text-main-color "></i>{" "}
                   {t("meetOurChefs.Catering")}
                 </span>
               </div>
@@ -396,19 +396,19 @@ function MeetOurChefs() {
                 alt=""
               />
               <div>
-                <i class="fa-solid fa-star text-yellow-300"></i>
-                <i class="fa-solid fa-star text-yellow-300"></i>
-                <i class="fa-solid fa-star text-yellow-300"></i>
-                <i class="fa-solid fa-star text-yellow-300"></i>
-                <i class="fa-regular fa-star text-yellow-300"></i>
+                <i className="fa-solid fa-star text-yellow-300"></i>
+                <i className="fa-solid fa-star text-yellow-300"></i>
+                <i className="fa-solid fa-star text-yellow-300"></i>
+                <i className="fa-solid fa-star text-yellow-300"></i>
+                <i className="fa-regular fa-star text-yellow-300"></i>
               </div>
               <p className="flex  w-2/3 text-center">
                 Expert in traditional Italian dishes, known{" "}
               </p>
               <div className="self-start px-14 *:p-1">
-                <i class="fa-regular fa-heart text-main-color "></i>
-                <i class="fa-regular fa-paper-plane text-main-color"></i>
-                <i class="fa-solid fa-cart-shopping text-main-color"></i>
+                <i className="fa-regular fa-heart text-main-color "></i>
+                <i className="fa-regular fa-paper-plane text-main-color"></i>
+                <i className="fa-solid fa-cart-shopping text-main-color"></i>
               </div>
             </div>
 
@@ -419,19 +419,19 @@ function MeetOurChefs() {
                 alt=""
               />
               <div>
-                <i class="fa-solid fa-star text-yellow-300"></i>
-                <i class="fa-solid fa-star text-yellow-300"></i>
-                <i class="fa-solid fa-star text-yellow-300"></i>
-                <i class="fa-solid fa-star text-yellow-300"></i>
-                <i class="fa-regular fa-star text-yellow-300"></i>
+                <i className="fa-solid fa-star text-yellow-300"></i>
+                <i className="fa-solid fa-star text-yellow-300"></i>
+                <i className="fa-solid fa-star text-yellow-300"></i>
+                <i className="fa-solid fa-star text-yellow-300"></i>
+                <i className="fa-regular fa-star text-yellow-300"></i>
               </div>
               <p className="flex  w-2/3 text-center">
                 Expert in traditional Italian dishes, known{" "}
               </p>
               <div className="self-start px-14 *:p-1">
-                <i class="fa-regular fa-heart text-main-color "></i>
-                <i class="fa-regular fa-paper-plane text-main-color"></i>
-                <i class="fa-solid fa-cart-shopping text-main-color"></i>
+                <i className="fa-regular fa-heart text-main-color "></i>
+                <i className="fa-regular fa-paper-plane text-main-color"></i>
+                <i className="fa-solid fa-cart-shopping text-main-color"></i>
               </div>
             </div>
 
@@ -442,19 +442,19 @@ function MeetOurChefs() {
                 alt=""
               />
               <div>
-                <i class="fa-solid fa-star text-yellow-300"></i>
-                <i class="fa-solid fa-star text-yellow-300"></i>
-                <i class="fa-solid fa-star text-yellow-300"></i>
-                <i class="fa-solid fa-star text-yellow-300"></i>
-                <i class="fa-regular fa-star text-yellow-300"></i>
+                <i className="fa-solid fa-star text-yellow-300"></i>
+                <i className="fa-solid fa-star text-yellow-300"></i>
+                <i className="fa-solid fa-star text-yellow-300"></i>
+                <i className="fa-solid fa-star text-yellow-300"></i>
+                <i className="fa-regular fa-star text-yellow-300"></i>
               </div>
               <p className="flex  w-2/3 text-center">
                 Expert in traditional Italian dishes, known{" "}
               </p>
               <div className="self-start px-14 *:p-1">
-                <i class="fa-regular fa-heart text-main-color "></i>
-                <i class="fa-regular fa-paper-plane text-main-color"></i>
-                <i class="fa-solid fa-cart-shopping text-main-color"></i>
+                <i className="fa-regular fa-heart text-main-color "></i>
+                <i className="fa-regular fa-paper-plane text-main-color"></i>
+                <i className="fa-solid fa-cart-shopping text-main-color"></i>
               </div>
             </div>
           </div>
@@ -466,20 +466,20 @@ function MeetOurChefs() {
           <p className="m-auto my-3 text-xl w-3/4 text-black">
             {t("meetOurChefs.DiscoverHowOurChefs")}
           </p>
-          <div class="max-w-6xl mx-auto p-16 columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+          <div className="max-w-6xl mx-auto p-16 columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
             <img
               src={Img1}
-              class="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-lg"
               alt="ChefEventImage"
             />
-            <img src={Img2} class="w-full h-auto rounded-lg" alt="" />
-            <img src={Img3} class="w-full h-auto rounded-lg" alt="" />
-            <img src={Img4} class="w-full h-auto rounded-lg" alt="" />
-            <img src={Img5} class="w-full h-auto rounded-lg" alt="" />
-            <img src={Img6} class="w-full h-auto rounded-lg" alt="" />
-            <img src={Img7} class="w-full h-auto rounded-lg" alt="" />
-            <img src={Img8} class="w-full h-auto rounded-lg" alt="" />
-            <img src={Img1} class="w-full h-auto rounded-lg" alt="" />
+            <img src={Img2} className="w-full h-auto rounded-lg" alt="" />
+            <img src={Img3} className="w-full h-auto rounded-lg" alt="" />
+            <img src={Img4} className="w-full h-auto rounded-lg" alt="" />
+            <img src={Img5} className="w-full h-auto rounded-lg" alt="" />
+            <img src={Img6} className="w-full h-auto rounded-lg" alt="" />
+            <img src={Img7} className="w-full h-auto rounded-lg" alt="" />
+            <img src={Img8} className="w-full h-auto rounded-lg" alt="" />
+            <img src={Img1} className="w-full h-auto rounded-lg" alt="" />
           </div>
         </div>
         <div className="  rounded-3xl w-full p-20  flex flex-col gap-3">
@@ -490,18 +490,18 @@ function MeetOurChefs() {
             {t("meetOurChefs.DiscoverHowOurChefs")}
           </p>
           <div>
-            <div class="flex gap-6 md:flex-row flex-col *:w-full md:*:w-1/3">
+            <div className="flex gap-6 md:flex-row flex-col *:w-full md:*:w-1/3">
               <div>
-                <div class="flex gap-1 mt-6 justify-center *:text-3xl">
-                  <span class="text-yellow-300 text-xl">★</span>
-                  <span class="text-yellow-300 text-xl">★</span>
-                  <span class="text-yellow-300 text-xl">★</span>
-                  <span class="text-yellow-300 text-xl">★</span>
-                  <span class="text-yellow-300 text-xl">★</span>
+                <div className="flex gap-1 mt-6 justify-center *:text-3xl">
+                  <span className="text-yellow-300 text-xl">★</span>
+                  <span className="text-yellow-300 text-xl">★</span>
+                  <span className="text-yellow-300 text-xl">★</span>
+                  <span className="text-yellow-300 text-xl">★</span>
+                  <span className="text-yellow-300 text-xl">★</span>
                 </div>
 
                 <div className="bg-orange-500 text-white p-6 rounded-2xl shadow-lg   relative">
-                  <div class="absolute -top-10 start-4 w-20 h-20 rounded-full border-4 border-white overflow-hidden">
+                  <div className="absolute -top-10 start-4 w-20 h-20 rounded-full border-4 border-white overflow-hidden">
                     <img
                       src="/static/media/ServiceImg1.87ae2fb75f8ab27f6a8b.webp"
                       className="object-cover w-32 h-32 rounded-xl"
@@ -509,7 +509,7 @@ function MeetOurChefs() {
                     />
                   </div>
 
-                  <p class="mt-2 text-sm ps-20">
+                  <p className="mt-2 text-sm ps-20">
                     <strong>Foodies & Chefs</strong> has transformed my
                     business! Their platform connects me with great clients, and
                     the easy-to-use CRM simplifies bookings and event
@@ -520,15 +520,15 @@ function MeetOurChefs() {
               </div>
 
               <div>
-                <div class="flex gap-1 mt-6 justify-center *:text-3xl">
-                  <span class="text-yellow-300 text-xl">★</span>
-                  <span class="text-yellow-300 text-xl">★</span>
-                  <span class="text-yellow-300 text-xl">★</span>
-                  <span class="text-yellow-300 text-xl">★</span>
-                  <span class="text-yellow-300 text-xl">★</span>
+                <div className="flex gap-1 mt-6 justify-center *:text-3xl">
+                  <span className="text-yellow-300 text-xl">★</span>
+                  <span className="text-yellow-300 text-xl">★</span>
+                  <span className="text-yellow-300 text-xl">★</span>
+                  <span className="text-yellow-300 text-xl">★</span>
+                  <span className="text-yellow-300 text-xl">★</span>
                 </div>
                 <div className="bg-orange-500 text-white p-6 rounded-2xl shadow-lg   relative">
-                  <div class="absolute -top-10 start-4 w-20 h-20 rounded-full border-4 border-white overflow-hidden">
+                  <div className="absolute -top-10 start-4 w-20 h-20 rounded-full border-4 border-white overflow-hidden">
                     <img
                       src="/static/media/ServiceImg1.87ae2fb75f8ab27f6a8b.webp"
                       className="object-cover w-32 h-32 rounded-xl"
@@ -536,7 +536,7 @@ function MeetOurChefs() {
                     />
                   </div>
 
-                  <p class="mt-2 text-sm ps-20">
+                  <p className="mt-2 text-sm ps-20">
                     <strong>Foodies & Chefs</strong> has transformed my
                     business! Their platform connects me with great clients, and
                     the easy-to-use CRM simplifies bookings and event
@@ -547,15 +547,15 @@ function MeetOurChefs() {
               </div>
 
               <div>
-                <div class="flex gap-1 mt-6 justify-center *:text-3xl">
-                  <span class="text-yellow-300 text-xl">★</span>
-                  <span class="text-yellow-300 text-xl">★</span>
-                  <span class="text-yellow-300 text-xl">★</span>
-                  <span class="text-yellow-300 text-xl">★</span>
-                  <span class="text-yellow-300 text-xl">★</span>
+                <div className="flex gap-1 mt-6 justify-center *:text-3xl">
+                  <span className="text-yellow-300 text-xl">★</span>
+                  <span className="text-yellow-300 text-xl">★</span>
+                  <span className="text-yellow-300 text-xl">★</span>
+                  <span className="text-yellow-300 text-xl">★</span>
+                  <span className="text-yellow-300 text-xl">★</span>
                 </div>
                 <div className="bg-orange-500 text-white p-6 rounded-2xl shadow-lg   relative">
-                  <div class="absolute -top-10 start-4 w-20 h-20 rounded-full border-4 border-white overflow-hidden">
+                  <div className="absolute -top-10 start-4 w-20 h-20 rounded-full border-4 border-white overflow-hidden">
                     <img
                       src="/static/media/ServiceImg1.87ae2fb75f8ab27f6a8b.webp"
                       className="object-cover w-32 h-32 rounded-xl"
@@ -563,7 +563,7 @@ function MeetOurChefs() {
                     />
                   </div>
 
-                  <p class="mt-2 text-sm ps-20">
+                  <p className="mt-2 text-sm ps-20">
                     <strong>Foodies & Chefs</strong> has transformed my
                     business! Their platform connects me with great clients, and
                     the easy-to-use CRM simplifies bookings and event
