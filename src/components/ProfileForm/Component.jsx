@@ -22,6 +22,8 @@ function ProfileForm({ isEditable, userData, setUserData }) {
   );
   const fileInputRef = useRef(null);
 
+  console.log(userData);
+
   // check if signed in or not
   useEffect(() => {
     checkSignIn();
@@ -89,6 +91,9 @@ function ProfileForm({ isEditable, userData, setUserData }) {
     const newUserData = { ...userData, ...res.data };
     localStorage.setItem("user", JSON.stringify(newUserData));
     setUserData(newUserData);
+
+    // Redirect to profile page
+    navigate("/profile");
   };
 
   return (
@@ -265,7 +270,7 @@ function ProfileForm({ isEditable, userData, setUserData }) {
                 </defs>
               </svg>
               <input
-                className="md:w-5/12 w-8/12 border-b border-[#B8B3B3] bg-transparent rounded-none px-10"
+                className="md:w-5/12 w-8/12 border-b border-[#B8B3B3] bg-transparent rounded-none px-4"
                 type="url"
                 name="InsragramAccount"
                 id="InsragramAccount"
@@ -293,7 +298,7 @@ function ProfileForm({ isEditable, userData, setUserData }) {
                 />
               </svg>
               <input
-                className="md:w-5/12 w-8/12 border-b border-[#B8B3B3] bg-transparent rounded-none  px-10"
+                className="md:w-5/12 w-8/12 border-b border-[#B8B3B3] bg-transparent rounded-none px-4"
                 type="url"
                 name="FacebookAccount"
                 id="FacebookAccount"
@@ -322,7 +327,7 @@ function ProfileForm({ isEditable, userData, setUserData }) {
                 />
               </svg>
               <input
-                className="md:w-5/12 w-8/12 border-b border-[#B8B3B3] bg-transparent rounded-none px-0"
+                className="md:w-5/12 w-8/12 border-b border-[#B8B3B3] bg-transparent rounded-none px-4"
                 type="url"
                 name="XAccount"
                 id="XAccount"
@@ -354,7 +359,7 @@ function ProfileForm({ isEditable, userData, setUserData }) {
               userData.facebookAccount ||
               userData.xAccount ? (
                 <>
-                  {userData?.facebook && (
+                  {userData?.facebookAccount && (
                     <a href={userData.facebook}>
                       <img
                         className="w-1/2 m-auto"
@@ -363,12 +368,12 @@ function ProfileForm({ isEditable, userData, setUserData }) {
                       />
                     </a>
                   )}
-                  {userData?.twitter && (
+                  {userData?.xAccount && (
                     <a href={userData.twitter}>
                       <img className="w-1/2 m-auto" src={XIcon} alt="X" />
                     </a>
                   )}
-                  {userData?.instagram && (
+                  {userData?.insragramAccount && (
                     <a href={userData.instagram}>
                       <img
                         className="w-1/2 m-auto"
