@@ -11,7 +11,7 @@ import resetLocalStorage from "../../utils/resetLocalStorage";
 import LogoImg from "../../assets/images/logo.webp";
 import NotificationsModal from "../NotificationsModal/Component";
 import * as signalR from "@microsoft/signalr";
-import { updateNotifications } from "../../services/notifications/notifications";
+import updateNotifications from "../../services/notifications/notifications";
 
 function Navbar() {
   const { t } = useTranslation();
