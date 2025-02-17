@@ -5,7 +5,6 @@ export const updateNotifications = async (connection, setNotifications) => {
             await connection.start();
 
             connection.on("ReceiveNotification", (notification) => {
-                console.log("Notification received:", notification);
                 setNotifications(notification);
             });
 
