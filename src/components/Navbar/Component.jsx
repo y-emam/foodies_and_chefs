@@ -78,9 +78,6 @@ function Navbar() {
       .withUrl(`${process.env.REACT_APP_API_URL}/notificationHub`, {
         accessTokenFactory: () => token, // Include token here
         transport: signalR.HttpTransportType.WebSockets,
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
         skipNegotiation: true,
       })
       .withAutomaticReconnect() // Optional: Automatically reconnect on disconnect
@@ -138,45 +135,68 @@ function Navbar() {
               </a>
             </div>
             <ul className="z-20 absolute w-[50%] flex flex-row justify-around gap-10 items-center left-1/2 -translate-x-1/2">
-              <div className="relative cursor-pointer">
-                <button
-                  className="px-[18px] py-[9px] flex items-center bg-transparent gap-2 text-white font-bold text-lg hover:text-orange-500 rounded-[35px] "
-                  onClick={() => {
-                    toggleDropDown("CreateEventMenu");
-                  }}
-                  style={{ borderRadius: "35px" }}
-                >
-                  {t("navigation.events")}
-                  <img src={CompleteArrowDownImg} alt="icon" />
-                </button>
+              {userData.allrole?.some(
+                (role) => role.toLowerCase() === "chef"
+              ) ? (
+                <li className="relative cursor-pointer">
+                  <button
+                    className="px-[18px] py-[9px] flex items-center bg-transparent gap-2 text-white font-bold text-lg hover:text-orange-500 rounded-[35px] "
+                    onClick={() => {
+                      toggleDropDown("CreateEventMenu");
+                    }}
+                    style={{ borderRadius: "35px" }}
+                  >
+                    {t("navigation.events")}
+                    <img src={CompleteArrowDownImg} alt="icon" />
+                  </button>
 
-                <div
-                  id="CreateEventMenu"
-                  className="z-20 hidden dropdown-menu absolute start-0 mt-2 w-48 bg-white shadow-lg rounded-lg text-center"
-                >
+                  <div
+                    id="CreateEventMenu"
+                    className="z-20 hidden dropdown-menu absolute start-0 mt-2 w-48 bg-white shadow-lg rounded-lg text-center"
+                  >
+                    <a
+                      className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
+                      href="/events"
+                    >
+                      {t("navigation.events")}
+                    </a>
+                    {userData.allrole?.some(
+                      (role) => role.toLowerCase() === "chef"
+                    ) && (
+                      <a
+                        className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
+                        href="/invites"
+                      >
+                        {t("navigation.invites")}
+                      </a>
+                    )}
+                  </div>
+                </li>
+              ) : (
+                <li>
                   <a
-                    className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
+                    className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
+                    style={{ borderRadius: "35px" }}
                     href="/events"
                   >
                     {t("navigation.events")}
                   </a>
+                </li>
+              )}
+              {userData.allrole?.some(
+                (role) => role.toLowerCase() === "chef"
+              ) && (
+                <li>
                   <a
-                    className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
-                    href="/invites"
+                    className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
+                    style={{ borderRadius: "35px" }}
+                    href="/menus"
                   >
-                    {t("navigation.invites")}
+                    {t("navigation.menus")}
                   </a>
-                </div>
-              </div>
-              <li>
-                <a
-                  className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
-                  style={{ borderRadius: "35px" }}
-                  href="/menus"
-                >
-                  {t("navigation.menus")}
-                </a>
-              </li>
+                </li>
+              )}
+
               <li>
                 <a
                   className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
