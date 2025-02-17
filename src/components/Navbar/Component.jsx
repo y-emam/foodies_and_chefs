@@ -67,8 +67,6 @@ function Navbar() {
 
   // Toggle Notifications
   const toggleNotifications = useCallback(() => {
-    console.log("toggleNotification");
-
     setShowNotifications((prev) => !prev);
   }, []);
 
@@ -346,7 +344,7 @@ function Navbar() {
             <li>
               <a
                 className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
-                href="/offers"
+                href="/meetOurChefs"
               >
                 {t("navigation.MeetOurChefs")}
               </a>

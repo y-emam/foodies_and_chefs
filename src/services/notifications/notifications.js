@@ -4,6 +4,7 @@ const updateNotifications = async (connection, setNotifications) => {
             await connection.start();
 
             connection.on("ReceiveNotification", (notification) => {
+                console.log("Received notification:", notification);
                 setNotifications(notification);
             });
 

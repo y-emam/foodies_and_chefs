@@ -1,8 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { useTranslation } from "react-i18next";
 import NotificationImg from "../../assets/images/NotificationFoodiesLogo.svg";
 import getNotificationDuration from "../../utils/getNotificationDuration";
 
 function NotificationsModal({ notifications, toggleNotifications }) {
+  const { t, i18n } = useTranslation();
+
   return (
     <div
       id="notification-list"
@@ -11,7 +14,9 @@ function NotificationsModal({ notifications, toggleNotifications }) {
     >
       {/* Header */}
       <div className="flex justify-between bg-[#D9D9D9] h-[38px] p-2 border-2 border-black">
-        <span className="font-semibold">Notifications</span>
+        <span className="font-semibold">
+          {t("notifications.notifications")}
+        </span>
         <button
           id="close_Notification"
           className="focus:outline-none bg-transparent"
@@ -57,7 +62,9 @@ function NotificationsModal({ notifications, toggleNotifications }) {
                       {notification?.senderName}
                     </h1>
                     <p className="font-medium md:text-sm text-[0.6rem] text-[#8A8787] text-start">
-                      {notification?.message}
+                      {i18n.language === "en"
+                        ? notification?.message
+                        : notification?.messageAr}
                     </p>
                   </div>
                 </div>
@@ -65,7 +72,10 @@ function NotificationsModal({ notifications, toggleNotifications }) {
                   className="absolute bottom-1 font-medium text-[9px] text-[#8A8787] md:w-3/12 w-3/12 sm:text-[12px] md:text-[13px] lg:text-[14px] end-0"
                   data-time="Thu Jan 16 2025 13:31:28 GMT+0200 (Eastern European Standard Time)"
                 >
-                  {getNotificationDuration(notification?.createdAt)}
+                  {getNotificationDuration(
+                    notification?.createdAt,
+                    i18n.language
+                  )}
                 </div>
               </a>
             ))}
@@ -75,7 +85,7 @@ function NotificationsModal({ notifications, toggleNotifications }) {
             <div className="flex m-2 space-x-3 rtl:space-x-reverse">
               <div className="flex flex-col items-start justify-center w-8/12">
                 <h1 className="font-semibold md:text-base text-sm">
-                  No Notificatoins
+                  {t("notifications.noNotifications")}
                 </h1>
               </div>
             </div>

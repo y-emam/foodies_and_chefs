@@ -18,6 +18,10 @@
     "profile": "الملف الشخصى",
     "copyrights": "© 2025 فوديز آند شيفز. جميع الحقوق محفوظة."
   },
+  "notifications": {
+    "notifications": "الإشعارات",
+    "noNotifications": "ليس لديك أي إشعارات."
+  },
   "signin": {
     "signin": "تسجيل الدخول",
     "email": "البريد الإلكتروني",

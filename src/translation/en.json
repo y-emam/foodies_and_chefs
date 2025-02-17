@@ -17,6 +17,10 @@
     "profile": "Profile",
     "copyrights": "© 2025 Foodies and Chefs. All rights reserved."
   },
+  "notifications": {
+    "notifications": "Notifications",
+    "noNotifications": "You don't have any notifications."
+  },
   "signin": {
     "signin": "Sign In",
     "email": "Email",
