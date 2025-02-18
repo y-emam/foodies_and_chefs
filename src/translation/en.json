@@ -218,7 +218,11 @@
       "chooseImage": "Choose Image",
       "showImage": "Show Image",
       "addCourse": "Add Course",
-      "addMenu": "Add Menu"
+      "addMenu": "Add Menu",
+      "updateMenu": "Update Menu"
+    },
+    "errors": {
+      "noCourses": "Please Add courses to your menu."
     }
   },
   "meetOurChefs": {

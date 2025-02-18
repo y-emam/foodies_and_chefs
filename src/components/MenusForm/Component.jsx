@@ -3,7 +3,7 @@ import DishImg2 from "../../assets/images/dish.webp";
 import { X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import checkSignIn from "../../utils/checkSignIn";
-import { addMenuService } from "../../services/menus/menus";
+import { addMenuService, updateMenu } from "../../services/menus/menus";
 import { useNavigate } from "react-router-dom";
 
 function MenusForm({ isNewMenu, menu, setMenu }) {
@@ -21,12 +21,27 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await addMenuService(menu);
+    if (menu?.courses.length === 0) {
+      setError(t("menus.errors.noCourses"));
+      return;
+    }
 
-    if (res && res.success) {
-      navigate("/menus");
+    if (isNewMenu) {
+      const res = await addMenuService(menu);
+
+      if (res && res.success) {
+        navigate("/menus");
+      } else {
+        setError(res.data[0]);
+      }
     } else {
-      setError(res.data[0]);
+      const res = await updateMenu(menu);
+
+      if (res && res.success) {
+        navigate("/menus");
+      } else {
+        setError(res.data[0]);
+      }
     }
   };
 
@@ -228,15 +243,15 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
 
             {/* Error Message */}
             {error && (
-              <div className="text-red-500 font-bold mt-2">{error}</div>
+              <div className="text-red-500 font-bold mt-20">{error}</div>
             )}
 
             <button
               type="submit"
               style={{ height: "40.76px" }}
-              className="w-full mt-20 text-white font-bold focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full mt-2 text-white font-bold focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              {t("menus.form.addMenu")}
+              {isNewMenu ? t("menus.form.addMenu") : t("menus.form.updateMenu")}
             </button>
           </form>
           {/* Modal */}

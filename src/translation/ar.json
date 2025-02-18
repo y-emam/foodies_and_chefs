@@ -219,7 +219,11 @@
       "chooseImage": "اختر صورة",
       "showImage": "عرض الصورة",
       "addCourse": "إضافة طبق",
-      "addMenu": "إضافة قائمة"
+      "addMenu": "إضافة قائمة",
+      "updateMenu": "تحديث القائمة"
+    },
+    "errors": {
+      "noCourses": "يرجى إضافة الدورات إلى قائمتك."
     }
   },
   "meetOurChefs": {
