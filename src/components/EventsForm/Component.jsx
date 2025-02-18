@@ -20,6 +20,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
   const today = new Date();
   const todayDate = today.toISOString().split("T")[0]; // Converts to yyyy-mm-dd format
   const [endTime, setEndTime] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     checkSignIn();
@@ -65,7 +66,14 @@ function EventsForm({ isNewEvent, event, setEvent }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log("Here");
+
     try {
+      if (event.minNumberOfInvetation > event.maxNumberOfInvetation) {
+        setError("Maximum number of invites should be bigger than minimum.");
+        return;
+      }
+
       const eventToSubmit = {
         ...event,
         date: new Date(event.date).toISOString(),
@@ -206,7 +214,10 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                       className="w-4 h-4 text-gray-500 bg-transparent rounded-md flex items-center justify-center focus:outline-none"
                       onClick={() => {
                         if (event.hours < 23) {
-                          setEvent({ ...event, hours: event.hours + 1 });
+                          setEvent({
+                            ...event,
+                            hours: Number(event.hours) + 1,
+                          });
                         } else {
                           setEvent({ ...event, hours: 23 });
                         }
@@ -257,7 +268,10 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                       className="w-4 h-4 text-gray-500 bg-transparent rounded-md flex items-center justify-center focus:outline-none"
                       onClick={() => {
                         if (event.minutes < 59) {
-                          setEvent({ ...event, minutes: event.minutes + 1 });
+                          setEvent({
+                            ...event,
+                            minutes: Number(event.minutes + 1),
+                          });
                         } else {
                           setEvent({ ...event, minutes: 59 });
                         }
@@ -467,6 +481,15 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                   {t("events.form.setYourLocation")}
                 </button>
               </div>
+            </div>
+
+            {/* Show Error on submit */}
+
+            <div
+              className="text-red-500 font-bold mt-12 text-center"
+              id="error"
+            >
+              {error}
             </div>
 
             <div className="flex justify-center">
