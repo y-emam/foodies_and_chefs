@@ -22,8 +22,6 @@ function ProfileForm({ isEditable, userData, setUserData }) {
   );
   const fileInputRef = useRef(null);
 
-  console.log(userData);
-
   // check if signed in or not
   useEffect(() => {
     checkSignIn();

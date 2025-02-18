@@ -66,8 +66,6 @@ function EventsForm({ isNewEvent, event, setEvent }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Here");
-
     try {
       if (event.minNumberOfInvetation > event.maxNumberOfInvetation) {
         setError("Maximum number of invites should be bigger than minimum.");

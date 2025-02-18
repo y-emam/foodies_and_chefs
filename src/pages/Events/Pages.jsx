@@ -23,11 +23,10 @@ function EventsPage() {
         const res = await getAllEventsService(1, 10);
 
         if (res && res.success) {
-          console.log(res.data.data);
-
           setEvents(res.data.data);
         }
       } catch (err) {
+        console.log("Error in getting all events");
         console.log(err);
       }
 
