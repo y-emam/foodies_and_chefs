@@ -15,13 +15,13 @@ import updateNotifications from "../../services/notifications/notifications";
 
 function Navbar() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [userData, setUserData] = useState("");
   const [notifications, setNotifications] = useState([]);
   const [connection, setConnection] = useState(null);
   const [showNotifications, setShowNotifications] = useState(false);
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     const validateJwtToken = () => {
@@ -244,6 +244,7 @@ function Navbar() {
               {showNotifications && (
                 <NotificationsModal
                   notifications={notifications}
+                  navigate={navigate}
                   toggleNotifications={toggleNotifications}
                 />
               )}

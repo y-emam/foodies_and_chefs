@@ -3,8 +3,14 @@ import { useTranslation } from "react-i18next";
 import NotificationImg from "../../assets/images/NotificationFoodiesLogo.svg";
 import getNotificationDuration from "../../utils/getNotificationDuration";
 
-function NotificationsModal({ notifications, toggleNotifications }) {
+function NotificationsModal({ notifications, toggleNotifications, navigate }) {
   const { t, i18n } = useTranslation();
+
+  const handleNotificationClick = (notification) => {
+    if (notification?.title) {
+      navigate(notification?.title || "#");
+    }
+  };
 
   return (
     <div
@@ -46,10 +52,10 @@ function NotificationsModal({ notifications, toggleNotifications }) {
         {notifications && notifications.length > 0 ? (
           <>
             {notifications.map((notification, index) => (
-              <a
+              <div
                 key={index}
-                href={notification?.link || "#"}
-                className="relative flex justify-between border-b-[0.5px] border-[#A9A9A9] h-[84px] hover:bg-gray-100 "
+                className="relative flex justify-between border-b-[0.5px] border-[#A9A9A9] h-[84px] hover:bg-gray-100 cursor-pointer"
+                onClick={() => handleNotificationClick(notification)}
               >
                 <div className="flex m-2 space-x-3 rtl:space-x-reverse">
                   <img
@@ -77,7 +83,7 @@ function NotificationsModal({ notifications, toggleNotifications }) {
                     i18n.language
                   )}
                 </div>
-              </a>
+              </div>
             ))}
           </>
         ) : (
