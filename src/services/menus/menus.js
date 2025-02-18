@@ -112,11 +112,28 @@ export const updateMenu = async (newMenu) => {
 
         console.log(newMenu);
 
+        /**
+         * the menu object has courses, and each course has an image
+         * if the image is a file, this means that the image has been changed
+         * so we need to upload the new image and get the url of the new image
+         * and update the image url in the menu object
+         * 
+         * if the image is a string, this means that the image has not been changed
+         * so we don't need to upload the image again.
+         */
+
 
         // upload images of the menu first
         for (let i = 0; i < newMenu.courses.length; i++) {
+
+            // The user hasn't uploaded image to the Course
             if (!newMenu.courses[i].image) {
                 newMenu.courses[i].image = "";
+                continue;
+            }
+
+            // if the image is a string, this means that the image has not been changed
+            if (typeof newMenu.courses[i].image === "string") {
                 continue;
             }
 
@@ -141,10 +158,12 @@ export const updateMenu = async (newMenu) => {
                 },
                 body: JSON.stringify({
                     id: menuToUpload.id,
+                    usersId: menuToUpload.usersId,
                     menuName: menuToUpload.name,
                     description: menuToUpload.description,
                     dishes: menuToUpload.courses.map(course => {
                         return {
+                            id: course.id,
                             cuisineName: course.name,
                             description: course.description,
                             dishesImage: course.image

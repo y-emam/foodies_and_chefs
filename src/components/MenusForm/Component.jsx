@@ -192,7 +192,9 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                           if (!course.image) return;
 
                           if (typeof course.image === "string") {
-                            setModalImg(course.image);
+                            setModalImg(
+                              `${process.env.REACT_APP_API_URL}/${course.image}`
+                            );
                             setIsModalOpen(true);
                           } else {
                             setModalImg(URL.createObjectURL(course.image));
@@ -213,7 +215,9 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
                           if (!course.image) return;
 
                           if (typeof course.image === "string") {
-                            setModalImg(course.image);
+                            setModalImg(
+                              `${process.env.REACT_APP_API_URL}/${course.image}`
+                            );
                             setIsModalOpen(true);
                           } else {
                             setModalImg(URL.createObjectURL(course.image));

@@ -27,14 +27,16 @@ function EditMenuPage() {
 
         // The Change in Menu structure is because Backend API is returning different structure
         setMenu({
+          id: newMenu.id,
+          usersId: newMenu.usersId,
           name: newMenu.menuName,
           description: newMenu.description,
-          id: newMenu.id,
           courses: newMenu.dishes.map((course) => {
             return {
+              id: course.id,
               name: course.cuisineName,
               description: course.description,
-              image: `${process.env.REACT_APP_API_URL}/${course.dishesImage}`,
+              image: course.dishesImage,
             };
           }),
         });
