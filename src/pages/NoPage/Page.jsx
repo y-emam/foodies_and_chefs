@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import DishImg from "../../assets/images/dish.webp";
 
 function NoPage() {
+  const navigate = useNavigate();
+
   return (
     <div className="mainbg h-[100vh] text-white flex items-center justify-center">
       <img
@@ -16,6 +19,7 @@ function NoPage() {
           type="submit"
           class="w-full mt-6 text-white bg-main-color font-bold focus:outline-none focus:ring-2 hover:bg-main-dark-color rounded-lg"
           style={{ height: "40.76px" }}
+          onClick={() => navigate("/")}
         >
           Home Page
         </button>
