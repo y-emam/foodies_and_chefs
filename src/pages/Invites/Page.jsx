@@ -2,14 +2,26 @@ import DishImg from "../../assets/images/dish.webp";
 import { useEffect, useState } from "react";
 import "./styles.css";
 import { useTranslation } from "react-i18next";
+import { getAllInvitesService } from "../../services/invites/invites";
 
 function InvitesPage() {
   const { t } = useTranslation();
   const [invites, setInvites] = useState([]);
+  const [invitesStatus, setInvitesStatus] = useState("all");
 
   useEffect(() => {
-    setInvites([]);
-  }, []);
+    const updateInvites = async () => {
+      const res = await getAllInvitesService(invitesStatus);
+
+      if (res && res.data) {
+        console.log(res);
+
+        setInvites(res.data.data);
+      }
+    };
+
+    updateInvites();
+  }, [invitesStatus]);
 
   return (
     <main
@@ -23,11 +35,7 @@ function InvitesPage() {
           className="hidden md:block absolute inset-0 m-auto h-full object-cover z-0 opacity-40"
         />
 
-        <form
-          method="get"
-          action="/GetMyInvitation"
-          className="w-full flex md:flex-row flex-col justify-center md:space-y-0 space-y-5"
-        >
+        <div className="w-full flex md:flex-row flex-col justify-center md:space-y-0 space-y-5">
           <div className="relative flex flex-col  md:w-1/4 w-full  items-center">
             <label className="section-title font-medium self-start md:self-start lg:self-start text-start p">
               {t("invites.status")}
@@ -35,7 +43,9 @@ function InvitesPage() {
 
             <select
               name="status"
-              className="text-xs	 md:text-xl appearance-none    w-full px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-[#FFFFFF4D]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
+              className="text-xs md:text-xl appearance-none w-full px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-[#FFFFFF4D]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
+              onChange={(e) => setInvitesStatus(e.target.value)}
+              value={invitesStatus}
             >
               <option
                 value="all"
@@ -76,7 +86,7 @@ function InvitesPage() {
               <i className="text-2xl md:text-3xl fa-solid fa-caret-down"></i>
             </div>
           </div>
-        </form>
+        </div>
 
         {!invites || invites?.length === 0 ? (
           <div className="text-center z-10">
@@ -85,7 +95,8 @@ function InvitesPage() {
             </div>
           </div>
         ) : (
-          <div>{t("invites.invites")}</div>
+          // <div>{t("invites.invites")}</div>
+          <div></div>
         )}
       </section>
     </main>

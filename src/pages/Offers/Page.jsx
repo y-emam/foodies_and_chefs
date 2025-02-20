@@ -3,25 +3,39 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 import { useTranslation } from "react-i18next";
 import checkSignIn from "../../utils/checkSignIn";
+import { getAllOffersService } from "../../services/offers/offers";
 
 function OffersPage() {
   const { t } = useTranslation();
   const [offers, setOffers] = useState([]);
+  const [offersStatus, setOffersStatus] = useState("all");
 
   useEffect(() => {
     checkSignIn();
   });
 
   useEffect(() => {
-    setOffers([
-      {
-        eventId: "4ecbd603-52e4-496c-f951-08dd50145aca",
-        name: "Graduation Event",
-        costPerGuest: "800",
-        status: "Pending",
-      },
-    ]);
-  }, []);
+    const updateOffers = async () => {
+      const res = await getAllOffersService(offersStatus);
+
+      if (res && res.success) {
+        console.log(res);
+
+        // setOffers(res.data.data);
+
+        setOffers([
+          {
+            eventId: "4ecbd603-52e4-496c-f951-08dd50145aca",
+            name: "Graduation Event",
+            costPerGuest: "800",
+            status: "Pending",
+          },
+        ]);
+      }
+    };
+
+    updateOffers();
+  }, [offersStatus]);
 
   return (
     <main
@@ -48,6 +62,8 @@ function OffersPage() {
             <select
               name="status"
               className="text-xs	 md:text-xl appearance-none    w-full px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-[#FFFFFF4D]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
+              onChange={(e) => setOffersStatus(e.target.value)}
+              value={offersStatus}
             >
               <option
                 value="all"
