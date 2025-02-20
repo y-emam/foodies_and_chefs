@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useParams } from "react-router-dom";
 import DateSVG from "../../../assets/svg/Date/Component";
 import EmailSVG from "../../../assets/svg/Email/Component";
 import LocationSVG from "../../../assets/svg/Location/Component";
@@ -6,8 +8,53 @@ import ProfileSVG from "../../../assets/svg/Profile/Component";
 import TimeSVG from "../../../assets/svg/Time/Component";
 import LocationMap from "../../../components/LocationMap/Component";
 import "./styles.css";
+import { useEffect, useState } from "react";
+import { getEventByEventIdService } from "../../../services/events/events";
+import checkSignIn from "../../../utils/checkSignIn";
+import { getAllMenusService } from "../../../services/menus/menus";
 
 function ShowOfferPage() {
+  const userData = JSON.parse(localStorage.getItem("user"));
+
+  const { eventId } = useParams();
+  const [event, setEvent] = useState();
+  const [menus, setMenus] = useState(null);
+  const [offer, setOffer] = useState({});
+
+  useEffect(() => {
+    checkSignIn();
+  });
+
+  useEffect(() => {
+    const updateVariables = async () => {
+      getEventByEventIdService(eventId).then((res) => {
+        if (res && res.success) {
+          console.log(res);
+
+          setEvent(res.data);
+        }
+      });
+
+      getAllMenusService(1, 1000).then((res) => {
+        if (res && res.success) {
+          console.log(res);
+
+          setMenus(res.data.data);
+        }
+      });
+    };
+
+    updateVariables();
+  }, []);
+
+  const handleSubmit = () => {
+    console.log("Offer Submitted");
+  };
+
+  const handleSave = () => {
+    console.log("Offer Saved");
+  };
+
   return (
     <body className="relative overflow-x-hidden bg-black">
       <div className="md:block hidden absolute -top-[3rem] -right-[9rem] w-96 h-[44rem] bg-gradient-to-tr from-[#E06B17] to-[#FFB57F] transform rotate-45 z-10" />
@@ -16,7 +63,9 @@ function ShowOfferPage() {
           <section className="min-h-screen md:space-y-20 space-y-10 md:min-h-full flex flex-col w-full items-center justify-center p-3 md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans">
             <div className="flex flex-col space-y-10 h-full items-center justifiy-center">
               <h1 className="signika-negative name-text font-bold text-sm md:text-[40px] py-5">
-                Hello, Chef Yasser
+                {userData && userData.firstName
+                  ? `Hello, Chef ${userData.firstName}`
+                  : ""}
               </h1>
               <p className="Monotype-Corsiva text-main-color md:text-3xl text-lg italic font-normal md:w-9/12">
                 “We are honored to invite you to dazzle our guests with your
@@ -35,37 +84,38 @@ function ShowOfferPage() {
               </div>
               <div className="flex items-center text-[0.7rem] md:text-2xl ">
                 <PhoneSVG />
-                <span>Host Phone: </span>
+                <span>Host Phone: 012345678912</span>
               </div>
               <div className="flex items-center text-[0.7rem] md:text-2xl ">
                 <ProfileSVG />
-                <span>Event name: Tech Conference 2025</span>
+                <span>Event name: {event?.eventName}</span>
               </div>
 
               <div className="flex items-center text-[0.7rem] md:text-2xl">
                 <ProfileSVG />
-                <span>
-                  Description: An annual technology conference featuring
-                  keynotes, workshops, and networking opportunities.
-                </span>
+                <span>Description: {event?.eventDescription}</span>
               </div>
               <div className="flex items-center text-[0.7rem] md:text-2xl">
                 <ProfileSVG />
-                <span>Number of guests: Minimum (50 to 500) Maximum</span>
+                <span>{`Number of guests: Minimum (${event?.minNumberOfInvetation} to ${event?.maxNumberOfInvetation}) Maximum`}</span>
               </div>
-              <div className="md:flex flex-col md:flex-row space-y-5 md:space-y-0 text-[0.7rem] md:text-2xl">
-                <div className="flex ">
-                  <DateSVG />
-                  <span>Date: Mon 15-Sep-2025 </span>
-                </div>
-                <div className="flex md:mx-10 mx-0">
-                  <TimeSVG />
-                  <span>{`Time: { From 11:00 } - { to 19:00 } `}</span>
-                </div>
+              <div className="flex items-center text-[0.7rem] md:text-2xl">
+                <DateSVG />
+                <span>Date: {event?.date?.split("T")[0]} </span>
+              </div>
+              <div className="flex items-center text-[0.7rem] md:text-2xl">
+                <TimeSVG />
+                <span>{`Time: From ${event?.startTime
+                  ?.split("T")[1]
+                  .substring(0, 5)} - to ${event?.endTime
+                  ?.split("T")[1]
+                  .substring(0, 5)} `}</span>
               </div>
               <div className="flex items-center   text-[0.7rem] md:text-2xl ">
                 <LocationSVG />
-                <span className="text-start">Location: San Francisco, CA</span>
+                <span className="text-start">
+                  Location: {event?.generalLocation}
+                </span>
               </div>
 
               {/* Google Maps Location */}
@@ -74,16 +124,16 @@ function ShowOfferPage() {
                 className="flex relative w-full h-64 justify-center items-center rtl:direction-rtl ltr:direction-ltr"
               >
                 <LocationMap
-                  location={"Cairo Festival"}
-                  latitude={"30.030886"}
-                  longitude={"31.405792"}
+                  location={event?.generalLocation}
+                  latitude={event?.latitude}
+                  longitude={event?.longitude}
                 />
               </div>
 
               <div className="flex items-center border-y border-[#FA8836] py-10 ">
                 <div className="flex justify-around w-full">
                   <label
-                    for="price"
+                    htmlFor="price"
                     className="text-white font-semibold text-[12px] md:text-[27px] "
                   >
                     Cost/Guest:
@@ -150,29 +200,36 @@ function ShowOfferPage() {
                 </div>
               </div>
               <div className="flex items-center justify-around">
-                <label for="Menu" className="text-[0.7rem] md:text-2xl">
+                <label htmlFor="Menu" className="text-[0.7rem] md:text-2xl">
                   Menu :
                 </label>
-                <select
-                  id="Menu"
-                  name="MenuId"
-                  className="text-xs md:text-xl appearance-none  md:w-1/2 w-2/3 px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-[#FA8836]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
-                >
-                  <option
-                    selected
-                    className=" checked:bg-orange-100 bg-white text-black "
+                {menus && menus.length > 0 ? (
+                  <select
+                    id="Menu"
+                    name="MenuId"
+                    className="text-xs md:text-xl appearance-none  md:w-1/2 w-2/3 px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-[#FA8836]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
                   >
-                    No Menu
-                  </option>
-                  <option value="createMenu" className=" bg-white text-black ">
-                    No items to select here, please “
-                    <span className="text-[#FA8836]"> Create Menu</span>”{" "}
-                  </option>
-                </select>
+                    {menus.map((menu) => (
+                      <option
+                        selected
+                        className=" checked:bg-orange-100 bg-white text-black "
+                      >
+                        {menu.menuName}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <div value="createMenu" className="text-white ">
+                    You don't have menus,{" "}
+                    <a href="/menus" className="bg-transparent text-main-color">
+                      Create Menu
+                    </a>
+                  </div>
+                )}
               </div>
 
               <div className="flex items-center justify-around">
-                <label for="Note" className="text-[0.7rem] md:text-2xl">
+                <label htmlFor="Note" className="text-[0.7rem] md:text-2xl">
                   Notes :
                 </label>
                 <textarea
@@ -183,7 +240,7 @@ function ShowOfferPage() {
               </div>
               <div className="flex items-center justify-center gap-5">
                 <button
-                  type="submit"
+                  onClick={handleSubmit}
                   className="hover:bg-[#CF5600] md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#FA8836] text-white md:p-2 p-0 md:text-3xl text-xs font-bold rounded-[15px] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836]  "
                 >
                   Accept

@@ -15,7 +15,7 @@ function OffersPage() {
   useEffect(() => {
     setOffers([
       {
-        id: "1",
+        eventId: "4ecbd603-52e4-496c-f951-08dd50145aca",
         name: "Graduation Event",
         costPerGuest: "800",
         status: "Pending",
@@ -128,7 +128,7 @@ function OffersPage() {
                     <td className="w-full h-3/4 flex justify-center">
                       <a
                         className="text-white bg-main-color w-[50px] md:w-[113px] h-[20px] md:h-[36px] md:text-xl text-[0.5rem] text-center p-0 font-medium rounded-[15px]  hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color"
-                        href={`/showOffer/${offer.id}`}
+                        href={`/showOffer/${offer.eventId}`}
                       >
                         Show
                       </a>

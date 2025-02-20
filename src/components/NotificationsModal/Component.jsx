@@ -8,7 +8,9 @@ function NotificationsModal({ notifications, toggleNotifications, navigate }) {
 
   const handleNotificationClick = (notification) => {
     if (notification?.title) {
-      navigate(notification?.title || "#");
+      // todo: uncomment this line when routes coming from backend gets changed and comment next line
+      // navigate(notification?.title || "#");
+      navigate("#");
     }
   };
 

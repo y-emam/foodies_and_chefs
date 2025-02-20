@@ -23,6 +23,8 @@ function EventsPage() {
         const res = await getAllEventsService(1, 10);
 
         if (res && res.success) {
+          console.log(res);
+
           setEvents(res.data.data);
         }
       } catch (err) {

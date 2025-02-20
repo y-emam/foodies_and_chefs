@@ -75,7 +75,7 @@ function App() {
 
           {/* Offers Pages */}
           <Route path="/offers" element={<OffersPage />} />
-          <Route path="/showOffer/:offerId" element={<ShowOfferPage />} />
+          <Route path="/showOffer/:eventId" element={<ShowOfferPage />} />
 
           {/* Meet Our Chefs */}
           <Route path="/meetOurChefs" element={<MeetOurChefs />} />

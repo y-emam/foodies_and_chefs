@@ -20,7 +20,7 @@ export const getMenuByIdService = async (menuId) => {
     }
 }
 
-export const getAllMenusService = async (page = 1, pageSize = 5) => {
+export const getAllMenusService = async (page = 1, pageSize = 10) => {
     try {
         const token = localStorage.getItem("token");
 
