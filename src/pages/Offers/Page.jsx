@@ -4,11 +4,14 @@ import "./styles.css";
 import { useTranslation } from "react-i18next";
 import checkSignIn from "../../utils/checkSignIn";
 import { getAllOffersService } from "../../services/offers/offers";
+import LoadingSpinner from "../../components/Spinner/Component";
 
 function OffersPage() {
   const { t } = useTranslation();
+
   const [offers, setOffers] = useState([]);
   const [offersStatus, setOffersStatus] = useState("all");
+  const [isOffersLoading, setIsOffersLoading] = useState(false);
 
   useEffect(() => {
     checkSignIn();
@@ -16,22 +19,31 @@ function OffersPage() {
 
   useEffect(() => {
     const updateOffers = async () => {
-      const res = await getAllOffersService(offersStatus);
+      setIsOffersLoading(true);
 
-      if (res && res.success) {
-        console.log(res);
+      try {
+        const res = await getAllOffersService(offersStatus);
 
-        // setOffers(res.data.data);
+        if (res && res.success) {
+          console.log(res);
 
-        setOffers([
-          {
-            eventId: "4ecbd603-52e4-496c-f951-08dd50145aca",
-            name: "Graduation Event",
-            costPerGuest: "800",
-            status: "Pending",
-          },
-        ]);
+          // setOffers(res.data.data);
+
+          setOffers([
+            {
+              eventId: "4ecbd603-52e4-496c-f951-08dd50145aca",
+              name: "Graduation Event",
+              costPerGuest: "800",
+              status: "Pending",
+            },
+          ]);
+        }
+      } catch (err) {
+        console.log("Error in getting all offers");
+        console.log(err);
       }
+
+      setIsOffersLoading(false);
     };
 
     updateOffers();
@@ -108,9 +120,15 @@ function OffersPage() {
 
         {!offers || offers?.length === 0 ? (
           <div className="text-center z-10">
-            <div className="font-bold text-base md:text-2xl mt-5 plus-jakarta-sans">
-              {t("offers.noOffers")}
-            </div>
+            {isOffersLoading ? (
+              <div className="font-bold text-base md:text-2xl mt-5 plus-jakarta-sans">
+                <LoadingSpinner />
+              </div>
+            ) : (
+              <div className="font-bold text-base md:text-2xl mt-5 plus-jakarta-sans">
+                {t("offers.noOffers")}
+              </div>
+            )}
           </div>
         ) : (
           offers.map((offer) => (
