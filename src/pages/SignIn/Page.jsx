@@ -84,11 +84,6 @@ function SignInPage() {
                 data-val-email="The EmailAddress field is not a valid e-mail address."
                 data-val-required="This field is required."
               />
-              <span
-                className="text-red-500 text-start w-full field-validation-valid"
-                data-valmsg-for="EmailAddress"
-                data-valmsg-replace="true"
-              ></span>
             </div>
             <div className="mb-4 relative flex flex-col">
               <label htmlFor="password" className="sr-only">
@@ -118,11 +113,6 @@ function SignInPage() {
                   } text-sm text-white`}
                 ></i>
               </button>
-              <span
-                className="text-red-500 text-start w-full field-validation-valid"
-                data-valmsg-for="Password"
-                data-valmsg-replace="true"
-              ></span>
             </div>
             <div className="flex flex-col items-start justify-between text-sm text-white leading-relaxed">
               <a

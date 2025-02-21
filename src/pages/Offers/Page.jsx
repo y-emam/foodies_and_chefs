@@ -3,25 +3,51 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 import { useTranslation } from "react-i18next";
 import checkSignIn from "../../utils/checkSignIn";
+import { getAllOffersService } from "../../services/offers/offers";
+import LoadingSpinner from "../../components/Spinner/Component";
 
 function OffersPage() {
   const { t } = useTranslation();
+
   const [offers, setOffers] = useState([]);
+  const [offersStatus, setOffersStatus] = useState("all");
+  const [isOffersLoading, setIsOffersLoading] = useState(false);
 
   useEffect(() => {
     checkSignIn();
   });
 
   useEffect(() => {
-    setOffers([
-      {
-        id: "1",
-        name: "Graduation Event",
-        costPerGuest: "800",
-        status: "Pending",
-      },
-    ]);
-  }, []);
+    const updateOffers = async () => {
+      setIsOffersLoading(true);
+
+      try {
+        const res = await getAllOffersService(offersStatus);
+
+        if (res && res.success) {
+          console.log(res);
+
+          // setOffers(res.data.data);
+
+          setOffers([
+            {
+              eventId: "4ecbd603-52e4-496c-f951-08dd50145aca",
+              name: "Graduation Event",
+              costPerGuest: "800",
+              status: "Pending",
+            },
+          ]);
+        }
+      } catch (err) {
+        console.log("Error in getting all offers");
+        console.log(err);
+      }
+
+      setIsOffersLoading(false);
+    };
+
+    updateOffers();
+  }, [offersStatus]);
 
   return (
     <main
@@ -48,6 +74,8 @@ function OffersPage() {
             <select
               name="status"
               className="text-xs	 md:text-xl appearance-none    w-full px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-[#FFFFFF4D]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
+              onChange={(e) => setOffersStatus(e.target.value)}
+              value={offersStatus}
             >
               <option
                 value="all"
@@ -92,9 +120,15 @@ function OffersPage() {
 
         {!offers || offers?.length === 0 ? (
           <div className="text-center z-10">
-            <div className="font-bold text-base md:text-2xl mt-5 plus-jakarta-sans">
-              {t("offers.noOffers")}
-            </div>
+            {isOffersLoading ? (
+              <div className="font-bold text-base md:text-2xl mt-5 plus-jakarta-sans">
+                <LoadingSpinner />
+              </div>
+            ) : (
+              <div className="font-bold text-base md:text-2xl mt-5 plus-jakarta-sans">
+                {t("offers.noOffers")}
+              </div>
+            )}
           </div>
         ) : (
           offers.map((offer) => (
@@ -128,7 +162,7 @@ function OffersPage() {
                     <td className="w-full h-3/4 flex justify-center">
                       <a
                         className="text-white bg-main-color w-[50px] md:w-[113px] h-[20px] md:h-[36px] md:text-xl text-[0.5rem] text-center p-0 font-medium rounded-[15px]  hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color"
-                        href={`/showOffer/${offer.id}`}
+                        href={`/showOffer/${offer.eventId}`}
                       >
                         Show
                       </a>

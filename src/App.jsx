@@ -12,7 +12,7 @@ import CreateEventsPage from "./pages/Events/Create/Page";
 import Footer from "./components/Footer/Component";
 import ProfilePage from "./pages/Profile/Page";
 import EditProfilePage from "./pages/Profile/Edit/Page";
-import InvitesPage from "./pages/Invites/Pages";
+import InvitesPage from "./pages/Invites/Page";
 import VerifyOtpPage from "./pages/VerifyOtp/Page";
 import ForgotPasswordConfirmationPage from "./pages/ForgotPassword/Confirmation/Page";
 import ResetPasswordPage from "./pages/ResetPassword/Page";
@@ -25,7 +25,8 @@ import OffersPage from "./pages/Offers/Page";
 import ShowOfferPage from "./pages/Offers/ShowOffer/Page";
 import NavbarHider from "./components/Navbar/Hider/Component";
 import OrderPage from "./pages/Orders/Page";
-import MeetOurChefs from './pages/meetOurChefs/Pages'
+import MeetOurChefs from "./pages/MeetOurChefs/Page";
+import EditMenuPage from "./pages/Menus/Edit/Page";
 function App() {
   useEffect(() => {
     document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
@@ -41,7 +42,7 @@ function App() {
         <Routes>
           {/* Home Page */}
           <Route path="/" element={<HomePage />} />
-          <Route path="/MeetOurChefs" element={<MeetOurChefs />} />
+
           {/* Authentication */}
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
@@ -63,6 +64,7 @@ function App() {
           {/* Commented because low performance */}
           <Route path="/menus" element={<MenusPage />} />
           <Route path="/menus/create" element={<CreateMenuPage />} />
+          <Route path="/menus/edit/:menuId" element={<EditMenuPage />} />
 
           {/* Profile Pages */}
           <Route path="/profile" element={<ProfilePage />} />
@@ -73,7 +75,10 @@ function App() {
 
           {/* Offers Pages */}
           <Route path="/offers" element={<OffersPage />} />
-          <Route path="/showOffer/:offerId" element={<ShowOfferPage />} />
+          <Route path="/showOffer/:eventId" element={<ShowOfferPage />} />
+
+          {/* Meet Our Chefs */}
+          <Route path="/meetOurChefs" element={<MeetOurChefs />} />
 
           {/* Order Pages */}
           <Route path="/orders" element={<OrderPage />} />
