@@ -27,6 +27,8 @@ import NavbarHider from "./components/Navbar/Hider/Component";
 import OrderPage from "./pages/Orders/Page";
 import MeetOurChefs from "./pages/MeetOurChefs/Page";
 import EditMenuPage from "./pages/Menus/Edit/Page";
+import Chat from "./pages/Chat/page";
+
 function App() {
   useEffect(() => {
     document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
@@ -86,6 +88,8 @@ function App() {
           {/* Google Maps Page */}
           <Route path="/googleMap" element={<GoogleMapsPage />} />
 
+             {/* Chat Page */}
+          <Route path="/Chat" element={<Chat />} />
           {/* Handling any other route */}
           <Route path="*" element={<NoPage />} />
         </Routes>

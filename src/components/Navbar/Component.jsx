@@ -215,6 +215,14 @@ function Navbar() {
                   </a>
                 </li>
                 <li>
+                  <a
+                    className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
+                    href="/Chat"
+                  >
+                    Chat
+                  </a>
+                </li>
+                <li>
                   <LanguageButton />
                 </li>
               </ul>
