@@ -146,7 +146,7 @@ function ShowEventPage() {
                   Social links
                 </th>
                 <th className="md:text-xl text-[0.5rem]">Send Invite</th>
-                <th className="md:text-xl text-[0.5rem]">Favourite</th>
+                <th className="md:text-xl text-[0.5rem]">Favorite</th>
               </tr>
             </thead>
             <tbody className="bg-[#D9D9D926]">
@@ -343,7 +343,7 @@ function ShowEventPage() {
         </div>
         {/* copy link Table */}
         <p className="plus-jakarta-sans text-[15px] md:text-[26px] border-t border-main-color w-full text-start pt-5 font-bold">
-          2-Invite your favourite chef to submit their offer via this link
+          2-Invite your favorite chef to submit their offer via this link
         </p>
         <div className="relative w-full flex justify-center items-center ">
           <div className="border-2 border-[#FA883669] text-center p-0.5 bg-[#73737354] w-full lg:w-3/4 lg:h-16 h-[38px] rounded-[30px] flex justify-between items-center">
