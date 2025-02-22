@@ -80,9 +80,6 @@ function SignInPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="input-bg w-full px-4 py-2 text-gray-900 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                data-val="true"
-                data-val-email="The EmailAddress field is not a valid e-mail address."
-                data-val-required="This field is required."
               />
             </div>
             <div className="mb-4 relative flex flex-col">
@@ -98,8 +95,6 @@ function SignInPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="input-bg w-full px-4 py-2 text-gray-900 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 pe-10"
-                data-val="true"
-                data-val-required="This field is required."
               />
               <button
                 type="button"
@@ -135,7 +130,7 @@ function SignInPage() {
             >
               {t("signin.signin")}
             </button>
-            <div className="hidden text-red-500 font-bold" id="error">
+            <div className="text-red-500 font-bold" id="error">
               {error}
             </div>
           </form>

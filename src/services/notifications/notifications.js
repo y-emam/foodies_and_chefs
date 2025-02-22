@@ -3,8 +3,30 @@ const updateNotifications = async (connection, setNotifications) => {
         if (connection) {
             await connection.start();
 
-            connection.on("ReceiveNotification", (notification) => {
-                setNotifications(notification);
+            connection.on("ReceiveNotification", (notifications) => {
+                // console.log(notifications);
+
+                /**
+                 * notifications variable sometimes return an array and sometime returns a js object
+                 * returns an array when you opens the website, refresh the page, or go to another page
+                 * returns a js object when a new notification comes
+                 */
+
+                if (Array.isArray(notifications)) {
+                    setNotifications(notifications);
+                } else if (notifications && typeof notifications === "object") {
+                    setNotifications((prevNotifications) => {
+                        if (prevNotifications) {
+                            return [...prevNotifications, notifications]
+                        } else {
+                            return notifications
+                        }
+
+                    })
+                } else {
+                    console.log("It's neither an array nor an object!");
+                }
+
             });
 
             // Clean up the connection on component unmount
