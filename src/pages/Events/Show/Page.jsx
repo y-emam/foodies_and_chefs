@@ -16,6 +16,8 @@ function ShowEventPage() {
   const [event, setEvent] = useState({});
   const [chefs, setChefs] = useState([]);
 
+  const [copied, setCopied] = useState(false);
+
   useEffect(() => {
     checkSignIn();
   });
@@ -64,6 +66,19 @@ function ShowEventPage() {
 
     updateEvent(eventId);
   }, []);
+
+  const handleCopy = async () => {
+    try {
+      const inviteLink = `${window.location.origin}/showOffer/${eventId}`;
+
+      await navigator.clipboard.writeText(inviteLink);
+
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // Reset copied state after 2s
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  };
 
   return (
     <main
@@ -347,7 +362,10 @@ function ShowEventPage() {
         </p>
         <div className="relative w-full flex justify-center items-center ">
           <div className="border-2 border-[#FA883669] text-center p-0.5 bg-[#73737354] w-full lg:w-3/4 lg:h-16 h-[38px] rounded-[30px] flex justify-between items-center">
-            <button className="md:mx-7 mx-2 mb-1 md:mb-0 bg-transparent">
+            <button
+              className="md:mx-7 mx-2 mb-1 md:mb-0 bg-transparent"
+              onClick={handleCopy}
+            >
               <i className="fa-solid fa-link text-[#C9CED6] md:text-[20px] text-[10px]"></i>
             </button>
             <span className="hidden" id="linkToCopy">
@@ -367,9 +385,10 @@ function ShowEventPage() {
             </span>
             <button
               id="copyLinkButton"
-              className="lg:h-[57px] h-[34px]  w-[90px]  md:w-[164px]  bg-main-color text-white lg:p-2 p-0 lg:text-sm text-[0.5rem] font-bold hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color rounded-[40px]"
+              className="lg:h-[57px] h-[34px] w-[90px] md:w-[164px]  bg-main-color text-white lg:p-2 p-0 lg:text-sm text-[0.5rem] font-bold hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color rounded-[40px]"
+              onClick={handleCopy}
             >
-              Copy Link
+              {copied ? "Link Copied" : "Copy Link"}
             </button>
           </div>
         </div>

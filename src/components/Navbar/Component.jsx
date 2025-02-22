@@ -81,7 +81,6 @@ function Navbar() {
         skipNegotiation: true,
       })
       .withAutomaticReconnect() // Optional: Automatically reconnect on disconnect
-      .configureLogging(signalR.LogLevel.Information) // Enable detailed logging
       .build();
 
     setConnection(newConnection);
