@@ -67,7 +67,11 @@ function ShowEventPage() {
     updateEvent(eventId);
   }, []);
 
-  const handleCopy = async () => {
+  const handleFavoriteClick = () => {
+    console.log("Favorite");
+  };
+
+  const handleCopyClick = async () => {
     try {
       const inviteLink = `${window.location.origin}/showOffer/${eventId}`;
 
@@ -234,10 +238,15 @@ function ShowEventPage() {
                       Send
                     </button>
                   </td>
-                  <td className="flex justify-center ">
+                  <td
+                    className="flex justify-center cursor-pointer"
+                    onClick={handleFavoriteClick}
+                  >
                     <i
                       id="fav-Icone"
-                      className="text-main-color fa-regular fa-heart md:text-3xl"
+                      className={`text-main-color fa-heart md:text-3xl ${
+                        chef.isFavorite ? "fas" : "far"
+                      }`}
                     ></i>
                   </td>
                 </tr>
@@ -364,7 +373,7 @@ function ShowEventPage() {
           <div className="border-2 border-[#FA883669] text-center p-0.5 bg-[#73737354] w-full lg:w-3/4 lg:h-16 h-[38px] rounded-[30px] flex justify-between items-center">
             <button
               className="md:mx-7 mx-2 mb-1 md:mb-0 bg-transparent"
-              onClick={handleCopy}
+              onClick={handleCopyClick}
             >
               <i className="fa-solid fa-link text-[#C9CED6] md:text-[20px] text-[10px]"></i>
             </button>
@@ -386,7 +395,7 @@ function ShowEventPage() {
             <button
               id="copyLinkButton"
               className="lg:h-[57px] h-[34px] w-[90px] md:w-[164px]  bg-main-color text-white lg:p-2 p-0 lg:text-sm text-[0.5rem] font-bold hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color rounded-[40px]"
-              onClick={handleCopy}
+              onClick={handleCopyClick}
             >
               {copied ? "Link Copied" : "Copy Link"}
             </button>
