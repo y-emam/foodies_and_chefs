@@ -19,7 +19,7 @@ function ShowOfferPage() {
   const { eventId } = useParams();
   const [event, setEvent] = useState();
   const [menus, setMenus] = useState(null);
-  const [offer, setOffer] = useState({});
+  // const [offer, setOffer] = useState({});
 
   useEffect(() => {
     checkSignIn();
@@ -245,12 +245,12 @@ function ShowOfferPage() {
                 >
                   Accept
                 </button>
-                <a
+                <button
                   className="md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#6555FF] text-white md:p-2 p-1 md:text-3xl text-xs font-bold text-center rounded-[15px] border-[3px] border-[#7163FF59] drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]"
-                  href="/Chef/SaveOrder?eventId=64475382-4e05-4669-17b1-08dd44dd8ea3"
+                  onClick={handleSave}
                 >
                   Save
-                </a>
+                </button>
               </div>
             </div>
           </section>
