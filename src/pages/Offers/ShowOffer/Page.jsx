@@ -76,15 +76,18 @@ function ShowOfferPage() {
             <div className="flex flex-col space-y-10 h-full self-start mx=0 md:mx-24 font-extrabold text-2xl md:w-10/12 w-full">
               <div className="flex items-center text-[0.7rem] md:text-2xl">
                 <ProfileSVG />
-                <span>Host Name: Yasser Emam</span>
+                <span>
+                  Host Name: {event?.userHost.firstName}{" "}
+                  {event?.userHost.lastName}
+                </span>
               </div>
               <div className="flex items-center text-[0.7rem] md:text-2xl ">
                 <EmailSVG />
-                <span>Host Email: yasseremam2002@gmail.com</span>
+                <span>Host Email: {event?.userHost.email}</span>
               </div>
               <div className="flex items-center text-[0.7rem] md:text-2xl ">
                 <PhoneSVG />
-                <span>Host Phone: 012345678912</span>
+                <span>Host Phone: {event?.userHost.phoneNumber}</span>
               </div>
               <div className="flex items-center text-[0.7rem] md:text-2xl ">
                 <ProfileSVG />
