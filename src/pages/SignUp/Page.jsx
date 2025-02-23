@@ -152,7 +152,7 @@ function SignUpPage() {
     if (!res) {
       setError("An error occurred. Please try again later.");
     } else if (res.success && res.data.userId) {
-      naviagte("/verifyOtp?userId=" + res.data.userId);
+      naviagte(`/verifyOtp?userId=${res.data.userId}&email=${email}`);
     } else {
       let temp = "";
       res.data.forEach((err) => {
