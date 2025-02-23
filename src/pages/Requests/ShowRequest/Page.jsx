@@ -13,13 +13,12 @@ import { getEventByEventIdService } from "../../../services/events/events";
 import checkSignIn from "../../../utils/checkSignIn";
 import { getAllMenusService } from "../../../services/menus/menus";
 
-function ShowOfferPage() {
+function ShowRequestPage() {
   const userData = JSON.parse(localStorage.getItem("user"));
 
   const { eventId } = useParams();
   const [event, setEvent] = useState();
   const [menus, setMenus] = useState(null);
-  // const [offer, setOffer] = useState({});
 
   useEffect(() => {
     checkSignIn();
@@ -48,11 +47,11 @@ function ShowOfferPage() {
   }, []);
 
   const handleSubmit = () => {
-    console.log("Offer Submitted");
+    console.log("Request Submitted");
   };
 
   const handleSave = () => {
-    console.log("Offer Saved");
+    console.log("Request Saved");
   };
 
   return (
@@ -263,4 +262,4 @@ function ShowOfferPage() {
   );
 }
 
-export default ShowOfferPage;
+export default ShowRequestPage;

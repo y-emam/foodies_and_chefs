@@ -73,7 +73,7 @@ function ShowEventPage() {
 
   const handleCopyClick = async () => {
     try {
-      const inviteLink = `${window.location.origin}/showOffer/${eventId}`;
+      const inviteLink = `${window.location.origin}/showRequest/${eventId}`;
 
       await navigator.clipboard.writeText(inviteLink);
 

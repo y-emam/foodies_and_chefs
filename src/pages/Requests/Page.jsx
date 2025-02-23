@@ -3,33 +3,31 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 import { useTranslation } from "react-i18next";
 import checkSignIn from "../../utils/checkSignIn";
-import { getAllOffersService } from "../../services/offers/offers";
+import { getAllRequestsService } from "../../services/requests/requests";
 import LoadingSpinner from "../../components/Spinner/Component";
 
-function OffersPage() {
+function RequestsPage() {
   const { t } = useTranslation();
 
-  const [offers, setOffers] = useState([]);
-  const [offersStatus, setOffersStatus] = useState("all");
-  const [isOffersLoading, setIsOffersLoading] = useState(false);
+  const [requests, setRequests] = useState([]);
+  const [requestsStatus, setRequestsStatus] = useState("all");
+  const [isRequestsLoading, setIsRequestsLoading] = useState(false);
 
   useEffect(() => {
     checkSignIn();
   });
 
   useEffect(() => {
-    const updateOffers = async () => {
-      setIsOffersLoading(true);
+    const updateRequests = async () => {
+      setIsRequestsLoading(true);
 
       try {
-        const res = await getAllOffersService(offersStatus);
+        const res = await getAllRequestsService(requestsStatus);
 
         if (res && res.success) {
           console.log(res);
 
-          // setOffers(res.data.data);
-
-          setOffers([
+          setRequests([
             {
               eventId: "4ecbd603-52e4-496c-f951-08dd50145aca",
               name: "Graduation Event",
@@ -39,19 +37,19 @@ function OffersPage() {
           ]);
         }
       } catch (err) {
-        console.log("Error in getting all offers");
+        console.log("Error in getting all requests");
         console.log(err);
       }
 
-      setIsOffersLoading(false);
+      setIsRequestsLoading(false);
     };
 
-    updateOffers();
-  }, [offersStatus]);
+    updateRequests();
+  }, [requestsStatus]);
 
   return (
     <main
-      className="offers-page min-h-[80dvh]  md:flex md:gap-10 mt-0 p-0 plus-jakarta-sans"
+      className="requests-page min-h-[80dvh]  md:flex md:gap-10 mt-0 p-0 plus-jakarta-sans"
       id="overlay"
     >
       <section className="min-h-screen mainbg relative   space-y-6 md:min-h-full flex flex-col w-full items-center p-3 md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans">
@@ -68,48 +66,48 @@ function OffersPage() {
         >
           <div className="relative flex flex-col  md:w-1/4 w-full  items-center">
             <label className="section-title font-medium self-start md:self-start lg:self-start text-start p">
-              {t("offers.status")}
+              {t("requests.status")}
             </label>
 
             <select
               name="status"
               className="text-xs	 md:text-xl appearance-none    w-full px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-[#FFFFFF4D]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
-              onChange={(e) => setOffersStatus(e.target.value)}
-              value={offersStatus}
+              onChange={(e) => setRequestsStatus(e.target.value)}
+              value={requestsStatus}
             >
               <option
                 value="all"
                 className=" checked:bg-orange-100 bg-white text-black "
               >
-                - {t("offers.statusType.all")} -
+                - {t("requests.statusType.all")} -
               </option>
 
               <option
                 value="accepted"
                 className="checked:bg-orange-100 bg-white text-black "
               >
-                {t("offers.statusType.confirmed")}
+                {t("requests.statusType.confirmed")}
               </option>
 
               <option
                 value="declined"
                 className="checked:bg-orange-100 bg-white text-black "
               >
-                {t("offers.statusType.declined")}
+                {t("requests.statusType.declined")}
               </option>
 
               <option
                 value="draft"
                 className="checked:bg-orange-100 bg-white text-black "
               >
-                {t("offers.statusType.draft")}
+                {t("requests.statusType.draft")}
               </option>
 
               <option
                 value="pending"
                 className="checked:bg-orange-100 bg-white text-black "
               >
-                {t("offers.statusType.pending")}
+                {t("requests.statusType.pending")}
               </option>
             </select>
             <div className="absolute top-7 ltr:right-2 rtl:left-2 md:ltr:right-[2%] md:rtl:left-[2%] flex items-center px-2 pointer-events-none">
@@ -118,21 +116,21 @@ function OffersPage() {
           </div>
         </form>
 
-        {!offers || offers?.length === 0 ? (
+        {!requests || requests?.length === 0 ? (
           <div className="text-center z-10">
-            {isOffersLoading ? (
+            {isRequestsLoading ? (
               <div className="font-bold text-base md:text-2xl mt-5 plus-jakarta-sans">
                 <LoadingSpinner />
               </div>
             ) : (
               <div className="font-bold text-base md:text-2xl mt-5 plus-jakarta-sans">
-                {t("offers.noOffers")}
+                {t("requests.noRequests")}
               </div>
             )}
           </div>
         ) : (
-          offers.map((offer) => (
-            <div className="w-full overflow-x-auto z-10" key={offer.id}>
+          requests.map((request) => (
+            <div className="w-full overflow-x-auto z-10" key={request.id}>
               <table className="w-full rounded-[5px] overflow-hidden table-auto">
                 <thead className="bg-[#d89d7274] rounded-t-[5px]">
                   <tr className="grid md:grid-cols-4 grid-cols-4 gap-2 md:gap-2 my-5 text-center">
@@ -149,20 +147,20 @@ function OffersPage() {
                 <tbody className="bg-[#D9D9D926]">
                   <tr className="grid md:grid-cols-4 grid-cols-4 gap-2 md:gap-2 my-5 text-center">
                     <td className="text-start md:text-[22px] md:mx-3 mx-1 font-semibold text-[0.5rem] w-full">
-                      {offer.name}
+                      {request.name}
                     </td>
                     <td className="text-start md:text-[22px] font-semibold text-[0.5rem] w-full">
-                      {offer.costPerGuest} EGP
+                      {request.costPerGuest} EGP
                     </td>
                     <td className="w-full h-3/4 flex justify-center">
                       <span className="bg-[#848484] w-[65px] md:w-[145px] h-[20px] md:h-[36px] md:text-lg text-[0.5rem] text-center p-1 font-medium rounded-[15px]">
-                        {offer.status}
+                        {request.status}
                       </span>
                     </td>
                     <td className="w-full h-3/4 flex justify-center">
                       <a
                         className="text-white bg-main-color w-[50px] md:w-[113px] h-[20px] md:h-[36px] md:text-xl text-[0.5rem] text-center p-0 font-medium rounded-[15px]  hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color"
-                        href={`/showOffer/${offer.eventId}`}
+                        href={`/showRequest/${request.eventId}`}
                       >
                         Show
                       </a>
@@ -228,4 +226,4 @@ function OffersPage() {
   );
 }
 
-export default OffersPage;
+export default RequestsPage;

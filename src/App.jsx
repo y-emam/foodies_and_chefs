@@ -21,12 +21,12 @@ import EditEventsPage from "./pages/Events/Edit/Page";
 import GoogleMapsPage from "./pages/GoogleMaps/Page";
 import ShowEventPage from "./pages/Events/Show/Page";
 import CreateMenuPage from "./pages/Menus/Create/Page";
-import OffersPage from "./pages/Offers/Page";
-import ShowOfferPage from "./pages/Offers/ShowOffer/Page";
 import NavbarHider from "./components/Navbar/Hider/Component";
 import OrderPage from "./pages/Orders/Page";
 import MeetOurChefs from "./pages/MeetOurChefs/Page";
 import EditMenuPage from "./pages/Menus/Edit/Page";
+import RequestsPage from "./pages/Requests/Page";
+import ShowRequestPage from "./pages/Requests/ShowRequest/Page";
 function App() {
   useEffect(() => {
     document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
@@ -73,9 +73,9 @@ function App() {
           {/* Invites Pages */}
           <Route path="/invites" element={<InvitesPage />} />
 
-          {/* Offers Pages */}
-          <Route path="/offers" element={<OffersPage />} />
-          <Route path="/showOffer/:eventId" element={<ShowOfferPage />} />
+          {/* Requests Pages */}
+          <Route path="/requests" element={<RequestsPage />} />
+          <Route path="/showRequest/:eventId" element={<ShowRequestPage />} />
 
           {/* Meet Our Chefs */}
           <Route path="/meetOurChefs" element={<MeetOurChefs />} />

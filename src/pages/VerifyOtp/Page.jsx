@@ -11,7 +11,7 @@ function VerifyOtpPage() {
   const navigate = useNavigate();
 
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
-  const [email, setEmail] = useState("yasser@gmail.com");
+  const [email, setEmail] = useState("");
   const [resetTimerLeft, setResetTimerLeft] = useState(60);
   const [isResetDisabled, setIsResetDisabled] = useState(true);
   const [error, setError] = useState("");

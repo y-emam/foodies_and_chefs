@@ -151,9 +151,9 @@ function Navbar() {
               <li>
                 <a
                   className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
-                  href="/offers"
+                  href="/requests"
                 >
-                  {t("navbar.offers")}
+                  {t("navbar.requests")}
                 </a>
               </li>
 
@@ -232,10 +232,10 @@ function Navbar() {
               >
                 <img src={CompleteArrowDownImg} alt="icon" />
                 <span className="hidden md:block menu-item text-white hover:text-white-500 truncate">
-                  Yasser Emam
+                  {`${userData?.firstName} ${userData?.lastName}`}
                 </span>
                 <span className="sm:block md:hidden menu-item text-white hover:text-white-500 truncate">
-                  Yasser
+                  {userData?.firstName}
                 </span>
 
                 <img
@@ -335,9 +335,9 @@ function Navbar() {
             <li>
               <a
                 className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
-                href="/offers"
+                href="/requests"
               >
-                {t("navbar.offers")}
+                {t("navbar.requests")}
               </a>
             </li>
 

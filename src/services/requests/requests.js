@@ -1,4 +1,4 @@
-export const getAllOffersService = async (status, page = 1, pageSize = 10) => {
+export const getAllRequestsService = async (status, page = 1, pageSize = 10) => {
     try {
         const token = localStorage.getItem("token");
 
