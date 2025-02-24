@@ -27,6 +27,7 @@ import MeetOurChefs from "./pages/MeetOurChefs/Page";
 import EditMenuPage from "./pages/Menus/Edit/Page";
 import RequestsPage from "./pages/Requests/Page";
 import ShowRequestPage from "./pages/Requests/ShowRequest/Page";
+import InvitationCardPage from "./pages/Invites/Card/Page";
 function App() {
   useEffect(() => {
     document.body.dir = i18n.language === "ar" ? "rtl" : "ltr";
@@ -72,6 +73,7 @@ function App() {
 
           {/* Invites Pages */}
           <Route path="/invites" element={<InvitesPage />} />
+          <Route path="/invites/:inviteId" element={<InvitationCardPage />} />
 
           {/* Requests Pages */}
           <Route path="/requests" element={<RequestsPage />} />

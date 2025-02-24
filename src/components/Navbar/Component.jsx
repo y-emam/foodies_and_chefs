@@ -131,7 +131,7 @@ function Navbar() {
               <ul className="z-20 absolute w-[50%] flex flex-row justify-around gap-10 items-center left-1/2 -translate-x-1/2">
                 <li>
                   <a
-                    className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
+                    className="menu-item text-white font-bold text-lg transition-smooth hover:text-orange-500 rounded-[35px]"
                     href="/meetOurChefs"
                   >
                     {t("navigation.MeetOurChefs")}
@@ -139,7 +139,7 @@ function Navbar() {
                 </li>
                 <li>
                   <a
-                    className="block px-4 py-2 text-white font-bold text-lg transition-smooth hover:bg-gray-100 hover:font-bold"
+                    className="block px-4 py-2 text-white font-bold text-lg transition-smooth hover:text-orange-500 rounded-[35px]"
                     href="/events"
                   >
                     {t("navigation.events")}
@@ -150,7 +150,7 @@ function Navbar() {
                 ) && (
                   <li>
                     <a
-                      className="block px-4 py-2 text-white font-bold text-lg transition-smooth hover:bg-gray-100 hover:font-bold"
+                      className="block px-4 py-2 text-white font-bold text-lg transition-smooth hover:text-orange-500 rounded-[35px]"
                       href="/invites"
                     >
                       {t("navigation.invites")}
@@ -162,7 +162,7 @@ function Navbar() {
                 ) && (
                   <li>
                     <a
-                      className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
+                      className="menu-item text-white font-bold text-lg transition-smooth hover:text-orange-500 rounded-[35px]"
                       style={{ borderRadius: "35px" }}
                       href="/menus"
                     >
@@ -172,7 +172,7 @@ function Navbar() {
                 )}
                 <li>
                   <a
-                    className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
+                    className="menu-item text-white font-bold text-lg transition-smooth hover:text-orange-500 rounded-[35px]"
                     href="/requests"
                   >
                     {t("navigation.requests")}
