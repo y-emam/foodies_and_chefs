@@ -24,3 +24,5 @@ yarn-error.log*
 
 # Swagger files
 swagger.json
+
+.env
