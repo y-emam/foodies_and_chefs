@@ -13,7 +13,9 @@ module.exports = {
       clipPath: {
         rhombus: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
       },
-
+      screens: {
+        "xl": "1240px",
+      }
     },
   },
   plugins: [],
