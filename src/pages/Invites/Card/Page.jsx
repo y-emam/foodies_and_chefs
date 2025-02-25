@@ -5,6 +5,8 @@ import MoneySVG from "../../../assets/svg/Money/Component";
 import PhoneSVG from "../../../assets/svg/Phone/Component";
 import ProfileSVG from "../../../assets/svg/Profile/Component";
 import TimeSVG from "../../../assets/svg/Time/Component";
+import LocationMap from "../../../components/LocationMap/Component";
+import DishImg from "../../../assets/images/img3.webp";
 
 function InvitationCardPage() {
   return (
@@ -49,40 +51,25 @@ function InvitationCardPage() {
               <span> {`{ Start 8:00 } - { End 11:30 } `} </span>
             </div>
           </div>
-          <div class="flex items-center  text-[0.7rem] md:text-2xl ">
+          <div class="flex items-center  text-[0.7rem] md:text-2xl">
             <LocationSVG />
             <span>Zahraa ,Nasr city, Egypt</span>
           </div>
 
-          <div class="flex relative w-full md:w-2/3 md:h-56 h-64 justify-center items-center ">
-            <div
-              id="map"
-              class="absolute w-full h-60 lg:h-60 md:h-40 mb-10"
-              style={{ backgroundColor: "orange", zIndex: "10" }}
-            >
-              <input
-                id="lat"
-                value="@Event.Latitude"
-                class="form-control hidden"
-                readonly
-              />
-              <input
-                id="log"
-                value="@Event.Longitude"
-                class="form-control hidden"
-                readonly
-              />
-            </div>
+          <div class="flex relative w-full md:w-2/3 md:h-56 h-64 justify-center items-center">
+            <LocationMap
+              location="Zahraa ,Nasr city, Egypt"
+              latitude="30.06263"
+              longitude="31.3467"
+            />
           </div>
         </div>
         <div class="flex flex-col justify-center items-center w-full relative">
-          <div class="before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-10 before:bg-[#00000080]  flex justify-center   w-full npm  bg-no-repeat min-h-60 ">
+          <div class="before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-10 before:bg-[#00000080] flex justify-center w-full npm bg-no-repeat min-h-60">
             <div class="z-20  w-full     m-auto">
-              <h2 class="handlee-regular text-7xl md:text-9xl">
-                @SharedLocalizer["Our Menu"]
-              </h2>
+              <h2 class="handlee-regular text-7xl md:text-9xl">Our Menu</h2>
               <p class="uppercase text-2xl md:text-4xl">
-                @SharedLocalizer["Special Dishes for you"]
+                Special Dishes for you
               </p>
             </div>
 
@@ -106,30 +93,27 @@ function InvitationCardPage() {
               <div class="max-h-fit flex flex-col npm  bg-no-repeat bg-auto w-full md:w-10/12 items-center">
                 {/* Chef name */}
                 <p class="ledger-regular text-3xl text-[#FA8836] uppercase w-11/12 border-t-2 border-[#FA8836] pt-5 mt-14 text-center">
-                  @SharedLocalizer["chef"]: @Event.Chef.FirstName
-                  @Event.Chef.LastName{" "}
+                  Chef: Yasser Emam
                 </p>
 
                 {/* Menu Section */}
                 <div class="md:flex hidden justify-between items-start p-5 md:p-14 w-full ">
                   <div class="w-1/2 text-start">
                     <span class="mogra-regular name-text md:text-4xl text-xl">
-                      @SharedLocalizer["AmuseBouche"]
+                      Amuse Bouche
                     </span>
                     <p class="Interl md:text-l text-lg font-medium">
-                      @Html.Raw(Menu.AmuseBoucheDec.Replace("\n", "<br />
-                      "))
+                      Amuse Bouche Description
                     </p>
                   </div>
 
                   <img
-                    src="~/Menu/@Menu.AmuseBoucheImage"
+                    src={DishImg}
                     class="w-[160px] h-[160px] hover:scale-[2] hover:-translate-x-6  transform-gpu transition duration ease-in-out"
                     alt=""
                   />
                 </div>
                 <div class="flex flex-col md:hidden justify-between items-center p-5 md:p-14 w-full ">
-                  z
                   <div class="w-full text-start">
                     <span class="mogra-regular name-text md:text-4xl text-xl">
                       @SharedLocalizer["AmuseBouche"]
@@ -139,6 +123,7 @@ function InvitationCardPage() {
                     <img
                       src="~/Menu/@Menu.AmuseBoucheImage"
                       class="w-full h-auto"
+                      alt=""
                     />
                   </div>
                   <div class="w-full text-start">
@@ -159,16 +144,12 @@ function InvitationCardPage() {
                       "))
                     </p>
                   </div>
-                  @if (Menu.AppetizerImage == "Object reference not set to an
-                  instance of an object.")
-                  {<img class="w-[160px] h-[160px]  " />}
-                  else
-                  {
-                    <img
-                      src="~/Menu/@Menu.AppetizerImage"
-                      class="w-[160px] h-[160px] hover:scale-[2] hover:-translate-x-6  transform-gpu transition duration-700 ease-in-out"
-                    />
-                  }
+
+                  <img
+                    src="~/Menu/@Menu.AppetizerImage"
+                    class="w-[160px] h-[160px] hover:scale-[2] hover:-translate-x-6  transform-gpu transition duration-700 ease-in-out"
+                    alt=""
+                  />
                 </div>
                 <div class="flex flex-col md:hidden justify-between items-center p-5 md:p-14 w-full ">
                   <div class="w-full text-start">
@@ -179,7 +160,8 @@ function InvitationCardPage() {
                   <div class="w-full">
                     <img
                       src="~/Menu/@Menu.AppetizerImage"
-                      class="w-full h-auto "
+                      class="w-full h-auto"
+                      alt=""
                     />
                   </div>
 
@@ -205,6 +187,7 @@ function InvitationCardPage() {
                   <img
                     src="~/Menu/@Menu.SaladImage"
                     class="w-[160px] h-[160px] hover:scale-[2] hover:-translate-x-6  transform-gpu transition duration-700 ease-in-out"
+                    alt=""
                   />
                 </div>
                 <div class="flex flex-col md:hidden justify-between items-center p-5 md:p-14 w-full ">
@@ -214,7 +197,11 @@ function InvitationCardPage() {
                     </span>
                   </div>
                   <div class="w-full">
-                    <img src="~/Menu/@Menu.SaladImage" class="w-full h-auto" />
+                    <img
+                      src="~/Menu/@Menu.SaladImage"
+                      class="w-full h-auto"
+                      alt=""
+                    />
                   </div>
 
                   <div class="w-full text-start">
@@ -239,6 +226,7 @@ function InvitationCardPage() {
                   <img
                     src="~/Menu/@Menu.MainCourseImage"
                     class="w-[160px] h-[160px] hover:scale-[2] hover:-translate-x-6  transform-gpu transition duration-700 ease-in-out"
+                    alt=""
                   />
                 </div>
                 <div class="flex flex-col md:hidden justify-between items-center p-5 md:p-14 w-full ">
@@ -250,7 +238,8 @@ function InvitationCardPage() {
                   <div class="w-full">
                     <img
                       src="~/Menu/@Menu.MainCourseImage"
-                      class="w-full h-auto "
+                      class="w-full h-auto"
+                      alt=""
                     />
                   </div>
 
@@ -310,12 +299,11 @@ function InvitationCardPage() {
 
                 <div class="flex flex-col items-center justify-center w-full md:mt-28 md:mb-14 mt-20 mb-5 z-30">
                   <label class="cairo font-semibold md:text-[32px] text-[16px] my-3">
-                    @SharedLocalizer["Total Number Of Invitation"]
+                    Total Number Of Invitation
                   </label>
                   <input
                     asp-for="NumberOfInvitation"
                     type="number"
-                    max="@maxCount"
                     name="NumberOfInvitation"
                     class="bg-[#D9D9D933] md:w-1/3 w-2/3 md:h-[78px] h-[40px] rounded-none p-3"
                     min="1"
@@ -325,55 +313,15 @@ function InvitationCardPage() {
                     class="lato-bold font-medium text-red-600"
                   ></span>
                   <div class="flex items-center justify-center gap-5  z-30 my-5">
-                    {/* @if (sameUser)
-                              { */}
                     <button
-                      disabled
                       type="submit"
-                      class="hover:bg-[#CF5600] md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#D9D9D9] text-white md:p-2 p-0 md:text-3xl text-xs font-bold rounded-[15px]"
+                      class="hover:bg-[#CF5600] md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#FA8836] text-white md:p-2 p-0 md:text-3xl text-xs font-bold rounded-[15px] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836]   "
                     >
-                      @SharedLocalizer["Accept"]
+                      Accept
                     </button>
-                    <button
-                      disabled
-                      class=" md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#D9D9D9] text-white md:p-2 p-1 md:text-3xl text-xs font-bold text-center rounded-[15px]"
-                    >
-                      @SharedLocalizer["Save"]
+                    <button class="md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#6555FF] text-white md:p-2 p-1 md:text-3xl text-xs font-bold text-center rounded-[15px] border-[3px] border-[#7163FF59] drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]">
+                      Save
                     </button>
-                    {/* } */}
-                    {/* else
-                              {
-                                  @if (requestInv == null || requestInv.NumberOfInvitation == 0)
-                                  {
-                                      <button type="submit" class="hover:bg-[#CF5600] md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#FA8836] text-white md:p-2 p-0 md:text-3xl text-xs font-bold rounded-[15px] border-[3px] border-[#FA8836] drop-shadow-md shadow-[#FA8836] hover:bg-transparent  hover:border-[3px] hover:border-[#FA8836] hover:text-[#FA8836]   ">@SharedLocalizer["Accept"]</button>
-                                      @if (requestInv != null)
-                                      {
-                                          @if (requestInv.Draft == false)
-                                          {
-                                              <a asp-action="SaveInvtation" asp-route-EventId="@Event.id" class="  md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#6555FF] text-white md:p-2 p-1 md:text-3xl text-xs font-bold text-center rounded-[15px] border-[3px] border-[#7163FF59] drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]">@SharedLocalizer["Save"]</a>
-
-                                          }
-                                          else
-                                          {
-                                              <button disabled class=" md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#D9D9D9] text-white md:p-2 p-1 md:text-3xl text-xs font-bold text-center rounded-[15px]">@SharedLocalizer["Save"]</button>
-
-                                          }
-                                      }
-                                      else
-                                      {
-                                          <a asp-action="SaveInvtation" asp-route-EventId="@Event.id" class="  md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#6555FF] text-white md:p-2 p-1 md:text-3xl text-xs font-bold text-center rounded-[15px] border-[3px] border-[#7163FF59] drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]">@SharedLocalizer["Save"]</a>
-
-                                      }
-
-                                  }
-                                  else
-                                  {
-                                      <button disabled type="submit" class="hover:bg-[#CF5600] md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#D9D9D9] text-white md:p-2 p-0 md:text-3xl text-xs font-bold rounded-[15px]">@SharedLocalizer["Accept"]</button>
-                                      <button disabled class=" md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#D9D9D9] text-white md:p-2 p-1 md:text-3xl text-xs font-bold text-center rounded-[15px]">@SharedLocalizer["Save"]</button>
-
-
-                                  }
-                              } */}
                   </div>
                 </div>
               </div>
