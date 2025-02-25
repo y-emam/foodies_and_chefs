@@ -363,6 +363,10 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                             ...event,
                             minNumberOfInvetation:
                               event.minNumberOfInvetation + 1,
+                            maxNumberOfInvetation: Math.max(
+                              event.minNumberOfInvetation + 1,
+                              event.maxNumberOfInvetation
+                            ),
                           });
                         }
                       }}
@@ -436,6 +440,10 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                           ...event,
                           maxNumberOfInvetation:
                             event.maxNumberOfInvetation - 1 || 1,
+                          minNumberOfInvetation: Math.min(
+                            event.minNumberOfInvetation,
+                            event.maxNumberOfInvetation - 1 || 1
+                          ),
                         })
                       }
                     >
