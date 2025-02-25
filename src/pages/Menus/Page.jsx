@@ -181,7 +181,7 @@ function MenusPage() {
           <section className="w-5/12 hidden md:flex justify-end ltr:border-l rtl: border-r border-main-color">
             <img
               src={DishImg2}
-              className="w-[30rem] h-auto object-cover"
+              className="w-[32rem] h-[38rem] object-cover"
               alt="FoodImage"
             />
           </section>

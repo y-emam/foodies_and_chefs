@@ -283,7 +283,7 @@ function MenusForm({ isNewMenu, menu, setMenu }) {
         <section className="w-5/12 hidden md:flex justify-end">
           <img
             src={DishImg2}
-            className="w-[30rem] h-[30rem] object-cover"
+            className="w-[32rem] h-[38rem] object-cover"
             alt="FoodImage"
           />
         </section>
