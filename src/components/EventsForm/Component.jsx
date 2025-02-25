@@ -13,6 +13,7 @@ import {
   updateEventService,
 } from "../../services/events/events";
 import checkSignIn from "../../utils/checkSignIn";
+import LocationPicker from "../LocationPicker/Component";
 
 function EventsForm({ isNewEvent, event, setEvent }) {
   const { t } = useTranslation();
@@ -481,6 +482,8 @@ function EventsForm({ isNewEvent, event, setEvent }) {
               </div>
             </div>
 
+            <LocationPicker />
+
             {/* Show Error on submit */}
 
             <div
@@ -505,7 +508,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
         <section className="w-5/12 hidden md:flex justify-center ltr:border-l rtl: border-r border-main-color">
           <img
             src={DishImg}
-            className="w-[30rem] h-auto object-cover"
+            className="w-[32rem] h-[38rem] object-cover"
             alt="DishImg"
           />
         </section>
