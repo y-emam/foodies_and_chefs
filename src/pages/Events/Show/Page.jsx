@@ -104,11 +104,18 @@ function ShowEventPage() {
             {event?.date && (
               <span className="w-10/12 tracking-wide" id="duration-output">
                 This event will take place on{" "}
-                <span className="text-main-color">{event.date}</span>
+                <span className="text-main-color">
+                  {event.date?.split("T")[0]}
+                </span>
                 <br /> From{" "}
-                <span className="text-main-color">{event.startTime} </span>
+                <span className="text-main-color">
+                  {event.startTime?.split("T")[1]?.substring(0, 5)}{" "}
+                </span>
                 <br />
-                until <span className="text-main-color">{event.endTime}</span>
+                until{" "}
+                <span className="text-main-color">
+                  {event.endTime?.split("T")[1]?.substring(0, 5)}
+                </span>
               </span>
             )}
           </div>
