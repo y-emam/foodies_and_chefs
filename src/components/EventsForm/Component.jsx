@@ -482,7 +482,8 @@ function EventsForm({ isNewEvent, event, setEvent }) {
               </div>
             </div>
 
-            <LocationPicker />
+            {/* New Google Maps Location Picker */}
+            {/* <LocationPicker /> */}
 
             {/* Show Error on submit */}
 
