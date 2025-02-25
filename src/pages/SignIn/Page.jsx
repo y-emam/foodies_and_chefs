@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import signinService from "../../services/authentication/signin";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import googleSignInService from "../../services/authentication/google";
 
 function SignInPage() {
   const { t } = useTranslation();
@@ -139,15 +140,17 @@ function SignInPage() {
             <span className="text-white font-medium">OR</span>
             <div className="border-t border-white flex-grow ml-3"></div>
           </div>
-          <a
+          <button
             name="provider"
             style={{ fontSize: "18px", height: "39.42px", color: "#464343" }}
             className="w-full mt-4 bg-white font-semibold py-2 rounded-lg flex items-center justify-center shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            href={`https://khaledyk-001-site4.atempurl.com/UserEvent/ExternalLogin?provider=Google&amp;fromSignin=true`}
+            // href={`https://khaledyk-001-site4.atempurl.com/UserEvent/ExternalLogin?provider=Google&amp;fromSignin=true`}
+            onClick={googleSignInService}
+            id="googleSignIn"
           >
             <img src={GoogleImg} alt="Google Icon" className="w-5 h-5 mr-2" />
             {t("signin.signinWithGoogle")}
-          </a>
+          </button>
         </div>
       </div>
     </div>

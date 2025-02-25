@@ -13,7 +13,6 @@ import {
   updateEventService,
 } from "../../services/events/events";
 import checkSignIn from "../../utils/checkSignIn";
-import LocationPicker from "../LocationPicker/Component";
 
 function EventsForm({ isNewEvent, event, setEvent }) {
   const { t } = useTranslation();
