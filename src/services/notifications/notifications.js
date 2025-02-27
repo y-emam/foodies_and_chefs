@@ -13,8 +13,6 @@ const updateNotifications = async (connection, setNotifications) => {
                  */
 
                 if (Array.isArray(notifications)) {
-                    console.log(notifications);
-
                     setNotifications(notifications);
                 } else if (notifications && typeof notifications === "object") {
                     setNotifications((prevNotifications) => {

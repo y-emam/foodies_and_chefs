@@ -290,7 +290,7 @@ function Navbar() {
                   <img className="h-14 object-cover" src={LogoImg} alt="logo" />
                 </a>
               </li>
-              <ul className="mt-10 border-t border-main-color">
+              <ul className="space-y-4 mt-10 border-t border-main-color">
                 <li>
                   <a
                     className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
@@ -315,28 +315,28 @@ function Navbar() {
                     {t("navigation.invites")}
                   </a>
                 </li>
+
+                <li>
+                  <a
+                    className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
+                    href="/menus"
+                  >
+                    {t("navigation.menus")}
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
+                    href="/requests"
+                  >
+                    {t("navigation.requests")}
+                  </a>
+                </li>
+                <li>
+                  <LanguageButton />
+                </li>
               </ul>
-
-              <li>
-                <a
-                  className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
-                  href="/menus"
-                >
-                  {t("navigation.menus")}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
-                  href="/requests"
-                >
-                  {t("navigation.requests")}
-                </a>
-              </li>
-              <li>
-                <LanguageButton />
-              </li>
             </ul>
           </div>
         </div>

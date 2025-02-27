@@ -71,41 +71,41 @@ function RequestsPage() {
 
             <select
               name="status"
-              className="text-xs	 md:text-xl appearance-none    w-full px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px]    border border-[#FFFFFF4D]  bg-[#444444] form-control    p-3   focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
+              className="text-xs md:text-xl appearance-none w-full px-4 py-2 rounded-[15px] text-white opacity-70 h-[39px] md:h-[48px] border border-[#FFFFFF4D] bg-[#444444] form-control p-3 focus:border-[#fa8836be] focus:ring-2 focus:ring-[#ecaf4a] focus:outline-none"
               onChange={(e) => setRequestsStatus(e.target.value)}
               value={requestsStatus}
             >
               <option
                 value="all"
-                className=" checked:bg-orange-100 bg-white text-black "
+                className=" checked:bg-orange-100 bg-white text-black"
               >
                 - {t("requests.statusType.all")} -
               </option>
 
               <option
                 value="accepted"
-                className="checked:bg-orange-100 bg-white text-black "
+                className="checked:bg-orange-100 bg-white text-black"
               >
                 {t("requests.statusType.confirmed")}
               </option>
 
               <option
                 value="declined"
-                className="checked:bg-orange-100 bg-white text-black "
+                className="checked:bg-orange-100 bg-white text-black"
               >
                 {t("requests.statusType.declined")}
               </option>
 
               <option
                 value="draft"
-                className="checked:bg-orange-100 bg-white text-black "
+                className="checked:bg-orange-100 bg-white text-black"
               >
                 {t("requests.statusType.draft")}
               </option>
 
               <option
                 value="pending"
-                className="checked:bg-orange-100 bg-white text-black "
+                className="checked:bg-orange-100 bg-white text-black"
               >
                 {t("requests.statusType.pending")}
               </option>
@@ -129,8 +129,8 @@ function RequestsPage() {
             )}
           </div>
         ) : (
-          requests.map((request) => (
-            <div className="w-full overflow-x-auto z-10" key={request.id}>
+          requests.map((request, ind) => (
+            <div className="w-full overflow-x-auto z-10" key={ind}>
               <table className="w-full rounded-[5px] overflow-hidden table-auto">
                 <thead className="bg-[#d89d7274] rounded-t-[5px]">
                   <tr className="grid md:grid-cols-4 grid-cols-4 gap-2 md:gap-2 my-5 text-center">

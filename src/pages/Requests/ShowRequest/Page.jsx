@@ -147,8 +147,15 @@ function ShowRequestPage() {
                       name="price"
                       id="Price"
                       type="number"
-                      value={request?.cost}
+                      placeholder="Price"
                       className="w-1/2 bg-[#D9D9D954] text-white border border-[#C0C0C0] rounded-none h-[20px] md:h-[34px] p-2 md:text-[15px] text-[7px] focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      value={request?.cost}
+                      onChange={(e) =>
+                        setRequest((prev) => ({
+                          ...prev,
+                          cost: e.target.value,
+                        }))
+                      }
                     />
                     {/* <!-- Currency Dropdown --> */}
                     <select
@@ -156,9 +163,7 @@ function ShowRequestPage() {
                       id="currancy"
                       className="md:w-1/2  hover:text-black bg-[#D9D9D954] border border-[#C0C0C0] border-s-0  text-white h-[20px] md:h-[34px] md:text-[15px] text-[7px] p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
                     >
-                      <option value="AED" selected>
-                        AED
-                      </option>
+                      <option value="AED">AED</option>
                       <option value="ARS">ARS</option>
                       <option value="BGN">BGN</option>
                       <option value="BHD">BHD</option>
@@ -170,7 +175,9 @@ function ShowRequestPage() {
                       <option value="CZK">CZK</option>
                       <option value="DKK">DKK</option>
                       <option value="DOP">DOP</option>
-                      <option value="EGP">EGP</option>
+                      <option value="EGP" selected>
+                        EGP
+                      </option>
                       <option value="EUR">EUR</option>
                       <option value="GBP">GBP</option>
                       <option value="HNL">HNL</option>
@@ -224,7 +231,10 @@ function ShowRequestPage() {
                 ) : (
                   <div value="createMenu" className="text-white ">
                     You don't have menus,{" "}
-                    <a href="/menus" className="bg-transparent text-main-color">
+                    <a
+                      href="/menus/create"
+                      className="bg-transparent text-main-color"
+                    >
                       Create Menu
                     </a>
                   </div>
