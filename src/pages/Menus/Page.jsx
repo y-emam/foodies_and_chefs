@@ -25,6 +25,8 @@ function MenusPage() {
         const res = await getAllMenusService(page, pageSize);
 
         if (res && res.success) {
+          console.log(res);
+
           setMenus(res.data.data);
         }
       } catch (err) {

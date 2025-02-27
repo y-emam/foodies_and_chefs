@@ -420,10 +420,7 @@ function ShowEventPage() {
         <p className="plus-jakarta-sans text-[15px] md:text-[26px] border-t border-main-color pt-5 w-full font-bold">
           3- Showcase your talent by adding your own menu.
         </p>
-        <form
-          action="/Home/SetMySelfChef"
-          className="flex flex-col items-center justify-center w-full space-x-5 border-b border-main-color pb-5"
-        >
+        <form className="flex flex-col items-center justify-center w-full space-x-5 border-b border-main-color pb-5">
           <input
             type="hidden"
             name="EventId"
@@ -452,10 +449,7 @@ function ShowEventPage() {
             Adding your own menu will override options 1 and 2.
           </div>
           <div className="flex justify-center">
-            <button
-              type="submit"
-              className="bg-[#6555FF] rounded-[15px] md:text-[30px]  w-[273px] md:w-[390px] h-[42px] md:h-[60px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]  "
-            >
+            <button className="bg-[#6555FF] rounded-[15px] md:text-[30px]  w-[273px] md:w-[390px] h-[42px] md:h-[60px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]">
               Use My Menu
             </button>
           </div>
