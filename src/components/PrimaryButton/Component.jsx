@@ -6,7 +6,7 @@ function PrimaryButton({ title, onClickFunction, type }) {
   return (
     <button
       type={type}
-      className={`px-4 py-2 mt-10 text-lg font-bold bg-main-color hover:bg-main-dark-color ${
+      className={`px-4 py-2 mt-10 text-lg font-bold bg-[#4136a3] ${
         isLoading
           ? "cursor-not-allowed bg-transparent"
           : "cursor-pointer bg-[#4136a3]"
