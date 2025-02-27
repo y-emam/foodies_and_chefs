@@ -19,6 +19,7 @@ function ShowRequestPage() {
   const { eventId } = useParams();
   const [event, setEvent] = useState();
   const [menus, setMenus] = useState(null);
+  const [request, setRequest] = useState(null);
 
   useEffect(() => {
     checkSignIn();
@@ -146,7 +147,7 @@ function ShowRequestPage() {
                       name="price"
                       id="Price"
                       type="number"
-                      value="500.00"
+                      value={request?.cost}
                       className="w-1/2 bg-[#D9D9D954] text-white border border-[#C0C0C0] rounded-none h-[20px] md:h-[34px] p-2 md:text-[15px] text-[7px] focus:outline-none focus:ring-2 focus:ring-orange-500"
                     />
                     {/* <!-- Currency Dropdown --> */}

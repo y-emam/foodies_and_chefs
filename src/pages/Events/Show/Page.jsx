@@ -60,6 +60,8 @@ function ShowEventPage() {
       const res = await getEventByEventIdService(eventId);
 
       if (res && res.success) {
+        console.log(res);
+
         setEvent(res.data);
       }
     };
@@ -82,6 +84,10 @@ function ShowEventPage() {
     } catch (err) {
       console.error("Failed to copy: ", err);
     }
+  };
+
+  const handleSendInviteToChef = () => {
+    console.log("Send Invite to Chef");
   };
 
   return (
@@ -241,7 +247,10 @@ function ShowEventPage() {
                   </td>
 
                   <td className="flex justify-end md:justify-center ">
-                    <button className="block text-white bg-[#6555FF] w-[45px] md:w-[113px] h-[16px] md:h-[36px] md:text-xl text-[0.5rem] text-center font-medium rounded-[15px] border-[3px] border-[#6555FF] drop-shadow-md shadow-[#6555FF]">
+                    <button
+                      className="block text-white bg-[#6555FF] w-[45px] md:w-[113px] h-[16px] md:h-[36px] md:text-xl text-[0.5rem] text-center font-medium rounded-[15px] border-[3px] border-[#6555FF] drop-shadow-md shadow-[#6555FF]"
+                      onClick={handleSendInviteToChef}
+                    >
                       Send
                     </button>
                   </td>
