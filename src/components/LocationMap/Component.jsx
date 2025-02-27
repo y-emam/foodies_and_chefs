@@ -18,7 +18,7 @@ const LocationMap = ({ location, latitude, longitude }) => {
   }
 
   return (
-    <div className="w-full h-full rounded-lg overflow-hidden shadow-lg border border-gray-300">
+    <div className="w-full h-full rounded-lg overflow-hidden shadow-lg border border-gray-300 z-10">
       <MapContainer
         center={[latitude, longitude]}
         zoom={13}

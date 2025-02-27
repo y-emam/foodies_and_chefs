@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        ledger: ['Ledger', 'serif'],
+      },
       colors: {
         'main-color': 'rgb(250 136 54)',
         'main-dark-color': '#CF5600'
