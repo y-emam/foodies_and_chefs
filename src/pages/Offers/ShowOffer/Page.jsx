@@ -19,7 +19,7 @@ function ShowOfferPage() {
   const { eventId } = useParams();
   const [event, setEvent] = useState();
   const [menus, setMenus] = useState(null);
-  const [offer, setOffer] = useState({});
+  // const [offer, setOffer] = useState({});
 
   useEffect(() => {
     checkSignIn();
@@ -51,9 +51,9 @@ function ShowOfferPage() {
     console.log("Offer Submitted");
   };
 
-  const handleSave = () => {
-    console.log("Offer Saved");
-  };
+  // const handleSave = () => {
+  //   console.log("Offer Saved");
+  // };
 
   return (
     <body className="relative overflow-x-hidden bg-black">

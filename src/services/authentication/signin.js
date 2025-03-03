@@ -10,8 +10,7 @@ const signinService = async (email, password) => {
 
         const signinData = await res.json();
 
-        console.log(signinData);
-        console.log(signinData);
+         
 
         if (signinData.success) {
             localStorage.setItem("token", signinData.token);
