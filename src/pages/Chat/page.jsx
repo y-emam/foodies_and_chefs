@@ -3,8 +3,7 @@ import "./styles.css";
 import { useEffect, useState,useRef  } from "react";
 import LoadingSpinner from "../../components/Spinner/Component";
 
-import Modal from "./Modal"; // استيراد المودال
-
+import Modal from "./Modal"; 
 import checkSignIn from "../../utils/checkSignIn";
 import * as signalR from "@microsoft/signalr";
 import GetChats from "../../services/Chat/GetChats";
@@ -16,7 +15,13 @@ import isJwtTokenValid from "../../utils/validateToken";
  // import ChatMessages from "../../components/Chat/ChatMessage";
  import SendMedia from "../../services/Chat/SendMedia"
 import ChatMessages from "../../components/Chat/ChatMessage";
+
+import Picker from "@emoji-mart/react";
+
 function Chat( ) {
+  const [emoji, setEmoji] = useState("");
+  const [showPicker, setShowPicker] = useState(false); // Controls visibility
+
   const [isLoading, setIsisLoading] = useState(true);
 
   const chatContainerRef = useRef(null);
@@ -116,7 +121,7 @@ const formatTime = (seconds) => {
   const [filteredChats, setFilteredChats] = useState(chats);
   const handleChange = (event) => {
     setContent(event.target.value);
-    
+    setEmoji("");
   };
   
   useEffect(() => {
@@ -364,24 +369,31 @@ const Search = (e) => {
           <div className="w-full flex p-3 items-center rounded-b-lg bg-[#1E1E1E]">
             
             {/* Emoji & Input */}
-            <div className="flex items-center gap-2 flex-1">
-              <button className="p-2 bg-transparent">
+            <div className="flex items-center gap-2 flex-1 relative">
+              <button className="p-2 bg-transparent"
+              onClick={() => setShowPicker(!showPicker)}
+              >
                 <i className="fa-regular fa-face-smile text-gray-500 text-lg"></i>
               </button>
+              {showPicker && (
+                  <div className="absolute bottom-14 left-0 z-50">
+                    <Picker  onEmojiSelect={(e) => setEmoji(e.native)} />
+                  </div>
+                )}
               <input
                 className="p-2 bg-transparent w-full focus:outline-none text-white"
                 type="text"
                 placeholder="Type a message..."
                 onChange={handleChange}
-                value={content}
+                value={content+emoji}
               />
             </div>
 
             {/* Actions: Attachment, Recording, Send */}
             <div className="flex gap-2 flex-shrink-0">
-              <button className="p-2 bg-transparent">
+              {/* <button className="p-2 bg-transparent">
                 <i className="fa-solid fa-paperclip text-gray-500 text-lg"></i>
-              </button>
+              </button> */}
               <button
                 className={`p-2 transition duration-300 flex items-center gap-2 ${
                   isRecording ? "bg-red-500 text-white animate-pulse" : "bg-transparent"
@@ -411,10 +423,10 @@ const Search = (e) => {
          <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title="عنوان المودال"
+        userData={Messages?.user}
       >
-        هذا هو المحتوى الخاص بالمودال 🎉
-      </Modal>
+        
+       </Modal>
       
       {/*  */}
       {isLoading && 
