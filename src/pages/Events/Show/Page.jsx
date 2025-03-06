@@ -16,6 +16,8 @@ function ShowEventPage() {
   const [event, setEvent] = useState({});
   const [chefs, setChefs] = useState([]);
 
+  const [copied, setCopied] = useState(false);
+
   useEffect(() => {
     checkSignIn();
   });
@@ -58,12 +60,35 @@ function ShowEventPage() {
       const res = await getEventByEventIdService(eventId);
 
       if (res && res.success) {
+        console.log(res);
+
         setEvent(res.data);
       }
     };
 
     updateEvent(eventId);
   }, []);
+
+  const handleFavoriteClick = () => {
+    console.log("Favorite");
+  };
+
+  const handleCopyClick = async () => {
+    try {
+      const inviteLink = `${window.location.origin}/showRequest/${eventId}`;
+
+      await navigator.clipboard.writeText(inviteLink);
+
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // Reset copied state after 2s
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  };
+
+  const handleSendInviteToChef = () => {
+    console.log("Send Invite to Chef");
+  };
 
   return (
     <main
@@ -85,11 +110,18 @@ function ShowEventPage() {
             {event?.date && (
               <span className="w-10/12 tracking-wide" id="duration-output">
                 This event will take place on{" "}
-                <span className="text-main-color">{event.date}</span>
+                <span className="text-main-color">
+                  {event.date?.split("T")[0]}
+                </span>
                 <br /> From{" "}
-                <span className="text-main-color">{event.startTime} </span>
+                <span className="text-main-color">
+                  {event.startTime?.split("T")[1]?.substring(0, 5)}{" "}
+                </span>
                 <br />
-                until <span className="text-main-color">{event.endTime}</span>
+                until{" "}
+                <span className="text-main-color">
+                  {event.endTime?.split("T")[1]?.substring(0, 5)}
+                </span>
               </span>
             )}
           </div>
@@ -146,7 +178,7 @@ function ShowEventPage() {
                   Social links
                 </th>
                 <th className="md:text-xl text-[0.5rem]">Send Invite</th>
-                <th className="md:text-xl text-[0.5rem]">Favourite</th>
+                <th className="md:text-xl text-[0.5rem]">Favorite</th>
               </tr>
             </thead>
             <tbody className="bg-[#D9D9D926]">
@@ -215,14 +247,22 @@ function ShowEventPage() {
                   </td>
 
                   <td className="flex justify-end md:justify-center ">
-                    <button className="block text-white bg-[#6555FF] w-[45px] md:w-[113px] h-[16px] md:h-[36px] md:text-xl text-[0.5rem] text-center font-medium rounded-[15px] border-[3px] border-[#6555FF] drop-shadow-md shadow-[#6555FF]">
+                    <button
+                      className="block text-white bg-[#6555FF] w-[45px] md:w-[113px] h-[16px] md:h-[36px] md:text-xl text-[0.5rem] text-center font-medium rounded-[15px] border-[3px] border-[#6555FF] drop-shadow-md shadow-[#6555FF]"
+                      onClick={handleSendInviteToChef}
+                    >
                       Send
                     </button>
                   </td>
-                  <td className="flex justify-center ">
+                  <td
+                    className="flex justify-center cursor-pointer"
+                    onClick={handleFavoriteClick}
+                  >
                     <i
                       id="fav-Icone"
-                      className="text-main-color fa-regular fa-heart md:text-3xl"
+                      className={`text-main-color fa-heart md:text-3xl ${
+                        chef.isFavorite ? "fas" : "far"
+                      }`}
                     ></i>
                   </td>
                 </tr>
@@ -343,11 +383,14 @@ function ShowEventPage() {
         </div>
         {/* copy link Table */}
         <p className="plus-jakarta-sans text-[15px] md:text-[26px] border-t border-main-color w-full text-start pt-5 font-bold">
-          2-Invite your favourite chef to submit their offer via this link
+          2-Invite your favorite chef to submit their offer via this link
         </p>
         <div className="relative w-full flex justify-center items-center ">
           <div className="border-2 border-[#FA883669] text-center p-0.5 bg-[#73737354] w-full lg:w-3/4 lg:h-16 h-[38px] rounded-[30px] flex justify-between items-center">
-            <button className="md:mx-7 mx-2 mb-1 md:mb-0 bg-transparent">
+            <button
+              className="md:mx-7 mx-2 mb-1 md:mb-0 bg-transparent"
+              onClick={handleCopyClick}
+            >
               <i className="fa-solid fa-link text-[#C9CED6] md:text-[20px] text-[10px]"></i>
             </button>
             <span className="hidden" id="linkToCopy">
@@ -367,19 +410,17 @@ function ShowEventPage() {
             </span>
             <button
               id="copyLinkButton"
-              className="lg:h-[57px] h-[34px]  w-[90px]  md:w-[164px]  bg-main-color text-white lg:p-2 p-0 lg:text-sm text-[0.5rem] font-bold hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color rounded-[40px]"
+              className="lg:h-[57px] h-[34px] w-[90px] md:w-[164px]  bg-main-color text-white lg:p-2 p-0 lg:text-sm text-[0.5rem] font-bold hover:bg-main-dark-color border-[3px] border-main-color drop-shadow-md shadow-main-color hover:bg-transparent  hover:border-[3px] hover:border-main-color hover:text-main-color rounded-[40px]"
+              onClick={handleCopyClick}
             >
-              Copy Link
+              {copied ? "Link Copied" : "Copy Link"}
             </button>
           </div>
         </div>
         <p className="plus-jakarta-sans text-[15px] md:text-[26px] border-t border-main-color pt-5 w-full font-bold">
           3- Showcase your talent by adding your own menu.
         </p>
-        <form
-          action="/Home/SetMySelfChef"
-          className="flex flex-col items-center justify-center w-full space-x-5 border-b border-main-color pb-5"
-        >
+        <form className="flex flex-col items-center justify-center w-full space-x-5 border-b border-main-color pb-5">
           <input
             type="hidden"
             name="EventId"
@@ -408,10 +449,7 @@ function ShowEventPage() {
             Adding your own menu will override options 1 and 2.
           </div>
           <div className="flex justify-center">
-            <button
-              type="submit"
-              className="bg-[#6555FF] rounded-[15px] md:text-[30px]  w-[273px] md:w-[390px] h-[42px] md:h-[60px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]  "
-            >
+            <button className="bg-[#6555FF] rounded-[15px] md:text-[30px]  w-[273px] md:w-[390px] h-[42px] md:h-[60px] mt-4 drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]">
               Use My Menu
             </button>
           </div>

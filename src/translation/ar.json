@@ -11,8 +11,8 @@
     "invites": "الدعوات",
     "menus": "القوائم",
     "offers": "العروض",
+    "requests": "الطلبات",
     "MeetOurChefs": "تعرف على طهاتنا",
-
     "signin": "الدخول",
     "signout": "تسجيل خروج",
     "profile": "الملف الشخصى",
@@ -179,6 +179,18 @@
       "pending": "قيد الانتظار"
     },
     "noOffers": "ليس لديك أي عروض."
+  },
+  "requests": {
+    "requests": "الطلبات",
+    "status": "الحالة",
+    "statusType": {
+      "all": "الكل",
+      "confirmed": "مؤكد",
+      "declined": "مرفوض",
+      "draft": "مسودة",
+      "pending": "قيد الانتظار"
+    },
+    "noRequests": "ليس لديك أي طلبات."
   },
   "events": {
     "subtitle": "أنشئ حدثك هنا.",

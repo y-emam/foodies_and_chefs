@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import DateSVG from "../../assets/svg/Date/Component";
 import EmailSVG from "../../assets/svg/Email/Component";
 import LocationSVG from "../../assets/svg/Location/Component";
@@ -5,8 +6,36 @@ import PhoneSVG from "../../assets/svg/Phone/Component";
 import ProfileSVG from "../../assets/svg/Profile/Component";
 import TimeSVG from "../../assets/svg/Time/Component";
 import "./styles.css";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getEventByEventIdService } from "../../services/events/events";
+import checkSignIn from "../../utils/checkSignIn";
 
 function OrderPage() {
+  const userData = localStorage.getItem("user");
+
+  const { eventId } = useParams();
+  const [event, setEvent] = useState(null);
+
+  useEffect(() => {
+    checkSignIn();
+  }, []);
+
+  useEffect(() => {
+    const updateEvent = async (eventId) => {
+      const res = getEventByEventIdService(eventId);
+
+      if (res && res.success) {
+        console.log(res);
+
+        setEvent(res.data);
+      }
+    };
+
+    updateEvent(eventId);
+  }, []);
+
+  const handleSave = () => {};
   return (
     <body className="relative overflow-x-hidden bg-black">
       <div className="md:block hidden absolute -top-[3rem] -right-[9rem] w-96 h-[44rem] bg-gradient-to-tr from-[#E06B17] to-[#FFB57F] transform rotate-45 z-10" />
@@ -15,7 +44,7 @@ function OrderPage() {
           <section className="min-h-screen md:space-y-20 space-y-10 md:min-h-full flex flex-col w-full items-center justify-center p-3 md:p-5 z-10 text-start lato-bold md:pl-10 plus-jakarta-sans">
             <div className="flex flex-col space-y-10 h-full items-center justifiy-center">
               <h1 className="signika-negative name-text font-bold text-sm md:text-[40px] py-5">
-                Hello, Chef Yasser
+                Hello, Chef {userData?.firstName}
               </h1>
               <p className="Monotype-Corsiva text-main-color md:text-3xl text-lg italic font-normal md:w-9/12">
                 “We are honored to invite you to dazzle our guests with your
@@ -26,27 +55,27 @@ function OrderPage() {
             <div className="flex flex-col space-y-10 h-full self-start mx=0 md:mx-24 font-extrabold text-2xl md:w-10/12 w-full">
               <div className="flex items-center text-[0.7rem] md:text-2xl">
                 <ProfileSVG />
-                <span>Host Name: Yasser Emam</span>
+                <span>
+                  Host Name:{" "}
+                  {`${event?.userHost.firstName} ${event?.userHost.lastName}`}
+                </span>
               </div>
               <div className="flex items-center text-[0.7rem] md:text-2xl ">
                 <EmailSVG />
-                <span>Host Email: yasseremam2002@gmail.com</span>
+                <span>Host Email: {event?.userHost.email}</span>
               </div>
               <div className="flex items-center text-[0.7rem] md:text-2xl ">
                 <PhoneSVG />
-                <span>Host Phone: </span>
+                <span>Host Phone: {event?.userHost.phoneNumber}</span>
               </div>
               <div className="flex items-center text-[0.7rem] md:text-2xl ">
                 <ProfileSVG />
-                <span>Event name: Tech Conference 2025</span>
+                <span>Event name: {event?.userHost.eventName}</span>
               </div>
 
               <div className="flex items-center text-[0.7rem] md:text-2xl">
                 <ProfileSVG />
-                <span>
-                  Description: An annual technology conference featuring
-                  keynotes, workshops, and networking opportunities.
-                </span>
+                <span>Description: {event?.userHost.eventDescription}</span>
               </div>
               <div className="flex items-center text-[0.7rem] md:text-2xl ">
                 <ProfileSVG />
@@ -203,12 +232,12 @@ function OrderPage() {
                 >
                   Accept
                 </button>
-                <a
+                <button
                   className="md:w-[330px] md:h-[57px] w-[130px] h-[27px] bg-[#6555FF] text-white md:p-2 p-1 md:text-3xl text-xs font-bold text-center rounded-[15px] border-[3px] border-[#7163FF59] drop-shadow-md shadow-[#7163FF59] hover:bg-transparent hover:border-4 hover:border-[#4136A3] hover:text-[#4136A3]"
-                  href="/Chef/SaveOrder?eventId=64475382-4e05-4669-17b1-08dd44dd8ea3"
+                  onClick={handleSave}
                 >
                   Save
-                </a>
+                </button>
               </div>
             </div>
           </section>

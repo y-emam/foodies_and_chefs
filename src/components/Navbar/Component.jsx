@@ -1,8 +1,8 @@
+import "./styles.css";
 import { useTranslation } from "react-i18next";
 import CompleteArrowDownImg from "../../assets/images/CompleteArrowDown.svg";
 import ProfileTempImg from "../../assets/images/profileTemp.webp";
 import LanguageButton from "../LanguageButton/Components";
-import "./styles.css";
 import { useCallback, useEffect, useState } from "react";
 import isJwtTokenValid from "../../utils/validateToken";
 import signoutService from "../../services/authentication/signout";
@@ -45,12 +45,6 @@ function Navbar() {
   }, []);
 
   const toggleDropDown = (dropdownId) => {
-    const element = document.getElementById("CreateEventMenu");
-
-    if (element.classList.contains("hidden")) {
-      element.classList.add("hidden");
-    }
-
     const dropdown = document.getElementById(dropdownId);
     dropdown.classList.toggle("hidden");
   };
@@ -81,7 +75,6 @@ function Navbar() {
         skipNegotiation: true,
       })
       .withAutomaticReconnect() // Optional: Automatically reconnect on disconnect
-      .configureLogging(signalR.LogLevel.Information) // Enable detailed logging
       .build();
 
     setConnection(newConnection);
@@ -97,11 +90,11 @@ function Navbar() {
 
   return (
     <>
-      <nav className="fixed h-[100px] w-full z-50 bg-black shadow-md">
+      <nav className="navbar fixed h-[100px] w-full z-50 bg-black shadow-md">
         <header className="relative flex justify-between items-center py-3 mx-4 md:mx-10 max-h-24">
           <div className="flex items-center gap-5">
             {/* Mobile Menu Toggle Button */}
-            <div className="block lg:hidden">
+            <div className="block xl:hidden">
               <button
                 id="menu-btn"
                 className="focus:outline-none bg-transparent"
@@ -125,62 +118,42 @@ function Navbar() {
             </div>
 
             {/* Dropdown Menu and Links (Hidden on Mobile) */}
-            <div className="hidden lg:flex justify-between w-auto items-center gap-5 text-black">
+            <div className="hidden xl:flex justify-between w-auto items-center gap-5 text-black">
               <div>
                 <a
-                  className="menu-item px-[18px]"
+                  className="menu-item px-[10px]"
                   style={{ borderRadius: "35px" }}
                   href="/"
                 >
                   <img className="h-14 object-cover" src={LogoImg} alt="logo" />
                 </a>
               </div>
-              <ul className="z-20 absolute w-[50%] flex flex-row justify-around gap-10 items-center left-1/2 -translate-x-1/2">
+              <ul className="z-20 absolute w-[60%] flex flex-row justify-around gap-10 items-center left-1/2 -translate-x-[60%] rtl:right-0 rtl:left-0">
+                <li>
+                  <a
+                    className="menu-item text-white font-bold text-lg transition-smooth hover:text-orange-500 rounded-[35px]"
+                    href="/meetOurChefs"
+                  >
+                    {t("navigation.MeetOurChefs")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="block px-4 py-2 text-white font-bold text-lg transition-smooth hover:text-orange-500 rounded-[35px]"
+                    href="/events"
+                  >
+                    {t("navigation.events")}
+                  </a>
+                </li>
                 {userData.allrole?.some(
                   (role) => role.toLowerCase() === "chef"
-                ) ? (
-                  <li className="relative cursor-pointer">
-                    <button
-                      className="px-[18px] py-[9px] flex items-center bg-transparent gap-2 text-white font-bold text-lg hover:text-orange-500 rounded-[35px] "
-                      onClick={() => {
-                        toggleDropDown("CreateEventMenu");
-                      }}
-                      style={{ borderRadius: "35px" }}
-                    >
-                      {t("navigation.events")}
-                      <img src={CompleteArrowDownImg} alt="icon" />
-                    </button>
-
-                    <div
-                      id="CreateEventMenu"
-                      className="z-20 hidden dropdown-menu absolute start-0 mt-2 w-48 bg-white shadow-lg rounded-lg text-center"
-                    >
-                      <a
-                        className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
-                        href="/events"
-                      >
-                        {t("navigation.events")}
-                      </a>
-                      {userData.allrole?.some(
-                        (role) => role.toLowerCase() === "chef"
-                      ) && (
-                        <a
-                          className="block px-4 py-2 text-black transition-smooth hover:bg-gray-100 hover:font-bold"
-                          href="/invites"
-                        >
-                          {t("navigation.invites")}
-                        </a>
-                      )}
-                    </div>
-                  </li>
-                ) : (
+                ) && (
                   <li>
                     <a
-                      className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
-                      style={{ borderRadius: "35px" }}
-                      href="/events"
+                      className="block px-4 py-2 text-white font-bold text-lg transition-smooth hover:text-orange-500 rounded-[35px]"
+                      href="/invites"
                     >
-                      {t("navigation.events")}
+                      {t("navigation.invites")}
                     </a>
                   </li>
                 )}
@@ -189,7 +162,7 @@ function Navbar() {
                 ) && (
                   <li>
                     <a
-                      className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
+                      className="menu-item text-white font-bold text-lg transition-smooth hover:text-orange-500 rounded-[35px]"
                       style={{ borderRadius: "35px" }}
                       href="/menus"
                     >
@@ -197,21 +170,12 @@ function Navbar() {
                     </a>
                   </li>
                 )}
-
                 <li>
                   <a
-                    className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
-                    href="/offers"
+                    className="menu-item text-white font-bold text-lg transition-smooth hover:text-orange-500 rounded-[35px]"
+                    href="/requests"
                   >
-                    {t("navigation.offers")}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="menu-item text-white font-bold text-lg hover:text-orange-500 rounded-[35px]"
-                    href="/meetOurChefs"
-                  >
-                    {t("navigation.MeetOurChefs")}
+                    {t("navigation.requests")}
                   </a>
                 </li>
                 <li>
@@ -269,10 +233,10 @@ function Navbar() {
                 >
                   <img src={CompleteArrowDownImg} alt="icon" />
                   <span className="hidden md:block menu-item text-white hover:text-white-500 truncate">
-                    Yasser Emam
+                    {`${userData?.firstName} ${userData?.lastName}`}
                   </span>
                   <span className="sm:block md:hidden menu-item text-white hover:text-white-500 truncate">
-                    Yasser
+                    {userData?.firstName}
                   </span>
 
                   <img
@@ -320,7 +284,7 @@ function Navbar() {
 
         {/* Sidebar (Visble on Mobile Only)*/}
         <div
-          className="hide-sidebar lg:hidden fixed inset-y-0 ltr:left-0 rtl:right-0 z-40 w-1/2 bg-[#2E2E2E] text-white transform transition-transform duration-300 ease-in-out"
+          className="hide-sidebar xl:hidden fixed inset-y-0 ltr:left-0 rtl:right-0 z-40 w-1/2 bg-[#2E2E2E] text-white transform transition-transform duration-300 ease-in-out"
           id="mobile-nav"
         >
           <div className="p-4">
@@ -334,7 +298,15 @@ function Navbar() {
                   <img className="h-14 object-cover" src={LogoImg} alt="logo" />
                 </a>
               </li>
-              <ul className="mt-10 border-y border-main-color">
+              <ul className="space-y-4 mt-10 border-t border-main-color">
+                <li>
+                  <a
+                    className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
+                    href="/meetOurChefs"
+                  >
+                    {t("navigation.MeetOurChefs")}
+                  </a>
+                </li>
                 <li>
                   <a
                     className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
@@ -351,37 +323,28 @@ function Navbar() {
                     {t("navigation.invites")}
                   </a>
                 </li>
+
+                <li>
+                  <a
+                    className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
+                    href="/menus"
+                  >
+                    {t("navigation.menus")}
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
+                    href="/requests"
+                  >
+                    {t("navigation.requests")}
+                  </a>
+                </li>
+                <li>
+                  <LanguageButton />
+                </li>
               </ul>
-
-              <li>
-                <a
-                  className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
-                  href="/menus"
-                >
-                  {t("navigation.menus")}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
-                  href="/offers"
-                >
-                  {t("navigation.offers")}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="block px-4 py-2 rounded text-white font-bold text-lg hover:bg-gray-700"
-                  href="/meetOurChefs"
-                >
-                  {t("navigation.MeetOurChefs")}
-                </a>
-              </li>
-              <li>
-                <LanguageButton />
-              </li>
             </ul>
           </div>
         </div>

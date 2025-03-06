@@ -363,6 +363,10 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                             ...event,
                             minNumberOfInvetation:
                               event.minNumberOfInvetation + 1,
+                            maxNumberOfInvetation: Math.max(
+                              event.minNumberOfInvetation + 1,
+                              event.maxNumberOfInvetation
+                            ),
                           });
                         }
                       }}
@@ -436,6 +440,10 @@ function EventsForm({ isNewEvent, event, setEvent }) {
                           ...event,
                           maxNumberOfInvetation:
                             event.maxNumberOfInvetation - 1 || 1,
+                          minNumberOfInvetation: Math.min(
+                            event.minNumberOfInvetation,
+                            event.maxNumberOfInvetation - 1 || 1
+                          ),
                         })
                       }
                     >
@@ -481,6 +489,9 @@ function EventsForm({ isNewEvent, event, setEvent }) {
               </div>
             </div>
 
+            {/* New Google Maps Location Picker */}
+            {/* <LocationPicker /> */}
+
             {/* Show Error on submit */}
 
             <div
@@ -505,7 +516,7 @@ function EventsForm({ isNewEvent, event, setEvent }) {
         <section className="w-5/12 hidden md:flex justify-center ltr:border-l rtl: border-r border-main-color">
           <img
             src={DishImg}
-            className="w-[30rem] h-auto object-cover"
+            className="w-[32rem] h-[38rem] object-cover"
             alt="DishImg"
           />
         </section>

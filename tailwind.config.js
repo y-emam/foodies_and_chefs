@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        ledger: ['Ledger', 'serif'],
+      },
       colors: {
         'main-color': 'rgb(250 136 54)',
         'main-dark-color': '#CF5600'
@@ -23,6 +26,9 @@ module.exports = {
           "100%": { opacity: 1, transform: "scale(1)" },
         },
       },
+      screens: {
+        "xl": "1240px",
+      }
     },
   },
   plugins: [],
