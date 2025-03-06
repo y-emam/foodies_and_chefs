@@ -11,6 +11,8 @@ import EventsPage from "./pages/Events/Pages";
 import CreateEventsPage from "./pages/Events/Create/Page";
 import Footer from "./components/Footer/Component";
 import ProfilePage from "./pages/Profile/Page";
+import ChefProfilePage from "./pages/Profile/ChefProfile/Page";
+
 import EditProfilePage from "./pages/Profile/Edit/Page";
 import InvitesPage from "./pages/Invites/Page";
 import VerifyOtpPage from "./pages/VerifyOtp/Page";
@@ -71,6 +73,7 @@ function App() {
           {/* Profile Pages */}
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/profile/edit" element={<EditProfilePage />} />
+          <Route path="/ChefProfile" element={<ChefProfilePage />} />
 
           {/* Invites Pages */}
           <Route path="/invites" element={<InvitesPage />} />
