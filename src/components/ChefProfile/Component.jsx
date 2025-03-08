@@ -38,7 +38,7 @@ const AddToFavorate = () => {}
     {/* // <!-- Section 1: Chef Profile --> */}
     <section class="mt-8 mb-16 font-sans">
         <div class="container mx-auto max-w-6xl px-4 text-center rounded-lg">
-            <h1 class="text-4xl font-bold mb-4 text-white">chef {userData?.firstName } {userData?.lirstName}</h1>
+            <h1 class="text-4xl font-bold mb-4 text-white">chef {userData?.firstName } {userData?.lastName}</h1>
             <p class="text-lg mb-4 text-white"> 
              {userData?.description}
             </p>
@@ -58,7 +58,7 @@ const AddToFavorate = () => {}
                         <span>{userData?.city}, {userData?.country}</span>
                     </div>
                 </div>
-                <button class="flex items-center text-white px-3 py-2 focus:outline-none mt-4" onClick={AddToFavorate}>
+                <button class="bg-transparent flex items-center text-white px-3 py-2 focus:outline-none mt-4" onClick={AddToFavorate}>
                     <i class="far fa-heart mr-2 text-[#FA8836]"></i>
                     Add to Favorite
                 </button>
@@ -81,30 +81,44 @@ const AddToFavorate = () => {}
     
     <section class="hidden lg:block py-8">
         <div class="container mx-auto max-w-6xl px-4">
-            <div class="h-[3px] bg-orange-600 mb-8"></div>
+            <div class="h-[3px] bg-main-color mb-8"></div>
             <h2 class="text-center sm:text-4xl md:text-6xl font-bold text-[#FA8836] mb-16 mt-14">
                 Chef's Event Menus
             </h2>
             <div class="flex my-8 xl:justify-start sm:justify-center font-sans">
                 <div class="relative flex">
-                    <input type="text" class="rounded-lg bg-[#383838CC] py-2 px-4 w-96 focus:outline-none text-white"
+                    <input type="text" class="rounded-lg bg-[#383838CC] py-2 ps-12 w-96 focus:outline-none text-white"
                         placeholder="Search" />
-                    <button class="absolute right-3 top-2 text-orange-600">
+                    <button class="absolute start-1 top-1 text-black w-10 bg-main-color rounded-full  ">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-                <img src="./iconfilter.png" alt="iconfilter" class="w-10 h-11 ml-4" />
+                <button className="bg-main-color flex h-11 items-center justify-center ml-4 w-10" >
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.5 12.5L5.5 4.5" stroke="white" stroke-width="1.25" stroke-linecap="round"/>
+                            <path d="M19.5 20.5L19.5 18.5" stroke="white" stroke-width="1.25" stroke-linecap="round"/>
+                            <path d="M5.5 20.5L5.5 16.5" stroke="white" stroke-width="1.25" stroke-linecap="round"/>
+                            <path d="M19.5 12.5L19.5 4.5" stroke="white" stroke-width="1.25" stroke-linecap="round"/>
+                            <path d="M12.5 7.5L12.5 4.5" stroke="white" stroke-width="1.25" stroke-linecap="round"/>
+                            <path d="M12.5 20.5L12.5 12.5" stroke="white" stroke-width="1.25" stroke-linecap="round"/>
+                            <circle cx="5.5" cy="14.5" r="2" stroke="white" stroke-width="1.25" stroke-linecap="round"/>
+                            <circle cx="12.5" cy="9.5" r="2" stroke="white" stroke-width="1.25" stroke-linecap="round"/>
+                            <circle cx="19.5" cy="15.5" r="2" stroke="white" stroke-width="1.25" stroke-linecap="round"/>
+                            </svg>
+
+                </button>
+               
             </div>
             <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 font-sans">
                 <div class="bg-[#383838CC] rounded shadow-lg overflow-hidden">
                     <img src="./reciepimg.png" alt="Italian Delight" class="w-full h-48 object-cover" />
                     <div class="p-4">
                         <div class="flex items-center mb-2 text-[#FA8836]">
+                            {/* <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i> */}
                             <div class="ml-auto flex gap-4">
                                 <i class="far fa-paper-plane"></i>
                                 <i class="far fa-heart"></i>
@@ -217,7 +231,7 @@ const AddToFavorate = () => {}
                     </li>
                 </ul>
             </div>
-            <div class="h-[3px] bg-orange-600 mb-4 mt-16"></div>
+            <div class="h-[3px] bg-main-color mb-4 mt-16"></div>
         </div>
     </section>
     
@@ -233,7 +247,7 @@ const AddToFavorate = () => {}
                         <input type="text"
                             class="rounded-lg bg-[#383838CC] py-2 px-4 w-64 sm:w-80 focus:outline-none text-white"
                             placeholder="Search" />
-                        <button class="absolute right-3 top-2 text-orange-600">
+                        <button class="absolute end-3 top-2 text-main-color bg-transparent">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
